@@ -11,9 +11,11 @@
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.42",
     "@iconify/react": "^4.1.1",
+    "aos": "^2.3.4",
     "fullpage.js": "^4.0.22",
     "next": "14.1.0",
     "react": "^18",
+    "react-alice-carousel": "^2.8.0",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
     "sass": "^1.71.0",

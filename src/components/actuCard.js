@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 const ActuCard = () => {
   return (
-    <div className={styles.cardWrapper}>
+    <div className={styles.cardWrapper} >
         <div className={styles.imgWrapper}></div>
         <div className={styles.titleWrapper}>
             <h3>Itinérance du Fonarev à Goma dans 

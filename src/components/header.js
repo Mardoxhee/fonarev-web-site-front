@@ -30,16 +30,16 @@ const Header = () => {
                     <Link href="/actualites">Actualités</Link> 
                 </li>
                 <li>
-                    <Link href="/galerie">Galerie</Link> 
+                    <Link href="/">Galerie</Link> 
                 </li>
                 <li>
-                    <Link href="/galerie">Stories</Link> 
+                    <Link href="/">Stories</Link> 
                 </li>
                 <li>
-                    <Link href="/galerie">Carriere</Link> 
+                    <Link href="/">Carriere</Link> 
                 </li>
                 <li>
-                    <Link href="/contact">Contact</Link> 
+                    <Link href="/">Contact</Link> 
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 
