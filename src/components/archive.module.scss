@@ -1,0 +1,62 @@
+.cardWrapper {
+
+    // height: 120px;
+    width: 415px;
+    margin: 10px 0px;
+    display: flex;
+    padding: 0;
+    margin-right: 2rem;
+    h3 {
+        margin: 0;
+        font-size: 10px;
+        margin: 1rem 0rem;
+    }
+    h4{
+        margin: 0;
+        font-size: 14px;
+        margin-top: 1rem
+    }
+    .imgContainer{
+        width: 100%;
+        height: 100px;
+        margin-right: 10px;
+        background: url('./../../public//leonarev.webp');
+        background-position: center center;
+        background-size: cover;
+        box-sizing: border-box;
+        overflow: hidden;
+  
+    }
+}
+
+.sideCard{
+    display: none;
+     // height: 120px;
+     width: 300px;
+     margin: 10px 0px;
+     display: flex;
+     padding: 0;
+     margin-right: 2rem;
+     h3 {
+        border: red solid 2px;
+         margin: 0;
+         font-size: 10px;
+         margin: 1rem 0rem;
+     }
+     h4{
+         margin: 0;
+         font-size: 14px;
+         margin-top: 1rem
+     }
+     .imgContainer{
+         width: 100%;
+         height: 100px;
+         margin-right: 10px;
+         background: url('./../../public//leonarev.webp');
+         background-position: center center;
+         background-size: cover;
+         box-sizing: border-box;
+         overflow: hidden;
+   
+     }
+}

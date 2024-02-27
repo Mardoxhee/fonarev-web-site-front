@@ -1,0 +1,44 @@
+.teamCardContainer{
+    height: 350px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    position: relative;
+    background-color: #FECA0A;
+    @media (max-width: 575.98px) { 
+        margin: 2rem 0rem;
+    }
+    // background-color:white;
+    .imgContainer{
+        border-radius: 10px;
+        width: 80%;
+        height: 260px;
+        background: url('./../../public/kevin-dga.jpg');
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: -2.5rem;
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
+
+    }
+.text{
+    position: absolute;
+    bottom: 0;
+    padding: .5rem ;
+    display: flex;
+    flex-direction: column ;
+    align-items: center ;
+    justify-content: center;
+    h3{
+        font-size: 15px;
+            margin: 0;
+            font-weight: 700;
+    }
+    h4{
+        text-align: center ;
+        font-weight: 500;
+    }
+}
+
+}

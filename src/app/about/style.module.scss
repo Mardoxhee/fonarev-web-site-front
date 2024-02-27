@@ -1,0 +1,188 @@
+@import "./../variables.module";
+
+.main {
+    height: auto;
+
+
+}
+.banner{
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D5EEFA;
+    div{
+        border:#FECA0A solid 10px ;
+        height: 400px;
+        width: 100%;
+        // background: url("./../../../public//about.jpg");
+        background: linear-gradient(21deg, rgba(173,130,47,1) 0%, rgba(0,0,0,0.3865195736497724) 0%), url("./../../../public//about.jpg");
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+  
+        h1{
+            font-size: 40px;
+            font-weight: 900;
+            margin-left: 6rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            span{
+                color: $yellow-color;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) { 
+        padding: 0;
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        div{
+         padding: 0;
+         h1{
+            margin-left: 1rem ;
+         }
+        }
+    }
+}
+
+.about, .story{
+    background-color: #F9F9F9;
+    padding: 2rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    .imageContainer{
+        width: 49%;
+    }
+    .txtSide{
+        width: 49%;
+        p {
+            text-align: justify;
+            font-size: 18px;
+            color: #505050;
+            line-height: 28px;
+        }
+    }
+
+    @media (max-width: 575.98px) { 
+        padding: 0;
+        flex-direction: column;
+        padding: 1rem;
+        .txtSide{
+            width: 100%;
+        }
+    }
+}
+.story{
+    background-color: white;
+    // justify-content: flex-end;
+}
+.mision{
+    padding: 2rem 8rem;
+    background-color: #F7F9FC;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 575.98px) { 
+        padding: 0;
+        padding: 1rem;
+    }
+    h2{
+        color: $move-color;
+        display: flex;
+        flex-direction: column;
+        font-size: 40px;
+        span{
+            color: #393939;
+        }
+    }
+    .cardWrapper{
+        display: flex;
+        padding: 0;
+        @media (max-width: 575.98px) { 
+            flex-direction: column;
+
+        }
+    }
+}
+.valeurs{
+    padding: 2rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 575.98px) { 
+        padding: 0;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .textSide{
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 575.98px) { 
+            width: 100%;
+        }
+        h2{
+            font-size: 35px;
+            display: flex;
+            flex-direction: column;
+            color: $move-color;
+            span{
+                color: #393939;
+            }
+        }
+        .valeursFlexer{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @media (max-width: 575.98px) { 
+                width: 100%;
+                div{
+                    width: 40%;
+                }
+            }
+            div{
+                width: 48%;
+            }
+        }
+        
+    }
+    .rightSide{
+        width: 49%;
+        background: url('./../../../public/valeurs.jpg');
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+.team{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 8rem;
+    background-color: #FFFBEE;
+    flex-direction: column;
+    @media (max-width: 575.98px) { 
+        padding: 0;;
+    }
+    h2{
+        color: #393939;
+        font-size: 25px;
+    }
+    .teamContainer{
+        margin-top: 4rem;
+        display: flex;
+        width: 100%;
+        @media (max-width: 575.98px) { 
+         flex-direction: column;
+         align-items: center;
+        }
+        justify-content: space-between;
+    }
+}

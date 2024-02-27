@@ -1,0 +1,193 @@
+@import "./../app/variables.module";
+.main{
+    width: 100%;
+    margin: 0 !important;
+    padding: 0  !important;
+}
+.slider{
+    width: 100% !important;
+    ul{
+        li{
+            width: 100% !important;
+        }
+    }
+    @media (max-width: 575.98px) { 
+        .bannerContainer, .bannerContainer2{
+            div{
+                width: 100%;
+            }
+            padding: 0 ;
+            padding-top: 8rem;
+            padding-left: 1rem;
+            padding-right: 2rem;
+            h1{
+                width: 100% !important;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+.bannerContainer, .bannerContainer2{
+    background: linear-gradient(90deg, rgba(0,0,0,0.7030461842940301) 0%, rgba(7,7,8,0.29968483975621496) 40%, rgba(0,212,255,0) 100%), url('./../../public/carou-bg.jpg');
+    height: 80vh;
+    padding: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-position: center ;
+    background-size: cover;
+    padding-top: 10rem;
+    // align-items: center;
+    div{
+        width: 50%;
+    }
+    h2{
+        display: inline-block;
+        font-size: 18px;
+        color: white;
+        background-color: $blue-color;
+        width: auto;
+        padding: 10px;
+        text-transform: uppercase;
+        font-weight: 500;
+   
+    }
+    h1{
+        display: inline-block;
+        background-color: $blue-color;
+        color: white;
+        font-size: 35px;
+        padding: 10px;
+    }
+    p{
+        color: white;
+        font-weight: 500;
+        width: 95%;
+    }
+    button{
+        display: inline-block;
+        padding:15px  40px;
+        border: none;
+        border: white 2px solid;
+        background: transparent ;
+        color: white;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+}
+
+.bannerContainer2{
+    background: linear-gradient(90deg, rgba(0,0,0,0.7030461842940301) 0%, rgba(7,7,8,0.29968483975621496) 40%, rgba(0,212,255,0) 100%), url('./../../public/dga.jpg');
+    background-position: center ;
+    background-size: cover;
+}
+.about{
+    display: flex;
+    // border: red solid 2px;
+    justify-content: space-between;
+    padding: 2rem 8rem;
+    .imgContainer{
+        // border: red solid 2px;
+        width: 48%;
+        box-sizing: border-box;
+        overflow: hidden;
+        height: 470px;
+        background-image: url("./../../public//qui-sommes-ns.jpg");
+        background-position: center center;
+        background-size: cover;
+        img{
+            max-width: 100% !important;
+            max-height: 100% !important;
+        }
+    }
+    .textSide{
+        width: 48%;
+        // border: red solid 2px;
+        text-align: justify;
+        h2{
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-top: 0;
+        }
+        p {
+            color: $paragraph-color;
+            font-size: 18px;
+            line-height: 28.5px;
+        }
+        button{
+            color: $move-color;
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 2px solid $move-color;
+        }
+    }
+
+    @media (max-width: 575.98px) { 
+        flex-direction: column-reverse !important;
+        // width: 100%;
+        padding: 0;
+        padding: 1rem;
+      ;
+        .imgContainer{
+            width: 100%;
+        }
+        .textSide{
+            width: 100%;
+            padding-top: 2rem;
+            padding-bottom : 1rem;
+        }
+    }
+}
+
+.actu{
+    display: flex;
+    flex-direction: column;
+    background-color: $yellow-light;
+    padding:2rem 8rem;
+    .topSide{
+        a {
+            cursor: pointer;
+        }
+        display: flex;
+        justify-content: space-between;
+        h2{
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+        button{
+            text-transform: uppercase;
+            padding: 20px 25px !important;
+            letter-spacing: 1.5px;
+            background-color: $blue-color;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+        }
+    }
+    .cardContainer{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 575.98px) { 
+        padding: 0rem 1rem;
+        .topSide{
+            padding: 0px;
+            h2{
+                font-size: 24px;
+                font-weight: 800;
+            }
+        }
+        .cardContainer{
+            flex-wrap: wrap;
+        }
+    }
+}
