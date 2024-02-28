@@ -99,7 +99,7 @@ export default function Home() {
                   </div>
               </section>
 
-              <section className={styles.actu} data-aos="flip-up">
+              <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>
                   <h2>Nos dernières nouvelles</h2>
                   <Link href="/actualites">

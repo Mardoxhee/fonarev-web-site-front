@@ -4,6 +4,9 @@ main {
 
 body {
   margin: 0;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
 }
 
 .alice-carousel__dots {
