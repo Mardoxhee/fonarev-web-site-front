@@ -33,6 +33,10 @@
             height: 419px;
             width: 100%;
         }
+        .thumbnails{
+            height: 419px;
+            width: 100%;
+        }
         .metadata{
           color: #8E8686 !important; 
           font-size: 13px; 
@@ -76,6 +80,7 @@ h2{
 .textContent{
     font-size: 16px;
     line-height: 22px;
+        font-weight: 300;
     br{
         margin-top: 5rem;
     }
@@ -86,6 +91,8 @@ h2{
     overflow: hidden;
     box-sizing: border-box;
     height: 220px;
+
+    margin: 2rem 0rem;
     @media (max-width: 575.98px) { 
         height: 100px;
     }

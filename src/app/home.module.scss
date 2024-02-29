@@ -122,6 +122,7 @@
             font-weight: 600;
             font-size: 16px;
             border-bottom: 2px solid $move-color;
+            cursor: pointer;
         }
     }
 
@@ -175,6 +176,9 @@
         margin-top: 2rem;
         display: flex;
         justify-content: space-between;
+        a {
+            width: 100% !important;
+        }
     }
 
     @media (max-width: 575.98px) { 

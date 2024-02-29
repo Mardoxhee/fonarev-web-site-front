@@ -10,11 +10,36 @@ const Header = () => {
   return (
     <div className={styles.mainContainer}>
         <ul className={styles.socialMedia } >
-            <li><Icon icon="pajamas:twitter" className={styles.icone} /></li>
-            <li><Icon icon="mdi:linkedin" className={styles.icone} /></li>
-            <li><Icon icon="ant-design:instagram-filled" className={styles.icone} /></li>
-            <li><Icon icon="ic:round-tiktok" className={styles.icone} /></li>
-            <li><Icon icon="ri:youtube-fill" className={styles.icone} /></li>
+            <li>
+                <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
+                    <Icon icon="ic:baseline-facebook" className={styles.icone} />
+                </Link> 
+            </li>
+            <li>
+                <Link href="https://twitter.com/fonarevrdc?s=11&t=deR11SqFyw5Xk4NNnFB3vg" target='_blank'>
+                    <Icon icon="pajamas:twitter" className={styles.icone} />
+                </Link> 
+            </li>
+            <li>
+                <Link href="https://www.linkedin.com//company/fonarev-rdc/" target='_blank'>
+                    <Icon icon="mdi:linkedin" className={styles.icone} />
+                </Link> 
+            </li>
+            <li>
+                <Link href="https://www.instagram.com/fonarevrdc/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target='_blank'>
+                    <Icon icon="ant-design:instagram-filled" className={styles.icone} />
+                </Link> 
+            </li>
+            <li>
+                <Link href="/">
+                    <Icon icon="ic:round-tiktok" className={styles.icone} />
+                </Link> 
+            </li>
+            <li>
+                <Link href="/">
+                    <Icon icon="ri:youtube-fill" className={styles.icone} />
+                </Link> 
+            </li>
         </ul>
         <nav>
             <div className={styles.logoContainer} >

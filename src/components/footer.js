@@ -4,6 +4,7 @@ import styles from './footer.module.scss'
 import { Icon } from '@iconify/react';
 import Image from 'next/image'
 import Logo from './../../public/fonarev-logo.png'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -12,12 +13,24 @@ const Footer = () => {
             <div className={styles.socialMedia}>
                 <h3>Nous suivre sur les réseaux</h3>
                 <div className={styles.iconesWrapper}>
-                    <Icon icon="ri:youtube-fill" className={styles.icone} />
+                    <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
+                        <Icon icon="ri:youtube-fill" className={styles.icone} />
+                    </Link> 
+                
+
                     <Icon icon="ic:round-tiktok" className={styles.icone} />
-                    <Icon icon="mdi:facebook" className={styles.icone} />
-                    <Icon icon="ant-design:instagram-filled" className={styles.icone} />
-                    <Icon icon="mdi:linkedin" className={styles.icone} />
-                    <Icon icon="pajamas:twitter" className={styles.icone} />
+                    <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
+                        <Icon icon="mdi:facebook" className={styles.icone} />
+                    </Link> 
+                    <Link href="https://www.instagram.com/fonarevrdc/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target='_blank'>
+                        <Icon icon="ant-design:instagram-filled" className={styles.icone} />
+                    </Link> 
+                    <Link href="https://www.linkedin.com//company/fonarev-rdc/" target='_blank'>
+                        <Icon icon="mdi:linkedin" className={styles.icone} />
+                    </Link> 
+                    <Link href="https://twitter.com/fonarevrdc?s=11&t=deR11SqFyw5Xk4NNnFB3vg" target='_blank'>
+                        <Icon icon="pajamas:twitter" className={styles.icone} />
+                    </Link> 
                 </div>
             </div>
             <div className = {styles.rightContainer}>
@@ -53,22 +66,19 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>
-                    <h3>A propos</h3>
+                    <h3>Actualités</h3>
                     <ul>
-                        <li>Qui sommes nous</li>
-                        <li>Notre histoire</li>
-                        <li>Nos valeurs</li>
+                        <li>Toutes les actualités</li>
+                        <li>A la une</li>
+                        {/* <li>Nos valeurs</li> */}
                         <li></li>
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>
-                    <h3>A propos</h3>
-                    <ul>
-                        <li>Qui sommes nous</li>
-                        <li>Notre histoire</li>
-                        <li>Nos valeurs</li>
-                        <li></li>
-                    </ul>
+                    <h3>Notre adresse</h3>
+                    <p>
+                        Avenue Colonel Ebeya 3498, <br/>Q/ Golf, C/ Gombe
+                    </p>
                 </div>
             </div>
         </footer>

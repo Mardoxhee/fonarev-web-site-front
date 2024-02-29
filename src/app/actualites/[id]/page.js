@@ -8,9 +8,27 @@ import { Icon } from '@iconify/react';
 import ArchiveCard from '@/components/sideCard'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 
 
 const Details = () => {
+    
+    const [articleDetails, setArticleDetails] = useState(null);
+
+
+    const router = useRouter();
+    let url= window.location.href
+ 
+    const lastPart = url.split('/').pop();
+    console.log("last part", lastPart)
+  
+
+    
+    
+
+
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
@@ -24,40 +42,65 @@ const Details = () => {
     ];
 
 
+    useEffect(() => {
+        const fetchArticleDetails = async () => {
+            try {
+                const response = await fetch(`https://fonarev-api.onrender.com/articles/${lastPart}`);
+                const data = await response.json();
+                setArticleDetails(data.article);
+                console.log('details', data.article.titre)
+            } catch (error) {
+                console.error('Erreur lors de la récupération des détails de l\'article :', error);
+            }
+        };
 
+        fetchArticleDetails();
+      
+    }, [lastPart]); 
+
+    
 
 
   return (
     <main className={styles.main}>
         <section className={styles.postDetails}> 
-            <h1>Distribution des kits de survi aux deplacés de Kanyaruchinya</h1>
-            <Image src={Thumbnails} alt = "descente terrain DG fonarev"/>
+        <h1> {articleDetails ? articleDetails.titre : ""} </h1>
+            <div className={styles.thumbnails}
+                    style={{
+                        backgroundImage: `url(${articleDetails ? articleDetails.thumbanails : ""})`,
+                        backgroundSize: "cover", // Nouvelle propriété
+                        backgroundPosition: "center", // Nouvelle propriété
+                    }}>
+                        
+            </div>
             <p className={styles.metadata}>Par Japhet Bula Bula </p>
             <p className={styles.metadata}>Publié le 14 Février 2024 - 10h 30</p>
             <div className={styles.ctaContainer}>
                 <button> <Icon icon="majesticons:share-line" className={styles.icone} /> <span>Partager l'article</span> </button>
                 <button> <Icon icon="et:chat" className={styles.icone} /> Laisser un commentaire</button>
             </div>
-            <h2>Le Parlement doit légiférer ce jeudi 15 février, 
-                en faveur du mariage pour les couples de même sexe. 
-                C'est le parti conservateur au pouvoir, qui porte ce projet de loi. 
-                Selon le gouvernement grec, cette loi mettra fin à une injustice 
-                vielle de plusieurs années.
-            </h2>
-            <p className = {styles.textContent}>
-                Cette loi marque une avancée pour les droits de la communauté LGBT notamment 
-                pour les parents ayant fait le choix de recourir à une gestation pour autrui.
-                Selon la loi grecque, un enfant peut être de père inconnu, mais pas de mère inconnue. 
-                Ce qui est un obstacle majeur dans la vie de parents homosexuels. <br/>
-
-                Angelo Michaelides est papa de deux petites filles nées aux Etats-Unis d'une mère porteuse, 
-                ce médecin, qui vit à Athènes est impatient que cette loi soit promulguée.<br/>
-
-                "Dès que la loi sera votée, j'inscrirai mes enfants à l'état civil. Ainsi, elles seront visibles 
-                pour l'Etat. Elles auront un numéro de sécurité sociale et des soins médicaux gratuits, comme tous 
-                les enfants. Je serai plus serein et je n'aurai plus à travailler du matin au soir pour pouvoir payer 
-                leur école privée. Mes filles pourront aller dans une école publique".
-            </p>
+                <h2
+                className={styles.postDetailsTitle}
+                >
+                {articleDetails?.titre // Use optional chaining for safer access
+                    ? articleDetails.titre
+                    // Split, capitalize, and join the title with line breaks
+                    .split(/\s+/)
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                    .join(' ')
+                    : (
+                    // Display a loading indicator or default text while fetching
+                    <span style={{ color: 'gray', fontStyle: 'italic' }}>Chargement du titre...</span>
+                    )}
+                </h2>
+                <p 
+                    className={styles.textContent} 
+                    style={{ whiteSpace: "pre-wrap" }}
+                >
+                {articleDetails?.contenu // Optional chaining for safety
+                    ? articleDetails.contenu.replace(/\./g, ". \n") // Replace if contenu exists
+                    : 'Chargement de l\'article...'} 
+                </p>
             <div className={styles.imgCaroussel} id = "imgCaroussel">
             <AliceCarousel
                 mouseTracking
@@ -76,7 +119,7 @@ const Details = () => {
             />
                     </div>
  
-            <p className= {styles.textContent} >
+            {/* <p className= {styles.textContent} >
                 Cependant Plusieurs députés émettent des réserves sur l’adoption 
                 par les couples de même sexe. En Grèce, des manifestations ont 
                 eu lieu pour protester contre le mariage des couples de même sexe.
@@ -94,7 +137,7 @@ const Details = () => {
 
                 Néanmoins, cette loi divise la société grecque, les partis d'extrême droite et l'église 
                 orthodoxe y sont fermement opposés.
-            </p>
+            </p> */}
             <div className={styles.ctaContainer}>
                 <button>Partager l'article</button>
                 <button>Laisser un commentaire</button>

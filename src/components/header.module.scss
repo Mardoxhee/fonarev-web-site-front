@@ -40,7 +40,14 @@
         padding: 0.5rem 8rem;
         font-size: 1.2rem;
         li {
-            margin: 0px 12.5px;
+            a {
+                color: rgb(61, 61, 61);
+                &:hover{
+                    color: $blue_color;
+                }
+            }
+            margin: 0px 8px;
+            color: Ò;
         }
     }
 

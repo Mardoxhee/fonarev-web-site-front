@@ -13,12 +13,35 @@ import 'aos/dist/aos.css';
 
 
 
+
+
 export default function Home() {
+  const [bannerIndex, setBannerIndex] = useState(0);
+  const [articles, setArticles] = useState([]);
+
+  const handleArticleList = async () => {
+    try {
+      const response = await fetch('https://fonarev-api.onrender.com/articles');
+      if (!response.ok) {
+        throw new Error('Failed to fetch articles');
+      }
+      const data = await response.json();
+     
+      console.log("data: " + data.article)
+      setArticles(data.article);
+    } catch (error) {
+      console.error('Error fetching articles:', error);
+    }
+  };
+
+ 
+
   useEffect(() => {
+    handleArticleList();
     AOS.init();
   }, [])
 
-  const [bannerIndex, setBannerIndex] = useState(0);
+ 
 
   const handleBannerChange = (currentIndex) => {
     setBannerIndex(currentIndex);
@@ -27,8 +50,7 @@ export default function Home() {
   return (
     <>
    <Head> <title>Fonarev rdc | Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité</title>  
-   {/* <meta name="description" />  */}
-   <meta name="keywords" content="victles,, violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
+   <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
    </Head>
       <main className={styles.main}>
         <section className={styles.slider}>
@@ -95,7 +117,9 @@ export default function Home() {
                       territoire national. le FONAREV est placé sous tutelle du ministère ayant 
                       les droits humains dans ses attributions.
                     </p>
-                    <button>En savoir plus</button>
+                    <Link href="/about">
+                      <button>En savoir plus</button>
+                    </Link>
                   </div>
               </section>
 
@@ -107,11 +131,22 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className={styles.cardContainer}>
-                    <ActuCard />
-                    <ActuCard/>
-                    <ActuCard/>
-                    <ActuCard/>
-                </div>
+                {articles.map((article) => (
+                    <Link href={`/actualites/${article._id}`}>
+                      <ActuCard
+                        key={article._id}
+                        date={article.date}
+                        category="Actualité"
+                        bg={article.thumbanails}
+                        title={article.titre}
+                      />
+                    </Link>
+                    ))}
+                    {/* <ActuCard date="" category="Actualité" bg="" title="" />
+                    <ActuCard date="" category="Actualité"bg="" title="" />
+                    <ActuCard date="" category="Actualité" bg="" title="" />
+                    <ActuCard date="" category="Actualité" bg="" title="" />  */}
+                </div> 
               </section>
         
       </main>

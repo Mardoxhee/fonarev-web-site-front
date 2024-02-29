@@ -27,7 +27,7 @@ const About = () => {
                     du 26 décembre 2022 portant principes fondamentaux relatifs à la protection
                     et à la réparation des victimes de violences sexuelles liées aux conflits 
                     et des victimes de crimes contre la paix et la sécurité de l'humanité et 
-                    le décret n°22/38 du 06 décembre 2022 fixant les statuts d'un établissement 
+                    le décret ∂38 du 06 décembre 2022 fixant les statuts d'un établissement 
                     public dénommé Fonds National des Réparations des Victimes de violences sexuelles 
                     liées aux conflits et d'autres crimes contre la paix et la sécurité de l'
                     humanité. il a son siège social à Kinshasa et exerce ses activités sur toute l'étendue 

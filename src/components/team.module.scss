@@ -13,13 +13,15 @@
         border-radius: 10px;
         width: 80%;
         height: 260px;
-        background: url('./../../public/kevin-dga.jpg');
+        background: url('./../../public/dga-emma.jpg');
         background-position: center center;
         background-size: cover;
         position: absolute;
         top: -2.5rem;
         left: 50%;
-        transform: translateX(-50%); /* Center horizontally */
+        transform: translateX(-50%); 
+        /* 
+        Center horizontally */
 
     }
 .text{
@@ -38,6 +40,7 @@
     h4{
         text-align: center ;
         font-weight: 500;
+        font-size: 12px;
     }
 }
 
