@@ -2,6 +2,7 @@ import styles from './actuCard.module.scss';
 import { Icon } from '@iconify/react';
 
 const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSize }) => {
+  const truncatedTitle = title.length > 60 ? `${title.substring(0, 60)}...` : title;
   return (
     <div
       className={styles.cardWrapper}
@@ -14,7 +15,7 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
       {/* Rest of the card content */}
       <div className={styles.imgWrapper}></div>
       <div className={styles.titleWrapper}>
-        <h3>{title}</h3>
+        <h3>{truncatedTitle}</h3>
         <div className={styles.metaContainer}>
           <p>
             <Icon icon="formkit:time" className={styles.icone} />

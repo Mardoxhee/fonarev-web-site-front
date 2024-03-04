@@ -4,8 +4,10 @@ import "./globals.css";
 import Header from './../components/header'
 import Footer from './../components/footer'
 import { Poppins } from 'next/font/google';
-import { store } from './store'
+import { store } from './store/store'
 import { Provider } from 'react-redux'
+import { persistStore } from "redux-persist";
+import {PersistGate} from 'redux-persist/integration/react'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,15 +23,19 @@ const poppins = Poppins({
 });
 
 export default function RootLayout({ children }) {
+let persistor = persistStore(store)
+
   return (
     <Provider store={store}>
-      <html lang="en">
-        <body className={poppins.className}>
-          <Header/>
-            {children}
-          <Footer/>
-          </body>
-      </html>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+        <html lang="en">
+          <body className={poppins.className}>
+            <Header/>
+              {children}
+            <Footer/>
+            </body>
+        </html>
+      {/* </PersistGate> */}
     </Provider>
   );
 }

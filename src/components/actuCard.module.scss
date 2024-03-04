@@ -21,6 +21,11 @@
     flex-direction: column;
     background-color: white;
     border: #E7E7E7 solid 1px;
+    h3{
+            text-decoration: none !important;
+            font-size: 1rem;
+    }
+
     .metaContainer{
         padding-bottom: 1rem;
         color: $paragraph-color;

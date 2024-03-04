@@ -9,35 +9,38 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useState, useEffect} from 'react';
 import AOS from 'aos';
+import {useGetAllArticlesQuery} from './store/slices/actualite'
 import 'aos/dist/aos.css';
-
-
-
+import Skeleton from './../components/skeleton'
 
 
 export default function Home() {
+  const { data, error, isLoading } = useGetAllArticlesQuery("");
+
+
   const [bannerIndex, setBannerIndex] = useState(0);
   const [articles, setArticles] = useState([]);
 
-  const handleArticleList = async () => {
-    try {
-      const response = await fetch('https://fonarev-api.onrender.com/articles');
-      if (!response.ok) {
-        throw new Error('Failed to fetch articles');
-      }
-      const data = await response.json();
+
+  // const handleArticleList = async () => {
+  //   try {
+  //     const response = await fetch('https://fonarev-api.onrender.com/articles');
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch articles');
+  //     }
+  //     const data = await response.json();
      
-      console.log("data: " + data.article)
-      setArticles(data.article);
-    } catch (error) {
-      console.error('Error fetching articles:', error);
-    }
-  };
+  //     console.log("data: " + data.article)
+  //     setArticles(data.article);
+  //   } catch (error) {
+  //     console.error('Error fetching articles:', error);
+  //   }
+  // };
 
  
 
   useEffect(() => {
-    handleArticleList();
+    // handleArticleList();
     AOS.init();
   }, [])
 
@@ -131,7 +134,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className={styles.cardContainer}>
-                {articles.map((article) => (
+                {isLoading ?  <Skeleton/> : data.article.map((article) => (
                     <Link href={`/actualites/${article._id}`}>
                       <ActuCard
                         key={article._id}

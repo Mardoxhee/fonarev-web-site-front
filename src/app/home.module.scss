@@ -178,6 +178,14 @@
         justify-content: space-between;
         a {
             width: 24.5%;
+            text-decoration: none !important;
+        }
+        h3{
+            text-decoration: none !important;
+            color: black;
+            &:hover{
+                color: $move-color;
+            }
         }
     }
 
@@ -194,6 +202,10 @@
             flex-wrap: wrap;
             a{
                 width: 100%;
+                text-decoration: none;
+            }
+            h3{
+                text-decoration: none !important;
             }
         }
     }
