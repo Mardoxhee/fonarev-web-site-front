@@ -4,8 +4,13 @@ import React from 'react'
 import MiniCard from './../../components/miniCard'
 import ArchiveCard from './../../components/archiveCard'
 import Link from 'next/link'
+import { useGetAllArticlesQuery } from '../store/slices/actualite'
 
 const Actualite = () => {
+    
+const {data, isLoading, error} = useGetAllArticlesQuery("")
+console.log("data", data)
+
   return (
     <main>
         <section className={styles.sectionWrapper}>
