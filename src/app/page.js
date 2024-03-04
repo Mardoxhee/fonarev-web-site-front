@@ -40,8 +40,8 @@ export default function Home() {
       <main className={styles.main}>
       <section className={styles.slider}>
           {isLoading ? (
-           <div className={styles.bannerContainer}>
-
+           <div className={styles.bannerContainerLoad}>
+                <span className={styles.loader} ></span>
            </div>
           ) : (
             <AliceCarousel
