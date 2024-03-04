@@ -5,10 +5,18 @@ import Image from 'next/image'
 import Logo from './../../public/fonarev-logo.png'
 import { Icon } from '@iconify/react';
 import Link from 'next/link'
+import {useState, useEffect} from 'react'
+
 
 const Header = () => {
+const [isMobile, setIsMobile] = useState(false)
+
+const handleHamburgerClick = () => {
+    setIsMobile(!isMobile);
+  };
+
   return (
-    <div className={styles.mainContainer}>
+    <div className={isMobile ? styles.mobileContainer  : styles.mainContainer}>
         <ul className={styles.socialMedia } >
             <li>
                 <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
@@ -70,7 +78,8 @@ const Header = () => {
             <div className={styles.ctaContainer}> 
                 <button>BRISEZ LE SILENCE</button>
             </div>
-            <Icon icon="icon-park:hamburger-button" className={styles.icone} />
+                {isMobile ? <Icon icon="maki:cross" className={styles.icone} onClick={handleHamburgerClick}/>:  <Icon icon="icon-park:hamburger-button" className={styles.icone} onClick={handleHamburgerClick}/>}
+           
         </nav>
     </div>
   )

@@ -177,7 +177,7 @@
         display: flex;
         justify-content: space-between;
         a {
-            width: 100% !important;
+            width: 24.5%;
         }
     }
 
@@ -192,6 +192,9 @@
         }
         .cardContainer{
             flex-wrap: wrap;
+            a{
+                width: 100%;
+            }
         }
     }
 }

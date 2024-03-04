@@ -121,10 +121,10 @@ const About = () => {
         <section className={styles.team}>
             <h2>Notre équipe dirigeante</h2>
             <div className={styles.teamContainer}>
-                <TeamCard/>
-                <TeamCard/>
-                <TeamCard/>
-                <TeamCard/>
+                <TeamCard bg="https://res.cloudinary.com/yudingplatform/image/upload/v1709200783/wgbhfbehpc96rt2if8di.jpg" prenom="Eddy" nom="MBANZU" postnom="DIEKUZEIKO" />
+                <TeamCard bg="https://res.cloudinary.com/yudingplatform/image/upload/v1709200783/wgbhfbehpc96rt2if8di.jpg" prenom="Lucien" nom="LUNDULA" postnom="LOLATUI"  />
+                <TeamCard bg="https://res.cloudinary.com/yudingplatform/image/upload/v1709200783/wgbhfbehpc96rt2if8di.jpg" prenom="Kevin" nom="NGUNGA" postnom="MAKIEDI" />
+                <TeamCard bg="https://res.cloudinary.com/yudingplatform/image/upload/v1709200783/wgbhfbehpc96rt2if8di.jpg" prenom="Lucien" nom="ZANDI" postnom="          "/>
             </div>
         </section>
 
