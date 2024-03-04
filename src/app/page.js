@@ -21,30 +21,12 @@ export default function Home() {
   const [bannerIndex, setBannerIndex] = useState(0);
   const [articles, setArticles] = useState([]);
 
-
-  // const handleArticleList = async () => {
-  //   try {
-  //     const response = await fetch('https://fonarev-api.onrender.com/articles');
-  //     if (!response.ok) {
-  //       throw new Error('Failed to fetch articles');
-  //     }
-  //     const data = await response.json();
-     
-  //     console.log("data: " + data.article)
-  //     setArticles(data.article);
-  //   } catch (error) {
-  //     console.error('Error fetching articles:', error);
-  //   }
-  // };
-
  
 
   useEffect(() => {
     // handleArticleList();
     AOS.init();
   }, [])
-
- 
 
   const handleBannerChange = (currentIndex) => {
     setBannerIndex(currentIndex);
@@ -56,46 +38,49 @@ export default function Home() {
    <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
    </Head>
       <main className={styles.main}>
-        <section className={styles.slider}>
-        <AliceCarousel
-            items={[
-              <div className={styles.bannerContainer}  key="1">
-              <div>
-                <h2>Actualité</h2>
-                <h1>Commemoration du genocide congolais à kinshasa et dans le monde</h1>
-                <p>Le mercredi 14 août 2023, le président de la République Démocratique 
-                  du Congo, Felix-Antoine Tshisekedi, a lancé la première commémoration 
-                  officielle du génocide congolais ...
-                </p>     
-                  <button>En savoir plus</button>          
+      <section className={styles.slider}>
+          {isLoading ? (
+           <div className={styles.bannerContainer}>
+
+           </div>
+          ) : (
+            <AliceCarousel
+              items={data.article.slice(0, 3).map((article, index) => (
+                <div
+                  className={index % 2 === 0 ? styles.bannerContainer : styles.bannerContainer2}
+                  key={article._id}
+                  style={{
+                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.7030461842940301) 0%, rgba(7,7,8,0.29968483975621496) 40%, rgba(0,212,255,0) 100%),url(${article.thumbanails})`,
+                  backgroundPosition: 'center', // Default to center
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                  }}
+                >
+                  <div>
+                    <h2>Actualité</h2>
+                    <h1>{article.titre}</h1>
+                    <p>{article.contenu.substr(0, 250)}...</p>
+                    <Link href={`/actualites/${article._id}`}>
+                      <button>En savoir plus</button>
+                    </Link>
+                  </div>
                 </div>
-          </div>,
-          <div className={styles.bannerContainer2}  key="2">
-              <div>
-                <h2>Actualité</h2>
-                <h1>Commemoration du genocide congolais à kinshasa et dans le monde</h1>
-                <p>Le mercredi 14 août 2023, le président de la République Démocratique 
-                  du Congo, Felix-Antoine Tshisekedi, a lancé la première commémoration 
-                  officielle du génocide congolais ...
-                </p>     
-                  <button>En savoir plus</button>          
-                </div>
-          </div>
-              // Add more banner items as necessary
-            ]}
-            mouseTracking="false"
-            autoPlay
-            autoPlayInterval={3000} 
-            slideToIndex={bannerIndex}
-            infinite={true}
-            onSlideChanged={handleBannerChange}
-            animationType="fadeout"
-            controlsStrategy="alternate"
-            keyboardNavigation = {true}
-            animationDuration = {500}
-          />
-        
-          </section>
+              ))}
+              mouseTracking="false"
+              autoPlay
+              autoPlayInterval={3000}
+              slideToIndex={bannerIndex}
+              infinite={true}
+              onSlideChanged={handleBannerChange}
+              animationType="fadeout"
+              controlsStrategy="alternate"
+              keyboardNavigation={true}
+              animationDuration={500}
+            />
+          )}
+        </section>
+
+
 
               <section className = {styles.about}>
                 <div className={styles.imgContainer}    data-aos="fade-right" > 

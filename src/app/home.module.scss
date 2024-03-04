@@ -28,6 +28,7 @@
     }
 }
 .bannerContainer, .bannerContainer2{
+    height: 100vh;
     background: linear-gradient(90deg, rgba(0,0,0,0.7030461842940301) 0%, rgba(7,7,8,0.29968483975621496) 40%, rgba(0,212,255,0) 100%), url('./../../public/carou-bg.jpg');
     height: 80vh;
     padding: 8rem;
