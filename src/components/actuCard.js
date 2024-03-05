@@ -2,7 +2,7 @@ import styles from './actuCard.module.scss';
 import { Icon } from '@iconify/react';
 
 const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSize }) => {
-  const truncatedTitle = title.length > 60 ? `${title.substring(0, 60)}...` : title;
+  const truncatedTitle = title.length > 70 ? `${title.substring(0, 60)}...` : title;
   return (
     <div
       className={styles.cardWrapper}
