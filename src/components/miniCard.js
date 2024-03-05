@@ -3,13 +3,14 @@ import React from 'react'
 import Link from 'next/link'
 
 
-const MiniCard = () => {
+const MiniCard = ({titre, backgroundImage}) => {
   return (
-      <div className={styles.cardWrapper}>
-          <div className={styles.imgWrapper} >
+
+    <div className={styles.cardWrapper}>
+          <div className={styles.imgWrapper}  style={{ backgroundImage: `url(${backgroundImage})` }} >
               <h4>ACTUALITE</h4>
           </div>
-          <h3>Distribution des kits de survi aux deplacés de kanyaruchinya</h3>
+          <h3>{titre}</h3>
       </div>
   )
 }

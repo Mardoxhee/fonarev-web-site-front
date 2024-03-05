@@ -5,6 +5,7 @@
     width: 300px;
     position: relative;
     background-color: #FECA0A;
+    
     @media (max-width: 575.98px) { 
         margin: 2rem 0rem;
     }
@@ -27,7 +28,6 @@
 .text{
     position: absolute;
     bottom: 0;
-    padding: .5rem ;
     display: flex;
     flex-direction: column ;
     align-items: center ;
@@ -43,7 +43,9 @@
     h4{
         text-align: center ;
         font-weight: 500;
-        font-size: 12px;
+        font-size: 14px;
+      
+      
     }
 }
 
