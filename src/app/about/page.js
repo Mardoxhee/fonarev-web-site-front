@@ -124,7 +124,7 @@ const About = () => {
                 <TeamCard bg="pca2.jpeg" prenom="Eddy" nom="MBANZU" postnom="DIEKUZEIKO" fonction="Président du Conseil d’Administration" />
                 <TeamCard bg="dg.jpg" prenom="Lucien" nom="LUNDULA" postnom="LOLATUI" fonction="Drecteur Général"  />
                 <TeamCard bg="dga_k.jpg" prenom="Kevin" nom="NGUNGA" postnom="MAKIEDI" fonction = "Directeur Général Adjoint en charge de l'administration et des finances" />
-                <TeamCard bg="dga-emma-2.jpg" prenom="Lucien" nom="ZANDI" postnom=" " fonction ="Directeur Général Adjoint en charge des opérations" />
+                <TeamCard bg="dga-emma-2.jpg" prenom="Emmanuella" nom="ZANDI" postnom=" " fonction ="Directeur Général Adjoint en charge des opérations" />
             </div>
         </section>
 
