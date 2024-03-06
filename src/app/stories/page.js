@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './contact.module.scss'
+import styles from './style.module.scss'
 
-const page = () => {
+const Stories = () => {
   return (
     <main className={styles.main}>
         OUPS, la page est en construction. Revenez très bientôt...
@@ -9,4 +9,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Stories

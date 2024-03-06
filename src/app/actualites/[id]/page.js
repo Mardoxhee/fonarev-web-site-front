@@ -12,6 +12,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useGetAllArticlesQuery } from '../../store/slices/actualite'
 import Head from 'next/head';
+import Link from 'next/link'
 
 
 
@@ -19,7 +20,7 @@ const Details = () => {
     const {data, isLoading, error} = useGetAllArticlesQuery("")
     console.log("data", data)
 
-const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
+    const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
     
     const [articleDetails, setArticleDetails] = useState(null);
 
@@ -162,11 +163,14 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
         <section className={styles.sideBar}> 
             <div className={styles.pub}></div>
             <div className={styles.cardContainer}>
-                <h2>A la une</h2>
-                <ArchiveCard  />
-                <ArchiveCard  />
-                <ArchiveCard  />
-            </div>
+            <h2>A la une</h2>
+            {/* Display the three latest articles using ArchiveCard */}
+            {data?.article?.slice(0, 3).map((article) => (
+            <Link key={article._id} href={`/actualites/${article._id}`}>
+                <ArchiveCard titre={article.titre} backgroundImageSrc={article.thumbanails} category="ACTUALITE" />
+            </Link>
+            ))}
+          </div>
             <div className={styles.pub}></div>
         </section>
     </main>
