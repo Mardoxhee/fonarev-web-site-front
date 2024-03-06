@@ -71,7 +71,7 @@ const About = () => {
             </div>
         </section>
 
-        <section className={styles.valeurs}>
+        {/* <section className={styles.valeurs}>
             <div className={styles.textSide}>
                 <h2>Les valeurs <span>du Fonarev</span></h2>
                 <div className={styles.valeursFlexer}> 
@@ -116,7 +116,7 @@ const About = () => {
             <div className={styles.rightSide}>
 
             </div>
-        </section>
+        </section> */}
 
         <section className={styles.team}>
             <h2>Notre équipe dirigeante</h2>
