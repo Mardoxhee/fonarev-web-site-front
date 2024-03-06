@@ -10,10 +10,16 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { useGetAllArticlesQuery } from '../../store/slices/actualite'
+import Head from 'next/head';
 
 
 
 const Details = () => {
+    const {data, isLoading, error} = useGetAllArticlesQuery("")
+    console.log("data", data)
+
+const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
     
     const [articleDetails, setArticleDetails] = useState(null);
 
@@ -62,7 +68,17 @@ const Details = () => {
 
 
   return (
-    <main className={styles.main}>
+    <>
+
+            <Head>
+                <title>{articleDetails?.titre || 'Article Details'}</title>
+                <meta property="og:title" content={articleDetails?.titre || 'Article Details'} />
+                <meta property="og:description" content={articleDetails?.contenu || 'Description of the article'} />
+                <meta property="og:image" content={articleDetails?.thumbanails || 'URL to the article thumbnail'} />
+                <meta property="og:url" content={url} />
+                <meta property="og:type" content="article" />
+            </Head>
+            <main className={styles.main}>
         <section className={styles.postDetails}> 
         <h1> {articleDetails ? articleDetails.titre : ""} </h1>
             <div className={styles.thumbnails}
@@ -97,9 +113,9 @@ const Details = () => {
                     className={styles.textContent} 
                     style={{ whiteSpace: "pre-wrap" }}
                 >
-                {articleDetails?.contenu // Optional chaining for safety
-                    ? articleDetails.contenu.replace(/\./g, ". \n") // Replace if contenu exists
-                    : 'Chargement de l\'article...'} 
+                    {articleDetails?.contenu
+                        ? articleDetails.contenu.replace(/\.\s*/g, ".\n").trim() // Replace period followed by optional spaces with a line break and trim
+                        : 'Chargement de l\'article...'} 
                 </p>
             <div className={styles.imgCaroussel} id = "imgCaroussel">
             <AliceCarousel
@@ -154,6 +170,8 @@ const Details = () => {
             <div className={styles.pub}></div>
         </section>
     </main>
+    </>
+    
   )
 }
 

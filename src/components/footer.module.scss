@@ -17,6 +17,7 @@
         padding-top: 2rem;
         display: flex;
         flex-direction: column;
+     
         @media (max-width: 575.98px) { 
             padding: 0;
         }
@@ -39,6 +40,11 @@
                 ul{
                     padding: 0 ;
                     margin: 0;
+                    a{
+                        text-decoration: none;
+                        color: black;
+                        cursor: pointer;
+                    }
                     li {
                         list-style: none;
                         margin: 15px 0px;

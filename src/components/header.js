@@ -41,6 +41,7 @@ const handleHamburgerClick = () => {
             <li>
                 <Link href="/">
                     <Icon icon="ic:round-tiktok" className={styles.icone} />
+
                 </Link> 
             </li>
             <li>

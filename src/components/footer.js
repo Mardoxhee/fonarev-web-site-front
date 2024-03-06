@@ -59,9 +59,15 @@ const Footer = () => {
                 <div className = {styles.linkBlock}>
                     <h3>A propos</h3>
                     <ul>
+                    <Link href="/about/#about" >
                         <li>Qui sommes nous</li>
+                    </Link> 
+                    <Link href="/about/#story" >
                         <li>Notre histoire</li>
-                        <li>Nos valeurs</li>
+                    </Link> 
+                    <Link href="/about/#team" >
+                        <li>Equipe dirigeante</li>
+                    </Link> 
                         <li></li>
                     </ul>
                 </div>
