@@ -10,7 +10,7 @@ const About = () => {
     <main className={styles.main}>
         <section className = {styles.banner}>
                 <div>
-                    <h1>A propos du <span>fonarev</span></h1>
+                    <h1>A propos du <span>Fonarev</span></h1>
                 </div>
         </section>
 
