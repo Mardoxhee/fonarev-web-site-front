@@ -91,19 +91,16 @@ export default function Home() {
                       A propos de nous
                     </h2>
                     <p>
-                      Le Fonds National des Réparations des Victimes de violences sexuelles 
-                      liées aux conflits et d'autres crimes contre la paix et la sécurité de 
-                      l'humanité. FONAREV en sigle est un établissement public institué par 
-                      la loi n°22/65 du 26 décembre 2022 portant principes fondamentaux 
-                      relatifs à la protection et à la réparation des victimes de violences 
-                      sexuelles liées aux conflits et des victimes de crimes contre la paix 
-                      et la sécurité de l'humanité et le décret n°22/38 du 06 décembre 2022 
-                      fixant les statuts d'un établissement public dénommé Fonds National des 
-                      Réparations des Victimes de violences sexuelles liées aux conflits et 
-                      d'autres crimes contre la paix et la sécurité de l'humanité. il a son 
-                      siège social à Kinshasa et exerce ses activités sur toute l'étendue du 
-                      territoire national. le FONAREV est placé sous tutelle du ministère ayant 
-                      les droits humains dans ses attributions.
+                        Le Fonds National des Réparations des Victimes de violences sexuelles liées aux 
+                        conflits et d’autres crimes contre la paix et la sécurité de l’humanité. 
+                        FONAREV en sigle est un établissement public institué par la loi n°22/65 du 26 
+                        décembre 2022 portant principes fondamentaux relatifs à la protection et à la 
+                        réparation des victimes de violences sexuelles liées aux conflits et des victimes 
+                        de crimes contre la paix et la sécurité de l’humanité et le décret n°22/38 du 06 
+                        décembre 2022 fixant les statuts d’un établissement public dénommé Fonds National des 
+                        Réparations des Victimes de violences sexuelles liées aux conflits et d’autres crimes contre 
+                        la paix et la sécurité de l’humanité. Il a son siège social à Kinshasa et exerce ses activités 
+                        sur toute l’étendue du territoire national.
                     </p>
                     <Link href="/about">
                       <button>En savoir plus</button>

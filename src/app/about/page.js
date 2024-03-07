@@ -19,41 +19,47 @@ const About = () => {
 
             </div>
             <div className={styles.txtSide}>
-                <h2>Qui sommes nous</h2>
+                <h2>Cadre légal</h2>
                 <p>
-                    Le Fonds National des Réparations des Victimes de violences sexuelles 
-                    liées aux conflits et d'autres crimes contre la paix et la sécurité de l'  humanité. 
-                    FONAREV en sigle est un établissement public institué par la loi n°22/65 
-                    du 26 décembre 2022 portant principes fondamentaux relatifs à la protection
-                    et à la réparation des victimes de violences sexuelles liées aux conflits 
-                    et des victimes de crimes contre la paix et la sécurité de l'humanité et 
-                    le décret ∂38 du 06 décembre 2022 fixant les statuts d'un établissement 
-                    public dénommé Fonds National des Réparations des Victimes de violences sexuelles 
-                    liées aux conflits et d'autres crimes contre la paix et la sécurité de l'
-                    humanité. il a son siège social à Kinshasa et exerce ses activités sur toute l'étendue 
-                    du territoire national. le FONAREV est placé sous tutelle du ministère ayant les droits 
-                    humains dans ses attributions.
+                    Le FONAREV est un établissement public à caractère technique, financier et social, doté d’une personnalité juridique, qui jouit d’une autonomie financière et de gestion. Il est sous la tutelle du Ministère ayant les droits humains dans ses attributions.
+                    Les textes légaux régissant le FONAREV sont :
                 </p>
+                <ul>
+                    <li>
+                        Décret n°22/038 du 06 décembre 2022 fixant les statuts d’un Etablissement public dénommé Fonds National des Réparations des Victimes de Violences Sexuelles liées aux conflits et d’autres crimes contre la paix et la sécurité de l’humanité, FONAREV en sigle.
+                    </li>
+                    <li>
+                        Loi n°22/065 du 26 décembre 2022 fixant les principes fondamentaux relatifs à la protection et à la réparation des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l’humanité ;
+                    </li>
+                    <li>
+                        Décret n°23/20 du 09 juin 2023 modifiant et complétant le décret n°22/038 mentionné ci-haut.
+                    </li>
+                </ul>
+
+             
+             
             </div>
         </section>
 
         <section className={styles.story} id="story">
             <div className={styles.txtSide}>
-                <h2>Notre histoire</h2>
-                <p>
-                    Le Fonds National des Réparations des Victimes de violences sexuelles 
-                    liées aux conflits et d'autres crimes contre la paix et la sécurité de l'  humanité. 
-                    FONAREV en sigle est un établissement public institué par la loi n°22/65 
-                    du 26 décembre 2022 portant principes fondamentaux relatifs à la protection
-                    et à la réparation des victimes de violences sexuelles liées aux conflits 
-                    et des victimes de crimes contre la paix et la sécurité de l'humanité et 
-                    le décret n°22/38 du 06 décembre 2022 fixant les statuts d'un établissement 
-                    public dénommé Fonds National des Réparations des Victimes de violences sexuelles 
-                    liées aux conflits et d'autres crimes contre la paix et la sécurité de l'
-                    humanité. il a son siège social à Kinshasa et exerce ses activités sur toute l'étendue 
-                    du territoire national. le FONAREV est placé sous tutelle du ministère ayant les droits 
-                    humains dans ses attributions.
-                </p>
+                <h2>Notre Vision</h2>
+                <ul>
+                    <li>
+                        Assurer la vision humaniste du chef de l’Etat pour la prise en charge des victimes Les victimes au centre de toutes les actions et préoccupations
+                    </li>
+                    <li>
+                        Bonne gouvernance : Transparence et Intégrité financière
+                    </li>
+                    <li>
+                        Implication et engagement avec abnégation de l’ensemble du personnel
+                    </li>
+                    <li>
+                        Devenir une structure de référence en Afrique et dans le monde en matière des réparations des victimes
+                    </li>
+
+                </ul>
+          
             </div>
             <div className={styles.imageContainer}>
 
