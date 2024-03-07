@@ -41,6 +41,7 @@ const handleHamburgerClick = () => {
             <li>
                 <Link href="/">
                     <Icon icon="ic:round-tiktok" className={styles.icone} />
+
                 </Link> 
             </li>
             <li>
@@ -63,16 +64,16 @@ const handleHamburgerClick = () => {
                     <Link href="/actualites">Actualités</Link> 
                 </li>
                 <li>
-                    <Link href="/">Galerie</Link> 
+                    <Link href="/galerie">Galerie</Link> 
                 </li>
                 <li>
-                    <Link href="/">Stories</Link> 
+                    <Link href="/stories">Stories</Link> 
                 </li>
                 <li>
-                    <Link href="/">Carriere</Link> 
+                    <Link href="/carriere">Carriere</Link> 
                 </li>
                 <li>
-                    <Link href="/">Contact</Link> 
+                    <Link href="/contact">Contact</Link> 
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 

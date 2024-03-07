@@ -14,7 +14,7 @@ const About = () => {
                 </div>
         </section>
 
-        <section className={styles.about}>
+        <section className={styles.about} id="about">
             <div className={styles.imageContainer}>
 
             </div>
@@ -37,7 +37,7 @@ const About = () => {
             </div>
         </section>
 
-        <section className={styles.story}>
+        <section className={styles.story} id="story">
             <div className={styles.txtSide}>
                 <h2>Notre histoire</h2>
                 <p>
@@ -60,7 +60,7 @@ const About = () => {
             </div>
         </section>
 
-        <section className = {styles.mision}>
+        <section className = {styles.mision} id="mission">
             <h2>Les missions <span>du Fonarev</span></h2>
             <div className = {styles.cardWrapper}>
                 <MissionCard text = "Allouer des réparations aux victimes" icone = "material-symbols:home-repair-service-outline-rounded"/>
@@ -71,7 +71,7 @@ const About = () => {
             </div>
         </section>
 
-        {/* <section className={styles.valeurs}>
+        {/* <section className={styles.valeurs} id="valeur">
             <div className={styles.textSide}>
                 <h2>Les valeurs <span>du Fonarev</span></h2>
                 <div className={styles.valeursFlexer}> 
@@ -118,7 +118,7 @@ const About = () => {
             </div>
         </section> */}
 
-        <section className={styles.team}>
+        <section className={styles.team} id="team">
             <h2>Notre équipe dirigeante</h2>
             <div className={styles.teamContainer}>
                 <TeamCard bg="pca2.jpeg" prenom="Eddy" nom="MBANZU" postnom="DIEKUZEIKO" fonction="Président du Conseil d’Administration" />

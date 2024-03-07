@@ -5,6 +5,7 @@ import MiniCard from './../../components/miniCard'
 import ArchiveCard from './../../components/archiveCard'
 import Link from 'next/link'
 import { useGetAllArticlesQuery } from '../store/slices/actualite'
+import { Icon } from '@iconify/react';
 
 const Actualite = () => {
     
@@ -37,7 +38,66 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
         </section>
 
         <section className = {styles.bannerContainer}>
-            <div></div>
+            <div>
+              <h5>240 X  1214</h5>
+            </div>
+        </section>
+
+        <section className={styles.videos}>
+            <div className={styles.videosContainer}>
+            <div className={styles.mainVideos} style={{
+                backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+              }}>
+                <div>
+                  <Icon icon="line-md:play-twotone" className={styles.icone} />
+                </div>
+             
+              </div>
+              <div className={styles.miniatureContainer}>
+                <div  
+                className={styles.miniC}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center center',
+                }}>
+                <div >
+                  <Icon icon="line-md:play-twotone" className={styles.icone} />
+                </div>
+                </div>
+                <div  
+                className={styles.miniC}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center center',
+                }}>
+                <div>
+                  <Icon icon="line-md:play-twotone" className={styles.icone} />
+                </div>
+                </div>
+               <div  
+               className={styles.miniC}
+               style={{
+                backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center center',
+                }}>
+                <div>
+                  <Icon icon="line-md:play-twotone" className={styles.icone} />
+                </div>
+                </div>
+              </div>
+              </div>
+              <div className={styles.articleContainer}>
+                {data?.article?.slice(0, 2).map((article, index) => (
+                  <Link key={article._id} href={`/actualites/${article._id}`}>
+                    <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
+                  </Link>
+                ))}
+              </div>
         </section>
 
         {/* <section className= {styles.inlineSection} >
@@ -49,16 +109,19 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
                  
             </div>
         </section> */}
-
         <section className={styles.archiveContainer}>
         <h2>Archives</h2>
         <div className={styles.containerFlexer}>
           <div className={styles.cardsWrappa}>
             {data?.article?.map((article) => (
-              <ArchiveCard key={article.id} titre={article.titre} backgroundImage={article.thumbanails} />
+              <Link key={article._id} href={`/actualites/${article._id}`}>
+                <ArchiveCard key={article.id} titre={article.titre} backgroundImage={article.thumbanails} />
+              </Link>
             ))}
           </div>
-          <div className={styles.verticalBanner}></div>
+          <div className={styles.verticalBanner}>
+            <h5>322.828 x 1214</h5>
+          </div>
         </div>
       </section>
     </main>
