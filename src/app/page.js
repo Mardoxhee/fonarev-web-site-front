@@ -117,7 +117,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className={styles.cardContainer}>
-                {isLoading ?  <Skeleton/> : data.article.map((article) => (
+                {isLoading ?  <Skeleton/> : data.article.slice(0, 4).map((article) => (
                     <Link href={`/actualites/${article._id}`}>
                       <ActuCard
                         key={article._id}
