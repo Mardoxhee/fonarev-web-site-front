@@ -20,6 +20,12 @@ export default function Home() {
 
 
   const [bannerIndex, setBannerIndex] = useState(0);
+  function formatDate(dateString) {
+    // Assuming your dateString is in a format like "YYYY-MM-DD"
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }; // Adjust options as needed
+    return date.toLocaleDateString('fr-FR', options); // Customize locale and options
+  }
 
 
  
@@ -112,18 +118,18 @@ export default function Home() {
 
               <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>
-                  <h2>Nos dernières nouvelles</h2>
+                  <h2>Nos dernières activités</h2>
                   <Link href="/actualites">
-                    <button>Toutes nos actualités</button>
+                    <button>Toutes nos activités</button>
                   </Link>
                 </div>
                 <div className={styles.cardContainer}>
-                {isLoading ?  <Skeleton/> : data.article.slice(0, 4).map((article) => (
+                {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
                     <Link href={`/actualites/${article._id}`}>
                       <ActuCard
                         key={article._id}
-                        date={article.date}
-                        category="Actualité"
+                        date={article.date ? formatDate(article.date) : ""} // Use the formatted date
+                        category="Activité"
                         bg={article.thumbanails}
                         title={article.titre}
                       />
