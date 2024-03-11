@@ -16,10 +16,11 @@ import Skeleton from './../components/skeleton'
 
 export default function Home() {
   const { data, error, isLoading } = useGetAllArticlesQuery("");
+  const articles = data?.article ? [...data.article] : [];
 
 
   const [bannerIndex, setBannerIndex] = useState(0);
-  const [articles, setArticles] = useState([]);
+
 
  
 
@@ -46,7 +47,7 @@ export default function Home() {
            </div>
           ) : (
             <AliceCarousel
-              items={data.article.slice(0, 3).map((article, index) => (
+              items={articles.reverse().slice(0, 3).map((article, index) => (
                 <div
                   className={index % 2 === 0 ? styles.bannerContainer : styles.bannerContainer2}
                   key={article._id}
