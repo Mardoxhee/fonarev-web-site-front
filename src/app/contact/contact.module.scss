@@ -1,6 +1,80 @@
 .main{
-    height: 90vh;
+    height: auto;
+    background-color: #f3f4f6;
+}
+.banner{
+    height: 70vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 4rem 8rem;
+    background:linear-gradient(360deg, #1a1a1a, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, .2) 85%, rgba(0, 0, 0, .1)), url('./../../../public/contact.jpeg');
+    background-position: center center;
+    background-size: cover;
+    h2{
+        color: white;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+    p{
+        margin: 0;
+        color: white;
+    }
+}
+
+.contact{
+    padding: 2rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    .textContent{
+        width: 40%;
+        border : green solid 2Px;
+    }
+
+    .formContainer{
+        width: 50%;
+        height: 80vh;
+    
+        margin-top: -10rem;
+        background-color: #f3f4f6;
+        border: rgba(0, 0, 0, 0.044) solid 1px;
+        height: 80vh;
+        h3{
+            padding : 20px;
+            height: 10%;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            height: 71.5%;
+            .inputFlexer{
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem 0rem;
+                input{
+                    width: 46%;
+                    background-color: #f3f4f6;
+                    border: none;
+                    padding: 15px 5px;
+                }
+                textarea{
+                    width: 100%;
+                    background-color: #f3f4f6;
+                    border: none;
+                    padding: 15px 5px;
+                    height: 200px;
+                }
+            }
+
+            button{
+                background-color: #0089CF;
+                border: none;
+                width: 100%;
+                color: white;
+                padding: 1rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+    }
 }

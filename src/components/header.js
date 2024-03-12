@@ -2,7 +2,7 @@
 import styles from './header.module.scss'
 import React from 'react'
 import Image from 'next/image'
-import Logo from './../../public/fonarev-logo.png'
+import Logo from './../../public/logo-fonarev.png'
 import { Icon } from '@iconify/react';
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
@@ -51,11 +51,11 @@ const handleHamburgerClick = () => {
             </li>
         </ul>
         <nav>
+        <Link href="/">
             <div className={styles.logoContainer} >
-            <Link href="/">
                 <Image src={Logo} alt = "logo du fonarev" />
-            </Link> 
             </div>
+            </Link> 
             <ul>
                 <li>
                     <Link href="/about"> A propos</Link> 
@@ -70,7 +70,7 @@ const handleHamburgerClick = () => {
                     <Link href="/stories">Stories</Link> 
                 </li>
                 <li>
-                    <Link href="/carriere">Carriere</Link> 
+                    <Link href="/activites">Activités</Link> 
                 </li>
                 <li>
                     <Link href="/contact">Contact</Link> 

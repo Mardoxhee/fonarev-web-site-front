@@ -6,14 +6,16 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
   return (
     <div
       className={styles.cardWrapper}
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundPosition: 'center', // Default to center
-        backgroundSize: 'cover', // Default to cover
-      }}
+ 
     >
       {/* Rest of the card content */}
-      <div className={styles.imgWrapper}></div>
+      <div className={styles.imgWrapper}
+           style={{
+            backgroundImage: `url(${bg})`,
+            backgroundPosition: 'center', // Default to center
+            backgroundSize: 'cover', // Default to cover
+          }}
+      ></div>
       <div className={styles.titleWrapper}>
         <h3>{truncatedTitle}</h3>
         <div className={styles.metaContainer}>
