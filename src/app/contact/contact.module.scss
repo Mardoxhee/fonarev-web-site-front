@@ -28,7 +28,7 @@
     justify-content: space-between;
     .textContent{
         width: 40%;
-        border : green solid 2Px;
+
     }
 
     .formContainer{
@@ -76,5 +76,11 @@
                 cursor: pointer;
             }
         }
+    }
+}
+
+.map{
+    iframe {
+        border: none !important;
     }
 }

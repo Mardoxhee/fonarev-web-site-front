@@ -29,7 +29,7 @@ const page = () => {
 
               </div>
         </section>
-        <section>
+        <section className={styles.map}>
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1989.276706262865!2d15.304852154603012!3d-4.306526529254505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a33f3dd71f221%3A0x6463848afe7e4f2e!2sHotel%20Selton%20(Kinshasa)!5e0!3m2!1sfr!2scd!4v1710205525847!5m2!1sfr!2scd" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
