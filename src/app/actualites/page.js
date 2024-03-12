@@ -10,7 +10,15 @@ import { Icon } from '@iconify/react';
 const Actualite = () => {
     
 const {data, isLoading, error} = useGetAllArticlesQuery("")
-console.log("data", data)
+const articles = data?.article ? [...data.article] : [];
+
+function formatDate(dateString) {
+  // Assuming your dateString is in a format like "YYYY-MM-DD"
+  const date = new Date(dateString);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' }; // Adjust options as needed
+  return date.toLocaleDateString('fr-FR', options); // Customize locale and options
+}
+
 
 const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
 
@@ -29,7 +37,7 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
           )}
         </div>
         <div className={styles.minicardWrapper}>
-          {data?.article?.map((article) => (
+          {articles.reverse().slice(0, 4).map((article) => (
             <Link key={article._id} href={`/actualites/${article._id}`}>
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
             </Link>
