@@ -1,17 +1,25 @@
 import React from 'react'
 import styles from './contact.module.scss'
+import Banner from './../../components/banner'
 
 const page = () => {
   return (
     <main className={styles.main}>
-        <section className={styles.banner}>
-          <h2>Nous contacter</h2>
-          <p>lorem lorem lorem lorem lorem</p>
-        </section>
+       <Banner pageTitle ="Nous contacter"/>
         <section className={styles.contact}>
-              <div className={styles.textContent}></div>
+              <div className={styles.textContent}>
+                  <h3>Notre siège social</h3>
+                  <p>Avenue Colonel Ebeya 3498,
+                  Q/ Golf, C/ Gombe</p>
+                  <h3 className={styles.horaire}>Notre horaire de travail</h3>
+                  <p>Lundi : 8h30 - 16H30</p>
+                  <p>Mardi : 8h30 - 16H30</p>
+                  <p>Mercredi : 8h30 - 16H30</p>
+                  <p>Jeudi : 8h30 - 16H30</p>
+                  <p>Vendredi : 8h30 - 16H30</p>
+              </div>
               <div className={styles.formContainer}>
-                <h3>Nous laisser un mot, un feedback, ...</h3>
+                <h3>Vous avez une préoccupation, une suggestion, un feedback, Entrez directement en contact notre équipe.</h3>
                   <form>
                       <div className={styles.inputFlexer}>
                           <input type='text' placeholder='Votre nom'/>

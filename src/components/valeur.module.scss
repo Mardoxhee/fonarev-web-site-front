@@ -1,0 +1,35 @@
+.cardWrapper{
+    border: #007eba solid  2px;
+    height: 350px ;
+    width: 100%;
+    background-color: #007eba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ 
+.iconeContainer{
+    border-radius: 100%;
+    border: white solid 2px;
+    display: inline-block;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.textContainer{
+    h4{
+        text-align: center;
+        color: white;
+        padding: 1rem 2rem;
+        font-weight: 400 !important;
+    }
+
+
+}
+}

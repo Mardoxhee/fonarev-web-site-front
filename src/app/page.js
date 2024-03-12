@@ -119,7 +119,7 @@ export default function Home() {
               <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>
                   <h2>Nos dernières activités</h2>
-                  <Link href="/actualites">
+                  <Link href="/activites">
                     <button>Toutes nos activités</button>
                   </Link>
                 </div>

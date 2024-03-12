@@ -17,7 +17,7 @@ const handleHamburgerClick = () => {
 
   return (
     <div className={isMobile ? styles.mobileContainer  : styles.mainContainer}>
-        <ul className={styles.socialMedia } >
+        <ul className={styles.socialMedia} >
             <li>
                 <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
                     <Icon icon="ic:baseline-facebook" className={styles.icone} />
@@ -64,14 +64,15 @@ const handleHamburgerClick = () => {
                     <Link href="/actualites">Actualités</Link> 
                 </li>
                 <li>
+                    <Link href="/activites">Activités</Link> 
+                </li>
+                <li>
                     <Link href="/galerie">Galerie</Link> 
                 </li>
                 <li>
                     <Link href="/stories">Stories</Link> 
                 </li>
-                <li>
-                    <Link href="/activites">Activités</Link> 
-                </li>
+             
                 <li>
                     <Link href="/contact">Contact</Link> 
                 </li>
