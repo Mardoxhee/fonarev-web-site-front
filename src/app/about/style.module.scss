@@ -6,24 +6,22 @@
 
 }
 .banner{
-    padding-top: 10rem;
-    padding-bottom: 4rem;
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-top: 8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #D5EEFA;
+
     div{
-        border:#FECA0A solid 10px ;
         height: 400px;
         width: 100%;
         // background: url("./../../../public//about.jpg");
-        background: linear-gradient(21deg, rgba(173,130,47,1) 0%, rgba(0,0,0,0.3865195736497724) 0%), url("./../../../public//about.jpg");
+        background: linear-gradient(21deg, rgba(173,130,47,1) 0%, rgba(0,0,0,0.3865195736497724) 0%), url("./../../../public/aboutcover.JPG");
         background-position: center;
         background-size: cover;
         display: flex;
         align-items: center;
+        padding-left: 2rem;
   
         h1{
             font-size: 40px;
@@ -59,10 +57,21 @@
     display: flex;
     justify-content: space-between;
     .imageContainer{
-        width: 49%;
+        width: 48%;
+        background: url("./../../../public/about1.jpeg");
+        background-position: center;
+        background-size: cover;
+    }
+    .imageContaine2{
+        width: 48%;
+        background: url("./../../../public/about2.jpeg");
+        background-position: center;
+        background-size: cover;
+        height: 450px;
     }
     .txtSide{
         width: 49%;
+        height: 500px;
         p, ul li {
             text-align: justify;
             font-size: 16px;
@@ -77,12 +86,24 @@
         padding: 1rem;
         .txtSide{
             width: 100%;
+            height: auto;
         }
+        .imageContainer, .imageContainer2{
+            width: 100% !important;
+            height: 300px;
+        }
+        flex-direction: column-reverse;
+
     }
 }
 .story{
     background-color: white;
-    // justify-content: flex-end;
+    @media (max-width: 575.98px) {
+        flex-direction: column;
+        .imageContaine2{
+            width: 100%;
+    } 
+ } // justify-content: flex-end;
 }
 .mision{
     padding: 2rem 8rem;
@@ -97,16 +118,20 @@
         color: $move-color;
         display: flex;
         flex-direction: column;
-        font-size: 40px;
+        color: black;
+   
         span{
             color: #393939;
         }
     }
     .cardWrapper{
-        display: flex;
-        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 50px;
+     
         @media (max-width: 575.98px) { 
             flex-direction: column;
+            grid-template-columns: repeat(1,1fr);
 
         }
     }

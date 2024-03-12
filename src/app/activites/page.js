@@ -5,6 +5,7 @@ import ActuCard from '@/components/actuCard'
 import {useGetAllArticlesQuery} from '../store/slices/actualite'
 import Skeleton from '@/components/skeleton'
 import Link from 'next/link'
+import Banner from '@/components/banner'
 
 const Activites = () => {
     const { data, error, isLoading } = useGetAllArticlesQuery("");
@@ -18,9 +19,7 @@ const Activites = () => {
 
   return (
     <main className={styles.main}>
-        <section className={styles.bannerContainer}>
-                <h2>Les activités du FONAREV</h2>
-        </section>
+     <Banner pageTitle="Les activité du Fonarev"/>
         <section className = {styles.grouper}>
             <h3>2024 <span>mars</span></h3>
             <div className={styles.cardWrapper}>

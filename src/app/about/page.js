@@ -2,6 +2,7 @@
 import { MissionCard } from '@/components/missionCard'
 import styles from './style.module.scss'
 import TeamCard from "./../../components/teamCard"
+import ValeurCard from './../../components/valeurCard'
 
 import React from 'react'
 
@@ -61,19 +62,20 @@ const About = () => {
                 </ul>
           
             </div>
-            <div className={styles.imageContainer}>
+            <div className={styles.imageContaine2}>
 
             </div>
         </section>
 
         <section className = {styles.mision} id="mission">
-            <h2>Les missions <span>du Fonarev</span></h2>
+            <h2>Les missions du Fonarev</h2>
             <div className = {styles.cardWrapper}>
-                <MissionCard text = "Allouer des réparations aux victimes" icone = "material-symbols:home-repair-service-outline-rounded"/>
-                <MissionCard text = "Aider les victimes à avoir accès à la justice" icone = "healthicons:justice-outline"/>
-                <MissionCard text = "Identifier les victimes" icone = "solar:user-id-broken"/>
-                <MissionCard text = "Aider les victimes à être indemnisées et à recouvrer les dommages intérêts leur alloués" icone = "solar:hand-money-outline"/>
-                <MissionCard text = "Aider les victimes à bénéficier gratuitement d'un accompagnement et d'une assistance judiciaire appropriés" icone = "healthicons:justice-outline"/>
+          
+                <ValeurCard text = "Allouer des réparations aux victimes" icone = "material-symbols:home-repair-service-outline-rounded"/>
+                <ValeurCard text = "Aider les victimes à avoir accès à la justice" icone = "healthicons:justice-outline"/>
+                <ValeurCard text = "Identifier les victimes" icone = "solar:user-id-broken"/>
+                <ValeurCard text = "Aider les victimes à être indemnisées et à recouvrer les dommages intérêts leur alloués" icone = "solar:hand-money-outline"/>
+                <ValeurCard text = "Aider les victimes à bénéficier gratuitement d'un accompagnement et d'une assistance judiciaire appropriés" icone = "healthicons:justice-outline"/> 
             </div>
         </section>
 

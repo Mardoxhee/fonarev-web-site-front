@@ -25,19 +25,21 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
   return (
     <main>
         <section className={styles.sectionWrapper}>
-        <div className={styles.mainActu}>
-        <div className={styles.imgConatainer} style={{ backgroundImage: lastArticle?.thumbanails ? `url(${lastArticle.thumbanails})` : 'none' }}>
-            <h4>Actualite</h4>
+        <Link key={lastArticle?._id} href={`/actualites/${lastArticle?._id}`}>
+          <div className={styles.mainActu}>
+          <div className={styles.imgConatainer} style={{ backgroundImage: lastArticle?.thumbanails ? `url(${lastArticle.thumbanails})` : 'none' }}>
+              <h4>Actualite</h4>
           </div>
-          {lastArticle && (
-            <>
-              <h3>{lastArticle.titre}</h3>
-              {/* Render other details of the last article here */}
-            </>
-          )}
-        </div>
+            {lastArticle && (
+              <>
+                <h3>{lastArticle.titre}</h3>
+                {/* Render other details of the last article here */}
+              </>
+            )}
+          </div>
+        </Link>
         <div className={styles.minicardWrapper}>
-          {articles.reverse().slice(0, 4).map((article) => (
+          {articles.reverse().slice(1, 5).map((article) => (
             <Link key={article._id} href={`/actualites/${article._id}`}>
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
             </Link>
@@ -58,54 +60,54 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center',
               }}>
-                <div>
-                  <Icon icon="line-md:play-twotone" className={styles.icone} />
-                </div>
+                  <div>
+                    <Icon icon="line-md:play-twotone" className={styles.icone} />
+                  </div>
              
               </div>
               <div className={styles.miniatureContainer}>
+                  <div  
+                  className={styles.miniC}
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                  }}>
+                  <div >
+                    <Icon icon="line-md:play-twotone" className={styles.icone} />
+                  </div>
+                  </div>
+                  <div  
+                  className={styles.miniC}
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                  }}>
+                  <div>
+                    <Icon icon="line-md:play-twotone" className={styles.icone} />
+                  </div>
+                  </div>
                 <div  
                 className={styles.miniC}
                 style={{
                   backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center',
-                }}>
-                <div >
-                  <Icon icon="line-md:play-twotone" className={styles.icone} />
-                </div>
-                </div>
-                <div  
-                className={styles.miniC}
-                style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center',
-                }}>
-                <div>
-                  <Icon icon="line-md:play-twotone" className={styles.icone} />
-                </div>
-                </div>
-               <div  
-               className={styles.miniC}
-               style={{
-                backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center',
-                }}>
-                <div>
-                  <Icon icon="line-md:play-twotone" className={styles.icone} />
-                </div>
-                </div>
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                  }}>
+                  <div>
+                    <Icon icon="line-md:play-twotone" className={styles.icone} />
+                  </div>
+                  </div>
               </div>
               </div>
-              <div className={styles.articleContainer}>
-                {data?.article?.slice(0, 2).map((article, index) => (
-                  <Link key={article._id} href={`/actualites/${article._id}`}>
-                    <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
-                  </Link>
-                ))}
-              </div>
+                <div className={styles.articleContainer}>
+                  {data?.article?.slice(0, 2).map((article, index) => (
+                    <Link key={article._id} href={`/actualites/${article._id}`}>
+                      <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
+                    </Link>
+                  ))}
+                </div>
         </section>
 
         {/* <section className= {styles.inlineSection} >
