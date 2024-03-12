@@ -58,7 +58,7 @@ const handleHamburgerClick = () => {
             </Link> 
             <ul>
                 <li>
-                    <Link href="/about"> A propos</Link> 
+                    <Link href="/about"> à propos</Link> 
                 </li>
                 <li>
                     <Link href="/actualites">Actualités</Link> 
