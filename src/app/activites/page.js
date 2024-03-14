@@ -19,7 +19,7 @@ const Activites = () => {
 
   return (
     <main className={styles.main}>
-     <Banner pageTitle="Les activité du Fonarev"/>
+     <Banner pageTitle="Les activités du Fonarev"/>
         <section className = {styles.grouper}>
             <h3>2024 <span>mars</span></h3>
             <div className={styles.cardWrapper}>
