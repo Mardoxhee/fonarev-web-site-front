@@ -32,7 +32,24 @@ const Details = () => {
     console.log("last part", lastPart)
   
 
+    const shareOnFacebook = () => {
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        console.log("url", facebookUrl);
+        window.open(facebookUrl, '_blank');
+       
+      };
     
+      const shareOnTwitter = () => {
+        const twitterUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.fonarev.cd/actualites/65f01ac9428b7de1c503ca45")}`;
+        window.open(twitterUrl, '_blank');
+
+      };
+    
+      const shareOnLinkedIn = () => {
+        const linkedInUrl = `https://www.linkedin.com/shareArticle?url=http://localhost:3000/actualites/65f01ac9428b7de1c503ca45`;
+        console.log("url", linkedInUrl);
+        window.open(linkedInUrl, '_blank');
+      };
     
 
 
@@ -90,12 +107,31 @@ const Details = () => {
                     }}>
                         
             </div>
-            <p className={styles.metadata}>Par Japhet Bula Bula </p>
-            <p className={styles.metadata}>Publié le 14 Février 2024 - 10h 30</p>
+            <div className={styles.shareContainer}>
+                <p className={styles.metadata}>Par le Fonarev</p>
+                <p className={styles.metadata}>Publié le 14 Février 2024 - 10h 30</p>
             <div className={styles.ctaContainer}>
-                <button> <Icon icon="majesticons:share-line" className={styles.icone} /> <span>Partager l'article</span> </button>
-                <button> <Icon icon="et:chat" className={styles.icone} /> Laisser un commentaire</button>
+                <p>Partager l'article sur  : </p>
+                <ul className={styles.socialMedia} >
+                    <li >
+                            <Icon icon="logos:facebook" className={styles.icone} onClick={shareOnFacebook}/>
+                    </li>
+                    <li onClick={shareOnTwitter}>
+                            <Icon icon="logos:twitter" className={styles.icone} />
+                    </li>
+                    <li onClick={shareOnLinkedIn}>
+                            <Icon icon="devicon:linkedin" className={styles.icone} />
+                    </li>
+                    <li>
+                            <Icon icon="skill-icons:instagram" className={styles.icone} />
+                    </li>
+                    <li>
+                            <Icon icon="logos:tiktok-icon" className={styles.icone} />
+                    </li>
+                </ul>
             </div>
+            </div>
+     
                 <h2
                 className={styles.postDetailsTitle}
                 >
@@ -115,11 +151,12 @@ const Details = () => {
                     style={{ whiteSpace: "pre-wrap" }}
                 >
                     {articleDetails?.contenu
-                        ? articleDetails.contenu.replace(/\.\s*/g, ".\n").trim() // Replace period followed by optional spaces with a line break and trim
+                        ? <article dangerouslySetInnerHTML={{__html : articleDetails.contenu }}></article>// Replace period followed by optional spaces with a line break and trim
                         : 'Chargement de l\'article...'} 
                 </p>
+                
             <div className={styles.imgCaroussel} id = "imgCaroussel">
-            <AliceCarousel
+            {/* <AliceCarousel
                 mouseTracking
                 items={items}
                 responsive={{
@@ -133,7 +170,7 @@ const Details = () => {
                   autoPlayInterval={3000} 
                   controlsStrategy="alternate"
                   keyboardNavigation = {true}
-            />
+            /> */}
                     </div>
  
             {/* <p className= {styles.textContent} >
