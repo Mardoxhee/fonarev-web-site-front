@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@fullpage/react-fullpage": "^0.1.42",
     "@iconify/react": "^4.1.1",
+    "@mui/lab": "^5.0.0-alpha.167",
     "@mui/material": "^5.15.11",
     "@reduxjs/toolkit": "^2.2.1",
     "aos": "^2.3.4",

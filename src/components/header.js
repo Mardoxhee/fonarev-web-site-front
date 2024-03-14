@@ -10,14 +10,19 @@ import {useState, useEffect} from 'react'
 
 const Header = () => {
 const [isMobile, setIsMobile] = useState(false)
+const [selected, setSelected] = useState(false)
 
 const handleHamburgerClick = () => {
     setIsMobile(!isMobile);
   };
 
+  const handleMenuSelections = () => {
+    setSelected(true);
+  }
+
   return (
     <div className={isMobile ? styles.mobileContainer  : styles.mainContainer}>
-        <ul className={styles.socialMedia} >
+        <ul className={styles.socialMedia}  >
             <li>
                 <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
                     <Icon icon="ic:baseline-facebook" className={styles.icone} />
@@ -56,7 +61,7 @@ const handleHamburgerClick = () => {
                 <Image src={Logo} alt = "logo du fonarev" />
             </div>
             </Link> 
-            <ul>
+            <ul onClick= {handleMenuSelections} className={selected ? styles.dNone : "" }>
                 <li>
                     <Link href="/about"> à propos</Link> 
                 </li>
