@@ -67,7 +67,8 @@ export default function Home() {
                   <div>
                     <h2>Actualité</h2>
                     <h1>{article.titre}</h1>
-                    <p>{article.contenu.substr(0, 250)}...</p>
+                    <p dangerouslySetInnerHTML={{__html : article.contenu.substr(0, 250) + "..." }}></p>
+                    
                     <Link href={`/actualites/${article._id}`}>
                       <button>En savoir plus</button>
                     </Link>
