@@ -25,7 +25,7 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
   return (
     <main>
         <section className={styles.sectionWrapper}>
-        <Link key={lastArticle?._id} href={`/actualites/${lastArticle?._id}`}>
+        <Link key={lastArticle?._id}href={`/actualites/details?articleId=${lastArticle?._id}?articleTitle=${lastArticle?.titre}`}>
           <div className={styles.mainActu}>
           <div className={styles.imgConatainer} style={{ backgroundImage: lastArticle?.thumbanails ? `url(${lastArticle.thumbanails})` : 'none' }}>
               <h4>Actualite</h4>
@@ -40,7 +40,7 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
         </Link>
         <div className={styles.minicardWrapper}>
           {articles.reverse().slice(1, 5).map((article) => (
-            <Link key={article._id} href={`/actualites/${article._id}`}>
+         <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
             </Link>
           ))}
@@ -103,7 +103,7 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
               </div>
                 <div className={styles.articleContainer}>
                   {data?.article?.slice(0, 2).map((article, index) => (
-                    <Link key={article._id} href={`/actualites/${article._id}`}>
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
                       <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
                     </Link>
                   ))}
@@ -124,7 +124,7 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
         <div className={styles.containerFlexer}>
           <div className={styles.cardsWrappa}>
             {data?.article?.map((article) => (
-              <Link key={article._id} href={`/actualites/${article._id}`}>
+               <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
                 <ArchiveCard key={article.id} titre={article.titre} backgroundImage={article.thumbanails} />
               </Link>
             ))}
