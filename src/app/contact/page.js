@@ -5,7 +5,7 @@ import Banner from './../../components/banner'
 const page = () => {
   return (
     <main className={styles.main}>
-       <Banner pageTitle ="Nous contacter"/>
+       <Banner pageTitle ="Nous contacter" background="/contact.jpeg"/>
         <section className={styles.contact}>
               <div className={styles.textContent}>
                   <h3>Notre siège social</h3>

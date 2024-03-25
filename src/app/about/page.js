@@ -3,17 +3,14 @@ import { MissionCard } from '@/components/missionCard'
 import styles from './style.module.scss'
 import TeamCard from "./../../components/teamCard"
 import ValeurCard from './../../components/valeurCard'
+import Banner from './../../components/banner'
 
 import React from 'react'
 
 const About = () => {
   return (
     <main className={styles.main}>
-        <section className = {styles.banner}>
-                <div>
-                    <h1>A propos du <span>Fonarev</span></h1>
-                </div>
-        </section>
+      <Banner pageTitle="A propos du Fonarev" background="/fonarev-about.jpeg"/>
 
         <section className={styles.about} id="about">
             <div className={styles.imageContainer}>
