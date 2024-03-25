@@ -220,19 +220,25 @@
     opacity: 0; 
     display: none !important;
     position: absolute;
+    margin-top: 1rem;
     background-color: white;
-    padding: 0px 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     flex-direction: column;
-    transition: opacity 0.3s ease; 
     opacity: 0; 
+    transition: all .3s ease-out 0s;
   
   
     a{
         border-bottom: .5px solid rgb(212, 212, 212);   
             font-size: .8rem  !important;
-            margin: .8rem 0rem !important;
-            padding-bottom: .5rem !important;
+            padding: 1rem 3rem !important;
+            &:hover{
+                background-color: #8E1F71;
+                transition: all .3s ease-out 0s;
+                padding: 1rem 1rem;
+                color: white !important;
+             
+            }
     }
  }
  .active{
