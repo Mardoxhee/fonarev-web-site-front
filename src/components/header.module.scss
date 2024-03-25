@@ -205,3 +205,49 @@
         display: none;
     }
  }
+
+ .hoverMenu, .active{
+    &:hover{
+        .secondaryMenu{
+            display: flex !important;
+            opacity: 1; 
+            transition: all 300ms ease 0s;
+      
+         }
+    }
+ }
+ .secondaryMenu{
+    opacity: 0; 
+    display: none !important;
+    position: absolute;
+    background-color: white;
+    padding: 0px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    flex-direction: column;
+    transition: opacity 0.3s ease; 
+    opacity: 0; 
+  
+  
+    a{
+        border-bottom: .5px solid rgb(212, 212, 212);   
+            font-size: .8rem  !important;
+            margin: .8rem 0rem !important;
+            padding-bottom: .5rem !important;
+    }
+ }
+ .active{
+    a {
+        color: #8E1F71 !important;
+        padding-bottom: 36px;
+        border-bottom: 3px solid #8E1F71;
+        font-weight: 700;
+    }
+  
+    small {
+        a {
+            color :black !important;
+            border-bottom: .5px solid rgb(212, 212, 212);   
+            font-weight: 500;
+        }
+    }
+ }
