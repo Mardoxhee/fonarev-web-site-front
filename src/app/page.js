@@ -67,8 +67,9 @@ export default function Home() {
                   <div>
                     <h2>Actualité</h2>
                     <h1>{article.titre}</h1>
-                    <p>{article.contenu.substr(0, 250)}...</p>
-                    <Link href={`/actualites/${article._id}`}>
+                    <p dangerouslySetInnerHTML={{__html : article.contenu.substr(0, 250) + "..." }}></p>
+                    
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
                       <button>En savoir plus</button>
                     </Link>
                   </div>
@@ -125,7 +126,7 @@ export default function Home() {
                 </div>
                 <div className={styles.cardContainer}>
                 {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
-                    <Link href={`/actualites/${article._id}`}>
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
                       <ActuCard
                         key={article._id}
                         date={article.date ? formatDate(article.date) : ""} // Use the formatted date
