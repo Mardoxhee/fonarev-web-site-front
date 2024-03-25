@@ -71,13 +71,13 @@ const handleHamburgerClick = () => {
                 <li>
                     <Link href="/activites">Activités</Link> 
                 </li>
-                <li>
+                {/* <li>
                     <Link href="/galerie">Galerie</Link> 
                 </li>
                 <li>
                     <Link href="/stories">Stories</Link> 
                 </li>
-             
+              */}
                 <li>
                     <Link href="/contact">Contact</Link> 
                 </li>
