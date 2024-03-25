@@ -10,6 +10,7 @@ import Banner from '@/components/banner'
 const Activites = () => {
     const { data, error, isLoading } = useGetAllArticlesQuery("");
     const articles = data?.article ? [...data.article] : [];
+    const articlesInReverseOrder = articles.reverse();
     function formatDate(dateString) {
         // Assuming your dateString is in a format like "YYYY-MM-DD"
         const date = new Date(dateString);
@@ -23,7 +24,7 @@ const Activites = () => {
         <section className = {styles.grouper}>
             <h3>2024 <span>mars</span></h3>
             <div className={styles.cardWrapper}>
-                {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
+            {isLoading ? <Skeleton /> : articlesInReverseOrder.slice(0, 4).map((article) => (
                     <Link href={`/actualites/${article._id}`}>
                       <ActuCard
                         key={article._id}
@@ -40,7 +41,7 @@ const Activites = () => {
         <section className = {styles.grouper}>
             <h3>2024 <span>février</span></h3>
             <div className={styles.cardWrapper}>
-                {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
+            {isLoading ? <Skeleton /> : articlesInReverseOrder.slice(5, 9).map((article) => (
                     <Link href={`/actualites/${article._id}`}>
                       <ActuCard
                         key={article._id}
