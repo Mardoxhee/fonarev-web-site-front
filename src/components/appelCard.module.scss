@@ -1,5 +1,5 @@
 .cardCont{
-    height: 210px;
+    height: auto;
     display: flex;
     background-color: white;
     margin: .5rem 0rem;
@@ -12,9 +12,10 @@
     }
     .imgContainer{
         width: 30%;
-        background-image: url('./../../public/bg-app.webp');
-        background-size: cover;
+        background-image: url('./../../public/logo-fona.jpg');
+        background-size: contain;
         background-position: center center;
+        background-repeat: no-repeat;
     }
     .textSide{
         padding: 10px 20px;
@@ -27,7 +28,7 @@
                 h4{
                     margin: 0;
                 }
-                button{
+                a{
                     padding: 0;
                     padding: 10px;
                     border: none;
@@ -35,6 +36,9 @@
                     font-size: .8rem;
                     display: flex;
                     align-items: center;
+                    background-color: rgb(239, 239, 239) ;
+                    text-decoration: none;
+                    color: black;
                     .icone{
                         margin-right: 10px;
                         font-size: .9rem;
