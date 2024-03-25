@@ -96,8 +96,8 @@ const handleHamburgerClick = () => {
                     <Link href="#">Opportunités</Link>
                     <small className={styles.secondaryMenu}>
                         <Link href="#">Offres d'emploi</Link>
-                        <Link href="/opportunites/appels">Appel d'offre</Link>
-                        <Link href="#">Appel d'offre</Link>
+                        <Link href="/opportunites/appels">Appels d'offre</Link>
+                        <Link href="#">Stages</Link>
                     </small>
                 </li>
             </ul>
