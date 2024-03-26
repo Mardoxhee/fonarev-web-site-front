@@ -247,6 +247,9 @@
         padding-bottom: 36px;
         border-bottom: 3px solid #8E1F71;
         font-weight: 700;
+        @media (max-width: 575.98px) {
+            border-bottom: none !important;
+     }
     }
   
     small {
