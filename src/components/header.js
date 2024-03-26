@@ -93,7 +93,7 @@ const handleHamburgerClick = () => {
                 </li>
        
                 <li className={isLinkActive("/opportunites") ? styles.active : styles.hoverMenu}>
-                    <Link href="#">Opportunités</Link>
+                    <Link href="#">Opportunités<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
                         <Link href="#">Offres d'emploi</Link>
                         <Link href="/opportunites/appels">Appels d'offres</Link>
