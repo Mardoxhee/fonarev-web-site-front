@@ -93,9 +93,7 @@ const handleHamburgerClick = () => {
                     <Link href="/stories">Stories</Link> 
                 </li>
               */}
-                <li className={isLinkActive("/contact") ? styles.active : ""} onClick= {handleMenuSelections} >
-                    <Link href="/contact">Contact</Link>
-                </li>
+            
        
                 <li className={isLinkActive("/opportunites") ? styles.active : styles.hoverMenu}>
                     <Link href="#">Opportunités<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
@@ -104,6 +102,9 @@ const handleHamburgerClick = () => {
                         <Link href="/opportunites/appels" onClick= {handleMenuSelections} >Appels d'offres</Link>
                         <Link href="#">Stages</Link>
                     </small>
+                </li>
+                <li className={isLinkActive("/contact") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/contact">Contact</Link>
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 

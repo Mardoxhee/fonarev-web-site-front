@@ -27,6 +27,7 @@
             }
         }
     }
+  
 }
 .bannerContainer, .bannerContainer2{
     height: 100vh;
@@ -260,4 +261,34 @@
       50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
       75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
       100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+  }
+
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .bannerContainer, .bannerContainer2{
+        padding: 4rem 2rem;  
+        padding-top: 7rem;
+
+        div{
+            width: 100%;
+        }
+    }
+    .about{
+        padding: 2rem ;
+        flex-direction: column-reverse;
+        .textSide, .imgContainer{
+            width: 100%;
+        }
+    }
+
+    .actu{
+        padding: 2rem;
+        .cardContainer{
+            flex-wrap: wrap;
+            a{
+                width: 48%;
+            }
+        }
+    }
+     
   }

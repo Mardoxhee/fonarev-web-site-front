@@ -1,4 +1,30 @@
 .main{
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 2rem 1rem;
+        padding-top: 9rem;
+        flex-direction: column;
+        .postDetails{
+            width: 100% !important;
+        }
+        .sideBar{
+            width: 100% !important;
+            .pub{
+                height: 20vh !important;
+            }
+            .cardContainer{
+                h2{
+                    width: 100% !important;
+                }
+                display: flex;
+                flex-wrap: wrap !important;
+                a {
+                    width: 40% !important;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
     height: auto;
     display: flex;
     justify-content: space-between;
