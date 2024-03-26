@@ -6,11 +6,19 @@ import Logo from './../../public/logo-fonarev.png'
 import { Icon } from '@iconify/react';
 import Link from 'next/link'
 import {useState, useEffect} from 'react'
+import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 
 const Header = () => {
 const [isMobile, setIsMobile] = useState(false)
 const [selected, setSelected] = useState(false)
+const [isOpportunitiesOpen, setIsOpportunitiesOpen] = useState(false);
+const router = useRouter();
+
+const handleOpportunitiesClick = () => {
+    setIsOpportunitiesOpen(!isOpportunitiesOpen); // Toggle Opportunités dropdown
+  };
 
 const handleHamburgerClick = () => {
     setIsMobile(!isMobile);
@@ -18,7 +26,13 @@ const handleHamburgerClick = () => {
 
   const handleMenuSelections = () => {
     setSelected(true);
+    setIsMobile(false); 
   }
+
+  const isLinkActive = (href) => {
+    const pathname = usePathname();
+    return pathname.includes(href);
+};
 
   return (
     <div className={isMobile ? styles.mobileContainer  : styles.mainContainer}>
@@ -61,16 +75,17 @@ const handleHamburgerClick = () => {
                 <Image src={Logo} alt = "logo du fonarev" />
             </div>
             </Link> 
-            <ul onClick= {handleMenuSelections} className={selected ? styles.dNone : "" }>
-                <li>
-                    <Link href="/about"> à propos</Link> 
+            <ul className={selected ? styles.dNone : "" }>
+                <li className={isLinkActive("/about") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/about">à propos</Link>
                 </li>
-                <li>
-                    <Link href="/actualites">Actualités</Link> 
+                <li className={isLinkActive("/actualites") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/actualites">Actualités</Link>
                 </li>
-                <li>
-                    <Link href="/activites">Activités</Link> 
+                <li className={isLinkActive("/activites") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/activites">Activités</Link>
                 </li>
+
                 {/* <li>
                     <Link href="/galerie">Galerie</Link> 
                 </li>
@@ -78,8 +93,17 @@ const handleHamburgerClick = () => {
                     <Link href="/stories">Stories</Link> 
                 </li>
               */}
-                <li>
-                    <Link href="/contact">Contact</Link> 
+                <li className={isLinkActive("/contact") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/contact">Contact</Link>
+                </li>
+       
+                <li className={isLinkActive("/opportunites") ? styles.active : styles.hoverMenu}>
+                    <Link href="#">Opportunités<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
+                    <small className={styles.secondaryMenu}>
+                        <Link href="#">Offres d'emploi</Link>
+                        <Link href="/opportunites/appels" onClick= {handleMenuSelections} >Appels d'offres</Link>
+                        <Link href="#">Stages</Link>
+                    </small>
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 

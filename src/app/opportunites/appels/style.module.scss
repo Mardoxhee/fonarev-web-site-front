@@ -1,0 +1,55 @@
+.main{
+    background-color: rgb(239, 234, 228);
+    
+    .bannerContainer{
+        background-color: #0089cf;
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 7rem;
+        color: white;
+     
+        h1{
+            margin: 0;
+            font-size: 3rem;
+        }
+        p{
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .subtitle{
+            padding: 2rem 15rem;
+            display: flex;
+            flex-direction: column;
+            @media (max-width: 575.98px) {
+                    padding: 1rem;
+            }
+        .titleContainer{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            padding-bottom: 1rem;
+            align-items: center;
+            h2{
+                margin: 0;
+            }
+            button{
+                padding: .8rem 3rem;
+                display: inline-block;
+                background: transparent ;
+                border : 1px solid black
+            }
+        }
+
+        .cardContainer{
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 0rem;
+            height: auto;
+        }
+    }
+}
