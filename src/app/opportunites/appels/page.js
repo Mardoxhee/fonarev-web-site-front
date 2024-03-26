@@ -7,7 +7,7 @@ const Appel = () => {
         <main className={styles.main}>
           <section className={styles.bannerContainer}>
               <h1>
-                  Appels d' offre
+                  Appels d'offres
               </h1>
               <p>
                 Retrouvez tous les appels d'offre disponibles au FONAREV.
@@ -15,7 +15,7 @@ const Appel = () => {
           </section>
           <section className={styles.subtitle}>
             <div className={styles.titleContainer}>
-                <h2> Appels d'offre</h2>
+                <h2> Appels d'<span>offres</span></h2>
                 <button>Voir plus</button>
             </div>
 
