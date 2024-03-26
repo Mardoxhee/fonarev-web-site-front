@@ -10,13 +10,14 @@
         justify-content: center;
         margin-top: 7rem;
         color: white;
-
+     
         h1{
             margin: 0;
             font-size: 3rem;
         }
         p{
             margin: 0;
+            text-align: center;
         }
     }
 
@@ -24,6 +25,9 @@
             padding: 2rem 15rem;
             display: flex;
             flex-direction: column;
+            @media (max-width: 575.98px) {
+                    padding: 1rem;
+            }
         .titleContainer{
             display: flex;
             justify-content: space-between;
