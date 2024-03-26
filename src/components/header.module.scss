@@ -10,6 +10,7 @@
     border-bottom: rgb(225, 225, 225) solid 1px;
     box-shadow:  1px -40px 10px 34px #000;
     // border: red solid 2px;
+    
     @media (max-width: 575.98px) { 
       align-items: center;
       nav{
@@ -32,7 +33,30 @@
          }
       }
     }
-    
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        align-items: center;
+      
+        nav{
+          width: 100%;
+          .logoContainer{
+              width: 50%;
+              margin-left: .6rem;
+          }
+          ul, div button{
+              display: none !important;
+          }
+          li{
+              margin : 5px 0px !important;
+          }
+          .icone{
+              display: block !important;
+              font-size: 3rem;
+              color: black;
+              margin-right: 1rem;
+           }
+        }
+
+    }
 
     .socialMedia{
         display: flex;
@@ -43,6 +67,7 @@
         border-bottom: 1px solid rgb(220, 220, 220);
         padding: 0.5rem 8rem;
         font-size: 1.2rem;
+   
         li {
             a {
                 color: rgb(61, 61, 61);
@@ -53,10 +78,16 @@
             margin: 0px 8px;
             color: Ò;
         }
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            justify-content: center;
+        }
     }
 
     nav{
         padding: 0.6rem 8rem;
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+          padding: 1rem 2rem;
+        }
          .icone{
             display: none;
          }
@@ -201,9 +232,11 @@
     }
  }
  .dNone{
+ 
     @media (max-width: 575.98px) { 
         display: none;
     }
+
  }
 
  .hoverMenu, .active{
@@ -263,3 +296,12 @@
  .iconeArrow{
     margin-left: 10px;
  }
+
+
+ @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .socialMedia{
+        width: 100%;
+        justify-content: center;
+    }
+ }
+

@@ -4,6 +4,21 @@
     box-sizing: border-box;
     margin-top: 8rem;
     padding-top: 3rem;
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 2rem 1rem;
+        a:first-child{
+            width: 70% !important;
+        }
+
+        .minicardWrapper{
+            width: 30% !important;
+            a:first-child{
+                width: 100% !important;
+            }
+            
+        }
+   
+    }
     @media (max-width: 575.98px) {
         width: 100%;
         box-sizing: border-box;
@@ -316,5 +331,39 @@
             color: rgb(163, 163, 163);
         }
 
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .bannerContainer{
+        padding: 2rem
+    }
+
+    .videos{
+        padding: 2rem;
+        height: 50vh;
+        .mainVideos{
+            height: 60%;
+        }
+        .articleContainer{
+      
+            a {
+                height: 40% !important;
+                .imgWrapper{
+                    height: 100px !important;
+                }
+                h3{
+                    font-size: 9px !important;
+                }
+            }
+        }
+    }
+
+    .archiveContainer{
+        padding: 2rem;
+        .verticalBanner{
+            height: 500px;
+            width: 40%;
+        }
     }
 }

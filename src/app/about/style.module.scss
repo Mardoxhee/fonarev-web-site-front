@@ -5,57 +5,32 @@
 
 
 }
-.banner{
-    padding-top: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #D5EEFA;
 
-    div{
-        height: 400px;
-        width: 100%;
-        // background: url("./../../../public//about.jpg");
-        background: linear-gradient(21deg, rgba(173,130,47,1) 0%, rgba(0,0,0,0.3865195736497724) 0%), url("./../../../public/aboutcover.JPG");
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        padding-left: 2rem;
-  
-        h1{
-            font-size: 40px;
-            font-weight: 900;
-            margin-left: 6rem;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            span{
-                color: $yellow-color;
-            }
-        }
-    }
+ 
 
-    @media (max-width: 575.98px) { 
-        padding: 0;
-        padding-top: 10rem;
-        padding-bottom: 2rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        div{
-         padding: 0;
-         h1{
-            margin-left: 1rem ;
-         }
-        }
-    }
-}
 
 .about, .story{
     background-color: #F9F9F9;
     padding: 2rem 8rem;
     display: flex;
     justify-content: space-between;
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        padding: 2rem;
+        flex-direction: column-reverse;
+        .txtSide{
+            width: 100% !important;
+        }
+        .imageContainer{
+            width: 100% !important;
+            height: 400px;
+        }
+
+        .imageContaine2{
+            width: 100% !important;
+        }
+    }
+
+  
     .imageContainer{
         width: 48%;
         background: url("./../../../public/about1.jpeg");
@@ -210,4 +185,29 @@
         }
         justify-content: space-between;
     }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+        .story{
+            flex-direction: column !important;
+        }
+
+        .mision{
+            padding: 2rem;
+           
+            .cardWrapper{
+                    grid-template-columns: repeat(2,1fr); 
+                    gap: 30px;
+            }
+        }
+
+        .team{
+            padding: 2rem;
+            .teamContainer{
+                flex-wrap: wrap;
+                .teamCardContainer{
+                display: none !important;
+                    width: 350px;
+                }
+            }
+        }
 }
