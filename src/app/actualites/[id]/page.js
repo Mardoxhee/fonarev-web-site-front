@@ -75,8 +75,8 @@ const Details = () => {
                 const response = await fetch(`https://fonarev-api.onrender.com/articles/${lastPart}`);
                 const data = await response.json();
                 setArticleDetails(data.article);
-                setArticlePhotos(ata.article.photos)
-                console.log('details', data.article.titre)
+                setArticlePhotos(data.article.photos)
+                console.log('details photos', data.article)
             } catch (error) {
                 console.error('Erreur lors de la récupération des détails de l\'article :', error);
             }
