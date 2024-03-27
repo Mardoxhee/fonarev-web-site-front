@@ -7,6 +7,7 @@
 }
 .slider{
     width: 100vw !important;
+    overflow: hidden;
     ul{
         li{
             width: 100% !important;
@@ -18,7 +19,7 @@
                 width: 100%;
             }
             padding: 0 ;
-            padding-top: 8rem;
+            padding-top: 7rem;
             padding-left: 1rem;
             padding-right: 2rem;
             h1{
@@ -40,6 +41,13 @@
     background-position: center ;
     background-size: cover;
     padding-top: 10rem;
+    @media (max-width: 575.98px) { 
+        min-height: 95vh !important;
+        padding-top: 6rem !important;
+   p{
+        width: 98% !important;
+   }
+    }
     // align-items: center;
     div{
         width: 50%;
