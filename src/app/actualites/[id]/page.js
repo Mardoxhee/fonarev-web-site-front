@@ -142,7 +142,7 @@ const Details = () => {
                 <p className={styles.metadata}>Par le Fonarev</p>
                 <p className={styles.metadata}>Publié le {formatDate(articleDetails ? articleDetails.date : "")}</p>
             <div className={styles.ctaContainer}>
-                <p>Partager l'article sur  : </p>
+                <p>Partager l'article sur</p>
                 <ul className={styles.socialMedia} >
                     <li >
                             <Icon icon="logos:facebook" className={styles.icone} onClick={shareOnFacebook}/>
@@ -163,21 +163,6 @@ const Details = () => {
             </div>
             </div>
      
-                <h2
-                className={styles.postDetailsTitle}
-                >
-                {articleDetails?.titre // Use optional chaining for safer access
-                    ? articleDetails.titre
-                    // Split, capitalize, and join the title with line breaks
-                    .split(/\s+/)
-                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                    .join(' ')
-                    : (
-                    // Display a loading indicator or default text while fetching
-                    <span style={{ color: 'gray', fontStyle: 'italic' }}>Chargement du titre...</span>
-                    )}
-                </h2>
-           
                     {articleDetails?.contenu
                         ? <article dangerouslySetInnerHTML={{__html : articleDetails.contenu }} className={styles.textContent}  ></article>// Replace period followed by optional spaces with a line break and trim
                         : 'Chargement de l\'article...'} 
