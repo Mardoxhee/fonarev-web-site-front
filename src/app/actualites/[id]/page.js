@@ -175,10 +175,7 @@ const Details = () => {
                         </div>
                     ))}
                 </div>
-            <div className={styles.ctaContainer}>
-                <button>Partager l'article</button>
-                <button>Laisser un commentaire</button>
-            </div>
+
         </section>
         <section className={styles.sideBar}> 
             <div className={styles.pub}></div>
