@@ -18,6 +18,13 @@ import { useSearchParams } from "next/navigation";
 
 
 const Details = () => {
+    const formatTitre = (titre) => {
+        // Convertir en minuscules et enlever les accents
+        const titreFormate = titre?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        // Remplacer les espaces par des tirets
+        return titreFormate?.replace(/\s+/g, '-');
+      };
+
     const searchParams = useSearchParams()
     const {data, isLoading, error} = useGetAllArticlesQuery("")
     console.log("data", data)
@@ -194,7 +201,7 @@ const Details = () => {
             <h2>A la une</h2>
             {/* Display the three latest articles using ArchiveCard */}
             {data?.article?.slice(0, 3).map((article) => (
-            <Link key={article._id} href={`/actualites/details?articleId=${article._id}`}>
+            <Link key={article?._id} href={`/actualites/details?articleId=${article?._id}&articleTitle=${formatTitre( article?.titre)}`}>
                 <ArchiveCard titre={article.titre} backgroundImageSrc={article.thumbanails} category="ACTUALITE" />
             </Link>
             ))}
