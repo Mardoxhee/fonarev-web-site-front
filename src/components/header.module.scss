@@ -115,17 +115,21 @@
             display: flex;
             list-style: none;
             justify-content: space-between;
-            width: 48%;
             padding-left: 0;
             li {
                 margin : 0px 10px;
                 text-transform: uppercase;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 600;
                 cursor: pointer;
+                &:hover > a{
+                        color: #8E1F71 !important;
+                  
+                }
                 a {
                     text-decoration: none;
                     color: black;
+                   
                 }
                
             }

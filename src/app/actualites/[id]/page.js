@@ -127,7 +127,7 @@ const Details = () => {
                 <meta property="og:url" content={url} />
                 <meta property="og:type" content="article" />
             </Head>
-            <main className={styles.main}>
+            <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
         <h1> {articleDetails ? articleDetails.titre : ""} </h1>
             <div className={styles.thumbnails}
