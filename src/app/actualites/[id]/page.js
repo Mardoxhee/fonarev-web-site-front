@@ -176,23 +176,13 @@ const Details = () => {
                         : 'Chargement de l\'article...'} 
      
                 
-            <div className={styles.imgCaroussel} id = "imgCaroussel">
-            <AliceCarousel
-                mouseTracking
-                items={items}
-                responsive={{
-                    0: { items: 1 },
-                    568: { items: 2 },
-                    1024: { items: 3 }, // Show 3 items on screens wider than 1024 pixels
-                  }}
-                  autoWidth
-                  animationType="slide"
-                  autoPlay
-                  autoPlayInterval={3000} 
-                  controlsStrategy="alternate"
-                  keyboardNavigation = {true}
-            />
-                    </div>
+                <div className={styles.imgCaroussel} id="imgCaroussel">
+                    {articlePhotos.map((photoUrl, index) => (
+                        <div className={styles.imgPhotos} key={index} style={{ backgroundImage: `url(${photoUrl})` }}>
+                            {/* Ici, la propriété 'style' est utilisée pour définir l'image de fond */}
+                        </div>
+                    ))}
+                </div>
             <div className={styles.ctaContainer}>
                 <button>Partager l'article</button>
                 <button>Laisser un commentaire</button>
