@@ -82,7 +82,7 @@ export default function Home() {
               ))}
               mouseTracking="false"
               autoPlay
-              autoPlayInterval={3000}
+              autoPlayInterval={6000}
               slideToIndex={bannerIndex}
               infinite={true}
               onSlideChanged={handleBannerChange}
