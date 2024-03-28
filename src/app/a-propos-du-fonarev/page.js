@@ -1,9 +1,9 @@
 "use client"
 import { MissionCard } from '@/components/missionCard'
 import styles from './style.module.scss'
-import TeamCard from "./../../components/teamCard"
-import ValeurCard from './../../components/valeurCard'
-import Banner from './../../components/banner'
+import TeamCard from "../../components/teamCard"
+import ValeurCard from '../../components/valeurCard'
+import Banner from '../../components/banner'
 
 import React from 'react'
 

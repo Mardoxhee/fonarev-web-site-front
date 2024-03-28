@@ -76,8 +76,8 @@ const handleHamburgerClick = () => {
             </div>
             </Link> 
             <ul className={selected ? styles.dNone : "" }>
-                <li className={isLinkActive("/about") ? styles.active : ""} onClick= {handleMenuSelections} >
-                    <Link href="/about">à propos</Link>
+                <li className={isLinkActive("/a-propos-du-fonarev") ? styles.active : ""} onClick= {handleMenuSelections} >
+                    <Link href="/a-propos-du-fonarev">à propos</Link>
                 </li>
                 <li className={isLinkActive("/actualites") ? styles.active : ""} onClick= {handleMenuSelections} >
                     <Link href="/actualites">Actualités</Link>

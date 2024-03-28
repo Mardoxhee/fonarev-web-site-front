@@ -28,7 +28,12 @@ export default function Home() {
   }
 
 
- 
+  const formatTitre = (titre) => {
+    // Convertir en minuscules et enlever les accents
+    const titreFormate = titre?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // Remplacer les espaces par des tirets
+    return titreFormate?.replace(/\s+/g, '-');
+  };
 
   useEffect(() => {
     // handleArticleList();
@@ -69,7 +74,7 @@ export default function Home() {
                     <h1>{article.titre}</h1>
                     <p dangerouslySetInnerHTML={{__html : article.contenu.substr(0, 250) + "..." }}></p>
                     
-                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <button>En savoir plus</button>
                     </Link>
                   </div>
@@ -101,17 +106,17 @@ export default function Home() {
                     </h2>
                     <p>
                         Le Fonds National des Réparations des Victimes de violences sexuelles liées aux 
-                        conflits et d’autres crimes contre la paix et la sécurité de l’humanité. 
-                        FONAREV en sigle est un établissement public institué par la loi n°22/65 du 26 
+                        conflits et des victimes des crimes contre la paix et la sécurité de l’humanité, 
+                        FONAREV en sigle, est un établissement public institué par la loi n°22/65 du 26 
                         décembre 2022 portant principes fondamentaux relatifs à la protection et à la 
                         réparation des victimes de violences sexuelles liées aux conflits et des victimes 
                         de crimes contre la paix et la sécurité de l’humanité et le décret n°22/38 du 06 
                         décembre 2022 fixant les statuts d’un établissement public dénommé Fonds National des 
-                        Réparations des Victimes de violences sexuelles liées aux conflits et d’autres crimes contre 
-                        la paix et la sécurité de l’humanité. Il a son siège social à Kinshasa et exerce ses activités 
+                        Réparations des Victimes de violences sexuelles liées aux conflits et de crimes contre la paix  
+                        et la sécurité de l’humanité. Il a son siège social à Kinshasa et exerce ses activités 
                         sur toute l’étendue du territoire national.
                     </p>
-                    <Link href="/about">
+                    <Link href="/a-propos-du-fonarev">
                       <button>En savoir plus</button>
                     </Link>
                   </div>
@@ -126,7 +131,7 @@ export default function Home() {
                 </div>
                 <div className={styles.cardContainer}>
                 {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
-                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${article.titre}`}>
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <ActuCard
                         key={article._id}
                         date={article.date ? formatDate(article.date) : ""} // Use the formatted date
