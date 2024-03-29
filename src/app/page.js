@@ -12,6 +12,7 @@ import AOS from 'aos';
 import {useGetAllArticlesQuery} from './store/slices/actualite'
 import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
+import { Icon } from '@iconify/react';
 
 
 export default function Home() {
@@ -50,9 +51,9 @@ export default function Home() {
    <  meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />
     <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
    </Head>
-      <main className={styles.main}>
+    <main className={styles.main}>
       <section className={styles.slider}>
-          {isLoading ? (
+          {/* {isLoading ? (
            <div className={styles.bannerContainerLoad}>
                 <span className={styles.loader} ></span>
            </div>
@@ -91,8 +92,157 @@ export default function Home() {
               keyboardNavigation={true}
               animationDuration={500}
             />
-          )}
-        </section>
+          )} */}
+
+          <div className= {styles.aliceContainer}>
+                <div className={styles.item}>
+                <AliceCarousel
+                    items={
+                      [
+                        <div className={styles.victimPicture}>
+                        <div className={styles.logoContainer}>
+
+                        </div>
+                        <div className={styles.description}>
+                            <p>
+                              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                              lorem lorem lorem lorem lorem lorem lorem lorem lorem lore
+                            </p>
+                        </div>
+
+                    </div>,
+                       <div className={styles.victimPicture2}>
+                       <div className={styles.logoContainer}>
+
+                       </div>
+                       <div className={styles.description}>
+                           <p>
+                           lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                          lorem lorem lorem lorem lorem lorem lorem lorem lorem lor
+                           </p>
+                       </div>
+
+                   </div>,
+                      <div className={styles.victimPicture3}>Ò
+                      <div className={styles.logoContainer}>
+
+                      </div>
+                      <div className={styles.description}>
+                          <p>
+                            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
+                            lorem lorem lorem lorem lorem lorem lorem lorem lorem lore
+                          </p>
+                      </div>
+
+                  </div>
+                       ]
+                    }
+                      mouseTracking="false"
+                      autoPlay
+                      autoPlayInterval={10000}
+                      slideToIndex={bannerIndex}
+                      infinite={true}
+                      onSlideChanged={handleBannerChange}
+                      animationType="fadeout"
+                      controlsStrategy="alternate"
+                      keyboardNavigation={true}
+                      animationDuration={1000}
+                    />
+                 
+
+                    <div className={styles.rightSide}>
+
+                    <AliceCarousel
+                    items={
+                      [  
+                        <div className={styles.quoteContainer}>
+                            <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
+                            <p className={styles.quotation}>  
+                            Nous ne pouvons espérer un congo nouveau sans réparer les dommages 
+                            causés à celles qui, par leur sagesse, bâtissent la nation et par 
+                            leur force, engendrent et éduquent nos héros. La violence sexuelle 
+                            en temps de conflit est un problème global, c’est une affaire de tous !
+  
+                            </p>
+                            <div className={styles.authorFlexer}>
+                            <div className={styles.avatar}>
+  
+                            </div>
+                              <h3 className={styles.author}>
+                                Denise NYAKERU TSHISEKEDI
+                                <span>
+                                    Première dame de la République Démocratique du Congo
+                                </span>
+                              </h3>
+                            
+                            </div>
+                        </div>,
+                          
+                      <div className={styles.quoteContainer}>
+                      <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
+                      <p className={styles.quotation}>  
+                      Pour apaiser la douleur des femmes victimes de violences liées 
+                      aux conflits et tenter de réparer les préjudices qui leur ont été 
+                      infligés, mon pays a mis en place des mécanismes institutionnels 
+                      spécifiques, notamment le Fonds National des Réparations des Victimes 
+                      des violences sexuelles liées aux conflits et des victimes des crimes 
+                      contre la paix et la sécurité de l'humanité (FONAREV), créé en décembre 2022
+
+                      </p>
+                      <div className={styles.authorFlexer}>
+                      <div className={styles.avatar2}>
+
+                      </div>
+                        <h3 className={styles.author}>
+                          Felix TSHISEKEDI TSHILOMBO
+                          <span>
+                              Président de la République Démocratique du Congo
+                          </span>
+                        </h3>
+                      
+                      </div>
+                  </div>,
+                    
+                    <div className={styles.quoteContainer}>
+                    <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
+                    <p className={styles.quotation}>  
+                    Nous ne pouvons espérer un congo nouveau sans réparer les dommages 
+                    causés à celles qui, par leur sagesse, bâtissent la nation et par 
+                    leur force, engendrent et éduquent nos héros. La violence sexuelle 
+                    en temps de conflit est un problème global, c’est une affaire de tous !
+
+                    </p>
+                    <div className={styles.authorFlexer}>
+                    <div className={styles.avatar3}>
+
+                    </div>
+                      <h3 className={styles.author}>
+                        Lucien LUNDULA LOLATUI
+                        <span>
+                        Directeur Général du Fonarev
+                        </span>
+                      </h3>
+                    
+                    </div>
+                </div>
+                       ]
+                    }
+                      mouseTracking="false"
+                      autoPlay
+                      autoPlayInterval={5000}
+                      slideToIndex={bannerIndex}
+                      infinite={true}
+                      onSlideChanged={handleBannerChange}
+                      animationType="fadeout"
+                      controlsStrategy="alternate"
+                      keyboardNavigation={true}
+                      animationDuration={200}
+                    />
+               
+                    </div>
+                </div>
+          </div>
+      </section>
 
 
 

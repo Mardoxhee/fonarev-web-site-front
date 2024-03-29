@@ -99,13 +99,22 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/activites") ? styles.active : ""} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
                 </li>
-                <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
+                <li className={isLinkActive("/publications/rapports-annuels") ? styles.active : styles.hoverMenu}>
                     <Link href="#">Publications<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
-                        <Link href="#">Rapports annuels</Link>
-                        <Link href="/publications/appels" onClick= {handleMenuSelections} >Newsletter</Link>
+                        <Link href="/publications/rapports-annuels">Rapports annuels</Link>
+                        <Link href="#" onClick= {handleMenuSelections} >Newsletter</Link>
                         <Link href="#">Bulletins infos</Link>
                         <Link href="#">Articles</Link>
+                    </small>
+                </li>
+                <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
+                    <Link href="#">Mediathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
+                    <small className={styles.secondaryMenu}>
+                        <Link href="#">Témoignages</Link>
+                        <Link href="#" onClick= {handleMenuSelections} >Podcasts</Link>
+                        <Link href="#">Recap</Link>
+                   
                     </small>
                 </li>
 
