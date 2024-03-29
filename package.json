@@ -16,6 +16,8 @@
     "@mui/lab": "^5.0.0-alpha.167",
     "@mui/material": "^5.15.11",
     "@reduxjs/toolkit": "^2.2.1",
+    "@vidstack/player": "^1.6.5",
+    "@vidstack/player-react": "^1.6.5",
     "aos": "^2.3.4",
     "fullpage.js": "^4.0.22",
     "next": "14.1.0",

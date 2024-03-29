@@ -14,6 +14,8 @@ import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 
+// import VideoUrl from './../../public/logo-fonarev.mp4'
+
 
 export default function Home() {
   const { data, error, isLoading } = useGetAllArticlesQuery("");
@@ -105,8 +107,7 @@ export default function Home() {
                         </div>
                         <div className={styles.description}>
                             <p>
-                              lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
-                              lorem lorem lorem lorem lorem lorem lorem lorem lorem lore
+                              RIEN SANS LES VICTIMES 
                             </p>
                         </div>
 
@@ -117,20 +118,18 @@ export default function Home() {
                        </div>
                        <div className={styles.description}>
                            <p>
-                           lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
-                          lorem lorem lorem lorem lorem lorem lorem lorem lorem lor
+                            TOUT POUR LES VICTIMES 
                            </p>
                        </div>
 
                    </div>,
                       <div className={styles.victimPicture3}>Ò
                       <div className={styles.logoContainer}>
-
+          
                       </div>
                       <div className={styles.description}>
                           <p>
-                            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem 
-                            lorem lorem lorem lorem lorem lorem lorem lorem lorem lore
+                              RIEN SANS LES VICTIMES 
                           </p>
                       </div>
 
@@ -139,9 +138,11 @@ export default function Home() {
                     }
                       mouseTracking="false"
                       autoPlay
-                      autoPlayInterval={10000}
+                      autoPlayInterval={20000}
                       slideToIndex={bannerIndex}
                       infinite={true}
+                      disableButtonsControls={true}
+                      disableSwipe={true}
                       onSlideChanged={handleBannerChange}
                       animationType="fadeout"
                       controlsStrategy="alternate"
@@ -206,10 +207,10 @@ export default function Home() {
                     <div className={styles.quoteContainer}>
                     <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
                     <p className={styles.quotation}>  
-                    Nous ne pouvons espérer un congo nouveau sans réparer les dommages 
-                    causés à celles qui, par leur sagesse, bâtissent la nation et par 
-                    leur force, engendrent et éduquent nos héros. La violence sexuelle 
-                    en temps de conflit est un problème global, c’est une affaire de tous !
+                    Le Fonarev est ainsi le fruit d'une collaboration combinant à la fois
+                    la volonté politique du chef de l'Etat, les plaidoyers des organisations
+                    de la societé civile, dont les mouvements citoyens, ainsi que l'ac-
+                    compagnement de la communauté internationale et en particulier les Nations unies. 
 
                     </p>
                     <div className={styles.authorFlexer}>
@@ -231,12 +232,11 @@ export default function Home() {
                       autoPlay
                       autoPlayInterval={5000}
                       slideToIndex={bannerIndex}
-                      infinite={true}
                       onSlideChanged={handleBannerChange}
-                      animationType="fadeout"
-                      controlsStrategy="alternate"
-                      keyboardNavigation={true}
-                      animationDuration={200}
+                      animationType="fadeout" 
+                      animationDuration={800}
+                      disableButtonsControls
+                      infinite
                     />
                
                     </div>
