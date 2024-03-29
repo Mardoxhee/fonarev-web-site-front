@@ -107,7 +107,7 @@ export default function Home() {
                         </div>
                         <div className={styles.description}>
                             <p>
-                              RIEN SANS LES VICTIMES 
+                              RIEN SANS LES VICTIMES <span>!</span>
                             </p>
                         </div>
 
@@ -118,7 +118,7 @@ export default function Home() {
                        </div>
                        <div className={styles.description}>
                            <p>
-                            TOUT POUR LES VICTIMES 
+                           RIEN SANS LES VICTIMES <span>!</span>
                            </p>
                        </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
                       </div>
                       <div className={styles.description}>
                           <p>
-                              RIEN SANS LES VICTIMES 
+                              RIEN SANS LES VICTIMES <span>!</span>
                           </p>
                       </div>
 
@@ -138,7 +138,7 @@ export default function Home() {
                     }
                       mouseTracking="false"
                       autoPlay
-                      autoPlayInterval={20000}
+                      autoPlayInterval={6000}
                       slideToIndex={bannerIndex}
                       infinite={true}
                       disableButtonsControls={true}
@@ -156,6 +156,31 @@ export default function Home() {
                     <AliceCarousel
                     items={
                       [  
+
+                        <div className={styles.quoteContainer}>
+                        <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
+                        <p className={styles.quotation}>  
+                        Pour apaiser la douleur des femmes victimes de violences liées 
+                        aux conflits et tenter de réparer les préjudices qui leur ont été 
+                        infligés, mon pays a mis en place des mécanismes institutionnels 
+                        spécifiques, notamment le Fonds National des Réparations des Victimes 
+                        de violences sexuelles liées aux conflits et des victimes des crimes 
+                        contre la paix et la sécurité de l'humanité (FONAREV), créé en décembre 2022
+  
+                        </p>
+                        <div className={styles.authorFlexer}>
+                        <div className={styles.avatar2}>
+  
+                        </div>
+                          <h3 className={styles.author}>
+                            Felix TSHISEKEDI TSHILOMBO
+                            <span>
+                                Président de la République Démocratique du Congo
+                            </span>
+                          </h3>
+                        
+                        </div>
+                    </div>,
                         <div className={styles.quoteContainer}>
                             <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
                             <p className={styles.quotation}>  
@@ -178,39 +203,14 @@ export default function Home() {
                             
                             </div>
                         </div>,
-                          
-                      <div className={styles.quoteContainer}>
-                      <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
-                      <p className={styles.quotation}>  
-                      Pour apaiser la douleur des femmes victimes de violences liées 
-                      aux conflits et tenter de réparer les préjudices qui leur ont été 
-                      infligés, mon pays a mis en place des mécanismes institutionnels 
-                      spécifiques, notamment le Fonds National des Réparations des Victimes 
-                      des violences sexuelles liées aux conflits et des victimes des crimes 
-                      contre la paix et la sécurité de l'humanité (FONAREV), créé en décembre 2022
-
-                      </p>
-                      <div className={styles.authorFlexer}>
-                      <div className={styles.avatar2}>
-
-                      </div>
-                        <h3 className={styles.author}>
-                          Felix TSHISEKEDI TSHILOMBO
-                          <span>
-                              Président de la République Démocratique du Congo
-                          </span>
-                        </h3>
-                      
-                      </div>
-                  </div>,
-                    
+                               
                     <div className={styles.quoteContainer}>
                     <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
                     <p className={styles.quotation}>  
-                    Le Fonarev est ainsi le fruit d'une collaboration combinant à la fois
-                    la volonté politique du chef de l'Etat, les plaidoyers des organisations
-                    de la societé civile, dont les mouvements citoyens, ainsi que l'ac-
-                    compagnement de la communauté internationale et en particulier les Nations unies. 
+                      Nous voulons regarder les victimes comme des êtres humains 
+                      dont il faut prendre soin. Elles sont là, ils sont là.
+                      Ce sont nos mères, nos soeurs, nos pères, nos frères, 
+                      nos petites-filles et nos petits-fils.
 
                     </p>
                     <div className={styles.authorFlexer}>
@@ -230,7 +230,7 @@ export default function Home() {
                     }
                       mouseTracking="false"
                       autoPlay
-                      autoPlayInterval={5000}
+                      autoPlayInterval={8000}
                       slideToIndex={bannerIndex}
                       onSlideChanged={handleBannerChange}
                       animationType="fadeout" 
