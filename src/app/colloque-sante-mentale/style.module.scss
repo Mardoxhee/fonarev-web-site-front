@@ -1,0 +1,94 @@
+.main{
+
+    width: 99vw;
+    display: flex;
+  
+    .imageContainer{
+        width: 40%;
+        height: 100%;
+        background :linear-gradient(90deg, rgba(0, 0, 0, 0.311) 0%, rgba(38, 38, 38, 0.459) 100%), url("./../../../public//hommes.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        color: white ;
+        padding: 0rem 2rem;
+        min-height: 100vh;
+        h1{
+            font-weight: 900;
+            color: white;
+            width: 70%;
+        }
+        p{
+            text-align: center;
+            width: 75%;
+        }
+    }
+    .formContainer{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;            
+        padding: 0rem 2.5rem  !important;
+        padding-top: 7rem !important;
+        h2{
+            font-size: 1.3rem;
+            margin: 0rem;
+        }
+
+        form{
+            width: 100%;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            .inputFlexer{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                margin: .5rem 0rem;
+
+                input, select{
+                    width: 45%;
+                    padding: .8rem;
+                    background-color: #f3f4f6;
+                    border: none;
+                }
+            }
+            .freeInput{
+                margin: .2rem 0rem;
+                width: 100%;
+                input{
+                    width: 96.5%;
+                    padding: .8rem;
+                    background-color: #f3f4f6;
+                    border: none;
+                }
+                textarea{
+                    padding: .8rem;
+                    margin-top: 1rem;
+                    width: 96.5%;
+                    min-height: 10rem;
+                    background-color: #f3f4f6;
+                    border: none;
+                }
+            }
+        }
+
+        button{
+            padding: 1rem;
+            background-color: #8E1F71;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: .3rem;
+        }
+    }
+
+
+}

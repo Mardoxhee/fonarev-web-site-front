@@ -1,5 +1,7 @@
-.main{
+.mainCont{
 
+box-sizing: border-box;
+overflow: hidden;
     @media only screen and (min-width: 768px) and (max-width: 991px) {
         padding: 2rem 1rem;
         padding-top: 9rem;
@@ -30,20 +32,25 @@
     justify-content: space-between;
     padding: 9rem 8rem;
     @media (max-width: 575.98px) { 
-        padding: 0;
         flex-direction: column;
+        width: 100%;
+        padding: 0;
+        justify-content: center !important;
         .sideBar{
             margin-top: 2rem;
-            width: 100% !important;
-            padding-right: 1rem;
-            margin-left: 1rem;
+            width: 96% !important;
         }
        .postDetails  {
-        padding-top: 9rem;
-        width: 98% !important;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        // display: none;
+        width: 92% !important;
+        padding: 1rem;
+       padding-top: 9rem;
+       h1{
+        font-size: 28px !important;
+       }
+       .textContent{
+        text-align: justify;
+       }
+    
         h1{
             font-size: 30px !important;
         }
@@ -144,6 +151,15 @@ h2{
     height: 220px;
     margin-top: 0 !important;
     flex-wrap: wrap;
+    @media (max-width: 575.98px) { 
+        height: 150px !important;
+        justify-content: space-between;
+        .imgPhotos{
+            width: 49% !important;
+            margin: 0 !important;
+            margin: .3Òrem 0rem !important;
+        }
+    }
 
     .imgPhotos{
         width: 30%;
@@ -172,8 +188,11 @@ h2{
 
 .sideBar{
     @media (max-width: 575.98px) {
-    padding: 0 !important;
-    width: 100% !important;
+    width: 96%;
+    padding-top: 0;
+    .pub{
+        display: none;
+    }
      }
     width: 28%;
     height: auto;
@@ -187,7 +206,7 @@ h2{
     .cardContainer{
         height: auto;
         width: 100%;
-        padding: 2rem 0rem;
+        padding: 2rem 1rem;
         a{
             text-decoration: none;
             color: black;

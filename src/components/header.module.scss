@@ -65,7 +65,7 @@
         flex-direction: row-reverse;
         margin: 0px;
         border-bottom: 1px solid rgb(220, 220, 220);
-        padding: 0.5rem 8rem;
+        padding: 0.5rem 6rem;
         font-size: 1.2rem;
    
         li {
@@ -84,7 +84,7 @@
     }
 
     nav{
-        padding: 0.6rem 8rem;
+        padding: 0.6rem 6rem;
         @media only screen and (min-width: 768px) and (max-width: 991px) {
           padding: 1rem 2rem;
         }
@@ -115,17 +115,21 @@
             display: flex;
             list-style: none;
             justify-content: space-between;
-            width: 48%;
             padding-left: 0;
             li {
                 margin : 0px 10px;
                 text-transform: uppercase;
-                font-size: 14px;
+                font-size: 12px;
                 font-weight: 600;
                 cursor: pointer;
+                &:hover > a{
+                        color: #8E1F71 !important;
+                  
+                }
                 a {
                     text-decoration: none;
                     color: black;
+                   
                 }
                
             }
