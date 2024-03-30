@@ -4,6 +4,10 @@
     margin: 0 !important;
     padding: 0  ;
     padding-top: 4rem;
+    @media (max-width: 575.98px) {
+       box-sizing: border-box;
+       overflow: hidden !important;
+     }
 }
 .slider{
     // overflow: hidden;
