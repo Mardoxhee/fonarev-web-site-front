@@ -50,7 +50,7 @@
         grid-template-columns: 70% 30%;
         @media (max-width: 575.98px) { 
           display: flex;
-          flex-direction: column-reverse !important;
+          flex-direction: column !important;
         }
 
 
@@ -91,7 +91,15 @@
                 }
             }
             @media (max-width: 575.98px) { 
-           display: none;
+                .description{
+                    left: 1rem;
+                    width: 100%;
+                    p{
+                        font-size: 4rem;
+                     
+                    }
+                
+                }
               }
         }
         .victimPicture2{
@@ -508,6 +516,8 @@
             color :#0089CF;
             display: inline-block !important;
             width: 40%;
+            cursor: pointer;
+            background-color: white;
         }
   }
 
