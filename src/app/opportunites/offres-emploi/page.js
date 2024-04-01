@@ -1,0 +1,181 @@
+"use client"
+import React from 'react'
+import styles from "./style.module.scss"
+import AppelCard from './../../../components/appelCard'
+import { useForm } from "react-hook-form";
+
+const Offres = () => {
+
+    const { handleSubmit, setValue,register, formState: { errors } } = useForm();
+    
+    const validatePhoneNumber = (value) => {
+        const phoneNumberRegex = /^\d+$/;
+        if (!phoneNumberRegex.test(value)) {
+            return "Le numéro de téléphone ne doit contenir que des chiffres";
+        }
+        if (value.length !== 10) {
+            return "Le numéro de téléphone doit comporter 10 chiffres";
+        }
+        return true;
+      };
+      
+      const validateEmail = (value) => {
+      
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            return "Veuillez saisir une adresse e-mail valide";
+        }
+        return true;
+      };
+      
+    const onSubmit =async (values)=>{   
+        setDisbaled(true)
+        setSpinner(true)
+          const PARTICIPANTS_ROUTE = "https://fonarev-api.onrender.com/participants";
+          const resp = await   fetch(PARTICIPANTS_ROUTE, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+          
+              },
+            body: JSON.stringify(values)
+        })
+        const response = await  resp.json();
+        setSpinner(false)
+        console.log("waiting response", response)
+        if(resp.status !==201){
+          // setOpen(true);
+          // setSpiner(false);
+          // setresponseCode(0);
+          // setResponseTitle(response.status);
+          // setResponseContent(response.error)
+      
+        }else{
+          showAlert('Merci!', 'Votre demande a été soumise', 'success');
+  
+        }
+        }
+      
+
+  return (
+        <main className={styles.main}>
+          <section className={styles.bannerContainer}>
+              <h1>
+                  Offres d'emplois
+              </h1>
+              <p>
+                    Retrouvez les postes vacants au sein du fonarev.
+              </p>
+          </section>
+          <section className={styles.mainContent}>
+                <div className = {styles.formContainer}>
+                    <h2>Pour toute candidature spontanée</h2>
+                    <form onSubmit= {handleSubmit(onSubmit)}>
+                        <div className={styles.inputWrapper}>
+                            <div>
+                                <input type='text' placeholder='Nom'
+                                    {...register("nom", {
+                                    required: "Ce champ est obligatoire",
+                                    })}
+                                    className={errors.nom ? styles.inputError : ''}
+                                />
+                                {errors.nom && <span className={styles.errorMessage}>{errors.nom.message}</span>}
+                            </div>
+                            <div>
+                                <input type='text' placeholder='Prénom'
+                                    {...register("prenom", {
+                                    required: "Ce champ est obligatoire",
+                                    })}
+                                    className={errors.prenom ? styles.inputError : ''}
+                                />
+                                {errors.prenom && <span className={styles.errorMessage}>{errors.prenom.message}</span>}
+                            </div>  
+                        </div>
+                        <div className={styles.inputWrapper}>
+                        <div>
+                            <input type='text' placeholder='Téléphone' 
+                                        {...register("phone", {
+                                            required: "Ce champ est obligatoire",
+                                            validate: validatePhoneNumber // Validation personnalisée
+                                        })}
+                                        className={errors.phone ? styles.inputError : ''}
+                                    />
+                                {errors.phone && <span className={styles.errorMessage}>{errors.phone.message}</span>}
+                                </div>
+                            <div>
+                            <input type='text' placeholder='Email'
+                            {...register("email", {
+                                required: "Ce champ est obligatoire",
+                                validate: validateEmail // Validation personnalisée
+                            })}
+                            className={errors.email ? styles.inputError : ''}
+                        />
+                                {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
+                            </div>  
+                        </div>
+
+                        <div className={styles.inputWrapper}>
+                            <div>
+                                <input type='text' placeholder='Ville'
+                                    {...register("ville", {
+                                    required: "Ce champ est obligatoire",
+                                    })}
+                                    className={errors.ville ? styles.inputError : ''}
+                                />
+                                {errors.ville && <span className={styles.errorMessage}>{errors.ville.message}</span>}
+                            </div>
+                            <div>
+                                <input type='text' placeholder='Province'
+                                    {...register("province", {
+                                    required: "Ce champ est obligatoire",
+                                    })}
+                                    className={errors.email ? styles.inputError : ''}
+                                />
+                                {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
+                            </div>  
+                        </div>
+                        <div className={styles.inputUpload}>
+                        <div className = {styles.uploadInput}>
+                                <label>Uploader le CV</label>
+                                <input type='file'
+                                     {...register("cv", {
+                                        required: "Ce champ est obligatoire",
+                                        })}
+                                        className={errors.cv ? styles.inputError : ''}
+                                />
+                            {errors.cv && <span className={styles.errorMessage}>{errors.cv.message}</span>}
+                            </div>
+                            <div className = {styles.uploadInput}>
+                                <label>Uploader la lettre de motivation</label>
+                                <input type='file' 
+                                     {...register("lm", {
+                                        required: "Ce champ est obligatoire",
+                                        })}
+                                        className={errors.lm ? styles.inputError : ''}
+                                />
+                        {errors.lm && <span className={styles.errorMessage}>{errors.lm.message}</span>}
+                            </div>
+                        </div> 
+                        <button>Soumettre</button>
+                    </form>
+                </div>
+                <div className={styles.subtitle}>
+                    <div className={styles.titleContainer}>
+                        <h2> Les offres d'emplois</h2>
+                        <button>Voir plus</button>
+                    </div>
+
+                    <div className={styles.cardContainer}>
+                        <h3>Oups il n'ya pas de poste à pourvoir pour l'instant !</h3>
+
+                    </div>
+                </div>
+          </section>
+
+
+         
+        </main>
+  )
+}
+
+export default Offres

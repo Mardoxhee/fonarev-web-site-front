@@ -10,7 +10,7 @@ const Appel = () => {
                   Appels d'offres 
               </h1>
               <p>
-                Retrouvez tous les appels d'offre disponibles au FONAREV.
+                Retrouvez tous les appels d'offres disponibles au FONAREV.
               </p>
           </section>
           <section className={styles.subtitle}>
