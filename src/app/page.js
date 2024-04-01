@@ -13,11 +13,14 @@ import {useGetAllArticlesQuery} from './store/slices/actualite'
 import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
+import {useRouter} from 'next/navigation'
 
 // import VideoUrl from './../../public/logo-fonarev.mp4'
 
 
 export default function Home() {
+const router = useRouter()
+
   const { data, error, isLoading } = useGetAllArticlesQuery("");
   const articles = data?.article ? [...data.article] : [];
 
@@ -46,6 +49,11 @@ export default function Home() {
   const handleBannerChange = (currentIndex) => {
     setBannerIndex(currentIndex);
   };
+
+
+  const handleRedirect = () => {
+    router.push('/colloque-sante-mentale')
+  }
 
   return (
     <>
@@ -270,6 +278,16 @@ export default function Home() {
                       <button>En savoir plus</button>
                     </Link>
                   </div>
+              </section>
+
+
+              <section  className={styles.colloque}>
+                        <div className={styles.visuel}></div>
+                        <div className={styles.content}>
+                            <h2>Colloque sur la santé mentale des victimes </h2>
+                            <p>Remplir le formulaire pour réserver votre place</p>
+                            <button onClick={handleRedirect}>SE PRéENREGISTRER</button>
+                        </div>
               </section>
 
               <section className={styles.actu} data-aos="zoom-in">

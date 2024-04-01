@@ -50,7 +50,7 @@
         grid-template-columns: 70% 30%;
         @media (max-width: 575.98px) { 
           display: flex;
-          flex-direction: column-reverse !important;
+          flex-direction: column !important;
         }
 
 
@@ -91,7 +91,15 @@
                 }
             }
             @media (max-width: 575.98px) { 
-           display: none;
+                .description{
+                    left: 1rem;
+                    width: 100%;
+                    p{
+                        font-size: 4rem;
+                     
+                    }
+                
+                }
               }
         }
         .victimPicture2{
@@ -111,9 +119,7 @@
             display: flex;
             align-items: center;
             justify-content: center;  
-            @media (max-width: 575.98px) { 
-                height: 100vh;
-                   }          
+          
         }
         .quoteContainer{
             display: flex;
@@ -452,3 +458,69 @@
     }
      
   }
+  .colloque{
+    padding: 2rem 8rem;
+    display: flex;
+    @media (max-width: 575.98px) { 
+        flex-direction: column;
+        padding: 1rem 1rem !important;
+        .visuel{
+            height: 500px  !important;
+            width: 100% !important;
+            background-size: contain !important;
+                background-position: center;
+                background-repeat: no-repeat !important;
+        }
+        .content{
+           padding: .5rem;
+           width: auto;
+           padding-left: 1rem !important;
+           min-height: auto !important;
+           width: auto !important;
+           button{
+            width: 70% !important;
+
+           }
+        }
+    }
+    .visuel{
+        width: 40%;
+        background: url('./../../public/colloque.jpg');
+        height: auto;
+        background-size: cover;
+        background-position: center;
+    }
+    .content{
+        width: 60%;
+        padding: 2rem;
+        min-height: 400px;
+        background-color: #0089CF;
+        color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 4rem;
+        h2{
+            font-size: 2rem;
+            color: white;
+            margin: .5rem 0rem;
+        }
+        button{
+            padding: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            color :#0089CF;
+            display: inline-block !important;
+            width: 40%;
+            cursor: pointer;
+            background-color: white;
+        }
+  }
+
+}
+
+.colloque{
+    display: none !important;
+}
