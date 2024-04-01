@@ -236,15 +236,18 @@ const router = useRouter()
                 </div>
                        ]
                     }
-                      mouseTracking="false"
-                      autoPlay
-                      autoPlayInterval={8000}
-                      slideToIndex={bannerIndex}
-                      onSlideChanged={handleBannerChange}
-                      animationType="fadeout" 
-                      animationDuration={800}
-                      disableButtonsControls
-                      infinite
+                    mouseTracking="false"
+                    autoPlay
+                    autoPlayInterval={6000}
+                    slideToIndex={bannerIndex}
+                    infinite={true}
+                    disableButtonsControls={true}
+                    disableSwipe={true}
+                    onSlideChanged={handleBannerChange}
+                    animationType="fadeout"
+                    controlsStrategy="alternate"
+                    keyboardNavigation={true}
+                    animationDuration={1000}
                     />
                
                     </div>

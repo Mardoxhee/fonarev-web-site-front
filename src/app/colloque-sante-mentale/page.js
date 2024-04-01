@@ -34,7 +34,7 @@ const Colloque = () => {
         // setResponseContent(response.error)
     
       }else{
-        window.location.reload();
+        // window.location.reload();
       }
       }
     
@@ -63,18 +63,14 @@ const validateEmail = (value) => {
   return (
     <main className={styles.main}>
         <section className={styles.imageContainer}>
-            <h1>Colloque sur la santé mentale des victimes</h1>
-            <p>details colloque details colloquedetails colloque
-            details colloquedetails colloquedetails colloquedetails 
-            details colloquedetails colloquedetails colloquedetails 
-            </p>
+        
         </section>
         <section className={styles.formContainer}>
             <h2>Formulaire de préenregistrement</h2>
             <form onSubmit= {handleSubmit(onSubmit)} >
                 <div className={styles.inputFlexer}>
                   <div>
-                    <input type='text' placeholder='Votre nom'
+                    <input type='text' placeholder='Nom'
                         {...register("nom", {
                         required: "Ce champ est obligatoire",
                         })}
@@ -83,7 +79,7 @@ const validateEmail = (value) => {
                     {errors.nom && <span className={styles.errorMessage}>{errors.nom.message}</span>}
                     </div>
                     <div>
-                        <input type='text' placeholder='Votre prenom'
+                        <input type='text' placeholder='Prénom'
                               {...register("prenom", {
                                 required: "Ce champ est obligatoire",
                               })}
@@ -107,7 +103,7 @@ const validateEmail = (value) => {
                       {errors.genre && <span className={styles.errorMessage}>{errors.genre.message}</span>}
                 </div>
                   <div>
-                      <input type='text' placeholder='Votre nationalité'
+                      <input type='text' placeholder='Nationalité'
                         {...register("nationalite", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -118,7 +114,7 @@ const validateEmail = (value) => {
                 </div>
                 <div className={styles.inputFlexer}>
                     <div>
-                    <input type='text' placeholder='Votre email'
+                    <input type='text' placeholder='Email'
                             {...register("email", {
                                 required: "Ce champ est obligatoire",
                                 validate: validateEmail // Validation personnalisée
@@ -128,7 +124,7 @@ const validateEmail = (value) => {
                            {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
                     </div>
                     <div>
-                    <input type='text' placeholder='Votre téléphone' 
+                    <input type='text' placeholder='Téléphone' 
                             {...register("telephone", {
                                 required: "Ce champ est obligatoire",
                                 validate: validatePhoneNumber // Validation personnalisée
@@ -140,7 +136,7 @@ const validateEmail = (value) => {
                 </div>
                 <div className={styles.inputFlexer}>
                     <div>
-                      <input type='text' placeholder='Votre pays'
+                      <input type='text' placeholder='Pays'
                         {...register("pays", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -149,7 +145,7 @@ const validateEmail = (value) => {
                             {errors.pays && <span className={styles.errorMessage}>{errors.pays.message}</span>}
                     </div>
                     <div>
-                      <input type='text' placeholder='Votre ville'
+                      <input type='text' placeholder='Ville'
                         {...register("ville", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -160,7 +156,7 @@ const validateEmail = (value) => {
                 </div>
                 <div className={styles.freeInput}>
                   <div>
-                    <input type='text' placeholder='Votre profession'
+                    <input type='text' placeholder='Profession'
                       {...register("profession", {
                         required: "Ce champ est obligatoire",
                       })}
