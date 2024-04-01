@@ -1,7 +1,7 @@
 .main{
 
-    width: 99vw;
     display: flex;
+
   
     .imageContainer{
         width: 40%;
@@ -89,6 +89,36 @@
             margin-top: .3rem;
         }
     }
+    @media (max-width: 575.98px) { 
+        width: auto !important;
+        flex-direction: column;
+        .imageContainer{
+      
+            padding: 0 !important;
+            min-height: 40vh !important;
+            padding-top: 5rem !important;
+            width: auto !important;
+            h1{
+                width: 90% !important;
+            }
 
+        }
+        .formContainer{
+            padding: 0rem 0rem!important;
+            width: auto !important;
+            padding: 2rem  1rem!important;
+            .freeInput{
+                input{
+                    width: 93% !important;
+                }
+            }
+            textarea{
+                width: 93% !important;
+            }
+            form{
+               padding: 0rem;
+            }
+        }
+    }
 
 }
