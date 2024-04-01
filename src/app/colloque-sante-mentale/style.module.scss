@@ -6,9 +6,10 @@
     .imageContainer{
         width: 40%;
         height: 100%;
-        background :linear-gradient(90deg, rgba(0, 0, 0, 0.311) 0%, rgba(38, 38, 38, 0.459) 100%), url("./../../../public//hommes.jpg");
-        background-size: cover;
-        background-position: center;
+        background :url("./../../../public/colloque.jpg");
+        background-size: contain;
+        background-position: center 80%;
+        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -16,6 +17,7 @@
         text-align: center;
         color: white ;
         padding: 0rem 2rem;
+        padding-top: 2rem;
         min-height: 100vh;
         h1{
             font-weight: 900;
@@ -126,10 +128,9 @@
         width: auto !important;
         flex-direction: column;
         .imageContainer{
-      
             padding: 0 !important;
             min-height: 40vh !important;
-            padding-top: 8rem !important;
+            padding-top: 15rem !important;
             width: auto !important;
             h1{
                 width: 90% !important;
