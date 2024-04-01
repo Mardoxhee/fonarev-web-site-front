@@ -3,14 +3,15 @@ import styles from './style.module.scss'
 import { useForm } from "react-hook-form";
 import React from 'react'
 import {useState, useEffect} from 'react'
+import showAlert from './../../components/Swal'
+
 
 const Colloque = () => {
 
     const { handleSubmit, setValue,register, formState: { errors } } = useForm();
     const [spinner, setSpinner] = useState(false)
     const [disbaled, setDisbaled] = useState(false)
-
-
+   
     const onSubmit =async (values)=>{   
       setDisbaled(true)
       setSpinner(true)
@@ -34,7 +35,8 @@ const Colloque = () => {
         // setResponseContent(response.error)
     
       }else{
-        // window.location.reload();
+        showAlert('Merci!', 'Votre demande a été soumise', 'success');
+
       }
       }
     
@@ -66,7 +68,7 @@ const validateEmail = (value) => {
         
         </section>
         <section className={styles.formContainer}>
-            <h2>Formulaire de préenregistrement</h2>
+            <h2>Formulaire de pré-enregistrement</h2>
             <form onSubmit= {handleSubmit(onSubmit)} >
                 <div className={styles.inputFlexer}>
                   <div>
@@ -97,6 +99,7 @@ const validateEmail = (value) => {
                         })}
                         className={errors.genre ? styles.inputError : ''}
                         >
+                             <option value="" disabled selected>-- Sélectionner le genre --</option>
                               <option value="M">M</option>
                               <option value="F">F</option>
                       </select>
@@ -172,6 +175,7 @@ const validateEmail = (value) => {
                 </div>
                 <button disbaled ={disbaled}><span className={spinner ? styles.Dnone : ""}>Soumettre</span> <span className={spinner ? styles.loader : styles.Dnone} ></span></button>
             </form>
+
         </section>
     </main>
   )
