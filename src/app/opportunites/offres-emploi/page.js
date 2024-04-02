@@ -220,7 +220,7 @@ const Offres = () => {
                     </div>
 
                     <div className={styles.cardContainer}>
-                        <h3>Oups il n'ya pas de poste à pourvoir pour l'instant !</h3>
+                        <h3>Oups il n'y a pas de poste à pourvoir pour l'instant !</h3>
 
                     </div>
                 </div>
