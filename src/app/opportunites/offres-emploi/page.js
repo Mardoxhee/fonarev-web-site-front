@@ -126,8 +126,10 @@ const Offres = () => {
                         <div className={styles.inputWrapper}>
                             <div>
                                 <input type='text' placeholder='Nom'
+                                 maxLength={30} 
                                     {...register("nom", {
                                     required: "Ce champ est obligatoire",
+                              
                                     })}
                                     className={errors.nom ? styles.inputError : ''}
                                 />
@@ -135,6 +137,7 @@ const Offres = () => {
                             </div>
                             <div>
                                 <input type='text' placeholder='Prénom'
+                                  maxLength={30} 
                                     {...register("prenom", {
                                     required: "Ce champ est obligatoire",
                                     })}
@@ -145,7 +148,8 @@ const Offres = () => {
                         </div>
                         <div className={styles.inputWrapper}>
                         <div>
-                            <input type='text' placeholder='Téléphone' 
+                            <input type='text' placeholder='Téléphone'
+                              maxLength={15}  
                                         {...register("phone", {
                                             required: "Ce champ est obligatoire",
                                             validate: validatePhoneNumber // Validation personnalisée
@@ -156,6 +160,7 @@ const Offres = () => {
                                 </div>
                             <div>
                             <input type='text' placeholder='Email'
+                              maxLength={30}  
                             {...register("email", {
                                 required: "Ce champ est obligatoire",
                                 validate: validateEmail // Validation personnalisée
@@ -169,6 +174,7 @@ const Offres = () => {
                         <div className={styles.inputWrapper}>
                             <div>
                                 <input type='text' placeholder='Ville'
+                                  maxLength={30}  
                                     {...register("ville", {
                                     required: "Ce champ est obligatoire",
                                     })}
@@ -178,6 +184,7 @@ const Offres = () => {
                             </div>
                             <div>
                                 <input type='text' placeholder='Province'
+                                  maxLength={25}  
                                     {...register("province", {
                                     required: "Ce champ est obligatoire",
                                     })}
