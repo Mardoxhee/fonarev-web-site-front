@@ -3,10 +3,37 @@ import React from 'react'
 import styles from "./style.module.scss"
 import AppelCard from './../../../components/appelCard'
 import { useForm } from "react-hook-form";
+import {useState, useEffect} from 'react'
+import showAlert from './../../../components/Swal'
 
 const Offres = () => {
 
+    const [cvUrl, setCvUrl] = useState(null);
+    const [lmUrl, setLmUrl] = useState(null);
+    const [spinner, setSpinner] = useState(false)
+    const [disbaled, setDisbaled] = useState(false)
+
     const { handleSubmit, setValue,register, formState: { errors } } = useForm();
+
+    const handleFileUpload = async (file) => {
+        const cloudName = "yudingplatform";
+        const cloudinaryData = new FormData();
+        cloudinaryData.append("file", file);
+        cloudinaryData.append("upload_preset", "yuding");
+        cloudinaryData.append("cloud_name", "yudingplatform");
+        cloudinaryData.append("resource_type", "auto"); 
+        const resp = await fetch(
+          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+          {
+            method: "post",
+            body: cloudinaryData,
+          }
+        );
+        const data = await resp.json();
+        console.log("data de cloudinary", data)
+        return data.url;
+      };
+    
     
     const validatePhoneNumber = (value) => {
         const phoneNumberRegex = /^\d+$/;
@@ -29,21 +56,45 @@ const Offres = () => {
       };
       
     const onSubmit =async (values)=>{   
+        setSpinner(true)
+        const cvFile = values.cv[0];
+        const lmFile = values.lm[0];
+        // Uploading CV
+        let cvValue;
+        if (cvFile) {
+        cvValue = await handleFileUpload(cvFile);
+        setCvUrl(cvValue);
+        }
+
+        // Uploading lettre de motivation
+        let lmValue;
+        if (lmFile) {
+        lmValue = await handleFileUpload(lmFile);
+        setLmUrl(lmValue);
+        }
+
+        const data = {
+        ...values,
+        cv: cvValue || null,
+        lm: lmValue || null,
+        };
+
         setDisbaled(true)
         setSpinner(true)
-          const PARTICIPANTS_ROUTE = "https://fonarev-api.onrender.com/participants";
+          const PARTICIPANTS_ROUTE = "https://fonarev-api.onrender.com/candidatures";
           const resp = await   fetch(PARTICIPANTS_ROUTE, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json; charset=UTF-8",
           
               },
-            body: JSON.stringify(values)
+            body: JSON.stringify(data)
         })
         const response = await  resp.json();
         setSpinner(false)
         console.log("waiting response", response)
         if(resp.status !==201){
+            setSpinner(false)
           // setOpen(true);
           // setSpiner(false);
           // setresponseCode(0);
@@ -52,6 +103,7 @@ const Offres = () => {
       
         }else{
           showAlert('Merci!', 'Votre demande a été soumise', 'success');
+          setSpinner(false)
   
         }
         }
@@ -138,6 +190,7 @@ const Offres = () => {
                         <div className = {styles.uploadInput}>
                                 <label>Uploader le CV</label>
                                 <input type='file'
+                                 accept=".pdf,.docx"
                                      {...register("cv", {
                                         required: "Ce champ est obligatoire",
                                         })}
@@ -148,6 +201,7 @@ const Offres = () => {
                             <div className = {styles.uploadInput}>
                                 <label>Uploader la lettre de motivation</label>
                                 <input type='file' 
+                                 accept=".pdf,.docx"
                                      {...register("lm", {
                                         required: "Ce champ est obligatoire",
                                         })}
@@ -156,7 +210,7 @@ const Offres = () => {
                         {errors.lm && <span className={styles.errorMessage}>{errors.lm.message}</span>}
                             </div>
                         </div> 
-                        <button>Soumettre</button>
+                        <button disbaled ={disbaled}><span className={spinner ? styles.Dnone : ""}>Soumettre</span> <span className={spinner ? styles.loader : styles.Dnone} ></span></button>
                     </form>
                 </div>
                 <div className={styles.subtitle}>
