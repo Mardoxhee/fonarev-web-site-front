@@ -83,7 +83,7 @@ const Details = () => {
     useEffect(() => {
         const fetchArticleDetails = async () => {
             try {
-                const response = await fetch(`http://91.108.120.188:4001/articles/${lastPart}`);
+                const response = await fetch(`https://fonarev-api.onrender.com/articles/${lastPart}`);
                 const data = await response.json();
                 setArticleDetails(data.article);
                 setArticlePhotos(data.article.photos)

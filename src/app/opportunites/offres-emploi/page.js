@@ -81,7 +81,7 @@ const Offres = () => {
 
         setDisbaled(true)
         setSpinner(true)
-          const PARTICIPANTS_ROUTE = "http://91.108.120.188:4001/candidatures";
+          const PARTICIPANTS_ROUTE = "https://fonarev-api.onrender.com/candidatures";
           const resp = await   fetch(PARTICIPANTS_ROUTE, {
             method: 'POST',
             headers: {

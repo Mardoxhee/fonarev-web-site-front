@@ -15,7 +15,7 @@ const Colloque = () => {
     const onSubmit =async (values)=>{   
       setDisbaled(true)
       setSpinner(true)
-        const PARTICIPANTS_ROUTE = "http://91.108.120.188:4001/participants";
+        const PARTICIPANTS_ROUTE = "https://fonarev-api.onrender.com/participants";
         const resp = await   fetch(PARTICIPANTS_ROUTE, {
           method: 'POST',
           headers: {
