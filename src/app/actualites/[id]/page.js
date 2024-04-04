@@ -14,6 +14,7 @@ import { useGetAllArticlesQuery } from '../../store/slices/actualite'
 import Head from 'next/head';
 import Link from 'next/link'
 import { useSearchParams } from "next/navigation";
+import { usePathname } from 'next/navigation'
 
 
 
@@ -36,14 +37,17 @@ const Details = () => {
 
 
     const router = useRouter();
-    const url = router.asPath;
+    const pathname = window.location.href
  
     const lastPart = searchParams.get('articleId')
-    console.log("lurlpath", router.asPath)
+
+
+    console.log("lurlpath", window.location.href)
   
 
+
     const shareOnFacebook = () => {
-        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        const facebookUrl = `https://www.facebook.com/share.php?u=https://www.fonarev.cd/actualites/details?articleId=65fc5dfa098d8fe43d68e323?articleTitle=rencontre-entre-le-dg-du-fonarev-et-le-president-de-la-cndh-:-vers-une-collaboration-pour-la-justice-et-la-reparation`;
         console.log("url", facebookUrl);
         window.open(facebookUrl, '_blank');
        
@@ -79,7 +83,7 @@ const Details = () => {
     useEffect(() => {
         const fetchArticleDetails = async () => {
             try {
-                const response = await fetch(`https://fonarev-api.onrender.com/articles/${lastPart}`);
+                const response = await fetch(`http://91.108.120.188:4001/articles/${lastPart}`);
                 const data = await response.json();
                 setArticleDetails(data.article);
                 setArticlePhotos(data.article.photos)
@@ -124,7 +128,7 @@ const Details = () => {
                 <meta property="og:title" content={articleDetails?.titre || 'Article Details'} />
                 <meta property="og:description" content={articleDetails?.contenu || 'Description of the article'} />
                 <meta property="og:image" content={articleDetails?.thumbanails || 'URL to the article thumbnail'} />
-                <meta property="og:url" content={url} />
+                {/* <meta property="og:url" content={url} /> */}
                 <meta property="og:type" content="article" />
             </Head>
             <main className={styles.mainCont}>
