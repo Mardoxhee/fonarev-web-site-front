@@ -73,6 +73,7 @@ const validateEmail = (value) => {
                 <div className={styles.inputFlexer}>
                   <div>
                     <input type='text' placeholder='Nom'
+                      maxLength={30} 
                         {...register("nom", {
                         required: "Ce champ est obligatoire",
                         })}
@@ -82,6 +83,7 @@ const validateEmail = (value) => {
                     </div>
                     <div>
                         <input type='text' placeholder='Prénom'
+                          maxLength={30} 
                               {...register("prenom", {
                                 required: "Ce champ est obligatoire",
                               })}
@@ -107,6 +109,7 @@ const validateEmail = (value) => {
                 </div>
                   <div>
                       <input type='text' placeholder='Nationalité'
+                        maxLength={30} 
                         {...register("nationalite", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -118,6 +121,7 @@ const validateEmail = (value) => {
                 <div className={styles.inputFlexer}>
                     <div>
                     <input type='text' placeholder='Email'
+                      maxLength={30} 
                             {...register("email", {
                                 required: "Ce champ est obligatoire",
                                 validate: validateEmail // Validation personnalisée
@@ -128,6 +132,7 @@ const validateEmail = (value) => {
                     </div>
                     <div>
                     <input type='text' placeholder='Téléphone' 
+                      maxLength={15} 
                             {...register("telephone", {
                                 required: "Ce champ est obligatoire",
                                 validate: validatePhoneNumber // Validation personnalisée
@@ -395,6 +400,7 @@ const validateEmail = (value) => {
                     </div>
                     <div>
                       <input type='text' placeholder='Ville'
+                        maxLength={30} 
                         {...register("ville", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -406,6 +412,7 @@ const validateEmail = (value) => {
                 <div className={styles.inputFlexer}>
                 <div>
                       <input type='text' placeholder='Profession'
+                        maxLength={30} 
                         {...register("profession", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -416,6 +423,7 @@ const validateEmail = (value) => {
 
                     <div>
                       <input type='text' placeholder='Institution'
+                        maxLength={50} 
                         {...register("institution", {
                           required: "Ce champ est obligatoire",
                         })}
@@ -426,7 +434,7 @@ const validateEmail = (value) => {
                  
                 </div>
                 <div className={styles.freeInput}>
-                    <textarea type='text' placeholder='Laissez un message'
+                    <textarea type='text' placeholder='Message'
                       {...register("description", {
                       })}
                  
