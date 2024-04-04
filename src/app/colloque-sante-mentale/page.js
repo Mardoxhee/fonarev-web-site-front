@@ -4,11 +4,12 @@ import { useForm } from "react-hook-form";
 import React from 'react'
 import {useState, useEffect} from 'react'
 import showAlert from './../../components/Swal'
+import { Icon } from '@iconify/react';
 
 
 const Colloque = () => {
 
-    const { handleSubmit, setValue,register, formState: { errors } } = useForm();
+    const { handleSubmit, setValue,register, formState: { errors }  } = useForm();
     const [spinner, setSpinner] = useState(false)
     const [disbaled, setDisbaled] = useState(false)
    
@@ -64,11 +65,20 @@ const validateEmail = (value) => {
 
   return (
     <main className={styles.main}>
-        <section className={styles.imageContainer}>
-        
-        </section>
-        <section className={styles.formContainer}>
+        <section className={styles.bannerContainer}>
+              <h1>
+                 Colloque sur la santé mentale des victimes
+              </h1>
+              <p>
+                 Voir le programme <a href='colloque-sante-mentale/programme-colloque'>ici<Icon icon="material-symbols:download" className={styles.icone} /></a>
+              </p>
+          </section>
+          <section className={styles.contentFlexer}>
+        <div className={styles.imageContainer}>
+        </div>
+        <div className={styles.formContainer}>
             <h2>Formulaire de pré-enregistrement</h2>
+  
             <form onSubmit= {handleSubmit(onSubmit)} >
                 <div className={styles.inputFlexer}>
                   <div>
@@ -131,7 +141,7 @@ const validateEmail = (value) => {
                            {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
                     </div>
                     <div>
-                    <input type='text' placeholder='Téléphone' 
+                    <input type='number' placeholder='Téléphone' 
                       maxLength={15} 
                             {...register("telephone", {
                                 required: "Ce champ est obligatoire",
@@ -444,6 +454,7 @@ const validateEmail = (value) => {
                 <button disbaled ={disbaled}><span className={spinner ? styles.Dnone : ""}>Soumettre</span> <span className={spinner ? styles.loader : styles.Dnone} ></span></button>
             </form>
 
+        </div>
         </section>
     </main>
   )

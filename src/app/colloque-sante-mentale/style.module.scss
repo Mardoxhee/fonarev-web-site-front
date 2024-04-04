@@ -1,11 +1,60 @@
 .main{
 
-    display: flex;
 
-  
+    .bannerContainer{
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            height: 30vh;
+        }
+        background-color: #0089cf;
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 7rem;
+        color: white;
+
+          @media (max-width: 575.98px) {
+            padding: 1rem;
+            h1{
+                font-size: 2rem !important;
+            }
+          }
+        h1{
+            margin: 0;
+            font-size: 3rem;
+        }
+        p{
+            margin: 0;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            a{
+                padding: 5px 10px;
+                background-color: #8E1F71;
+                color: white;
+                display: flex;
+                align-items: center;
+                margin-left: 5px;
+                .icone{
+                    margin-left: 5px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+.contentFlexer{
+    display: flex;
+    @media (max-width: 575.98px) {
+        display: block !important;
+    }
+}
+
     .imageContainer{
         width: 40%;
-        height: 100%;
+     
         background :url("./../../../public/colloque.jpg");
         background-size: contain;
         background-position: center 80%;
@@ -17,8 +66,7 @@
         text-align: center;
         color: white ;
         padding: 0rem 2rem;
-        padding-top: 2rem;
-        min-height: 100vh;
+      
         h1{
             font-weight: 900;
             color: white;
@@ -36,11 +84,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;            
-        padding: 0rem 2.5rem  !important;
-        padding-top: 7rem !important;
+        padding: 2rem 2.5rem  !important;
+      
         h2{
             font-size: 1.3rem;
             margin: 0rem;
+            text-align: center !important;
+        }
+        p{
+            margin: 0;
+            font-size: 12px;
+            margin-top: 5px;
         }
 
         form{
@@ -134,7 +188,6 @@
         .imageContainer{
             padding: 0 !important;
             min-height: 40vh !important;
-            padding-top: 15rem !important;
             width: auto !important;
             h1{
                 width: 90% !important;
@@ -143,8 +196,8 @@
         }
         .formContainer{
             padding: 0rem 0rem!important;
-            width: auto !important;
             padding: 2rem  1rem!important;
+            width: auto;
             .freeInput{
                 input{
                     width: 100% !important;
