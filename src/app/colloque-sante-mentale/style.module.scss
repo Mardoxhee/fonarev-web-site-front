@@ -17,9 +17,17 @@
 
           @media (max-width: 575.98px) {
             padding: 1rem !important;
+            width: 91% !important;
+            flex-direction: column;
+            justify-content: center;
             h1{
-                font-size: 2rem !important;
+                font-size: .9rem !important;
                 width: 100% !important;
+            }
+            p{
+                font-size: 10px !important;
+                width: 100% !important;
+                margin-top: 40px;
             }
           }
         h1{
@@ -29,7 +37,7 @@
             width: 60%;
         }
         p{
-        width: 30%;
+            width: 30%;
             margin: 0;
             text-align: center;
             font-size: 18px;
