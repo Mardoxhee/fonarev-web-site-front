@@ -70,7 +70,7 @@ const validateEmail = (value) => {
                  Colloque sur la santé mentale des victimes
               </h1>
               <p>
-                 Voir le programme <a href='colloque-sante-mentale/programme-colloque'>ici<Icon icon="material-symbols:download" className={styles.icone} /></a>
+                 Voir le programme <a target="_blank" href='colloque-sante-mentale/programme-colloque'>ici<Icon icon="material-symbols:download" className={styles.icone} /></a>
               </p>
           </section>
           <section className={styles.contentFlexer}>
@@ -445,6 +445,7 @@ const validateEmail = (value) => {
                 </div>
                 <div className={styles.freeInput}>
                     <textarea type='text' placeholder='Message'
+                      maxLength={60} 
                       {...register("description", {
                       })}
                  
