@@ -1,14 +1,73 @@
 .main{
 
-    display: flex;
 
-  
+    .bannerContainer{
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            height: 30vh;
+        }
+        background-color: #0089cf;
+        height: 12vh;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-top: 9rem;
+        color: white;
+        padding: 0rem 6rem !important;
+        justify-content: space-between;
+
+          @media (max-width: 575.98px) {
+            padding: 1rem !important;
+            h1{
+                font-size: 2rem !important;
+                width: 100% !important;
+            }
+          }
+        h1{
+            margin: 0;
+            font-size: 2rem;
+            text-align: left !important;
+            width: 60%;
+        }
+        p{
+        width: 30%;
+            margin: 0;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            a{
+                padding: 5px 10px;
+                background-color: #8E1F71;
+                color: white;
+                display: flex;
+                align-items: center;
+                margin-left: 5px;
+                .icone{
+                    margin-left: 5px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+.contentFlexer{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 6rem;
+    margin-bottom: 5rem;
+    @media (max-width: 575.98px) {
+        display: block !important;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
     .imageContainer{
-        width: 40%;
-        height: 100%;
+        width: 55%;
+        margin-top: 1rem;
         background :url("./../../../public/colloque.jpg");
-        background-size: contain;
-        background-position: center 80%;
+        background-size :contain !important;
+        background-position: left ;
         background-repeat: no-repeat;
         display: flex;
         align-items: center;
@@ -16,13 +75,14 @@
         flex-direction: column;
         text-align: center;
         color: white ;
-        padding: 0rem 2rem;
-        padding-top: 2rem;
-        min-height: 100vh;
+        flex-shrink: 0;
+
+      
         h1{
             font-weight: 900;
             color: white;
             width: 70%;
+          
         }
         p{
             text-align: center;
@@ -35,12 +95,24 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;            
-        padding: 0rem 2.5rem  !important;
-        padding-top: 7rem !important;
+        justify-content: space-between;            
+        padding: 1rem;
+        background: white;
+        padding-top: 2rem;
+        padding-bottom: 0;
+        padding-right: 0;
+        padding-top: 0 !important;
+        margin-top: .7rem;
+      
         h2{
             font-size: 1.3rem;
             margin: 0rem;
+            text-align: center !important;
+        }
+        p{
+            margin: 0;
+            font-size: 12px;
+            margin-top: 5px;
         }
 
         form{
@@ -55,19 +127,19 @@
             .inputFlexer{
                 @media (max-width: 575.98px) { 
                  div{
-                    width: 45% !important;
+                    width: 49% !important;
                  }
                 }
                 display: flex;
-                width: 95%;
+            
                 justify-content: space-between;
                 margin: .5rem 0rem;
                     div{
-                        width: 47%;
+                        width: 49%;
                         display: flex;
                         flex-direction: column;
+       
                         input, select{
-                            width: 100%;
                             padding: .8rem;
                             background-color: #f3f4f6;
                             border: none;
@@ -77,9 +149,9 @@
             }
             .freeInput{
                 margin: .2rem 0rem;
-                width: 95%;
+            
                 input{
-                    width: 100%;
+  
                     padding: .8rem;
                     background-color: #f3f4f6;
                     border: none;
@@ -91,9 +163,13 @@
                     padding: .8rem;
                     margin-top: 1rem;
                     width: 100%;
-                    min-height: 10rem;
+                    min-height: 3rem;
                     background-color: #f3f4f6;
                     border: none;
+                    width: 95% !important;
+                    @media (max-width: 575.98px) { 
+                        width: 92% !important;
+                    }
                 }
             }
         }
@@ -106,7 +182,7 @@
             font-size: 1rem;
             cursor: pointer;
             margin-top: .3rem;
-            width: 98.5%;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,8 +206,8 @@
         .imageContainer{
             padding: 0 !important;
             min-height: 40vh !important;
-            padding-top: 15rem !important;
             width: auto !important;
+            background-position: center !important;
             h1{
                 width: 90% !important;
             }
@@ -139,8 +215,10 @@
         }
         .formContainer{
             padding: 0rem 0rem!important;
-            width: auto !important;
             padding: 2rem  1rem!important;
+            width: auto;
+            margin-top: 2rem!important;
+          
             .freeInput{
                 input{
                     width: 100% !important;
