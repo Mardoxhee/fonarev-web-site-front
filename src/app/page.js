@@ -14,6 +14,8 @@ import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 import {useRouter} from 'next/navigation'
+import { Script } from 'next/script';
+
 
 // import VideoUrl from './../../public/logo-fonarev.mp4'
 
@@ -58,17 +60,6 @@ const router = useRouter()
   return (
     <>
    <Head> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-    <script
-       dangerouslySetInnerHTML={{
-         __html: `
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments)}
-           gtag('js', new Date());
-           gtag('config', 'G-W41SHGX1J0');
-         `,
-       }}
-      />
 
    <title>Fonarev rdc | Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité</title>  
    <  meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />

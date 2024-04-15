@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import showAlert from './../../components/Swal'
 import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
-
+import { Script } from 'next/script';
 
 const Colloque = () => {
 
@@ -67,17 +67,7 @@ const validateEmail = (value) => {
   return (
     <>
     <Head> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-     <script
-       dangerouslySetInnerHTML={{
-         __html: `
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments)}
-           gtag('js', new Date());
-           gtag('config', 'G-W41SHGX1J0');
-         `,
-       }}
-      />
+
     <title>Fonarev rdc | Colloque sur la santé mentale des victimes du FONAREV : Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité</title>  
     < meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />
      <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
