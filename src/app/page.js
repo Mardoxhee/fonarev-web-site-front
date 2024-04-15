@@ -60,17 +60,6 @@ const router = useRouter()
   return (
     <>
    <Head> 
-    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
-    <Script
-       dangerouslySetInnerHTML={{
-         __html: `
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments)}
-           gtag('js', new Date());
-           gtag('config', 'G-W41SHGX1J0');
-         `,
-       }}
-      />
 
    <title>Fonarev rdc | Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité</title>  
    <  meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />

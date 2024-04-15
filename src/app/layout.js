@@ -8,6 +8,7 @@ import { store } from './store/store'
 import { Provider } from 'react-redux'
 import { persistStore } from "redux-persist";
 import {PersistGate} from 'redux-persist/integration/react'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ let persistor = persistStore(store)
               {children}
             <Footer/>
             </body>
+            <GoogleAnalytics gaId="G-W41SHGX1J0" />
         </html>
       {/* </PersistGate> */}
     </Provider>
