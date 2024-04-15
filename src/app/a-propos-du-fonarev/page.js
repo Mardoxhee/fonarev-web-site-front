@@ -5,15 +5,15 @@ import TeamCard from "../../components/teamCard"
 import ValeurCard from '../../components/valeurCard'
 import Banner from '../../components/banner'
 import Head from 'next/head'; 
-
+import Script from 'next/script';
 import React from 'react'
 
 const About = () => {
   return (
     <>
     <Head> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-                <script
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+                <Script
                     dangerouslySetInnerHTML={{
                         __html: `
                         window.dataLayer = window.dataLayer || [];

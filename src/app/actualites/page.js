@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useGetAllArticlesQuery } from '../store/slices/actualite'
 import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
+import { Script } from 'next/script';
 
 const Actualite = () => {
     
@@ -33,8 +34,8 @@ const formatTitre = (titre) => {
   return (
     <>
     <Head> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-     <script
+     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+     <Script
        dangerouslySetInnerHTML={{
          __html: `
            window.dataLayer = window.dataLayer || [];

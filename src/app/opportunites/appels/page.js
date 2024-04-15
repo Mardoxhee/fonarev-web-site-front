@@ -2,13 +2,14 @@ import React from 'react'
 import styles from "./style.module.scss"
 import AppelCard from './../../../components/appelCard'
 import Head from 'next/head'; 
+import { Script } from 'next/script';
 
 const Appel = () => {
   return (
     <>
     <Head> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-     <script
+     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+     <Script
        dangerouslySetInnerHTML={{
          __html: `
            window.dataLayer = window.dataLayer || [];

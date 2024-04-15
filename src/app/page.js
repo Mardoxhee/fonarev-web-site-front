@@ -14,6 +14,8 @@ import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 import {useRouter} from 'next/navigation'
+import { Script } from 'next/script';
+
 
 // import VideoUrl from './../../public/logo-fonarev.mp4'
 
@@ -58,8 +60,8 @@ const router = useRouter()
   return (
     <>
    <Head> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-    <script
+    <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+    <Script
        dangerouslySetInnerHTML={{
          __html: `
            window.dataLayer = window.dataLayer || [];

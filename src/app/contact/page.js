@@ -7,8 +7,8 @@ const page = () => {
   return (
     <>
     <Head> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-     <script
+     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+     <Script
        dangerouslySetInnerHTML={{
          __html: `
            window.dataLayer = window.dataLayer || [];

@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import showAlert from './../../components/Swal'
 import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
-
+import { Script } from 'next/script';
 
 const Colloque = () => {
 
@@ -67,8 +67,8 @@ const validateEmail = (value) => {
   return (
     <>
     <Head> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
-     <script
+     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"/>
+     <Script
        dangerouslySetInnerHTML={{
          __html: `
            window.dataLayer = window.dataLayer || [];
