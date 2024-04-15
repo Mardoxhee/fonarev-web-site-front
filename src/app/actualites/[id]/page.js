@@ -124,6 +124,17 @@ const Details = () => {
     <>
 
             <Head>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-W41SHGX1J0"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments)}
+                        gtag('js', new Date());
+                        gtag('config', 'G-W41SHGX1J0');
+                        `,
+                    }}
+                    />
                 <title>{articleDetails?.titre || 'Article Details'}</title>
                 <meta property="og:title" content={articleDetails?.titre || 'Article Details'} />
                 <meta property="og:description" content={articleDetails?.contenu || 'Description of the article'} />
