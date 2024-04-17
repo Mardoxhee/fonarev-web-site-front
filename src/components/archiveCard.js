@@ -6,7 +6,7 @@ const ArchiveCard = ({ className = styles.cardWrapper, titre, backgroundImage })
     <div className={className}>
       <div className={styles.imgContainer} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
       <div className={styles.text}>
-        <h3>ACTUALITE</h3>
+        <h3>FONAREV</h3>
         <h4>{titre}</h4>
       </div>
     </div>
