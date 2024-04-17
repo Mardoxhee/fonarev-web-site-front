@@ -56,9 +56,8 @@ const formatTitre = (titre) => {
           </div>
         </Link>
         <div className={styles.minicardWrapper}>
-          {articles.reverse().slice(1, 5).map((article) => (
+          {articles.reverse().slice(2, 6).map((article) => (
          <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
-          
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
             </Link>
           ))}
@@ -141,7 +140,7 @@ const formatTitre = (titre) => {
         <h2>Archives</h2>
         <div className={styles.containerFlexer}>
           <div className={styles.cardsWrappa}>
-            {data?.article?.map((article) => (
+            {articles.reverse().map((article) => (
                <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                 <ArchiveCard key={article.id} titre={article.titre} backgroundImage={article.thumbanails} />
               </Link>
