@@ -11,12 +11,17 @@
         margin: 0px !important; 
         font-size: 12px;
         margin: .5rem 0rem;
+
     }
     h4{
         margin: 0;
         font-size: 12px;
         margin-top: 1rem;
         font-weight: 500;
+        @media (max-width: 575.98px) {
+            font-size: 9px !important;
+            width: 84%;
+        }
     }
     .imgContainer{
         width: 150px !important;
