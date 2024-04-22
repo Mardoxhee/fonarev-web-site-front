@@ -69,7 +69,7 @@ const formatTitre = (titre) => {
               <h5>240 X  1214</h5>
             </div>
         </section>
-
+{/* 
         <section className={styles.videos}>
             <div className={styles.videosContainer}>
             <div className={styles.mainVideos} style={{
@@ -119,13 +119,13 @@ const formatTitre = (titre) => {
               </div>
               </div>
                 <div className={styles.articleContainer}>
-                  {data?.article?.slice(0, 2).map((article, index) => (
+                {articles.reverse().slice(0, 2).map((article) => (
                     <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
                     </Link>
                   ))}
                 </div>
-        </section>
+        </section> */}
 
         {/* <section className= {styles.inlineSection} >
             <h2>Itinérances</h2>
