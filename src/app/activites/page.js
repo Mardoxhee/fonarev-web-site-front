@@ -31,7 +31,7 @@ const Activites = () => {
     <main className={styles.main}>
      <Banner pageTitle="Les activités du Fonarev" background = "/dga.jpg"/>
         <section className = {styles.grouper}>
-            <h3>2024 <span>mars</span></h3>
+            <h3>2024 <span>Avril</span></h3>
             <div className={styles.cardWrapper}>
             {isLoading ? <Skeleton /> : articlesInReverseOrder.slice(0, 4).map((article) => (
                     <Link href={`/actualites/${article._id}`}>
@@ -48,7 +48,7 @@ const Activites = () => {
         </section>
 
         <section className = {styles.grouper}>
-            <h3>2024 <span>février</span></h3>
+            <h3>2024 <span>Mars</span></h3>
             <div className={styles.cardWrapper}>
             {isLoading ? <Skeleton /> : articlesInReverseOrder.slice(5, 9).map((article) => (
                     <Link href={`/actualites/${article._id}`}>

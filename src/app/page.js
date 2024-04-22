@@ -306,7 +306,7 @@ const router = useRouter()
                   </Link>
                 </div>
                 <div className={styles.cardContainer}>
-                {isLoading ?  <Skeleton/> : articles.reverse().slice(4, 8).map((article) => (
+                {isLoading ?  <Skeleton/> : articles.reverse().slice(0, 4).map((article) => (
                     <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <ActuCard
                         key={article._id}
