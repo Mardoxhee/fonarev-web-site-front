@@ -56,7 +56,7 @@ const formatTitre = (titre) => {
           </div>
         </Link>
         <div className={styles.minicardWrapper}>
-          {articles.reverse().slice(1, 6).map((article) => (
+          {articles.reverse().slice(1, 5).map((article) => (
          <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
             </Link>
