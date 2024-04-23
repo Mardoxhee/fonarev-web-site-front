@@ -17,7 +17,7 @@ const About = () => {
      <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
     </Head>
     <main className={styles.main}>
-      <Banner pageTitle="A propos du Fonarev" background="/fonarev-about.jpeg"/>
+      <Banner pageTitle="A propos du Fonarev" background="/fonarev-about.jpg"/>
 
         <section className={styles.about} id="about">
             <div className={styles.imageContainer}>

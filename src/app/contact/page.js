@@ -13,7 +13,7 @@ const page = () => {
      
     </Head>
     <main className={styles.main}>
-       <Banner pageTitle ="Nous contacter" background="/contact.jpeg"/>
+       <Banner pageTitle ="Nous contacter" background="/contact.jpg"/>
         <section className={styles.contact}>
               <div className={styles.textContent}>
                   <h3>Notre siège social</h3>
@@ -23,7 +23,6 @@ const page = () => {
                   <p>Lundi : 8h30 - 16H30</p>
                   <p>Mardi : 8h30 - 16H30</p>
                   <p>Mercredi : 8h30 - 16H30</p>
-                  <p>Jeudi : 8h30 - 16H30</p>
                   <p>Vendredi : 8h30 - 16H30</p>
               </div>
               <div className={styles.formContainer}>
