@@ -49,9 +49,9 @@ const About = () => {
         <section className={styles.story} id="story">
             <div className={styles.txtSide}>
                 <h2>Notre Vision</h2>
-                <ul>
+                {/* <ul>
                     <li>
-                        Assurer la vision humaniste du chef de l’Etat pour la prise en charge des victimes Les victimes au centre de toutes les actions et préoccupations
+                            Œuvrer pour le relèvement des victimes et la non répétition des violences pour bâtir une paix durable.
                     </li>
                     <li>
                         Bonne gouvernance : Transparence et Intégrité financière
@@ -63,7 +63,10 @@ const About = () => {
                         Devenir une structure de référence en Afrique et dans le monde en matière des réparations des victimes
                     </li>
 
-                </ul>
+                </ul> */}
+                <p>
+                    Œuvrer pour le relèvement des victimes et la non répétition des violences pour bâtir une paix durable.
+                </p>
           
             </div>
             <div className={styles.imageContaine2}>
@@ -74,53 +77,74 @@ const About = () => {
         <section className = {styles.mision} id="mission">
             <h2>Les missions du Fonarev</h2>
             <div className = {styles.cardWrapper}>
-          
-                <ValeurCard text = "Allouer des réparations aux victimes" icone = "material-symbols:home-repair-service-outline-rounded"/>
-                <ValeurCard text = "Aider les victimes à avoir accès à la justice" icone = "healthicons:justice-outline"/>
                 <ValeurCard text = "Identifier les victimes" icone = "solar:user-id-broken"/>
-                <ValeurCard text = "Aider les victimes à être indemnisées et à recouvrer les dommages intérêts leur alloués" icone = "solar:hand-money-outline"/>
-                <ValeurCard text = "Aider les victimes à bénéficier gratuitement d'un accompagnement et d'une assistance judiciaire appropriés" icone = "healthicons:justice-outline"/> 
+                <ValeurCard text = "Aider les victimes à avoir accès à la justice" icone = "healthicons:justice-outline"/>
+                <ValeurCard text = "Allouer des réparations aux victimes" icone = "solar:hand-money-outline"/>
             </div>
         </section>
 
-        {/* <section className={styles.valeurs} id="valeur">
+        <section className={styles.valeurs} id="valeur">
             <div className={styles.textSide}>
                 <h2>Les valeurs <span>du Fonarev</span></h2>
                 <div className={styles.valeursFlexer}> 
                     <div>
                         <h4>
-                            Valeur 1
+                            Responsabilité 
                         </h4>
                         <p>
-                            loremlorem lorem lorem loremloremlorem 
-                            lorem lorem lorem lorem lorem lorem lorem
+                        Le FONAREV s’assume entièrement dans
+                        son intervention
                         </p>
                     </div>
                     <div>
                         <h4>
-                            Valeur 2
+                            Équité 
                         </h4>
                         <p>
-                            loremlorem lorem lorem loremloremlorem 
-                            lorem lorem lorem lorem lorem lorem lorem
+                        Le FONAREV s’assure que toutes les
+                        victimes aient, de manière juste, un accès à
+                        ses services et aux réparations
                         </p>
                     </div>
                     <div>
                         <h4>
-                            Valeur 3
+                            Bienveillance 
                         </h4>
                         <p>
-                            loremlorem lorem lorem loremloremlorem 
-                            lorem lorem lorem lorem lorem lorem lorem
+                        Le FONAREV prône une approche
+                        empathique envers les victimes pour les
+                        aider à se reconstruire.
                         </p>
                     </div>
                     <div>
                         <h4>
-                            Valeur 4
+                        Impartialité 
                         </h4>
                         <p>
-                            loremlorem lorem lorem loremloremlorem 
-                            lorem lorem lorem lorem lorem lorem lorem
+                        Le FONAREV alloue les réparations en
+                        toute neutralité, sans parti pris, ni influence
+                        extérieure inappropriée.
+                        </p>
+                    </div>
+                    <div>
+                        <h4>
+                        Confidentialité  
+                        </h4>
+                        <p>
+                        Le FONAREV s’engage à protéger et à ne
+                        pas divulguer les informations et les
+                        données personnelles des victimes et
+                        d’autres partenaires
+                        </p>
+                    </div>
+                    <div>
+                        <h4>
+                            Non discrimination  
+                        </h4>
+                        <p>
+                        Le FONAREV s’engage à respecter les
+                        opinions et convictions des victimes et
+                        d’autres partenaires, sans stigmatisation
                         </p>
                     </div>
                 </div>
@@ -128,7 +152,7 @@ const About = () => {
             <div className={styles.rightSide}>
 
             </div>
-        </section> */}
+        </section> 
 
         <section className={styles.team} id="team">
             <h2>Notre équipe dirigeante</h2>
