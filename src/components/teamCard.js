@@ -1,6 +1,6 @@
 import styles from './team.module.scss'
 import Image from 'next/image'
-import Dga from './../../public/kevin-dga.jpg'
+
 
 import React from 'react'
 
