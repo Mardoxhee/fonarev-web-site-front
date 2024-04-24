@@ -6,6 +6,7 @@ import {useState, useEffect} from 'react'
 import showAlert from './../../components/Swal'
 import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
+import Link from 'next/link'
 import { Script } from 'next/script';
 
 const Colloque = () => {
@@ -86,9 +87,24 @@ const validateEmail = (value) => {
         <div className={styles.imageContainer}>
         </div>
         <div className={styles.formContainer}>
-            <h2>Formulaire de pré-enregistrement</h2>
+
+          <h2>
+                Les pré-enregistrement sont clorturés, 
+                veuillez rester connectés sur nos réseaux sociaux pour suivre le colloque en direct
+          </h2>
+
+          <p>CLiquez sur les icones ci-dessous pour suivre le live : </p>
+          <div className={styles.socialMedia}>
+          <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
+            <Icon icon="logos:facebook" className={styles.icone} />
+          </Link> 
+          <Link href="https://www.youtube.com/@FonarevRDC" target='_blank'>
+            <Icon icon="logos:youtube-icon" className={styles.icone} />
+          </Link> 
+          </div>
+            {/* <h2>Formulaire de pré-enregistrement</h2> */}
   
-            <form onSubmit= {handleSubmit(onSubmit)} >
+            {/* <form onSubmit= {handleSubmit(onSubmit)} >
                 <div className={styles.inputFlexer}>
                   <div>
                     <input type='text' placeholder='Nom'
@@ -462,7 +478,7 @@ const validateEmail = (value) => {
              
                 </div>
                 <button disbaled ={disbaled}><span className={spinner ? styles.Dnone : ""}>Soumettre</span> <span className={spinner ? styles.loader : styles.Dnone} ></span></button>
-            </form>
+            </form> */}
 
         </div>
         </section>

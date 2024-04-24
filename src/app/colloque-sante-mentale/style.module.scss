@@ -84,6 +84,7 @@
         text-align: center;
         color: white ;
         flex-shrink: 0;
+        height: 500px;
 
       
         h1{
@@ -102,25 +103,44 @@
         height: auto;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-between;            
+        align-items: left !important;        
         padding: 1rem;
         background: white;
         padding-top: 2rem;
         padding-bottom: 0;
         padding-right: 0;
-        padding-top: 0 !important;
         margin-top: .7rem;
+        justify-content: center !important;
+
+        @media (max-width: 575.98px) { 
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
       
+        .socialMedia{
+            width: 100%;
+            margin-top: 1rem;
+            .icone{
+                margin-right: 10px;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
         h2{
             font-size: 1.3rem;
             margin: 0rem;
-            text-align: center !important;
+            text-align: left !important;
         }
         p{
             margin: 0;
             font-size: 12px;
             margin-top: 5px;
+            width: 40%;
+            text-align: left;
+            @media (max-width: 575.98px) { 
+                width: 50%;
+            }
+
         }
 
         form{
@@ -131,7 +151,7 @@
             box-sizing: border-box;
             overflow: hidden;
             padding-left: 0;
-            
+           
             .inputFlexer{
                 @media (max-width: 575.98px) { 
                  div{
@@ -225,7 +245,7 @@
             padding: 0rem 0rem!important;
             padding: 2rem  1rem!important;
             width: auto;
-            margin-top: 2rem!important;
+            padding-top: 0rem !important;
           
             .freeInput{
                 input{
