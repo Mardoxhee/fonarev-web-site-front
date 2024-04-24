@@ -293,8 +293,8 @@ const router = useRouter()
                         <div className={styles.visuel}></div>
                         <div className={styles.content}>
                             <h2>Colloque sur la santé mentale des victimes </h2>
-                            <p>Remplir le formulaire pour réserver votre place</p>
-                            <button onClick={handleRedirect}>SE PRéENREGISTRER</button>
+                            <p>Cliquez sur le bouton en bas pour suivre le colloque en direct</p>
+                            <button onClick={handleRedirect}>SUIVRE LE COLLOQUE</button>
                         </div>
               </section>
 

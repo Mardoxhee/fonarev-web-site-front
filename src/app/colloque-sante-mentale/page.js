@@ -89,7 +89,7 @@ const validateEmail = (value) => {
         <div className={styles.formContainer}>
 
           <h2>
-                Les pré-enregistrement sont clorturés, 
+                Les pré-enregistrements sont clorturés, 
                 veuillez rester connectés sur nos réseaux sociaux pour suivre le colloque en direct
           </h2>
 
