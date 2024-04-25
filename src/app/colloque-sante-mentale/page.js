@@ -95,10 +95,10 @@ const validateEmail = (value) => {
 
           <p>CLiquez sur les icones ci-dessous pour suivre le live : </p>
           <div className={styles.socialMedia}>
-          <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
+          <Link href="https://www.facebook.com/share/v/U9qLQ7ij1i8ikfGi/?mibextid=WC7FNe" target='_blank'>
             <Icon icon="logos:facebook" className={styles.icone} />
           </Link> 
-          <Link href="https://www.youtube.com/@FonarevRDC" target='_blank'>
+          <Link href="https://www.youtube.com/live/6x3ck0IcqUQ?si=kge4yNxlHsvSWGoZ" target='_blank'>
             <Icon icon="logos:youtube-icon" className={styles.icone} />
           </Link> 
           <Link href="https://us06web.zoom.us/j/81685663629?pwd=MRvWWJZd8AU5saUfhz0cnWliqauDOE.1" target='_blank'>
