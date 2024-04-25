@@ -101,10 +101,14 @@ const validateEmail = (value) => {
           <Link href="https://www.youtube.com/@FonarevRDC" target='_blank'>
             <Icon icon="logos:youtube-icon" className={styles.icone} />
           </Link> 
-          <Link href="https://customer-sum5zlx2xhmdf1w3.cloudflarestream.com/1f80b3022af6475dffc38fece01f6551/manifest/video.m3u8" target='_blank'>
-            <Icon icon="ri:live-line" className={styles.icone} />
+          <Link href="https://us06web.zoom.us/j/81685663629?pwd=MRvWWJZd8AU5saUfhz0cnWliqauDOE.1" target='_blank'>
+            <Icon icon="logos:zoom" className={styles.icone} />
+          </Link> 
+          <Link href="https://x.com/fonarevrdc?s=11" target='_blank'>
+            <Icon icon="logos:twitter" className={styles.icone} />
           </Link> 
           </div>
+          
             {/* <h2>Formulaire de pré-enregistrement</h2> */}
   
             {/* <form onSubmit= {handleSubmit(onSubmit)} >

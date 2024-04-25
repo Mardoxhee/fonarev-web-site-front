@@ -32,6 +32,7 @@
     "redux-persist": "^6.0.0",
     "sass": "^1.71.0",
     "sweetalert": "^2.1.2",
-    "sweetalert2": "^11.10.7"
+    "sweetalert2": "^11.10.7",
+    "video.js": "^8.10.0"
   }
 }
