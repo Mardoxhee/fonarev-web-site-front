@@ -45,12 +45,11 @@ const Activites = () => {
     articlesGroupedByMonth[key].push(article);
   });
 
-  // Triez les clés pour obtenir l'ordre inverse (du plus récent au plus ancien)
+  // Triez les clés pour obtenir l'ordre décroissant (du plus récent au plus ancien)
   const sortedKeys = Object.keys(articlesGroupedByMonth).sort((a, b) => {
     const [yearA, monthA] = a.split("-");
     const [yearB, monthB] = b.split("-");
 
-    // Pour afficher les années les plus récentes en premier
     if (yearA === yearB) {
       const months = [
         "janvier",
@@ -100,13 +99,20 @@ const Activites = () => {
             const articles = articlesGroupedByMonth[key];
             const [year, month] = key.split("-");
 
+            // Triez les articles dans chaque mois du plus récent au plus ancien
+            const sortedArticles = articles.sort((a, b) => {
+              const dateA = new Date(a.date);
+              const dateB = new Date(b.date);
+              return dateB - dateA; // du plus récent au plus ancien
+            });
+
             return (
               <section className={styles.grouper} key={key}>
                 <h3>
                   {year} <span>{month}</span>
                 </h3>
                 <div className={styles.cardWrapper}>
-                  {articles.map((article) => (
+                  {sortedArticles.map((article) => (
                     <Link
                       href={`/actualites/${article._id}`}
                       key={article._id}
