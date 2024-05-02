@@ -29,9 +29,11 @@
         margin-top: 2rem;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         a {
-            width: 24.5%;
+            width: 24.5% !important;
             text-decoration: none !important;
+            margin: 20px 0px;
         }
         h3{
             text-decoration: none !important;
