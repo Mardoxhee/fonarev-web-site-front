@@ -289,14 +289,14 @@ const router = useRouter()
               </section>
 
 
-              <section  className={styles.colloque}>
+              {/* <section  className={styles.colloque}>
                         <div className={styles.visuel}></div>
                         <div className={styles.content}>
                             <h2>Colloque sur la santé mentale des victimes </h2>
                             <p>Cliquez sur le bouton en bas pour suivre le colloque en direct</p>
                             <button onClick={handleRedirect}>SUIVRE LE COLLOQUE</button>
                         </div>
-              </section>
+              </section> */}
 
               <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>

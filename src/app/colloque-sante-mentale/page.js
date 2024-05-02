@@ -105,7 +105,7 @@ const validateEmail = (value) => {
             <Icon icon="logos:zoom" className={styles.icone} />
           </Link> 
           <Link href="https://x.com/fonarevrdc?s=11" target='_blank'>
-            <Icon icon="logos:twitter" className={styles.icone} />
+            <Icon icon="devicon:twitter" className={styles.icone} />
           </Link> 
           </div>
           
