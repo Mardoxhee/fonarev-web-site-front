@@ -136,7 +136,7 @@ const router = useRouter()
                        </div>
 
                    </div>,
-                      <div className={styles.victimPicture3}>Ò
+                      <div className={styles.victimPicture3}>
                       <div className={styles.logoContainer}>
           
                       </div>
