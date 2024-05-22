@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-const showAlert = (title, text, icon) => {
+const ShowAlert = (title, text, icon) => {
   return Swal.fire({
     title: title,
     text: text,
@@ -12,4 +12,4 @@ const showAlert = (title, text, icon) => {
   });
 };
 
-export default showAlert;
+export default ShowAlert;
