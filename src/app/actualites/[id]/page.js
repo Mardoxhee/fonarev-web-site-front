@@ -153,7 +153,7 @@ const Details = () => {
                             key="ogimage"
                         />
                         <link itemProp="thumbnailUrl" href={articleDetails?.thumbanails } />
-                        <meta property="og:url" content={lastPart} key="ogurl" />
+                        <meta property="og:url" content={`fonarev.cd/${lastPart}`} key="ogurl" />
                         <meta name="twitter:card" content="summary_large_image" key="twcard" />
                     </Head>
             <main className={styles.mainCont}>
