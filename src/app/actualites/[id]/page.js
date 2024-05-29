@@ -126,7 +126,7 @@ const Details = () => {
     <>
             <Head>
                         <title>FONAREV RDC</title>
-                        <link rel="canonical" href={url} key="canonical" />
+                        <link rel="canonical" href={pathname} key="canonical" />
                         <meta
                             property="og:site_name"
                             content="Fonarev RDC"
