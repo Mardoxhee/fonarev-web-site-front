@@ -124,15 +124,38 @@ const Details = () => {
 
   return (
     <>
-
             <Head>
-                <title>{articleDetails?.titre || 'Article Details'}</title>
-                <meta property="og:title" content={articleDetails?.titre || 'Article Details'} />
-                <meta property="og:description" content={articleDetails?.contenu || 'Description of the article'} />
-                <meta property="og:image" content={articleDetails?.thumbanails || 'URL to the article thumbnail'} />
-                {/* <meta property="og:url" content={url} /> */}
-                <meta property="og:type" content="article" />
-            </Head>
+                        <title>FONAREV RDC</title>
+                        <link rel="canonical" href={url} key="canonical" />
+                        <meta
+                            property="og:site_name"
+                            content="Fonarev RDC"
+                            key="ogsitename"
+                        />
+                        <meta
+                            name="description"
+                            content={`Fonds national des réparartions des victimes des violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité, FONAREV RDC`}
+                        />
+                        <meta
+                            property="og:title"
+                            content={`${articleDetails?.titre }, Fonarev RDC`}
+                            key="title"
+                        />
+                        <meta
+                            property="og:description"
+                            content={`${articleDetails?.contenu }, Fonarev RDC`}
+                            key="ogdesc"
+                        />
+                        <meta
+                            property="og:image"
+                            itemProp="image"
+                            content={articleDetails?.thumbanails }
+                            key="ogimage"
+                        />
+                        <link itemProp="thumbnailUrl" href={articleDetails?.thumbanails } />
+                        <meta property="og:url" content={lastPart} key="ogurl" />
+                        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+                    </Head>
             <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
         <h1> {articleDetails ? articleDetails.titre : ""} </h1>
