@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import {useState, useEffect} from 'react'
 import showAlert from './../../../components/Swal'
 import Head from 'next/head'; 
+import OffreCard from './../../../components/offreCard'
 import { Script } from 'next/script';
 
 const Offres = () => {
@@ -236,7 +237,7 @@ const Offres = () => {
                     </div>
 
                     <div className={styles.cardContainer}>
-                        <h3>Oups il n'y a pas de poste à pourvoir pour l'instant !</h3>
+                        <OffreCard reference="CDD (2 à 5 mois)" expiration="06 Juin 2024" titre="Avis d'appel à candidatures pour le recrutement des Agents chargés de l'identification des victimes des violences sexuelles liées aux conflits et victimes des crimes contre la paix et la sécurité de l'humanité." isAvis={true} bigTitle="Avis d'appel à candidatures" link="/avis-d-appel-a-candidature.pdf" />
 
                     </div>
                 </div>
