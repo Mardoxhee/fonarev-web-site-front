@@ -15,6 +15,7 @@ import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 import {useRouter} from 'next/navigation'
 import { Script } from 'next/script';
+import {getFileLink} from "./../lib/Requests"
 
 
 // import VideoUrl from './../../public/logo-fonarev.mp4'
@@ -57,6 +58,10 @@ const router = useRouter()
     router.push('/colloque-sante-mentale')
   }
 
+
+  if (isLoading) {
+    return <Skeleton />;
+  }
   return (
     <>
    <Head> 
@@ -317,10 +322,6 @@ const router = useRouter()
                       />
                     </Link>
                     ))}
-                    {/* <ActuCard date="" category="Actualité" bg="" title="" />
-                    <ActuCard date="" category="Actualité"bg="" title="" />
-                    <ActuCard date="" category="Actualité" bg="" title="" />
-                    <ActuCard date="" category="Actualité" bg="" title="" />  */}
                 </div> 
               </section>
         

@@ -1,6 +1,6 @@
 "use client"
 import styles from './id.module.scss'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Thumbnails from './../../../../public/bg-actu.jpg'
 import ImgContent from './../../../../public/img-content.jpg'
@@ -9,17 +9,17 @@ import ArchiveCard from '@/components/sideCard'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { useGetAllArticlesQuery } from '../../store/slices/actualite'
 import Head from 'next/head';
 import Link from 'next/link'
 import { useSearchParams } from "next/navigation";
-import { usePathname } from 'next/navigation'
-import { Script } from 'next/script';
+import {getFileLink} from './../../../lib/Requests'
 
 
 
 const Details = () => {
+
+    const [imageUrl, setImageUrl] = useState("");
     const formatTitre = (titre) => {
         // Convertir en minuscules et enlever les accents
         const titreFormate = titre?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -67,7 +67,29 @@ const Details = () => {
         window.open(linkedInUrl, '_blank');
       };
     
-
+      const fetchImage = async () => {
+        if (articleDetails?.thumbanails) {
+          try {
+            console.log("Fetching image link for bg:", articleDetails?.thumbanails);
+            const link = await getFileLink(articleDetails?.thumbanails);
+            console.log("Fetched link:", link);
+            if (link ) {
+              console.log("link test", link)
+              setImageUrl(link);
+            } else {
+              console.error("No src found in link object", link);
+              setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+            }
+          } catch (error) {
+            console.error("Error fetching image link:", error);
+            setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+          }
+        }
+      };
+    
+      useEffect(() => {
+        fetchImage();
+      }, [articleDetails]);
 
     const responsive = {
         0: { items: 1 },
@@ -161,7 +183,7 @@ const Details = () => {
         <h1> {articleDetails ? articleDetails.titre : ""} </h1>
             <div className={styles.thumbnails}
                     style={{
-                        backgroundImage: `url(${articleDetails ? articleDetails.thumbanails : ""})`,
+                        backgroundImage: `url(${articleDetails ? imageUrl : ""})`,
                         backgroundSize: "cover", // Nouvelle propriété
                         backgroundPosition: "center", // Nouvelle propriété
                     }}>

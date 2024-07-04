@@ -1,6 +1,6 @@
 "use client"
 import styles from './style.module.scss'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import MiniCard from './../../components/miniCard'
 import ArchiveCard from './../../components/archiveCard'
 import Link from 'next/link'
@@ -8,9 +8,10 @@ import { useGetAllArticlesQuery } from '../store/slices/actualite'
 import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
 import { Script } from 'next/script';
+import { getFileLink } from './../../lib/Requests';
 
 const Actualite = () => {
-    
+  const [imageUrl, setImageUrl] = useState("");
 const {data, isLoading, error} = useGetAllArticlesQuery("")
 const articles = data?.article ? [...data.article] : [];
 
@@ -23,6 +24,31 @@ function formatDate(dateString) {
 
 
 const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
+
+  const fetchImage = async () => {
+    if (lastArticle?.thumbanails) {
+      console.log("last article",lastArticle?.thumbanails)
+      try {
+   
+        const link = await getFileLink(lastArticle?.thumbanails);
+console.log("link actualites", link)
+        if (link ) {
+          console.log("link test", link)
+          setImageUrl(link);
+        } else {
+          console.error("No src found in link object", link);
+          setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+        }
+      } catch (error) {
+        console.error("Error fetching image link:", error);
+        setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchImage();
+  }, []);
 
 const formatTitre = (titre) => {
   // Convertir en minuscules et enlever les accents
@@ -44,7 +70,7 @@ const formatTitre = (titre) => {
         <section className={styles.sectionWrapper}>
         <Link key={ lastArticle?._id} href={`/actualites/details?articleId=${ lastArticle?._id}&articleTitle=${formatTitre( lastArticle?.titre)}`}>
           <div className={styles.mainActu}>
-          <div className={styles.imgConatainer} style={{ backgroundImage: lastArticle?.thumbanails ? `url(${lastArticle.thumbanails})` : 'none' }}>
+          <div className={styles.imgConatainer} style={{ backgroundImage: lastArticle?.thumbanails ? `url(${imageUrl})` : 'none' }}>
               <h4>Actualite</h4>
           </div>
             {lastArticle && (
