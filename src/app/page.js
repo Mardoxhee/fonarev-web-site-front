@@ -14,8 +14,7 @@ import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 import {useRouter} from 'next/navigation'
-import { Script } from 'next/script';
-import {getFileLink} from "./../lib/Requests"
+
 
 
 // import VideoUrl from './../../public/logo-fonarev.mp4'
