@@ -14,6 +14,13 @@ import 'aos/dist/aos.css';
 import Skeleton from './../components/skeleton'
 import { Icon } from '@iconify/react';
 import {useRouter} from 'next/navigation'
+import { Barlow_Condensed } from 'next/font/google';
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'], 
+  weight: ['300', '400', '700'],
+});
+
 
 
 
@@ -271,7 +278,7 @@ const router = useRouter()
                   {/* <Image src={AboutImage} alt = ""/> */}
                 </div>
                   <div className={styles.textSide} data-aos="fade-left" >
-                    <h2>
+                    <h2 className={barlowCondensed.className}>
                       A propos de nous
                     </h2>
                     <p>
@@ -295,9 +302,9 @@ const router = useRouter()
 
               <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>
-                  <h2>Nos dernières activités</h2>
+                  <h2 className={barlowCondensed.className}>Nos dernières activités</h2>
                   <Link href="/activites">
-                    <button>Toutes nos activités</button>
+                    <button >Toutes nos activités</button>
                   </Link>
                 </div>
                  <div className={styles.cardContainer}>
