@@ -294,15 +294,6 @@ const router = useRouter()
               </section>
 
 
-              {/* <section  className={styles.colloque}>
-                        <div className={styles.visuel}></div>
-                        <div className={styles.content}>
-                            <h2>Colloque sur la santé mentale des victimes </h2>
-                            <p>Cliquez sur le bouton en bas pour suivre le colloque en direct</p>
-                            <button onClick={handleRedirect}>SUIVRE LE COLLOQUE</button>
-                        </div>
-              </section> */}
-
               <section className={styles.actu} data-aos="zoom-in">
                 <div className={styles.topSide}>
                   <h2>Nos dernières activités</h2>
@@ -310,7 +301,7 @@ const router = useRouter()
                     <button>Toutes nos activités</button>
                   </Link>
                 </div>
-                <div className={styles.cardContainer}>
+                 <div className={styles.cardContainer}>
                 {isLoading ?  <Skeleton/> : articles.reverse().slice(0, 4).map((article) => (
                     <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <ActuCard
@@ -322,7 +313,7 @@ const router = useRouter()
                       />
                     </Link>
                     ))}
-                </div> 
+                </div>  
               </section>
         
       </main>

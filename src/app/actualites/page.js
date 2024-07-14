@@ -27,11 +27,8 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
 
   const fetchImage = async () => {
     if (lastArticle?.thumbanails) {
-      console.log("last article",lastArticle?.thumbanails)
       try {
-   
         const link = await getFileLink(lastArticle?.thumbanails);
-console.log("link actualites", link)
         if (link ) {
           console.log("link test", link)
           setImageUrl(link);
@@ -85,7 +82,7 @@ const formatTitre = (titre) => {
           {articles.reverse().slice(1, 5).map((article) => (
          <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
               <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
-            </Link>
+          </Link>
           ))}
         </div>
         </section>
@@ -95,73 +92,7 @@ const formatTitre = (titre) => {
               <h5>240 X  1214</h5>
             </div>
         </section>
-{/* 
-        <section className={styles.videos}>
-            <div className={styles.videosContainer}>
-            <div className={styles.mainVideos} style={{
-                backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center',
-              }}>
-                  <div>
-                    <Icon icon="line-md:play-twotone" className={styles.icone} />
-                  </div>
-             
-              </div>
-              <div className={styles.miniatureContainer}>
-                  <div  
-                  className={styles.miniC}
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                  }}>
-                  <div >
-                    <Icon icon="line-md:play-twotone" className={styles.icone} />
-                  </div>
-                  </div>
-                  <div  
-                  className={styles.miniC}
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                  }}>
-                  <div>
-                    <Icon icon="line-md:play-twotone" className={styles.icone} />
-                  </div>
-                  </div>
-                <div  
-                className={styles.miniC}
-                style={{
-                  backgroundImage: `linear-gradient(90deg, rgba(0,0,0,0.5) 100%, rgba(7,7,8,0.29968483975621496) 100%, rgba(0,212,255,0) 100%), url('/img-content.jpg')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center',
-                  }}>
-                  <div>
-                    <Icon icon="line-md:play-twotone" className={styles.icone} />
-                  </div>
-                  </div>
-              </div>
-              </div>
-                <div className={styles.articleContainer}>
-                {articles.reverse().slice(0, 2).map((article) => (
-                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
-                      <MiniCard titre={article.titre} backgroundImage={article.thumbanails} />
-                    </Link>
-                  ))}
-                </div>
-        </section> */}
 
-        {/* <section className= {styles.inlineSection} >
-            <h2>Itinérances</h2>
-            <div className={styles.cardContainer}>
-                    <MiniCard/>
-                    <MiniCard/>
-                    <MiniCard/>
-                 
-            </div>
-        </section> */}
         <section className={styles.archiveContainer}>
         <h2>Archives</h2>
         <div className={styles.containerFlexer}>

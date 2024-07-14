@@ -2,15 +2,17 @@
 import React, { useState, useEffect } from 'react';
 import styles from './minicard.module.scss'
 import Link from 'next/link'
+import { getFileLink } from './../lib/Requests';
 
 
 const MiniCard = ({titre, backgroundImage}) => {
   const [imageUrl, setImageUrl] = useState("");
   const fetchImage = async () => {
     if (backgroundImage) {
+
       try {
         const link = await getFileLink(backgroundImage);
-        console.log("Fetched link:", link);
+
         if (link ) {
           console.log("link test", link)
           setImageUrl(link);

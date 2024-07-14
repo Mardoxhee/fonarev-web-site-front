@@ -10,9 +10,7 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
   const fetchImage = async () => {
     if (bg) {
       try {
-        console.log("Fetching image link for bg:", bg);
         const link = await getFileLink(bg);
-        console.log("Fetched link:", link);
         if (link ) {
           console.log("link test", link)
           setImageUrl(link);
