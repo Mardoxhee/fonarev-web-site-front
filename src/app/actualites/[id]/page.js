@@ -13,11 +13,17 @@ import { useGetAllArticlesQuery } from '../../store/slices/actualite'
 import Head from 'next/head';
 import Link from 'next/link'
 import { useSearchParams } from "next/navigation";
+import { Barlow_Condensed } from 'next/font/google';
 import {getFileLink} from './../../../lib/Requests'
 
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'], 
+  weight: ['300', '400', '700'],
+});
 
 
 const Details = () => {
+
 
     const [imageUrl, setImageUrl] = useState("");
     const formatTitre = (titre) => {
@@ -180,7 +186,7 @@ const Details = () => {
                     </Head>
             <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
-        <h1> {articleDetails ? articleDetails.titre : ""} </h1>
+        <h1 className={barlowCondensed.className}> {articleDetails ? articleDetails.titre : ""} </h1>
             <div className={styles.thumbnails}
                     style={{
                         backgroundImage: `url(${articleDetails ? imageUrl : ""})`,
