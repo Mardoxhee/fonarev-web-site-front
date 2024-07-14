@@ -20,10 +20,11 @@ const page = () => {
                   <p>Avenue Colonel Ebeya 3498,
                   Q/ Golf, C/ Gombe</p>
                   <h3 className={styles.horaire}>Notre horaire de travail</h3>
-                  <p>Lundi : 8h30 - 16H30</p>
-                  <p>Mardi : 8h30 - 16H30</p>
-                  <p>Mercredi : 8h30 - 16H30</p>
-                  <p>Vendredi : 8h30 - 16H30</p>
+                  <p>Lundi : 8h30 - 17h30</p>
+                  <p>Mardi : 8h30 - 17H30</p>
+                  <p>Mercredi : 8h30 - 17H30</p>
+                  <p>Jeudi : 8h30 - 17H30</p>
+                  <p>Vendredi : 8h30 - 17H30</p>
               </div>
               <div className={styles.formContainer}>
                 <h3>Vous avez une préoccupation, une suggestion, un feedback, Entrez directement en contact notre équipe.</h3>
