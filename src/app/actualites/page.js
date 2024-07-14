@@ -9,6 +9,8 @@ import { Icon } from '@iconify/react';
 import Head from 'next/head'; 
 import { Script } from 'next/script';
 import { getFileLink } from './../../lib/Requests';
+import Image from 'next/image'
+import GenocostImage from './../../../public/banieregenocost.jpg'
 
 const Actualite = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -88,9 +90,8 @@ const formatTitre = (titre) => {
         </section>
 
         <section className = {styles.bannerContainer}>
-            <div>
-              <h5>240 X  1214</h5>
-            </div>
+        <Image src={GenocostImage} height={240} width="100%" alt="baniere genocost"/>
+      
         </section>
 
         <section className={styles.archiveContainer}>
