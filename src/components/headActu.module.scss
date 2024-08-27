@@ -1,0 +1,57 @@
+@import "./../app/variables.module";
+
+
+.cardWrapper{
+    @media (max-width: 575.98px) { 
+        width: 100%;
+        margin: .5rem 0rem;
+    }
+    width: 100%;
+    min-height: 200px !important;
+    border: #E7E7E7 solid 1px;
+
+    .imgWrapper{
+        height: 150px ;
+        // background: url('./../../public//dga.jpg');
+        background-position: center center;
+        background-size: cover;
+    }
+.titleWrapper{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+ 
+    h3{
+            text-decoration: none !important;
+            font-size: 1rem;
+    }
+
+    .metaContainer{
+        padding-bottom: 1rem;
+        color: $paragraph-color;
+        display: flex;
+        justify-content: space-between;
+        display: none;
+        p, h4{
+            display: flex;
+            align-items: center;
+            .icone{
+                font-size: 20px;
+            }
+            span{
+                margin-left: 10px;
+                font-size: 13px;
+            }
+        }
+        h4{
+            background-color: $move-color;
+            padding: 10px 20px;
+            color: white;
+            font-weight: 500;
+        }
+        
+    }
+}
+
+}
