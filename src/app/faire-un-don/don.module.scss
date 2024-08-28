@@ -1,0 +1,50 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   .titleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    h3{
+        color: #8E1F71;
+        font-weight: 600;
+    }
+    h2{
+        color :#2E3D44;
+        font-size: 35px;
+    }
+    p{
+        width: 50%;
+    
+    }
+    h3, h2, p{
+        margin: 0;
+        text-align: center;
+    }
+   }
+    .formContainer{
+        height: auto;
+        background: #F7F7F7;
+        margin:3rem 6rem;
+        padding: 5rem;
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .inputContainer{
+                display: flex;
+                flex-direction: column;
+                width: 47%;
+                margin: .8rem 0rem;
+                input{
+                    padding: .8rem;
+                    margin-top: .5rem;
+
+                }
+            }
+        }
+    }
+}

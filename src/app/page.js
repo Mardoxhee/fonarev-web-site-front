@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Icon } from '@iconify/react';
 import Actucard from './../components/actuCard'
 import HeadActu from './../components/headActu'
+import Link from 'next/link';
 
 const carouselItems = [
   {
@@ -261,7 +262,9 @@ const Home = () => {
               <div className={styles.giftText}>
                 <h2>Vous pouvez aussi soutenir les victimes</h2>
                 <p>Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
-                <button>FAIRE UN DON</button>
+                <Link href ="/faire-un-don" >
+                  <button>FAIRE UN DON</button>
+                </Link>
               </div>
         </section>
 
