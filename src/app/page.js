@@ -213,7 +213,11 @@ const Home = () => {
           <h2>QUI SOMMES NOUS</h2>
           <h1>Le Fonds National des Réparations des Victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l’humanité.</h1>
           <p>FONAREV en sigle, nous sommes un établissement public institué par la loi n°22/65 du 26 décembre 2022 portant principes fondamentaux relatifs à la protection et à la réparation des victimes de violences sexuelles liées aux conflits et des victimes de crimes contre la paix et la sécurité de l’humanité et le décret n°22/38 du 06 décembre 2022 fixant les statuts d’un établissement public dénommé Fonds National des Réparations des Victimes de violences sexuelles liées aux conflits et de crimes contre la paix et la sécurité de l’humanité. Il a son siège social à Kinshasa et exerce ses activités sur toute l’étendue du territoire national.</p>
-          <button> En savoir plus <Icon icon="solar:arrow-right-broken" className={styles.icone} /> </button>
+          <Link href ="/a-propos-du-fonarev" >
+            <button> 
+              En savoir plus <Icon icon="solar:arrow-right-broken" className={styles.icone} /> 
+            </button>
+          </Link>
         </div>
       </section>
 
