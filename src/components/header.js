@@ -140,7 +140,9 @@ const handleHamburgerClick = () => {
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 
+            <Link href="faire-un-don">
                 <button>FAIRE UN DON</button>
+            </Link>
             </div>
                 {isMobile ? <Icon icon="maki:cross" className={styles.icone} onClick={handleHamburgerClick}/>:  <Icon icon="icon-park:hamburger-button" className={styles.icone} onClick={handleHamburgerClick}/>}
            

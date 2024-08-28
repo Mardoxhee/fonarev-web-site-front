@@ -45,6 +45,49 @@
 
                 }
             }
+            button {
+                background: #800080;
+                font-size: 15px;
+                color: white;
+                font-weight: 600;
+                text-align: left;
+                border: none;
+                padding: 0%;
+                width: fit-content;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                letter-spacing: 2px;
+                cursor: pointer;
+                margin-top: 1.5rem;
+                .icone {
+                  font-size: 25px;
+                  margin-right: 10px;
+                }
+              }
         }
+    }
+}
+
+.moyenDePaiement{
+    .inputContainer{
+        width: 100% !important;
+    }
+    width: 500px;
+}
+.moyenDePaiement div{
+    display: flex;
+    align-items: center;
+    label{
+        margin-left: .5rem;
+    }
+    margin: 1rem 0rem;
+}
+.paymentDetails{
+    width: 100%;
+
+    .inputContainer{
+
+        width: 100% !important;
     }
 }
