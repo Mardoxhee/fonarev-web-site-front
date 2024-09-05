@@ -205,7 +205,7 @@
 
       h2 {
         font-weight: 500;
-        color: #800080;
+        color: #8E1F71;
         letter-spacing: 1px;
         padding-right: 0 2%;
         font-size: 20px;
@@ -218,7 +218,7 @@
         padding-right: 0 2%;
       }
       button {
-        background: #800080;
+        background: #8E1F71;
         font-size: 15px;
         color: white;
         font-weight: 400;
@@ -259,9 +259,11 @@
         color: rgb(89, 89, 89);
         margin: .8rem 0rem;
         margin-bottom: 1rem;
+        text-align: justify;
+        color: #67788e;
       }
       h2{
-        color: #800080;
+        color: #8E1F71;
         font-size: 20;
         font-weight: 500;
         letter-spacing: 1px;
@@ -272,7 +274,7 @@
       }
       button{
         padding: .8rem 1rem;
-        background-color: #800080;
+        background-color: #8E1F71;
         color: white;
         border: none;
         cursor: pointer;
@@ -303,7 +305,7 @@
     }
   }
 
-  .slider{
+  .slider {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,62 +313,95 @@
     background-color: #FBFBFB;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    h2{
+  
+    h2 {
       font-weight: 500;
       letter-spacing: 1px;
-      color: #800080;
+      color: #8E1F71;
       margin-bottom: 0;
-  
     }
-    h3{
+  
+    h3 {
       width: 50%;
       text-align: center;
       color: #67788E;
     }
-
+  
     .carousselContainer {
       display: flex;
       overflow: hidden;
       position: relative;
       width: 100%;
       margin: 2rem 0;
-    height: 500px;
-      .carouselInner {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
+    }
+  
+    .carouselItem {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 500px; /* Ensure full height */
+      margin:0px 5px; /* Spacing between items */
+      padding: 0; /* Remove extra padding */
+      cursor: pointer;
+    }
+  
+    .imageWrapper {
+      position: relative;
+      width: 100%;
+      height: 75%; /* Set to 75% for the image height */
+    }
+  
+    .itemContent {
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      color: white;
+      padding: 1rem;
+    h4, p {
+        text-align: center;
+        margin: 0;
       }
-    
-      .carouselItem {
-        flex: 0 0 25%; /* This makes each slide take 25% of the width, allowing 4 slides with one partially visible */
-        max-width: 25%;
-        box-sizing: border-box;
-        padding: 1rem;
-        position: relative;
+      h4{
+        font-size: 12px;
       }
-    
-      .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        cursor: pointer;
-        z-index: 10;
-        padding: 0.5rem;
-        font-size: 1.5rem;
-      }
-    
-      .arrowLeft {
-        left: 10px;
-      }
-    
-      .arrowRight {
-        right: 10px;
+      p{
+        font-size: 12px;
+        font-weight: 400;
       }
     }
-    
+  
+    /* Arrow buttons */
+    .arrowLeft, .arrowRight {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.7); /* Ensure the background is visible */
+      color: white;
+      border: none;
+      cursor: pointer;
+      z-index: 100; /* Increase z-index to make sure they appear on top */
+      padding: 1rem;
+      font-size: 2rem;
+      border-radius: 50%; /* Makes the buttons circular */
+      transition: background-color 0.3s ease;
+    }
+  
+    /* Hover effect for arrows */
+    .arrowLeft:hover, .arrowRight:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  
+    .arrowLeft {
+      left: 10px; /* Position the left arrow */
+    }
+  
+    .arrowRight {
+      right: 10px; /* Position the right arrow */
+    }
   }
+  
+  
+  
 
 .jumb{
 
@@ -423,4 +458,66 @@
     display: flex;
     justify-content: space-between;
   }
+}
+.faq{
+  padding: 2rem 6rem;
+  background: #FBFBFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  a{
+    text-decoration: none;
+  }
+  button{
+    padding: .8rem 1rem;
+    background-color: #8E1F71;
+    color: white;
+    border: none;
+
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    .icone{
+      font-size: 25px;
+      margin-left: 5px;
+    }
+  }
+  h2{
+    font-size: 20px;
+    color: #8E1F71;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin: 0;
+    text-align: center;
+  }
+  h3{
+    text-align: center;
+    color: #67788E;
+    font-size: 20px;
+    margin: 0;
+
+  }
+  h4{
+    font-size: 16px;
+    color: rgb(63, 63, 63);
+    font-weight: 600;
+    margin: 0;
+  }
+}
+.faqContainer{
+  margin-top: 2rem;
+  padding: 0rem 5rem;
+  margin-bottom: 2rem;
+}
+.alice-carousel__prev-btn{
+  z-index: 1000 !important;
+  border: red solid 2px !important;
+}
+.closeButton{
+  margin-bottom: 1rem;
 }
