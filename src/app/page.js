@@ -226,11 +226,15 @@ useEffect(() => {
   return (
     <>
         <Head>
-          <meta property="og:title" content="Fonarev RDC - A propos du FONAREV" />
-    <meta property="og:description" content="Découvrez le FONAREV, le Fonds National des Réparations des Victimes des Violences Sexuelles liées aux Conflits et des Victimes des Crimes contre la paix et la sécurité de l'humanité." />
-    <meta property="og:image" content="/logo-fonarev.png" />
-    <meta property="og:url" content="https://fonarev.cd/a-propos-du-fonarev" />
-    <meta property="og:type" content="website" />
+            <title key="title">Fonarev RDC - A propos du FONAREV</title>
+            <meta key="keywords" name="keywords" content="Fonarev, FOnarev.cd.com, Fonds national des réparations, victimes"/>
+            <meta key="og-title" property="og:title" content="Fonarev RDC" />
+            {/* <meta property="og:title" content="Fonarev RDC - A propos du FONAREV" /> */}
+            <meta key="description" name="description" content="Découvrez le FONAREV, le Fonds National des Réparations des Victimes des Violences Sexuelles liées aux Conflits et des Victimes des Crimes contre la paix et la sécurité de l'humanité." />
+            <meta property="og:image" content="/logo-fonarev.png" />
+            {/* <meta property="og:url" content="https://fonarev.cd/a-propos-du-fonarev" /> */}
+            <meta key="og-url" property="og:url" content="https://fonarev.cd/a-propos-du-fonarev" />
+            <meta key="og-type" property="og:type" content="website" />
     </Head>
     <main className={styles.mainContainer}>
       <section className={styles.bannerContainer}>
