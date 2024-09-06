@@ -103,6 +103,12 @@
         flex-direction: column;
         justify-content: space-between;
         padding-top: 10rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        h3{
+          margin-top: -8px !important;
+          font-size: 14px;
+        }
       }
     }
   }
@@ -442,6 +448,18 @@
 .actualites{
   padding: 2rem 6rem;
   background: #FBFBFB;
+
+  .cardContainer{
+
+  
+
+    h3{
+      width: 100%;
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+
   h2{
     font-size: 20px;
     color: #800080;

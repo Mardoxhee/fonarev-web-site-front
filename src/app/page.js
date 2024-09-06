@@ -11,6 +11,10 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Modal from "react-modal";
 import Head from 'next/head'; 
+import ActuCard from './../components/actuCard'
+import Laterral from './../components/lateralSqueleton'
+
+
 
 
 const carouselItems = [
@@ -49,19 +53,19 @@ const carouselItems = [
 
 const quoteItems = [
   {
-    quote: "Nous ne pouvons espérer un Congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c’est une affaire de tous !",
+    quote: "Nous ne pouvons espérer un Congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c'est une affaire de tous !",
     author: "Kevin NGUNGA MAKIEDI",
     title: "DG ai FONAREV",
     background: "/kv.jpg"
   },
   {
-    quote: "Le Fonds National des Réparations des Victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l’humanité. ",
+    quote: "Nous ne pouvons espérer un congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c'est une affaire de tous !",
     author: "Denise NYAKERU TSHISEKEDI",
     title: "Première dame de la RDC",
     background: "/denise.jpg"
   },
   {
-    quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum volutpat.",
+    quote: "Pour apaiser la douleur des femmes victimes de violences liées aux conflits et tenter de réparer les préjudices qui leur ont été infligés, mon pays a mis en place des mécanismes institutionnels spécifiques, notamment le Fonds National des Réparations des Victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité (FONAREV), créé en décembre 2022",
     author: "Felix Antoine TSHISEKEDI TSHILOMBO",
     title: "Président de la RDC",
     background: "/ft.jpg"
@@ -139,24 +143,28 @@ const Home = () => {
   const [isClient, setIsClient] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
+  const [articles, setArticles] = useState([])
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
-  const visibleSlides = 5; // Number of visible slides
-  const handleNextSlide = () => {
-    if (currentSlide < sliderItems.length - 4) {
-      setCurrentSlide((prevSlide) => prevSlide + 1);
+
+  const handleGetArticles = async () => {
+    try {
+      const response = await fetch("https://fonarev-api.onrender.com/articles");
+      console.log("response from today", response);
+      const articles = await response.json();
+      const lastThreeArticles = articles.article.slice(-4);
+      setArticles(lastThreeArticles);
+      console.log("Last three articles", lastThreeArticles);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
     }
   };
-  
-  const handlePrevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide((prevSlide) => prevSlide - 1);
-    }
-  };
-  
+useEffect(() => {
+  setIsClient(true);
+  handleGetArticles()
+}, []);
+
+
 
   const openModal = (url) => {
     setVideoUrl(url);
@@ -244,12 +252,19 @@ const Home = () => {
         </div>
 
         <div className={styles.actuContainer}>
-          <HeadActu  title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" />
-          <HeadActu  title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" />
-          <HeadActu  title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" />
-           {/* <Actucard title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" />
-           <Actucard title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" />
-           <Actucard title="Information 1" date="12 mai 2024" category="Urgence" bg="/kv.jpg" /> */}
+        {articles.length === 0 ? (
+              <Laterral />
+            ) : (
+              articles.slice(0, 3).map((article, index) => (
+                <HeadActu
+                  key={index} // Use a unique key if possible, like article ID
+                  title={article.titre}
+                  // date={article.date}
+                  // category={article.category}
+                  bg={article.thumbanails}
+                />
+              ))
+            )}
         </div>
       </section>
 
@@ -303,36 +318,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
               <Image src="/geno.jpg" alt="Genocost flyer" layout="fill" objectFit="cover"  />
             </div>
       </section>
-      {/* <section className={styles.slider}>
-          <h2>ELLES PRETENT LEURS VOIX</h2>
-          <h3>Témoiganges de nos survivantes, interprêtées par quelques personnalités influentes du pays</h3>
-          <div className={styles.carousselContainer}>
-          <div className={styles.carouselInner} style={{ transform: `translateX(-${currentSlide * (100 / visibleSlides)}%)` }}>
-              {sliderItems.map((item, index) => (
-                <div key={index} className={styles.carouselItem}>
-                <Image src={item.background} alt={item.title} layout="fill" objectFit="cover" />
-                <div className={styles.itemContent}>
-                  <h3>{item.date}</h3>
-                  <h4>{item.title}</h4>
-                  <p className="">{item.description}</p>
-                </div>
-                <div className={styles.hoverText}>
-                  <p>Texte supplémentaire affiché lors du hover</p>
-                </div>
-              </div>
-              ))}
-            </div>
-            <button className={`${styles.arrow} ${styles.arrowLeft}`} onClick={handlePrevSlide}>
-              &#10094;
-            </button>
-            {currentSlide < sliderItems.length - 4 && (
-                <button className={`${styles.arrow} ${styles.arrowRight}`} onClick={handleNextSlide}>
-                  &#10095;
-                </button>
-              )}
-
-          </div>
-        </section> */}
+     
       <section className={styles.slider}>
         <h2>NOS VOIX POUR ELLES</h2>
         <h3>Lorem ipsum dei gloriam lorem ipsum dei gloriam lorem ipsum dei gloriam</h3>
@@ -417,10 +403,15 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
             <h2>NOS DERNIERES ACTUALITES </h2>
             <h3>Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</h3>
             <div className={styles.cardContainer}>
-                <Actucard title="Titre de lactualite" date="12 mai 2024" category="Actualités" />
-                <Actucard title="Titre de lactualite" date="12 mai 2024" category="Actualités" />
-                <Actucard title="Titre de lactualite" date="12 mai 2024" category="Actualités" />
-                <Actucard title="Titre de lactualite" date="12 mai 2024" category="Actualités" />
+            {articles.slice(0, 4).map((article, index) => (
+            <ActuCard
+              key={index} // Use a unique key if possible, like article ID
+              title={article.titre}
+              date={article.date}
+              category={article.category}
+              bg={article.thumbanails}
+            />
+          ))}
             </div>
         </section>
         <section className={styles.faq}>
@@ -433,6 +424,8 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
               <button>VOIR PLUS</button>
             </Link>
         </section>
+        
+
 
     </main></>
 
