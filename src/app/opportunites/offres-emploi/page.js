@@ -18,25 +18,46 @@ const Offres = () => {
 
     const { handleSubmit, setValue,register, formState: { errors } } = useForm();
 
-    const handleFileUpload = async (file) => {
-        const cloudName = "yudingplatform";
+    // const handleFileUpload = async (file) => {
+    //     const cloudName = "yudingplatform";
+    //     const cloudinaryData = new FormData();
+    //     cloudinaryData.append("file", file);
+    //     cloudinaryData.append("upload_preset", "yuding");
+    //     cloudinaryData.append("cloud_name", "yudingplatform");
+    //     cloudinaryData.append("resource_type", "auto"); 
+    //     const resp = await fetch(
+    //       `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+    //       {
+    //         method: "post",
+    //         body: cloudinaryData,
+    //       }
+    //     );
+    //     const data = await resp.json();
+    //     console.log("data de cloudinary", data)
+    //     return data.url;
+    //   };
+    
+    
+  const handleFileUpload = async (file) => {
+    try {
+      if (file) {
         const cloudinaryData = new FormData();
         cloudinaryData.append("file", file);
-        cloudinaryData.append("upload_preset", "yuding");
-        cloudinaryData.append("cloud_name", "yudingplatform");
-        cloudinaryData.append("resource_type", "auto"); 
         const resp = await fetch(
-          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+          `http://10.140.0.107:8002/minio/files/upload`,
           {
             method: "post",
             body: cloudinaryData,
           }
         );
         const data = await resp.json();
-        console.log("data de cloudinary", data)
+        console.log("File link", data);
         return data.url;
-      };
-    
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'envoi du fichier:", error);
+    }
+  };
     
     const validatePhoneNumber = (value) => {
         const phoneNumberRegex = /^\d+$/;
