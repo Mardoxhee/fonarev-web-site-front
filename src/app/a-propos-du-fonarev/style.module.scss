@@ -25,6 +25,7 @@
         flex-direction: column-reverse;
         .txtSide{
             width: 100% !important;
+     
         }
         .imageContainer{
             width: 100% !important;
@@ -45,7 +46,7 @@
     }
     .imageContaine2{
         width: 48%;
-        background: url("./../../../public/about2.jpg");
+        background: url("./../../../public/vision.jpg");
         background-position: center;
         background-size: cover;
         height: 450px;
@@ -58,6 +59,10 @@
             font-size: 16px;
             color: #505050;
             line-height: 28px;
+         
+        }
+        .visionClass{
+            width: 80%;
         }
     }
 
@@ -165,7 +170,7 @@
     }
     .rightSide{
         width: 49%;
-        background: url('./../../../public/valeurs.jpg');
+        background: url('./../../../public/valeur.jpg');
         background-position: center center;
         background-size: cover;
     }

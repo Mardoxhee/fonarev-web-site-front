@@ -45,6 +45,15 @@ const Activites = () => {
     articlesGroupedByMonth[key].push(article);
   });
 
+
+  const formatTitre = (titre) => {
+    // Convertir en minuscules et enlever les accents
+    const titreFormate = titre?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // Remplacer les espaces par des tirets
+    return titreFormate?.replace(/\s+/g, '-');
+  };
+  
+
   // Triez les clés pour obtenir l'ordre décroissant (du plus récent au plus ancien)
   const sortedKeys = Object.keys(articlesGroupedByMonth).sort((a, b) => {
     const [yearA, monthA] = a.split("-");
@@ -113,10 +122,7 @@ const Activites = () => {
                 </h3>
                 <div className={styles.cardWrapper}>
                   {sortedArticles.map((article) => (
-                    <Link
-                      href={`/actualites/${article._id}`}
-                      key={article._id}
-                    >
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
                       <ActuCard
                         date={article.date ? formatDate(article.date) : ""}
                         category="Activité"

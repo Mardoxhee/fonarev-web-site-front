@@ -62,7 +62,7 @@ const About = () => {
         <section className={styles.story} id="story">
             <div className={styles.txtSide}>
                 <h2>Notre Vision</h2>
-                <p>
+                <p className={styles.visionClass}>
                     Œuvrer pour le relèvement des victimes et la non répétition des violences pour bâtir une paix durable.
                 </p>
           
@@ -121,8 +121,8 @@ const About = () => {
 
         <section className={styles.genocost} id="genocost">
             <div className={styles.imageContainer}>
-                <Image src="/genostTandem.jpg" width={500} height={350}/>
-                <Image src="/genostTandem.jpg" width={500} height={350}/>
+                <Image src="/genocost1.jpg" width={500} height={350}/>
+                <Image src="/genocost2.jpg" width={500} height={350}/>
             </div>
      
             <div >
@@ -140,7 +140,7 @@ const About = () => {
             <h2>Notre équipe dirigeante</h2>
             <div className={styles.teamContainer}>
                 <TeamCard bg="pca3.jpg" prenom="Eddy" nom="MBANZU" postnom="DIEKUZEIKO" fonction="Président du Conseil d’Administration" />
-                <TeamCard bg="dg.jpg" prenom="Lucien" nom="LUNDULA" postnom="LOLATUI" fonction="Directeur Général"  />
+                <TeamCard bg="dgpatrick.jpg" prenom="Patrick" nom="FATA" postnom="MAKUNGA" fonction="Directeur Général"  />
                 <TeamCard bg="dga_k.jpg" prenom="Kevin" nom="NGUNGA" postnom="MAKIEDI" fonction = "Directeur Général Adjoint en charge de l'administration et des finances" />
                 <TeamCard bg="dga-emma-2.jpg" prenom="Emmanuella" nom="ZANDI" postnom=" " fonction ="Directeur Général Adjoint en charge des opérations" />
             </div>
