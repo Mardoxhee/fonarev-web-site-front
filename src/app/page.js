@@ -226,30 +226,7 @@ const router = useRouter()
                               </h3>
                             
                             </div>
-                        </div>,
-                               
-                    <div className={styles.quoteContainer}>
-                    <Icon icon="icomoon-free:quotes-right" className={styles.icone} />
-                    <p className={styles.quotation}>  
-                      Nous voulons regarder les victimes comme des êtres humains 
-                      dont il faut prendre soin. Elles sont là, ils sont là.
-                      Ce sont nos mères, nos soeurs, nos pères, nos frères, 
-                      nos petites-filles et nos petits-fils.
-
-                    </p>
-                    <div className={styles.authorFlexer}>
-                    <div className={styles.avatar3}>
-
-                    </div>
-                      <h3 className={styles.author}>
-                        Lucien LUNDULA LOLATUI
-                        <span>
-                        Directeur Général du Fonarev
-                        </span>
-                      </h3>
-                    
-                    </div>
-                </div>
+                        </div>
                        ]
                     }
                     mouseTracking="false"
