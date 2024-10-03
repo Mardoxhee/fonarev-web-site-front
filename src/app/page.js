@@ -27,7 +27,7 @@ const carouselItems = [
         des violences sexuelles liées aux conflits et les victimes des crimes contre la paix et la sécurité de l’humanité depuis 1993
       </>
     ),
-    background: "/ident.jpg"
+    background: "/reparation.jpg"
   },
   {
     text: (
@@ -36,7 +36,7 @@ const carouselItems = [
         <span className={styles.highlight}>avoir accès à la justice</span>
       </>
     ),
-    background: "/carou-bg.jpg"
+    background: "/Idevic2.JPG"
   },
   {
     text: (
@@ -47,7 +47,7 @@ const carouselItems = [
         des violences sexuelles liées aux conflits et les victimes des crimes contre la paix et la sécurité de l’humanité à avoir accès à la justice
       </>
     ),
-    background: "/fonarev-about.jpg"
+    background: "/idvic3.jpg"
   }
 ];
 
