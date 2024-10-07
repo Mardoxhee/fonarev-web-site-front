@@ -37,11 +37,10 @@ const Details = () => {
     const {data, isLoading, error} = useGetAllArticlesQuery("")
     const articles = data?.article ? [...data.article] : [];
     console.log("data", data)
-
-    const lastArticle = data?.article?.length > 0 ? data.article[data.article.length - 1] : null;
     
     const [articleDetails, setArticleDetails] = useState(null);
     const [articlePhotos, setArticlePhotos] = useState([]);
+    const [imageLinks, setImageLinks] = useState([]);
 
 
     const router = useRouter();
@@ -97,18 +96,7 @@ const Details = () => {
         fetchImage();
       }, [articleDetails]);
 
-    const responsive = {
-        0: { items: 1 },
-        568: { items: 2 },
-        1024: { items: 3 },
-    };
-
-    const items = articlePhotos.map((photoUrl, index) => (
-        <div key={index}>
-            <Image src={photoUrl} alt={`Photo ${index + 1}`} />
-        </div>
-    ));
-
+ 
 
     useEffect(() => {
         const fetchArticleDetails = async () => {
@@ -149,6 +137,34 @@ const Details = () => {
         return `${day} ${month} ${year} ${hours}:${minutes}`;
       }; 
 
+
+      const insertImageAfterThirdParagraph = (content) => {
+        const paragraphs = content.split(/<\/p>/); // Split by closing </p> tags
+        if (paragraphs.length < 4) {
+            return content; // No image to insert if less than four paragraphs
+        }
+    
+        // Utiliser la première image du tableau imageLinks si elle existe
+        const imageUrl = imageLinks.length > 0 ? imageLinks[0] : ""; // First image from imageLinks
+    
+        const formattedParagraphs = paragraphs.map(paragraph => paragraph + '</p>');
+        const modifiedContent = [
+            ...formattedParagraphs.slice(0, 3), 
+            imageUrl ? `<img src="${imageUrl}" alt="Description of image" class="${styles.myInsertedImage}" style="max-width: 100%; height: auto;" />` : "", // Insert image
+            ...formattedParagraphs.slice(3) 
+        ].join(''); 
+        return modifiedContent;
+    };
+
+            useEffect(() => {
+              const fetchImageLinks = async () => {
+                  const links = await Promise.all(articlePhotos.map(photoUrl => getFileLink(photoUrl)));
+                  console.log("links", links)
+                  setImageLinks(links);
+              };
+      
+              fetchImageLinks();
+          }, [articlePhotos]);
 
   return (
     <>
@@ -221,24 +237,30 @@ const Details = () => {
             </div>
      
                     {articleDetails?.contenu
-                        ? <article dangerouslySetInnerHTML={{__html : articleDetails.contenu }} className={styles.textContent}  ></article>// Replace period followed by optional spaces with a line break and trim
+                        ?<article 
+                        dangerouslySetInnerHTML={{ __html: insertImageAfterThirdParagraph(articleDetails.contenu) }} 
+                        className={styles.textContent}  
+                    ></article>
                         : 'Chargement de l\'article...'} 
-     
                 
-                <div className={styles.imgCaroussel} id="imgCaroussel">
-                    {articlePhotos.map((photoUrl, index) => (
-                        <div className={styles.imgPhotos} key={index} style={{ backgroundImage: `url(${photoUrl})` }}>
-                            {/* Ici, la propriété 'style' est utilisée pour définir l'image de fond */}
+            <div className={styles.imgCaroussel} id="imgCaroussel">
+                    {imageLinks.map((fileLink, index) => (
+                        <div 
+                            className={styles.imgPhotos} 
+                            key={index} 
+                            style={{ backgroundImage: `url(${fileLink})` }} 
+                        >
                         </div>
                     ))}
                 </div>
+
+
 
         </section>
         <section className={styles.sideBar}> 
             <div className={styles.pub}></div>
             <div className={styles.cardContainer}>
             <h2>A la une</h2>
-            {/* Display the three latest articles using ArchiveCard */}
             {articles.reverse().slice(1, 3).map((article) => (
             <Link key={article?._id} href={`/actualites/details?articleId=${article?._id}&articleTitle=${formatTitre( article?.titre)}`}>
                 <ArchiveCard titre={article.titre} backgroundImageSrc={article.thumbanails} category="ACTUALITE" />

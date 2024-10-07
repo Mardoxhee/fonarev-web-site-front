@@ -56,10 +56,10 @@ const carouselItems = [
 
 const quoteItems = [
   {
-    quote: "Nous ne pouvons espérer un Congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c'est une affaire de tous !",
+    quote: "Aucune action du FONAREV ne sera entreprise sans que les victimes n’en tirent bénéfice",
     author: "Patrick FATA MAKUNGA",
     title: "Directeur Général du Fonarev",
-    background: "/kv.jpg"
+    background: "/pf.jpg"
   },
   {
     quote: "Nous ne pouvons espérer un congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c'est une affaire de tous !",
@@ -78,46 +78,46 @@ const quoteItems = [
 
 const sliderItems = [
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/prime.png",
     url : "https://youtube.com/embed/N32PEyFcl0w?si=BK4RGLC8tddRC577"
   },
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/feza.png",
     url:"https://youtube.com/embed/4qFKKnT1VmY?si=74UPoHIsFX0h-YsX"
   },
 
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/amina.png",
     url: "https://youtube.com/embed/WCWX68oE1WU?si=QhmCI-mWryroi_pZ"
   },
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/kanya.png",
     url : "https://youtube.com/embed/89zfhUkgom0?si=eRW9AecA8Qr6ErPY"
   },
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/zola.png",
     url :"https://youtube.com/embed/YFwENKZKnDI?si=Vm0_MkXlAhsWF0ZP"
   },
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/aicha.png",
     url :"https://youtube.com/embed/wz9Ce-jj0Ok?si=-VHd0O-imGoz2RYM"
 
   },
   {
-    title: "Témoignage de Amina jeune femme violée ",
-    description: "dezezz",
+    // title: "Témoignage de Amina jeune femme violée ",
+    // description: "dezezz",
     background: "/nsimba.png",
     url:"https://youtube.com/embed/CvbOlmYcIFY?si=CFK_2uhWWbKpdYr8"
   },
@@ -329,7 +329,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
    
       <section className={styles.slider}>
         <h2>NOS VOIX POUR ELLES</h2>
-        <h3>Lorem ipsum dei gloriam lorem ipsum dei gloriam lorem ipsum dei gloriam</h3>
+        {/* <h3></h3> */}
         {isClient && (
           <div className={styles.carousselContainer}>
             <AliceCarousel
@@ -401,7 +401,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
               </div>
               <div className={styles.giftText}>
                 <h2>Vous pouvez aussi soutenir les victimes</h2>
-                <p>Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
+                <p></p>
                 <Link href ="/faire-un-don" >
                   <button>FAIRE UN DON</button>
                 </Link>
@@ -410,7 +410,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
  
         <section className={styles.actualites}>
             <h2>NOS DERNIERES ACTUALITES </h2>
-            <h3>Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</h3>
+            <h3></h3>
             <div className={styles.cardContainer}>
             {articles.slice(0, 4).map((article, index) => (
             <ActuCard
@@ -430,9 +430,9 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
             <div className={styles.faqContainer}>
               <Faq/>
             </div>
-            <Link href="/faq">
+            {/* <Link href="/faq">
               <button>VOIR PLUS</button>
-            </Link>
+            </Link> */}
         </section>
         
 

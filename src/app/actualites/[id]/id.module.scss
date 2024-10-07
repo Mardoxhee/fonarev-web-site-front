@@ -223,3 +223,9 @@ h2{
         width: 100% !important;
     }
 }
+.myInsertedImage {
+    max-width: 100%; /* Limit to the container's width */
+    height: 100px; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below */
+    margin: 0 auto; /* Center the image */
+}
