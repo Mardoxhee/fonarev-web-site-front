@@ -8,10 +8,8 @@ export async function generateMetadata({ searchParams }) {
 
   console.log("article fetched", article);
 
-  const imageUrl = article?.article.thumbanails ? await getFileLink(article.article.thumbanails) : '';
-
-
-  const description = article?.article.contenu ? article.article.contenu.substring(0, 50) : '';
+  const imageUrl = article?.article.thumbanails ? await getFileLink(article?.article.thumbanails) : '';
+  const description = article?.article.contenu ? article?.article.contenu.substring(0, 50) : '';
 
   return {
     title: `${article?.article.titre} | FONAREV`,
