@@ -151,3 +151,7 @@ a {
     color-scheme: dark;
   }
 } */
+
+.ReactModal__Content {
+  width: 85% !important;
+}

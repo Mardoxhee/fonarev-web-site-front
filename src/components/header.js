@@ -111,7 +111,7 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
                     <Link href="#">Mediathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
-                        <Link href="#">Vidéos</Link>
+                        <Link href="https://www.youtube.com/@FonarevRDC/videos" target='_blank'>Vidéos</Link>
                         <Link href="#" onClick= {handleMenuSelections} >Podcasts</Link>
 
                    

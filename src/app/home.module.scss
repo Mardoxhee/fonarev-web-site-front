@@ -7,7 +7,12 @@
     .bannerContainer {
       display: flex;
       height: 100vh;
-  position: relative ;
+      position: relative ;
+      @media (max-width: 575.98px) {
+     overflow: hidden;
+     height: 80vh;
+     padding: 0 !important;
+           }
       .carouselContainer {
         width: 100%;
         position: relative;
@@ -62,10 +67,26 @@
               font-size: 28px;
               font-weight: 600;
           }
+
+          
+          @media (max-width: 575.98px) {
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            font-size: 20px !important;
+            margin-top: 10rem !important;
+            p{
+              font-size: 25px !important;
+            }
+          }
+
         }
       
       .prevButton,
       .nextButton {
+        @media (max-width: 575.98px) {
+          display: none;
+        }
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -120,9 +141,19 @@
         margin-top: -8px !important;
         font-size: 14px;
       }
+      @media (max-width: 575.98px) {
+        flex-direction: column ;
+        width: 100%;
+        padding: 5px;
+        top: 100%;
+        display: none;
+      }
     }
     .actuContainer > div {
       width: 32%;
+      @media (max-width: 575.98px) {
+        width: 100%;
+      }
     }
     }
   }
@@ -144,12 +175,32 @@
     padding-left: 4rem;
     padding-bottom: 4rem;
 
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+      height: auto;
+      padding: 0;
+    }
     .aboutCitation {
       float: right;
       padding-left: 5rem;
+      @media (max-width: 575.98px) {
+      padding: 0;
+      .citationContainer{
+        width: 100% !important;
+      }
+      }
     }
 
     .citationContainer {
+      @media (max-width: 575.98px) {
+        width: 100% !important;
+        justify-content: flex-end;
+        margin-top: 2rem;
+        .quoteContainer {
+          height: 30%;
+
+        }
+      }
       width: 50%;
       position: relative;
       display: flex;
@@ -171,6 +222,11 @@
         object-fit: cover;
         float: right;
         margin-left: 15%;
+        @media (max-width: 575.98px) {
+      
+          margin-left: 0;
+          width: 100% !important;
+        }
       }
 
       .quoteContainer {
@@ -182,7 +238,9 @@
         margin-left: -4rem;
         text-align: left;
         max-width: 50%;
-
+        @media (max-width: 575.98px) {
+          background-color: #008acf57; /* Blue background color */
+        }
         .quoteIcon {
           font-size: 3rem;
           font-weight: bold;
@@ -257,6 +315,11 @@
           margin-left: 10px;
         }
       }
+      @media (max-width: 575.98px) {
+        width: 95%;
+        padding: 10px;
+      }
+
     }
   }
   @keyframes slideLeft {
@@ -272,8 +335,17 @@
     display: flex;;
     padding: 0rem 6rem;
     align-items: center;
+    @media (max-width: 575.98px) {
+      justify-content: flex-end !important;
+      flex-direction: column-reverse;
+      padding: 0rem .5rem;
+    }
     .textContainer{
       width: 50%;
+      @media (max-width: 575.98px) {
+      width: 100%;
+      margin-bottom: 1rem;
+        }
       p{
         width: 90%;
         color: rgb(89, 89, 89);
@@ -281,16 +353,25 @@
         margin-bottom: 1rem;
         text-align: justify;
         color: #67788e;
+        @media (max-width: 575.98px) {
+          width: 98%;
+   
+        }
       }
       h2{
         color: #8E1F71;
         font-size: 20;
         font-weight: 500;
         letter-spacing: 1px;
+ 
       }
       h3{
         width: 70%;
         color : #67788E;
+        @media (max-width: 575.98px) {
+          width: 90%;
+      
+        }
       }
       button{
         padding: .8rem 1rem;
@@ -317,6 +398,11 @@
     width: 50%;
     height: 600px;
     position: relative;
+    @media (max-width: 575.98px) {
+      width: 100%;
+      margin-top: 1rem;
+      height: 400px;
+    }
      
     img{
       object-fit: cover;
@@ -333,7 +419,13 @@
     background-color: #FBFBFB;
     padding-top: 3rem;
     padding-bottom: 3rem;
-  
+    @media (max-width: 575.98px) {
+      padding-top: 1rem;
+      h3{
+        width: 80% !important;
+      }
+    }
+
     h2 {
       font-weight: 500;
       letter-spacing: 1px;
@@ -427,11 +519,20 @@
 
   padding: 5rem 6rem;
   display: flex;
+  @media (max-width: 575.98px) {
+    padding: 0;
+    flex-direction: column;
+    padding: .5rem;
+    }
   .bgCover{
     height: 25rem;
     width: 70%;
     background-image: url('/hommes.jpg');
     background-size: cover;
+    @media (max-width: 575.98px) {
+      width: 100%;
+      padding: 0;
+   }
   }
   .giftText{
     background-color: #0089cf;
@@ -441,13 +542,27 @@
     justify-content: center;
     padding: 1rem;
     color: white;
+    @media (max-width: 575.98px) {
+    width: 100%;
+    padding : 0rem;
+    padding-bottom: 1rem;
+}
     h2{
       margin-bottom: 0;
+      @media (max-width: 575.98px) {
+        margin-left: 5px;
+    }
     }
      p {
       margin: 2rem 0rem;
+      @media (max-width: 575.98px) {
+        margin-left: 5px;
+    }
      }
     button{
+      @media (max-width: 575.98px) {
+        margin-left: 5px;
+    }
       width:fit-content;
       padding: 1rem 2rem;
       background-color: white;
@@ -458,23 +573,48 @@
       cursor: pointer;
     }
   }
+  // @media (max-width: 575.98px) {
+  //       flex-direction: column;
+  //       padding:0 ;
+  // }
+
 }
 .actualites{
   padding: 2rem 6rem;
   background: #FBFBFB;
+  @media (max-width: 575.98px) {
+  padding: .5rem;
+  overflow: hidden;
+  padding-top: 1rem;
+
+}
+h3{
+  @media (max-width: 575.98px) {
+    width: 80% !important;
+    margin-top: 1rem !important;
+        }
+}
 
   .cardContainer{
-
-  
-
     h3{
       width: 100%;
       font-weight: 600;
       font-size: 15px;
+
     }
+  @media (max-width: 575.98px) {
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box;
+    div{
+      width: 99%;
+    }
+}
+
   }
 
   h2{
+
     font-size: 20px;
     color: #800080;
     font-weight: 500;
@@ -498,6 +638,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 575.98px) {
+    padding: 1rem;
+  }
+
   a{
     text-decoration: none;
   }
@@ -545,11 +689,22 @@
   margin-top: 2rem;
   padding: 0rem 5rem;
   margin-bottom: 2rem;
+  @media (max-width: 575.98px) {
+    width: 100% ;
+    padding: 0rem  !important;
+
+        }
 }
 .alice-carousel__prev-btn{
   z-index: 1000 !important;
-  border: red solid 2px !important;
+
 }
 .closeButton{
   margin-bottom: 1rem;
 }
+
+// .videoContainer{
+//   @media (max-width: 575.98px) {
+// border: red solid 2px;
+//         }
+// }

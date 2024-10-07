@@ -13,6 +13,9 @@ import Modal from "react-modal";
 import Head from 'next/head'; 
 import ActuCard from './../components/actuCard'
 import Laterral from './../components/lateralSqueleton'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
 
 
 
@@ -54,8 +57,8 @@ const carouselItems = [
 const quoteItems = [
   {
     quote: "Nous ne pouvons espérer un Congo nouveau sans réparer les dommages causés à celles qui, par leur sagesse, bâtissent la nation et par leur force, engendrent et éduquent nos héros. La violence sexuelle en temps de conflit est un problème global, c'est une affaire de tous !",
-    author: "Kevin NGUNGA MAKIEDI",
-    title: "DG ai FONAREV",
+    author: "Patrick FATA MAKUNGA",
+    title: "Directeur Général du Fonarev",
     background: "/kv.jpg"
   },
   {
@@ -272,7 +275,7 @@ useEffect(() => {
         </div>
       </section>
 
-      <section className={styles.aboutUs}>
+     <section className={styles.aboutUs}>
         <div 
           className={`${styles.citationContainer} ${fade ? styles.fade : ""} ${styles.aboutCitation}`}
         >
@@ -307,6 +310,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
         </div>
       </section>
 
+
       <section className={styles.genocostContainer}>
             <div className={styles.textContainer}>
               <h2>GENOCOST</h2>
@@ -322,7 +326,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
               <Image src="/geno.jpg" alt="Genocost flyer" layout="fill" objectFit="cover"  />
             </div>
       </section>
-     
+   
       <section className={styles.slider}>
         <h2>NOS VOIX POUR ELLES</h2>
         <h3>Lorem ipsum dei gloriam lorem ipsum dei gloriam lorem ipsum dei gloriam</h3>
@@ -368,28 +372,29 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
           </div>
         )}
       </section>
-
-<Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Video Modal"
-        ariaHideApp={false}
-      >
-        <button onClick={closeModal} className={styles.closeButton}>
-          X
-        </button>
-        <div className={styles.videoContainer}>
-          {videoUrl && (
-            <iframe
-              width="100%"
-              height="500px"
-              src={videoUrl}
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-            ></iframe>
-          )}
-        </div>
+ 
+      <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              style={customStyles}
+              contentLabel="Video Modal"
+              ariaHideApp={false}
+            >
+              <button onClick={closeModal} className={styles.closeButton}>
+                X
+              </button>
+              <div className={styles.videoContainer}>
+                {videoUrl && (
+                  <iframe
+                    width="100%"
+                    height="500px"
+                    src={videoUrl}
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                  ></iframe>
+                )}
+              </div>
       </Modal>
+     
         <section className={styles.jumb}>
               <div className={styles.bgCover}>
             
@@ -402,7 +407,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
                 </Link>
               </div>
         </section>
-
+ 
         <section className={styles.actualites}>
             <h2>NOS DERNIERES ACTUALITES </h2>
             <h3>Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</h3>
@@ -418,6 +423,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
           ))}
             </div>
         </section>
+
         <section className={styles.faq}>
             <h2>FAQ </h2>
             <h3>Foire Aux Questions</h3>
