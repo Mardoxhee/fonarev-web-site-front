@@ -8,17 +8,16 @@ export async function generateMetadata({ searchParams }) {
 
   console.log("article fetched", article);
 
-  // Utilisez getFileLink pour obtenir le lien de l'image
-  const imageUrl = article?.article.thumbanails ? await getFileLink(article.thumbanails) : '';
+  const imageUrl = article?.article.thumbanails ? await getFileLink(article.article.thumbanails) : '';
 
-  // Coupez le contenu à 50 caractères pour la description
-  const description = article?.article.contenu ? article.contenu.substring(0, 50) : '';
+
+  const description = article?.article.contenu ? article.article.contenu.substring(0, 50) : '';
 
   return {
     title: `${article?.article.titre} | FONAREV`,
     description: description,
     openGraph: {
-      title: article?.titre,
+      title: article?.article.titre,
       description: description, // Utilisez la description tronquée ici
       url: `https://www.fonarev.cd/actualites/details?articleId=${articleId}`,
       images: [{ url: imageUrl }],
@@ -49,8 +48,6 @@ const DetailsPage = async ({ params }) => {
               backgroundPosition: 'center',
             }}
           ></div>
-
-          {/* Passez simplement les détails de l'article au composant client */}
           <ClientComponents initialArticleDetails={articleDetails} /> 
         </section>
       </main>
