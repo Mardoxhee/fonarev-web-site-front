@@ -152,7 +152,7 @@ const Home = () => {
 
   const handleGetArticles = async () => {
     try {
-      const response = await fetch("https://fonarev-api.onrender.com/articles");
+      const response = await fetch("https://api.fona-vps.cloud/articles");
       console.log("response from today", response);
       const articles = await response.json();
       const lastThreeArticles = articles.article.slice(-4);
@@ -168,6 +168,12 @@ useEffect(() => {
 }, []);
 
 
+const formatTitre = (titre) => {
+  // Convertir en minuscules et enlever les accents
+  const titreFormate = titre?.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  // Remplacer les espaces par des tirets
+  return titreFormate?.replace(/\s+/g, '-');
+};
 
   const openModal = (url) => {
     setVideoUrl(url);
@@ -263,13 +269,15 @@ useEffect(() => {
               <Laterral />
             ) : (
               articles.slice(0, 3).map((article, index) => (
-                <HeadActu
-                  key={index} // Use a unique key if possible, like article ID
-                  title={article.titre}
-                  // date={article.date}
-                  // category={article.category}
-                  bg={article.thumbanails}
-                />
+                <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}> 
+                  <HeadActu
+                    key={index} // Use a unique key if possible, like article ID
+                    title={article.titre}
+                    // date={article.date}
+                    // category={article.category}
+                    bg={article.thumbanails}
+                  />
+                </Link>  
               ))
             )}
         </div>
@@ -413,13 +421,15 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
             <h3></h3>
             <div className={styles.cardContainer}>
             {articles.slice(0, 4).map((article, index) => (
-            <ActuCard
-              key={index} // Use a unique key if possible, like article ID
-              title={article.titre}
-              date={article.date}
-              category={article.category}
-              bg={article.thumbanails}
-            />
+           <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
+              <ActuCard
+                key={index} // Use a unique key if possible, like article ID
+                title={article.titre}
+                date={article.date}
+                category={article.category}
+                bg={article.thumbanails}
+              />
+           </Link>
           ))}
             </div>
         </section>

@@ -16,6 +16,12 @@ import { useSearchParams } from "next/navigation";
 import { Barlow_Condensed } from 'next/font/google';
 import {getFileLink} from './../../../lib/Requests'
 
+
+// export const metadata = {
+//   title: "Fonarev article | ",
+//   description: "This is Blog Details Page for Startup Nextjs Template",
+// };
+
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'], 
   weight: ['300', '400', '700'],
@@ -212,8 +218,8 @@ const Details = () => {
                         
             </div>
             <div className={styles.shareContainer}>
-                <p className={styles.metadata}>Par le Fonarev</p>
-                <p className={styles.metadata}>Publié le {formatDate(articleDetails ? articleDetails.date : "")}</p>
+                <p className={styles.metadata2}>Par le Fonarev</p>
+                <p className={styles.metadata2}>Publié le {formatDate(articleDetails ? articleDetails.date : "")}</p>
             <div className={styles.ctaContainer}>
                 <p>Partager l'article sur</p>
                 <ul className={styles.socialMedia} >
