@@ -34,9 +34,38 @@ const DetailsPage = async ({ params }) => {
 
   return (
     <>
-      <Head>
-        <title>{articleDetails?.titre} | FONAREV</title>
-      </Head>
+     <Head>
+                <title>FONAREV RDC</title>
+                        <link rel="canonical" href={`https://www.fonarev.cd/actualites/details?articleId=${articleId}`} key="canonical" />
+                        <meta
+                            property="og:site_name"
+                            content="Fonarev RDC"
+                            key="ogsitename"
+                        />
+                        <meta
+                            name="description"
+                            content={description}
+                        />
+                        <meta
+                            property="og:title"
+                            content={`${articleDetails?.titre }, Fonarev RDC`}
+                            key="title"
+                        />
+                        <meta
+                            property="og:description"
+                            content={`${articleDetails?.contenu }, Fonarev RDC`}
+                            key="ogdesc"
+                        />
+                        <meta
+                            property="og:image"
+                            itemProp="image"
+                            content={imageUrl}
+                            key="ogimage"
+                        />
+                        <link itemProp="thumbnailUrl" href={imageUrl } />
+                        {/* <meta property="og:url" content={`${pathname}${lastPart}`} key="ogurl" /> */}
+                        <meta name="twitter:card" content="summary_large_image" key="twcard" />
+                    </Head>
       <main className="mainCont">
         <section className="postDetails">
           <h1>{articleDetails?.titre}</h1>
