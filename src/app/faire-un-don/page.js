@@ -16,21 +16,21 @@ const Don = () => {
       <section>
         <Banner
           pageTitle="FAIRE UN DON"
-          exerpt="lorem lorem lorem lorem lorem lorem"
+          exerpt="Ensemble, nous accomplissons plus que n'importe quel autre personne ne
+          pourrait jamais le faire seule"
           background="/caroussel-item-1.jpg"
         />
       </section>
       <section className={styles.titleContainer}>
         <h3>Faire un don</h3>
         <h2>Merci pour votre soutien à nos victimes</h2>
-        <p>
-          Ensemble, nous accomplissons plus que n'importe quel autre personne ne
-          pourrait jamais le faire seule.
-        </p>
+
       </section>
 
       <section className={styles.formContainer}>
-        <h3>Votre don</h3>
+      <p>Nous sommes entrain de mettre en place un système efficace et sécurisé pour permettre aux personnes désireuses d'aider les victimes de faire leurs dons directement depuis notre site internet</p>
+
+        {/* <h3>Votre don</h3>
         <form>
           <div className={styles.inputContainer}>
             <label>Votre prénom</label>
@@ -124,7 +124,7 @@ const Don = () => {
               paiement
             </button>
           </div>
-        </form>
+        </form> */}
       </section>
     </main>
   );

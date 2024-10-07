@@ -8,6 +8,16 @@
     align-items: center;
     justify-content: center;
     padding: 3rem;
+    @media (max-width: 575.98px) {
+        padding: 1rem .5rem;
+        h2{
+            font-size: 1rem !important;
+        }
+        p{
+            width: 100% !important;
+            margin-top: 1rem !important;
+         }
+              }
     h3{
         color: #8E1F71;
         font-weight: 600;
@@ -30,7 +40,21 @@
         background: #F7F7F7;
         margin:3rem 6rem;
         padding: 5rem;
+        @media (max-width: 575.98px) {
+      padding: 1rem;
+      margin: 1rem;
+      p{
+        text-align: center !important;
+      }
+                  }
         form{
+            @media (max-width: 575.98px) {
+                p{
+                    width: 100% !important;
+                    margin-top: 1rem !important;
+                    text-align: center !important;
+                 }
+                      }
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -66,6 +90,7 @@
                 }
               }
         }
+
     }
 }
 
