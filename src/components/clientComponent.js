@@ -1,31 +1,25 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { getFileLink } from '@/lib/Requests';
-import SocialShareButtons from './socialShare.js';
-import AliceCarousel from 'react-alice-carousel';
+import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 
-const ClientComponents = ({ articleDetails }) => {
-  const [imageLinks, setImageLinks] = useState([]);
+const ClientComponents = ({ initialArticleDetails }) => {
+  const searchParams = useSearchParams();
+  const articleId = searchParams.get('articleId'); // Récupérer l'article ID à partir des query params
 
   useEffect(() => {
-    const fetchImageLinks = async () => {
-    //   const links = await Promise.all(articleDetails?.photos?.map(photoUrl => getFileLink(photoUrl)));
-    //   setImageLinks(links);
-    };
-    fetchImageLinks();
-  }, [articleDetails.photos]);
+    if (articleId) {
+      console.log("Article ID from client:", articleId);
+      // Ici, vous pouvez envoyer l'ID à une API ou à une autre partie de votre application
+    }
+  }, [articleId]);
 
   return (
-    <>
-      {/* <article dangerouslySetInnerHTML={{ __html: insertImageAfterThirdParagraph(articleDetails.contenu, imageLinks) }}></article> */}
-      <SocialShareButtons articleDetails={articleDetails} />
-      <div className="imgCaroussel">
-        {/* {imageLinks.map((fileLink, index) => (
-          <div className="imgPhotos" key={index} style={{ backgroundImage: `url(${fileLink})` }}></div>
-        ))} */}
-      </div>
-    </>
+    <div>
+      <h2>Détails de l'article</h2>
+      <p>{initialArticleDetails?.contenu}</p>
+      {/* Autres manipulations côté client */}
+    </div>
   );
 };
 

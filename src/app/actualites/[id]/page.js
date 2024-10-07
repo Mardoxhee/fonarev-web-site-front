@@ -1,22 +1,26 @@
-import { useGetAllArticlesQuery } from '../../store/slices/actualite';
-import Head from 'next/head';
-import Link from 'next/link';
-// import { formatTitre } from '@/utils/formatters'; // A helper utility for formatting titles
-import ArchiveCard from '@/components/sideCard'; // Move the card to a client component
-import ClientComponents from './../../../components/clientComponent.js'
+import Head from 'next/head'; 
+import ClientComponents from '../../../components/clientComponent.js';
+import { getFileLink } from './../../../lib/Requests.js';
 
-export async function generateMetadata({ params }) {
-  const { articleId } = params;
-  const article = await fetchArticleDetails(articleId); // Fetch article details in the server component
+export async function generateMetadata({ searchParams }) {
+  const { articleId } = searchParams;
+  const article = await fetchArticleDetails(articleId); 
+  console.log("article fetched", article);
+
+  // Utilisez getFileLink pour obtenir le lien de l'image
+  const imageUrl = article?.thumbanails ? await getFileLink(article.thumbanails) : '';
+
+  // Coupez le contenu à 50 caractères pour la description
+  const description = article?.contenu ? article.contenu.substring(0, 50) : '';
 
   return {
     title: `${article?.titre} | FONAREV`,
-    description: article?.contenu,
+    description: description,
     openGraph: {
       title: article?.titre,
-      description: article?.contenu,
+      description: description, // Utilisez la description tronquée ici
       url: `https://www.fonarev.cd/actualites/details?articleId=${articleId}`,
-      images: [{ url: article?.thumbanails }],
+      images: [{ url: imageUrl }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -24,9 +28,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const DetailsPage = async ({ searchParams }) => {
-  const { articleId } = searchParams;
-  const articleDetails = await fetchArticleDetails(articleId); // Fetch article details server-side
+const DetailsPage = async ({ params }) => {
+  const { articleId } = params; 
+  const articleDetails = await fetchArticleDetails(articleId); 
 
   return (
     <>
@@ -36,11 +40,18 @@ const DetailsPage = async ({ searchParams }) => {
       <main className="mainCont">
         <section className="postDetails">
           <h1>{articleDetails?.titre}</h1>
-          <div className="thumbnails" style={{ backgroundImage: `url(${articleDetails?.thumbanails})`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-          {/* <p>{`Publié le ${formatDate(articleDetails?.date)}`}</p> */}
-          <ClientComponents articleDetails={articleDetails} /> {/* Move client logic here */}
+          <div
+            className="thumbnails"
+            style={{
+              backgroundImage: `url(${articleDetails?.thumbanails})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          ></div>
+
+          {/* Passez simplement les détails de l'article au composant client */}
+          <ClientComponents initialArticleDetails={articleDetails} /> 
         </section>
-        {/* <AsideSection /> */}
       </main>
     </>
   );
@@ -48,7 +59,8 @@ const DetailsPage = async ({ searchParams }) => {
 
 export default DetailsPage;
 
+// Helper function to fetch article details from the API
 async function fetchArticleDetails(articleId) {
   const res = await fetch(`https://fonarev-api.onrender.com/articles/${articleId}`);
   return res.json();
-}
+} 
