@@ -36,7 +36,7 @@ const DetailsPage = async ({ searchParams }) => {
         <title>{articleDetails?.titre} | FONAREV</title>
       </Head>
       <main className="mainCont">
-          {/* <ClientComponents initialArticleDetails={articleDetails?.article} />  */}
+          <ClientComponents initialArticleDetails={articleDetails?.article} /> 
       </main>
     </>
   );

@@ -6,7 +6,6 @@ import ArchiveCard from '@/components/sideCard'
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { useRouter } from 'next/navigation';
 import { useGetAllArticlesQuery } from './../app/store/slices/actualite'
-import Head from 'next/head';
 import Link from 'next/link'
 import { useSearchParams } from "next/navigation";
 import { Barlow_Condensed } from 'next/font/google';
@@ -165,39 +164,8 @@ const Details = ({initialArticleDetails}) => {
 
   return (
     <>
-            <Head>
-                        <title>FONAREV RDC</title>
-                        <link rel="canonical" href={pathname} key="canonical" />
-                        <meta
-                            property="og:site_name"
-                            content="Fonarev RDC"
-                            key="ogsitename"
-                        />
-                        <meta
-                            name="description"
-                            content={`Fonds national des réparartions des victimes des violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité, FONAREV RDC`}
-                        />
-                        <meta
-                            property="og:title"
-                            content={`${articleDetails?.titre }, Fonarev RDC`}
-                            key="title"
-                        />
-                        <meta
-                            property="og:description"
-                            content={`${articleDetails?.contenu }, Fonarev RDC`}
-                            key="ogdesc"
-                        />
-                        <meta
-                            property="og:image"
-                            itemProp="image"
-                            content={articleDetails?.thumbanails }
-                            key="ogimage"
-                        />
-                        <link itemProp="thumbnailUrl" href={articleDetails?.thumbanails } />
-                        <meta property="og:url" content={`${pathname}${lastPart}`} key="ogurl" />
-                        <meta name="twitter:card" content="summary_large_image" key="twcard" />
-                    </Head>
-            <main className={styles.mainCont}>
+    
+        <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
         <h1 className={barlowCondensed.className} style={{ fontFamily: "'Barlow Condensed', sans-serif !important" }}>
                 {articleDetails ? articleDetails.titre : ""}
