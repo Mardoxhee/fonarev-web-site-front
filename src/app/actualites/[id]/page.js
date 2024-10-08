@@ -9,7 +9,9 @@ export async function generateMetadata({ searchParams }) {
   console.log("article fetched", article);
 
   const imageUrl = article?.article.thumbanails ? await getFileLink(article?.article.thumbanails) : '';
-  const description = article?.article.contenu ? article?.article.contenu.substring(0, 50) : '';
+  console.log("image url", imageUrl);
+  let description = article?.article.contenu ? article?.article.contenu.substring(0, 50) : '';
+  description = description.replace(/<[^>]+>/g, '');
 
   return {
     title: `${article?.article.titre} | FONAREV`,
