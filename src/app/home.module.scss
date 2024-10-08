@@ -129,7 +129,7 @@
       background: white;
       width: 80%;
       position: absolute;
-      
+      z-index: 10;
       left: 50%; /* Centré horizontalement */
       transform: translate(-50%, -50%); /* Ajuste pour être exactement au centre */
       display: flex;
