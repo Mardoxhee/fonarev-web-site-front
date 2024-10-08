@@ -164,7 +164,6 @@ const Details = ({initialArticleDetails}) => {
 
   return (
     <>
-    
         <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
         <h1 className={barlowCondensed.className} style={{ fontFamily: "'Barlow Condensed', sans-serif !important" }}>

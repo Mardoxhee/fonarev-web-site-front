@@ -1,8 +1,10 @@
 import Head from 'next/head'; 
-import ClientComponents from '../../../components/clientComponent.js';
+import dynamic from 'next/dynamic';
 import { getFileLink } from './../../../lib/Requests.js';
 
+const ClientComponents = dynamic(() => import('../../../components/clientComponent.js'), { ssr: false });
 export async function generateMetadata({ searchParams }) {
+
   const { articleId } = searchParams;
   const article = await fetchArticleDetails(articleId); 
 
