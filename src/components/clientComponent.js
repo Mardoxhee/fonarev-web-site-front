@@ -199,7 +199,9 @@ const Details = ({initialArticleDetails}) => {
                     </Head>
             <main className={styles.mainCont}>
         <section className={styles.postDetails}> 
-        <h1 className={barlowCondensed.className}> {articleDetails ? articleDetails.titre : ""} </h1>
+        <h1 className={barlowCondensed.className} style={{ fontFamily: "'Barlow Condensed', sans-serif !important" }}>
+                {articleDetails ? articleDetails.titre : ""}
+        </h1>
             <div className={styles.thumbnails}
                     style={{
                         backgroundImage: `url(${articleDetails ? imageUrl : ""})`,
