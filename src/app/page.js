@@ -337,7 +337,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
    
       <section className={styles.slider}>
         <h2>NOS VOIX POUR ELLES</h2>
-        {/* <h3></h3> */}
+        <h3>Des femmes influentes prêtent leurs voix pour porter les histoires des survivantes</h3>
         {isClient && (
           <div className={styles.carousselContainer}>
             <AliceCarousel
