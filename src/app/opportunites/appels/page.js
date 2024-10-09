@@ -29,9 +29,9 @@ const Appel = () => {
             </div>
 
             <div className={styles.cardContainer}>
-            <Suspense fallback={<div>Chargement...</div>}>
+            {/* <Suspense fallback={<div>Chargement...</div>}>
               <AppelCard isAvis={false} bigTitle="..." />
-            </Suspense>
+            </Suspense> */}
 
             <AppelCard isAvis = {false}  bigTitle = "Avis d'Appel d'Offres International  publié le Marcredi 12 Juin 2024" link="/avis-d-appel-offre-internationale.pdf" reference = "AOI N° 002- F/ DG FONAREV/ CPM/ DMIL/ 06- 2024" expiration = "Jusqu'au 12 juillet 2024 à 14h00'" titre = "MARCHE DE FOURNITURES" />
 
