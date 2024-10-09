@@ -8,7 +8,18 @@
 
  
 
-
+.litterature{
+    padding: 2rem 8rem;
+    text-align: justify;
+    font-style: italic;
+    font-weight: 400;
+    color: #565656;
+    @media (max-width: 575.98px) {
+        // width: 95% ;
+  padding: 1rem;
+  
+            }
+}
 .about, .story{
     background-color: #F9F9F9;
     padding: 2rem 8rem;
@@ -19,6 +30,7 @@
         flex-direction: column-reverse;
         .txtSide{
             width: 100% !important;
+     
         }
         .imageContainer{
             width: 100% !important;
@@ -39,7 +51,7 @@
     }
     .imageContaine2{
         width: 48%;
-        background: url("./../../../public/about2.jpg");
+        background: url("./../../../public/vision.jpg");
         background-position: center;
         background-size: cover;
         height: 450px;
@@ -52,6 +64,10 @@
             font-size: 16px;
             color: #505050;
             line-height: 28px;
+         
+        }
+        .visionClass{
+            width: 80%;
         }
     }
 
@@ -94,10 +110,15 @@
         display: flex;
         flex-direction: column;
         color: black;
+        margin-bottom: 0;
    
         span{
             color: #393939;
         }
+    }
+    p{
+        width: 70%;
+        margin-bottom: 2rem;
     }
     .cardWrapper{
         display: grid;
@@ -154,7 +175,7 @@
     }
     .rightSide{
         width: 49%;
-        background: url('./../../../public/valeurs.jpg');
+        background: url('./../../../public/valeur.jpg');
         background-position: center center;
         background-size: cover;
     }
@@ -210,4 +231,46 @@
                 }
             }
         }
+}
+
+.genocost{
+    background-color: #F7F9FC;
+    min-height: 500px;
+    padding: 2rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 575.98px) {
+            flex-direction: column;
+            padding: 0;
+    }
+    
+    img{
+        height: 100% !important;
+        width: 50%;
+    }
+    div{
+        width: 48%;
+        @media (max-width: 575.98px) {
+         width: 90%;
+    }
+        p{
+            font-size: 14px;
+            text-align: justify;
+        }
+        .paragraph{
+            margin-top: 10px;
+        }
+    }
+    .imageContainer{
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 575.98px) {
+
+    }
+        img{
+            width: 100%;
+         margin: 10px 0px;
+        }
+    }
 }

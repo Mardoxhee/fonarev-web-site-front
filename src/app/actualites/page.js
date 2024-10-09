@@ -46,8 +46,27 @@ const lastArticle = data?.article?.length > 0 ? data.article[data.article.length
   };
 
   useEffect(() => {
-    fetchImage();
-  }, []);
+    const fetchImage = async () => {
+      if (lastArticle?.thumbanails) {
+        try {
+          const link = await getFileLink(lastArticle?.thumbanails);
+          if (link) {
+            console.log("Image link:", link); // Check that link is correct
+            setImageUrl(link);
+          } else {
+            console.error("No src found in link object", link);
+            setImageUrl("default-fallback-image-url.png");
+          }
+        } catch (error) {
+          console.error("Error fetching image link:", error);
+          setImageUrl("default-fallback-image-url.png");
+        }
+      }
+    };
+  
+    fetchImage(); // Call the fetch function
+  }, [lastArticle]); // Add lastArticle as a dependency
+  
 
 const formatTitre = (titre) => {
   // Convertir en minuscules et enlever les accents

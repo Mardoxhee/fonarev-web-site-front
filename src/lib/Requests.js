@@ -26,3 +26,9 @@ export async function getFileLink(file) {
     const data = await getFromAPi(url);
     return data;
 }
+
+export async function getArticleDetails(lastPart) {
+    const url = `https://fonarev-api.onrender.com/articles/${lastPart}`;
+    const data = await getFromAPi(url);
+    return data;
+}

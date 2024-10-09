@@ -71,7 +71,7 @@ overflow: hidden;
             height: 419px;
             width: 100%;
         }
-        .metadata{
+        .metadata2{
           color: #8E8686 !important; 
           font-size: 13px; 
        
@@ -222,4 +222,10 @@ h2{
     @media (max-width: 575.98px) {
         width: 100% !important;
     }
+}
+.myInsertedImage {
+    max-width: 100%; /* Limit to the container's width */
+    height: 100px; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below */
+    margin: 0 auto; /* Center the image */
 }

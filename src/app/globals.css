@@ -40,6 +40,11 @@ body {
   width: 100%;
 }
 
+a {
+  text-decoration: none !important;
+}
+
+
 /* #imgCaroussel {
   /* display: none !important; */
 
@@ -151,3 +156,7 @@ a {
     color-scheme: dark;
   }
 } */
+
+.ReactModal__Content {
+  width: 85% !important;
+}

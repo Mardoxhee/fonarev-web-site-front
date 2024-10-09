@@ -111,9 +111,9 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
                     <Link href="#">Mediathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
-                        <Link href="#">Témoignages</Link>
+                        <Link href="https://www.youtube.com/@FonarevRDC/videos" target='_blank'>Vidéos</Link>
                         <Link href="#" onClick= {handleMenuSelections} >Podcasts</Link>
-                        <Link href="#">Recap</Link>
+
                    
                     </small>
                 </li>
@@ -140,7 +140,9 @@ const handleHamburgerClick = () => {
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 
+            <Link href="/faire-un-don">
                 <button>FAIRE UN DON</button>
+            </Link>
             </div>
                 {isMobile ? <Icon icon="maki:cross" className={styles.icone} onClick={handleHamburgerClick}/>:  <Icon icon="icon-park:hamburger-button" className={styles.icone} onClick={handleHamburgerClick}/>}
            
