@@ -140,7 +140,7 @@ const handleHamburgerClick = () => {
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 
-            <Link href="faire-un-don">
+            <Link href="/faire-un-don">
                 <button>FAIRE UN DON</button>
             </Link>
             </div>

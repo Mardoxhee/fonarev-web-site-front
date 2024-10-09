@@ -596,6 +596,24 @@ height: auto;
 .actualites{
   padding: 2rem 6rem;
   background: #FBFBFB;
+  button{
+    padding: .8rem 1rem;
+    background-color: #8E1F71;
+    color: white;
+    border: none;
+
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    .icone{
+      font-size: 25px;
+      margin-left: 5px;
+    }
+  }
   @media (max-width: 575.98px) {
   padding: .5rem;
   overflow: hidden;
@@ -728,3 +746,30 @@ h3{
 // border: red solid 2px;
 //         }
 // }
+.eventPub {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 2rem 0rem;
+  padding-bottom: 5rem;
+  @media (max-width: 575.98px) {
+    // padding: 1rem !important;
+    padding : 0 !important;
+    .eventBanner {
+      width: 100%;
+      margin : 0rem 1rem
+    }
+  }
+}
+
+.eventBanner {
+  width: 80%;
+  background: url('/banieregenocost.jpg') no-repeat center center;
+  background-size: contain; /* Ensures the image width takes 100% of the container while maintaining aspect ratio */
+  height: 300px;
+  object-fit: contain; 
+}
+
+

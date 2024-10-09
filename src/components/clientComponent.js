@@ -225,6 +225,7 @@ const Details = ({initialArticleDetails}) => {
         </section>
         <section className={styles.sideBar}> 
             <div className={styles.pub}></div>
+            <div className={styles.mobilePub}></div>
             <div className={styles.cardContainer}>
             <h2>A la une</h2>
             {articles.reverse().slice(1, 3).map((article) => (

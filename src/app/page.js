@@ -318,7 +318,9 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
         </div>
       </section>
 
-
+      <section className={styles.eventPub}>
+        <div className={styles.eventBanner}></div>
+      </section>
       <section className={styles.genocostContainer}>
             <div className={styles.textContainer}>
               <h2>GENOCOST</h2>
@@ -432,6 +434,9 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
            </Link>
           ))}
             </div>
+            <Link href="/actualites">
+              <button>PLUS D'ACTUALITES</button>
+            </Link>
         </section>
 
         <section className={styles.faq}>
