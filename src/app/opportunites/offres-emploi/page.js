@@ -44,7 +44,7 @@ const Offres = () => {
         const cloudinaryData = new FormData();
         cloudinaryData.append("file", file);
         const resp = await fetch(
-          `http://10.140.0.107:8002/minio/files/upload`,
+          `https://minioapi.fona-vps.cloud/minio/files/upload`,
           {
             method: "post",
             body: cloudinaryData,
