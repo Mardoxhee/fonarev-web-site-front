@@ -258,6 +258,7 @@ const Offres = () => {
                     </div>
 
                     <div className={styles.cardContainer}>
+                        <OffreCard reference="CDI" expiration="25 Novembre 2024" titre="Avis d'appel à candidatures pour le recrutement de : 1 Responsable du numérique et sécurité de l'information, 1 Secrétaire permanent de la cellule des passations des marchés, 1 Responsable sécurité " isAvis={true} bigTitle="Avis d'appel à candidatures" link="/Recrutement-FONAREV.pdf" />
                         <OffreCard reference="CDD (2 à 5 mois)" expiration="06 Juin 2024" titre="Avis d'appel à candidatures pour le recrutement des Agents chargés de l'identification des victimes des violences sexuelles liées aux conflits et victimes des crimes contre la paix et la sécurité de l'humanité." isAvis={true} bigTitle="Avis d'appel à candidatures" link="/avis-d-appel-a-candidature.pdf" />
 
                     </div>

@@ -147,6 +147,7 @@ const Home = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const [articles, setArticles] = useState([])
+  const [lastFourArticles, setLastFourArticles] = useState([]);
 
 
 
@@ -155,9 +156,12 @@ const Home = () => {
       const response = await fetch("https://api.fona-vps.cloud/articles");
       console.log("response from today", response);
       const articles = await response.json();
-      const lastThreeArticles = articles.article.slice(-4);
+      const lastThreeArticles = articles.article.slice(-3);
+      const lastFourArticles = articles.article.slice(-4);
+      console.log("lastThreeArticles",lastFourArticles)
+      setLastFourArticles(lastFourArticles)
       setArticles(lastThreeArticles);
-      console.log("Last three articles", lastThreeArticles);
+
     } catch (error) {
       console.error("Error fetching articles:", error);
     }
@@ -266,20 +270,25 @@ const formatTitre = (titre) => {
 
         <div className={styles.actuContainer}>
         {articles.length === 0 ? (
-              <Laterral />
-            ) : (
-              articles.slice(0, 3).map((article, index) => (
-                <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}> 
+  <Laterral />
+          ) : (
+            articles
+              ?.slice(0, 3)
+              .reverse() // Inverse l'ordre des articles
+              .map((article, index) => (
+                <Link
+                  key={article._id}
+                  href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}
+                >
                   <HeadActu
-                    key={index} // Use a unique key if possible, like article ID
+                    key={index} // Utilisez une clé unique, comme article._id
                     title={article.titre}
-                    // date={article.date}
-                    // category={article.category}
                     bg={article.thumbanails}
                   />
-                </Link>  
+                </Link>
               ))
-            )}
+          )}
+
         </div>
       </section>
 
@@ -318,9 +327,9 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
         </div>
       </section>
 
-      <section className={styles.eventPub}>
+      {/* <section className={styles.eventPub}>
         <div className={styles.eventBanner}></div>
-      </section>
+      </section> */}
       <section className={styles.genocostContainer}>
             <div className={styles.textContainer}>
               <h2>GENOCOST</h2>
@@ -422,7 +431,7 @@ Le FONAREV est une institution à caractère publique en faveur de la réparatio
             <h2>NOS DERNIERES ACTUALITES </h2>
             <h3></h3>
             <div className={styles.cardContainer}>
-            {articles.slice(0, 4).map((article, index) => (
+            {lastFourArticles.slice(0, 4)?.reverse().map((article, index) => (
            <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
               <ActuCard
                 key={index} // Use a unique key if possible, like article ID
