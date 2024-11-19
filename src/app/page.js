@@ -153,7 +153,7 @@ const Home = () => {
 
   const handleGetArticles = async () => {
     try {
-      const response = await fetch("https://api.fona-vps.cloud/articles");
+      const response = await fetch("https://fonarev-api.onrender.com/articles");
       console.log("response from today", response);
       const articles = await response.json();
       const lastThreeArticles = articles.article.slice(-3);
