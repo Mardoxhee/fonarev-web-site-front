@@ -9,6 +9,7 @@ const OffreCard = ({titre, expiration, reference, link, bigTitle, isAvis}) => {
             <div className={styles.imgContainer}></div>
             <div className={styles.textSide}>
                 <h3>{bigTitle} </h3> <br/>
+                <span>Depassé</span>
                <h2 className={isAvis !== true ? styles.customH2 : ''}>{titre} </h2>
                 <div className={styles.inContainer}>
                     <h4 className={styles.location}><Icon icon="zondicons:book-reference" className={styles.icone} /> Nature du contrat : {reference}</h4>
