@@ -140,17 +140,17 @@ const customStyles = {
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [quoteIndex, setQuoteIndex] = useState(0);
   const [fade, setFade] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
   const [articles, setArticles] = useState([])
   const [lastFourArticles, setLastFourArticles] = useState([]);
+   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
-
+   const ModalOpen = () => setIsModalOpen(true);
+   const ModalClose = () => setIsModalOpen(false);
   const handleGetArticles = async () => {
     try {
       const response = await fetch("https://fonarev-api.onrender.com/articles");
@@ -193,7 +193,6 @@ const formatTitre = (titre) => {
   const handleNextQuote = () => {
     setFade(true);
     setTimeout(() => {
-      setQuoteIndex((prevIndex) => (prevIndex + 1) % quoteItems.length);
       setFade(false);
     }, 500);
   };
@@ -267,10 +266,10 @@ const formatTitre = (titre) => {
             <p>{carouselItems[currentIndex].text}</p>
           </div>
         </div>
-
+      
         <div className={styles.actuContainer}>
         {articles.length === 0 ? (
-  <Laterral />
+      <Laterral />
           ) : (
             articles
               ?.slice(0, 3)
@@ -292,31 +291,48 @@ const formatTitre = (titre) => {
         </div>
       </section>
 
+      <section className={styles.tvVideoSection}>
+        <div className={styles.tvWrapper}>
+          {/* Télévision en arrière-plan */}
+          <Image 
+            src="/tv-frame.png" 
+            alt="TV frame" 
+            layout="fill" 
+            objectFit="contain" 
+            className={styles.tvImage} 
+          />
+          {/* Vidéo intégrée */}
+          <div className={styles.videoWrapper}>
+            <iframe
+              src="https://www.youtube.com/embed/y4bly-MWU18"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+        <p className={styles.videoDescription}>
+          Trailler de la campagne d'identification des victimes initiées par le FONAREV.
+        </p>
+      </section>
+
+
+
      <section className={styles.aboutUs}>
         <div 
-          className={`${styles.citationContainer} ${fade ? styles.fade : ""} ${styles.aboutCitation}`}
+          className={styles.aboutImageConatiner}
         >
-          <Image
-            src={quoteItems[quoteIndex].background}
-            alt="Background image"
-            layout="fill"
-            objectFit="cover"
-            className={styles.backgroundImage}
-          />
-          <div className={styles.quoteContainer}>
-            <div className={styles.quoteIcon}>“</div>
-            <p className={styles.quoteText}>{quoteItems[quoteIndex].quote}</p>
-            <p className={styles.authorName}>{quoteItems[quoteIndex].author}</p>
-            <p className={styles.authorTitle}>{quoteItems[quoteIndex].title}</p>
-          </div>
+          <Image src="/pr-fatshi13.jpg" alt="Beton fatshi" width={400} height={500} />
+
         </div>
         <div className={styles.aboutText}>
           <h2>QUI SOMMES NOUS</h2>
           <h1>Le Fonds National des Réparations des Victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité.</h1>
           <p>
           Depuis plusieurs décennies, la République Démocratique du Congo est marquée par des conflits armés qui engendrent de graves violations des droits de l'homme, y compris des actes de violences sexuelles. Les victimes, souvent laissées dans l'anonymat et la marginalisation, se heurtent à l'absence de mécanismes adéquats pour accéder à la justice et obtenir réparation.
-Dans ce contexte alarmant, et grâce à un processus de plaidoyer mené par la Distinguée Première Dame Denise Nyakeru Tshisekedi, la République Démocratique du Congo a adopté, le 26 décembre 2022, une loi créant le <strong>Fonds National des Réparations des Victimes des Violences Sexuelles liées aux Conflits et des Victimes des Crimes contre la paix et la sécurité de l'humanité</strong>, communément appelé FONAREV.
-Le FONAREV est une institution à caractère publique en faveur de la réparation des victimes des violences sexuelles liés aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité sous la tutelle du Ministère des droits humains.
+          Dans ce contexte alarmant, et grâce à un processus de plaidoyer mené par la Distinguée Première Dame Denise Nyakeru Tshisekedi, la République Démocratique du Congo a adopté, le 26 décembre 2022, une loi créant le <strong>Fonds National des Réparations des Victimes des Violences Sexuelles liées aux Conflits et des Victimes des Crimes contre la paix et la sécurité de l'humanité</strong>, communément appelé FONAREV.
+          Le FONAREV est une institution à caractère publique en faveur de la réparation des victimes des violences sexuelles liés aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité sous la tutelle du Ministère des droits humains.
 
           </p>
           <Link href ="/a-propos-du-fonarev" >
