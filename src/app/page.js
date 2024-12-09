@@ -313,7 +313,7 @@ const formatTitre = (titre) => {
           </div>
         </div>
         <p className={styles.videoDescription}>
-          Trailler de la campagne d'identification des victimes initiées par le FONAREV.
+         Campagne d'identification des victimes des violences sexuelles liées aux conflicts et des victimes des crimes contre la paix et la sécurité de l'humanité.
         </p>
       </section>
 
