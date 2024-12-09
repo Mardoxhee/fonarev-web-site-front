@@ -108,10 +108,10 @@ const formatTitre = (titre) => {
         </div>
         </section>
 
-        <section className = {styles.bannerContainer}>
+        {/* <section className = {styles.bannerContainer}>
         <Image src={GenocostImage} height={240} width="100%" alt="baniere genocost"/>
       
-        </section>
+        </section> */}
 
         <section className={styles.archiveContainer}>
         <h2>Archives</h2>
