@@ -32,7 +32,7 @@ const Appel = () => {
             {/* <Suspense fallback={<div>Chargement...</div>}>
               <AppelCard isAvis={false} bigTitle="..." />
             </Suspense> */}
-
+                <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS  publié le mardi 08 Avril 2025" link="/AMI-consulting.pdf" reference = "AMI N°07-PI/DG FONAREV/CGPMP/PF/04-2025" expiration = "Le 22 avril 2025" titre = "Recrutement d'un consultant chargé de la réalisation d'une étude de modélisation du recouvrement relatif au système de crédit carbone par le FONAREV" />
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS  publié le vendredi 13 Mars 2025" link="/Fonarev-AMI-3-2025.pdf" reference = "AMI N°03-PI/DG FONAREV/CGPMP/PF/03-2025" expiration = "Le 27 mars 2025" titre = "Recrutement d'un consultant (Cabinet) chargé d'une mission d'assistance fiscale au FONAREV" />
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS publié le vendredi 13 Mars 2025" link="/Fonarev-AMI-6-2025.pdf" reference = "AMI N°06-PI/DG FONAREV/CGPMP/PF/03-2025" expiration = "Le 28 mars 2025" titre = "Recrutement d'un consultant individuel pour la réalisation des études sur les projets d'investissement du FONAREV"  />
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS publié le vendredi 13 Mars 2025" link="/FONAREV-AMI-CHARGE-AUDIT-DES-ETATS.pdf" reference = "AMI N°02-PI/DG FONAREV/CGPMP/PF/03-2025" expiration = "Le 28 mars 2025" titre = "Recrutement d'un Auditeur Externe (Cabinet) chargé de réaliser l'audit des états financiers du FONAREV"  />
