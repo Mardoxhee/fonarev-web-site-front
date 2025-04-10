@@ -22,7 +22,7 @@ async function getFromAPi(url) {
     }
 }
 export async function getFileLink(file) {
-    const url = `https://minioapi.fona-vps.cloud/minio/files/${file}`;
+    const url = `https://backendminio.fona-vps.cloud/minio/files/${file}`;
     const data = await getFromAPi(url);
     return data;
 }
