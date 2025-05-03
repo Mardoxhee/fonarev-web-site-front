@@ -32,7 +32,8 @@ const Appel = () => {
       
       <main className={styles.main}>
         <section className={styles.bannerContainer}>
-          <h1>Colloque International sur la Reconnaissance des Génocides en RDC</h1>
+          <h1>La CIA-VAR et le FONAREV, en collaboration avec l’Université de Kinshasa (UNIKIN), l’Université Protestante de Lubumbashi (UPL) et le Centre de Recherche en Sciences Humaines (CRESH), organisent du 29 au 31 juillet 2025, un colloque international sur le thème :<br/>
+         <strong> « RECONNAISSANCE INTERNATIONALE DES GÉNOCIDES COMMIS SUR LE TERRITOIRE DE LA RÉPUBLIQUE DÉMOCRATIQUE DU CONGO »</strong></h1>
           <p>Appel à contributions - Soumettez vos propositions au plus tard le 31 mai 2025</p>
         </section>
         
@@ -51,16 +52,13 @@ const Appel = () => {
           <div className={styles.contentContainer}>
             <h2>Participez à cet événement historique</h2>
             <p>
-              <strong>LA CIAVAR</strong> et le <strong>FONAREV</strong> co-organisent un colloque international 
-              sur la reconnaissance internationale des génocides commis sur le territoire 
-              de la République Démocratique du Congo.
+             Pendant trois jours, des discussions approfondies permettront d'explorer les dimensions juridiques, historiques et sociales des crimes commis, tout en encourageant le dialogue participatif.
             </p>
             
             <div className={styles.highlightBox}>
               <h3>Comment contribuer ?</h3>
               <p>
-                Nous invitons chercheurs, experts et acteurs de la société civile à soumettre 
-                leurs contributions pour cet important colloque international.
+               Investisseurs et chercheurs de tous les bords sont invités à faire parvenir leurs contributions à ces travaux en veillant à se conformer aux exigences formulées dans l'argumentaire à télécharger
               </p>
               <p>
                 Axes du colloque :
@@ -75,7 +73,7 @@ const Appel = () => {
             <div className={styles.contactInfo}>
               <h3>Contactez-nous</h3>
               <p>
-                Pour soumettre votre proposition ou pour plus d'informations :
+                Pour soumettre votre proposition au comité scientifique mis en place à cet effet ou pour plus d'informations  :
               </p>
               <a href="mailto:colloquegenodderdc-2025@fonarev.cd" className={styles.emailLink}>
                 colloquegenociderdc-2025@fonarev.cd
