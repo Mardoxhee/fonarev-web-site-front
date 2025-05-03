@@ -58,7 +58,7 @@ const Appel = () => {
             <div className={styles.highlightBox}>
               <h3>Comment contribuer ?</h3>
               <p>
-               Investisseurs et chercheurs de tous les bords sont invités à faire parvenir leurs contributions à ces travaux en veillant à se conformer aux exigences formulées dans l'argumentaire à télécharger
+               Universitaires et chercheurs de tous les bords sont invités à faire parvenir leurs contributions à ces travaux en veillant à se conformer aux exigences formulées dans l'argumentaire à télécharger
               </p>
               <p>
                 Axes du colloque :
