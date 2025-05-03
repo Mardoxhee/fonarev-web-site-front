@@ -1,10 +1,26 @@
-import React, { Suspense } from 'react';
+"use client"
+import React, { Suspense, useState } from 'react';
 import styles from "./style.module.scss";
 import Head from 'next/head'; 
 import { Script } from 'next/script';
 import Image from 'next/image';
 
 const Appel = () => {
+  const [language, setLanguage] = useState('french');
+
+  const handleDownload = () => {
+    const pdfName = language === 'french' 
+      ? 'Appel_a_contributions_colloque_génocide_RDC_2025.pdf' 
+      : 'Call_for_Papers_Colloquium_Genocide_DRC_2025.pdf';
+    
+    const link = document.createElement('a');
+    link.href = `/${pdfName}`;
+    link.download = pdfName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <Head> 
@@ -22,7 +38,6 @@ const Appel = () => {
         
         <section className={styles.colloqueContainer}>
           <div className={styles.flyerContainer}>
-            {/* Remplacez par votre image réelle */}
             <div className={styles.flyerImage}>
               <Image 
                 src="/contributions.jpg" 
@@ -31,7 +46,6 @@ const Appel = () => {
                 objectFit="cover"
               />
             </div>
-
           </div>
           
           <div className={styles.contentContainer}>
@@ -69,9 +83,26 @@ const Appel = () => {
             </div>
             
             <div className={styles.languageToggle}>
-              <button className={styles.active}>Version française</button>
-              <button>English version</button>
+              <button 
+                className={language === 'french' ? styles.active : ''}
+                onClick={() => setLanguage('french')}
+              >
+                Version française
+              </button>
+              <button 
+                className={language === 'english' ? styles.active : ''}
+                onClick={() => setLanguage('english')}
+              >
+                English version
+              </button>
             </div>
+
+            <button 
+              className={styles.downloadButton}
+              onClick={handleDownload}
+            >
+              Télécharger l'appel à contributions ({language === 'french' ? 'FR' : 'EN'})
+            </button>
           </div>
         </section>
       </main>
