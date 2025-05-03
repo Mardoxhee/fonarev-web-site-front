@@ -17,7 +17,7 @@ const Appel = () => {
       <main className={styles.main}>
         <section className={styles.bannerContainer}>
           <h1>Colloque International sur la Reconnaissance des Génocides en RDC</h1>
-          <p>Appel à contributions - Soumettez vos propositions au plus tard le 29 mai 2025</p>
+          <p>Appel à contributions - Soumettez vos propositions au plus tard le 31 mai 2025</p>
         </section>
         
         <section className={styles.colloqueContainer}>
