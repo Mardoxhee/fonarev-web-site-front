@@ -132,6 +132,7 @@ const handleHamburgerClick = () => {
                     <small className={styles.secondaryMenu}>
                         <Link href="/opportunites/offres-emploi">Offres d'emploi</Link>
                         <Link href="/opportunites/appels" onClick= {handleMenuSelections} >Appels d'offres</Link>
+                        <Link href="/opportunites/appels-a-contributions" onClick= {handleMenuSelections} >Appels à contribution</Link>
                         <Link href="#">Stages</Link>
                     </small>
                 </li>
