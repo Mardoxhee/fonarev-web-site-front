@@ -32,7 +32,7 @@ const Appel = () => {
             {/* <Suspense fallback={<div>Chargement...</div>}>
               <AppelCard isAvis={false} bigTitle="..." />
             </Suspense> */}
-                <AppelCard isAvis = {true}  bigTitle = "AVIS DE REPORT DE DEPOT D'OFFRES. DAte initiale : Le 19 Mai, Date repportée  au  04 juin 2025" link="/avis_repport.pdf" reference = "AAON N° 03-T/DG FONAREV/CGPMP/PF/04-2025" expiration = "Le 04 juin 2025" titre = "MARCHE DES TRAVAUX DE CONSTRUCTION ET EQUIPEMENT, EN LOT UNIQUE, D'UN CENTRE DE SANTE DE REFERENCE A FICHAMA DANS LE TERRITOIRE DE DJUGU, PROVINCE DE L'ITURI" />
+                <AppelCard isAvis = {true}  bigTitle = "AVIS DE REPORT DE DEPOT D'OFFRES. DAte initiale : Le 19 Mai, Date reportée  au  04 juin 2025" link="/avis_repport.pdf" reference = "AAON N° 03-T/DG FONAREV/CGPMP/PF/04-2025" expiration = "Le 04 juin 2025" titre = "MARCHE DES TRAVAUX DE CONSTRUCTION ET EQUIPEMENT, EN LOT UNIQUE, D'UN CENTRE DE SANTE DE REFERENCE A FICHAMA DANS LE TERRITOIRE DE DJUGU, PROVINCE DE L'ITURI" />
 
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS  publié le mardi 06 mai 2025" link="/ami_erp.pdf" reference = "AMI N°08-PI/DG FONAREV/CGPMP/PF/05-2025" expiration = "21 mai 2025" titre = "Recrutement d'un consultant spécialisé dans l'implémentation d'ERP" />
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL A MANIFESTATION D'INTERETS  publié le vendredi 09 Mai 2025" link="/ami_audit_numerique.pdf" reference = "AMI N°21-PI/DG FONAREV/CGPMP/PF/05-2025" expiration = "Le 09 juin 2025" titre = "Recrutement d'un cabinet consultant externe chargé de réaliser un audit du système d'information duFONAREV (Audit du numérique)" />
