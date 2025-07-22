@@ -358,7 +358,7 @@ const formatTitre = (titre) => {
             
             </div>
             <div className={styles.flyerContainer}>
-              <Image src="/geno.jpg" alt="Genocost flyer" layout="fill" objectFit="cover"  />
+              <Image src="/genocost-car.jpeg" alt="Genocost flyer" layout="fill" objectFit="cover"  />
             </div>
       </section>
    
