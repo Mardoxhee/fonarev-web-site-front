@@ -22,7 +22,7 @@ async function getFromAPi(url) {
     }
 }
 export async function getFileLink(file) {
-    const url = `https://360.fonasite.app:5521/minio/files/site/${file}`;
+    const url = `https://minio2.fonasite.app/minio/files/site/${file}`;
     const data = await getFromAPi(url);
     console.log("data de cloudinary", data)
     return data;
