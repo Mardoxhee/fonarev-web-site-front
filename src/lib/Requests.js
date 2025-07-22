@@ -16,14 +16,15 @@ async function getFromAPi(url) {
         const data = (await response.json()) ;
 
         console.error(' need to see ', data);
-        return data.src;
+        return data?.data?.src;
     } catch (error) {
         console.error('Error fetching data:', error);
     }
 }
 export async function getFileLink(file) {
-    const url = `https://360.fonasite.app:5521/minio/files/${file}`;
+    const url = `https://360.fonasite.app:5521/minio/files/site/${file}`;
     const data = await getFromAPi(url);
+    console.log("data de cloudinary", data)
     return data;
 }
 

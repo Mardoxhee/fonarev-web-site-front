@@ -44,7 +44,7 @@ const Offres = () => {
         const cloudinaryData = new FormData();
         cloudinaryData.append("file", file);
         const resp = await fetch(
-          `https://360.fonasite.app:5521/minio/files/upload`,
+          `https://360.fonasite.app:5521/minio/files/site/upload`,
           {
             method: "post",
             body: cloudinaryData,
