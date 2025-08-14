@@ -77,9 +77,9 @@ const About = () => {
             <p>Les missions du FONAREV sont nombreuses et essentielles pour répondre aux besoins des victimes des violences sexuelles et des crimes contre l’humanité en RDC. 
             Elles comprennent :</p>
             <div className = {styles.cardWrapper}>
-                <ValeurCard text = "L'identification minutieuse des victimes " icone = "solar:user-id-broken"/>
-                <ValeurCard text = "L'accompagnement des victimes dans leur accès à la justice" icone = "healthicons:justice-outline"/>
-                <ValeurCard text = "La facilitation de l'indemnisation des victimes" icone = "solar:hand-money-outline"/>
+                <ValeurCard text = "Identifier les victimes" icone = "solar:user-id-broken"/>
+                <ValeurCard text = "Aider les victimes à avoir accès à la justice" icone = "healthicons:justice-outline"/>
+                <ValeurCard text = "Allouer les réparations aux victimes" icone = "solar:hand-money-outline"/>
             </div>
         </section>
 

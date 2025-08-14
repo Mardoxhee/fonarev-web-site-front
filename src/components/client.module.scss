@@ -199,10 +199,13 @@ display: none;
         height: auto;
         padding-top: 35px;
         .pub{
-            height: 500px;
+            height: 650px;
             width: 100%;
-            background-color: #0089CF;
-            // background: url('/oct-rose.jpg');
+            // background-color: #0089CF;
+            background: url('/genocost-cover.jpeg');
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
         }
         .cardContainer{
             height: auto;
