@@ -301,19 +301,34 @@ const formatTitre = (titre) => {
             objectFit="contain" 
             className={styles.tvImage} 
           />
-          {/* Vidéo intégrée */}
+          {/* Preview image avec bouton play */}
           <div className={styles.videoWrapper}>
-            <iframe
-              src="https://www.youtube.com/embed/y4bly-MWU18"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <a
+              href="https://www.youtube.com/watch?v=Is7CNjCB1U8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.genovidLink}
+            >
+              <Image
+                src="/genovid.png"
+                alt="Vidéo Genocost"
+                layout="fill"
+                objectFit="cover"
+                className={styles.genovidImg}
+              />
+              <span className={styles.playButton}>
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.5)"/>
+                  <polygon points="32,25 60,40 32,55" fill="#fff"/>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
         <p className={styles.videoDescription}>
-         Campagne d'identification des victimes des violences sexuelles liées aux conflicts et des victimes des crimes contre la paix et la sécurité de l'humanité.
+          <strong>Suivez le documentaire du GENOCOST sur YouTube</strong>.<br/>
+          <span style={{color:'#8E1F71'}}>Attention&nbsp;: Vidéo réservée à un public majeur (18+).</span>
+          <br/>Cliquez sur l'écran pour accéder à la vidéo.
         </p>
       </section>
 
