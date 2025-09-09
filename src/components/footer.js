@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
         </footer>
         <div className = {styles.copyRight} >
-                <p>Copyright 2024 FONAREV | Powered by FONAREV</p>
+                <p>Copyright 2025 FONAREV | Powered by FONAREV</p>
             </div>
         
     </section>
