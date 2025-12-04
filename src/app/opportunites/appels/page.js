@@ -32,6 +32,10 @@ const Appel = () => {
             {/* <Suspense fallback={<div>Chargement...</div>}>
               <AppelCard isAvis={false} bigTitle="..." />
             </Suspense> */}
+
+                <AppelCard isAvis = {true}  bigTitle = "AVIS DE REPORT DE DEPOT D'OFFRES publié le jeudi 04 Décembre 2025" link="/avis-de-report.pdf" reference = "AOI N°04-S/DG FONAREV/CGPMP/PF/10-2025" expiration = "16 Décembre 2025" titre = "MARCHE DE RECRUTEMENT D'UN PRESTATAIRE CHARGÉ DE LA PRODUCTION DES SUPPORTS AUDIOVISUELS"/>
+
+
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL À MANIFESTATION D'INTERETS  publié le lundi 03 Novembre 2025" link="/AMI-BET-HGR-HAUT-KATANGA.pdf" reference = "AMI N°31-PI/DG FONAREV/CGPMP/PF/10-2025" expiration = "Le 03 Décembre 2025" titre = "RECRUTEMENT D'UNE FIRME DE CONSULTANTS CHARGEE DE LA REALISATION DES ETUDES, DU CONTROLE ET DE LA SURVEILLANCE DE TRAVAUX DE CONSTRUCTION DES HOPITAUX GENERAUX DANS L A PROVINCE DU HAUT KATANGA"/>
                 <AppelCard isAvis = {true}  bigTitle = "AVIS D'APPEL À MANIFESTATION D'INTERETS  publié le lundi 03 Novembre 2025" link="/AMI-BET-INFRASTRUCTURE-DE-BASE-HAUT-KATANGA.pdf" reference = "MI N°31-PI/DG FONAREV/CGPMP/PF/10-2025" expiration = "Le 03 Décembre 2025" titre = "RECRUTEMENT D'UN CONSULTANT FIRME EN CHARGE DES ÉTUDES DES TRAVAUX DE CONSTRUCTION D'INFRASTRUCTURES DE BASE DANS LA PROVINCE DU HAUT KATANGA"/>
 
