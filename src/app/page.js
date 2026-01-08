@@ -437,9 +437,9 @@ const formatTitre = (titre) => {
               <div className={styles.giftText}>
                 <h2>Vous pouvez aussi soutenir les victimes</h2>
                 <p></p>
-                <Link href ="/faire-un-don" >
-                  <button>FAIRE UN DON</button>
-                </Link>
+                <a href="https://front.ecosys.fonasite.app/" target="_blank" rel="noreferrer">
+                  <button>DEVENIR PARTENAIRE</button>
+                </a>
               </div>
         </section>
  
