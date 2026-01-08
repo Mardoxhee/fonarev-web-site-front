@@ -234,7 +234,7 @@ const Details = ({initialArticleDetails}) => {
             </Link>
             ))}
           </div>
-            <div className={styles.pub}></div>
+
         </section>
     </main>
     </>

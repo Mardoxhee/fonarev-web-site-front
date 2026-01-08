@@ -4,7 +4,7 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'minio.fona-vps.cloud',
+          hostname: '360.fonasite.app',
         },
       ],
     },
