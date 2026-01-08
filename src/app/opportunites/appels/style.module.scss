@@ -49,6 +49,15 @@
                 background: transparent ;
                 border : 1px solid black
             }
+
+            .archiveBtn{
+                padding: .8rem 3rem;
+                display: inline-block;
+                background: transparent;
+                border: 1px solid black;
+                text-decoration: none;
+                color: black;
+            }
         }
 
         .cardContainer{
@@ -56,6 +65,98 @@
             flex-direction: column;
             padding: 2rem 0rem;
             height: auto;
+        }
+
+        .emptyState{
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            padding: 1.2rem;
+            p{
+                margin: 0 0 1rem 0;
+                color: rgba(0, 0, 0, 0.65);
+            }
+        }
+
+        .emptyCta{
+            display: inline-block;
+            padding: .8rem 1.2rem;
+            background: transparent;
+            border: 1px solid black;
+            text-decoration: none;
+            color: black;
+        }
+
+        .contentGrid{
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 1.5rem;
+
+            @media (max-width: 991px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .listColumn{
+            min-width: 0;
+        }
+
+        .sidebar{
+            min-width: 0;
+        }
+
+        .ppm2026Sticky{
+            position: sticky;
+            top: 9rem;
+
+            @media (max-width: 991px) {
+                position: static;
+                top: auto;
+            }
+
+            max-height: calc(100vh - 10rem);
+            overflow: auto;
+
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            padding: 1.2rem;
+        }
+
+        .ppm2026Header{
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            padding-bottom: .8rem;
+            margin-bottom: .8rem;
+
+            h3{
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: .6rem;
+                font-size: 1.1rem;
+            }
+
+            p{
+                margin: 0;
+                color: rgba(0, 0, 0, 0.6);
+                font-size: .9rem;
+            }
+        }
+
+        .ppmBadge{
+            background-color: #0089cf;
+            color: white;
+            padding: .2rem .55rem;
+            font-size: .8rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .ppm2026Cards{
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
         }
     }
 }
