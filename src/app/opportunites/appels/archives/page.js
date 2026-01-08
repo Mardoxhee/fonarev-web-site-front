@@ -62,10 +62,10 @@ const parseFrenchDate = (raw) => {
 
 const appels = [
   {
-    id: "2026-01-09-agences-voyage",
-    publishDate: "2026-01-09",
+    id: "2026-01-08-agences-voyage",
+    publishDate: "2026-01-08",
     isAvis: true,
-    bigTitle: "AVIS D'APPEL D'OFFRES publié le 09 janvier 2026",
+    bigTitle: "AVIS D'APPEL D'OFFRES publié le 08 janvier 2026",
     link: "/AVIS%20D%27APPEL%20D%27OFFRES%20-%20RECRUTEMENT%20DES%20AGENCES%20DE%20VOYAGES.pdf",
     reference: "AAOI N° 01- S/DG FONAREV/CGPMP/PF/12-2025",
     expiration: "Le 09 février 2026",

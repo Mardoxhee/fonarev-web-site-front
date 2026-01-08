@@ -35,7 +35,7 @@ const Appel = () => {
                 {/* <Suspense fallback={<div>Chargement...</div>}>
                   <AppelCard isAvis={false} bigTitle="..." />
                 </Suspense> */}
-                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 09 janvier 2026" link="/AVIS%20D%27APPEL%20D%27OFFRES%20-%20RECRUTEMENT%20DES%20AGENCES%20DE%20VOYAGES.pdf" reference = "AAOI N° 01- S/DG FONAREV/CGPMP/PF/12-2025" expiration = "Le 09 février 2026" titre = "MARCHE DE RECRUTEMENT DES AGENCES DE VOYAGE POUR L’ORGANISATION DES DEPLACEMENTS PROFESSIONNELS DES AGENTS DU FONAREV" />
+                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 08 janvier 2026" link="/AVIS%20D%27APPEL%20D%27OFFRES%20-%20RECRUTEMENT%20DES%20AGENCES%20DE%20VOYAGES.pdf" reference = "AAOI N° 01- S/DG FONAREV/CGPMP/PF/12-2025" expiration = "Le 09 février 2026" titre = "MARCHE DE RECRUTEMENT DES AGENCES DE VOYAGE POUR L’ORGANISATION DES DEPLACEMENTS PROFESSIONNELS DES AGENTS DU FONAREV" />
 
 
 
