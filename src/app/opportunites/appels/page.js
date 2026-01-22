@@ -37,7 +37,10 @@ const Appel = () => {
                 </Suspense> */}
                 <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 08 janvier 2026" link="/AVIS%20D%27APPEL%20D%27OFFRES%20-%20RECRUTEMENT%20DES%20AGENCES%20DE%20VOYAGES.pdf" reference = "AAOI N° 01- S/DG FONAREV/CGPMP/PF/12-2025" expiration = "Le 09 février 2026" titre = "MARCHE DE RECRUTEMENT DES AGENCES DE VOYAGE POUR L’ORGANISATION DES DEPLACEMENTS PROFESSIONNELS DES AGENTS DU FONAREV" />
 
-
+                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 14 janvier 2026" link="/AMI-CABINET-DAVOCATS[71].pdf" reference = "AMI N°02-PI/DG FONAREV/CGPMP/PF/01-2026" expiration = "Le 13 février 2026" titre = "RECRUTEMENT D'UN CABINET D'AVOCATS CONSEIL POUR LE FONAREV" />
+                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 14 janvier 2026" link="/AA-CONTRUCTION-D-UN-CENTRE-DES-VICTIMES-A-KONGA-KONGA[47].pdf" reference = "AAOI N° 01- S/DG FONAREV/CGPMP/PF/12-2025" expiration = "Le 13 février 2026" titre = "MARCHE DES TRAVAUX DE CONSTRUCTION D'UN CENTRE DES VICTIMES DANS LA PROVINCE DE LA THOPO" />
+                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 14 janvier 2026" link="/Avis-d-appel-d-offres-CS-FICHAMA[15].pdf" reference = "AON N° 02-T/DG FONAREV/CGPMP/PF/01-2026" expiration = "Le 13 février 2026" titre = "MARCHE DES TRAVAUX DE CONSTRUCTION D'UN CENTRE DE SANTE A FICHAMA, A BUNIA DANS LA PROVINCE DE L'ITURI" />
+                <AppelCard variant="compact" isAvis = {true}  bigTitle = "AVIS D'APPEL D'OFFRES publié le 14 janvier 2026" link="/AAO-CONTRUCTION-D-UN-CENTRE-DES-VICTIMES-A-KONGA-KONGA.pdf" reference = "AAON N° 06-T/DG FONAREV/CGPMP/PF/01-2026" expiration = "Le 13 février 2026" titre = "MARCHE DE TRAVAUX DE CONSTRUCTION D'UN ETABLISSEMENT SCOLAIRE ET PROFESSIONNEL(EP KASONGA)-FICHAMA DANS LA PROVINCE DE L'ITURI" />
 
                 </div>
               </div>
