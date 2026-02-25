@@ -103,7 +103,7 @@ const handleHamburgerClick = () => {
                     <Link href="#">Publications<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
                         <Link href="/publications/rapports-annuels">Rapports annuels</Link>
-                        <Link href="#" onClick= {handleMenuSelections} >Newsletter</Link>
+                        <Link href="/publications/newsletter" onClick= {handleMenuSelections} >Newsletter</Link>
                         <Link href="#">Bulletins infos</Link>
                         <Link href="#">Articles</Link>
                     </small>

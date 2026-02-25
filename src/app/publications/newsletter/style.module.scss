@@ -1,0 +1,236 @@
+@import "./../../variables.module";
+
+.page{
+  width: 100%;
+  padding-top: 7.5rem;
+}
+
+.hero{
+  width: 100%;
+  padding: 4.5rem 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(38, 38, 38, 0.55) 100%), url("./../../../../public/bg-actu.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.heroInner{
+  padding: 0 8rem;
+
+  @media (max-width: 575.98px) { 
+    padding: 0 1rem;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 0 2rem;
+  }
+}
+
+.heroContent{
+  max-width: 820px;
+  color: white;
+}
+
+.kicker{
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.title{
+  margin: 12px 0 8px;
+  font-size: 46px;
+  line-height: 1.05;
+
+  @media (max-width: 575.98px) { 
+    font-size: 34px;
+  }
+}
+
+.subtitle{
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.section{
+  width: 100%;
+  padding: 3rem 0 4.5rem;
+  background: #f7f9fc;
+}
+
+.sectionInner{
+  padding: 0 8rem;
+
+  @media (max-width: 575.98px) { 
+    padding: 0 1rem;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    padding: 0 2rem;
+  }
+}
+
+.sectionHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1.4rem;
+}
+
+.sectionTitle{
+  margin: 0;
+  font-size: 22px;
+}
+
+.sectionSubtitle{
+  margin: 0;
+  color: #67768E;
+  font-size: 14px;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+
+  @media (max-width: 575.98px) { 
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.landscapeCard{
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 22px;
+  background: #eef1f6;
+  min-height: 320px;
+}
+
+.landscapeContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 18px 30px rgba(16, 24, 40, 0.10);
+  width: 60%;
+  z-index: 2;
+  margin-right: clamp(-92px, -6.2vw, -140px);
+  min-height: 260px;
+}
+
+.landscapeMedia{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 320px;
+  width: 40%;
+  box-shadow: 0 18px 30px rgba(16, 24, 40, 0.10);
+}
+
+@media (max-width: 575.98px) { 
+  .landscapeCard{
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 18px;
+    min-height: auto;
+  }
+
+  .landscapeContent{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+    padding: 18px;
+  }
+
+  .landscapeMedia{
+    width: 100%;
+    min-height: 220px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+  .landscapeCard{
+    min-height: 300px;
+  }
+
+  .landscapeContent{
+    width: 60%;
+    margin-right: -84px;
+  }
+
+  .landscapeMedia{
+    width: 40%;
+    min-height: 300px;
+  }
+}
+
+.cardTop{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.meta{
+  font-size: 12px;
+  color: #67768E;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cardBody{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.cardTitle{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #0b2447;
+}
+
+.cardText{
+  margin: 0;
+  font-size: 14px;
+  color: #67768E;
+  line-height: 1.5;
+}
+
+.cardFooter{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue-color;
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 12px 16px;
+  border-radius: 12px;
+  width: fit-content;
+  transition: all 0.2s ease;
+
+  &:hover{
+    opacity: 0.9;
+  }
+}

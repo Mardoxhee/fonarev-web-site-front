@@ -34,20 +34,21 @@ const Footer = () => {
                 </div>
             </div>
             <div className = {styles.rightContainer}>
-                <h3>Vous abonner à notre newsletter</h3>
-                <div className = {styles.formContainer}>   
-                    <form> 
-                        <input/>
-                        <button  type= "submit">
-                            <Icon icon="basil:telegram-outline" className={styles.submitBtn} />
-                        </button>
-                    </form>
-                    <p>En cliquant sur ENVOYER, vous acceptez que FONAREV RDC 
-                        vous adresse sa newsletter. Vous pourrez à tout moment 
-                        vous désinscrire en utilisant le lien intégré à chaque newsletter. 
-                        Pour en savoir plus, consultez notre politique de protection 
-                        des données.
-                    </p>
+                {/* <h3>Newsletter</h3> */}
+                <div className = {styles.newsletterCard}>   
+                    <div className={styles.newsletterCardHeader}>
+                        <div className={styles.newsletterBadge}>BROCHURE</div>
+                        <div className={styles.newsletterMeta}>Édition Janvier</div>
+                    </div>
+                    <div className={styles.newsletterCardBody}>
+                        <div className={styles.newsletterTitle}>Newsletter FONAREV</div>
+                        <div className={styles.newsletterSubtitle}>Découvrez les faits marquants, activités et actualités du mois.</div>
+                    </div>
+                    <div className={styles.newsletterCardFooter}>
+                        <a className={styles.newsletterDownloadCta} href="/api/newsletter/janvier">
+                            Télécharger (PDF)
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
