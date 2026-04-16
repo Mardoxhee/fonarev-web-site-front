@@ -4,6 +4,14 @@ import Image from 'next/image'
 
 const newsletters = [
   {
+    id: '2026-03',
+    monthLabel: 'Mars',
+    title: 'Newsletter FONAREV',
+    description: "Découvrez les faits marquants, activités et actualités du mois.",
+    href: '/api/newsletter/mars',
+    imageSrc: '/reparation.jpg',
+  },
+  {
     id: '2026-02',
     monthLabel: 'Février',
     title: 'Newsletter FONAREV',
@@ -70,7 +78,7 @@ const Newsletter = () => {
                     fill
                     sizes="(max-width: 575.98px) 100vw, 520px"
                     style={{ objectFit: 'cover' }}
-                    priority={item.id === '2026-02'}
+                    priority={item.id === '2026-03'}
                   />
                 </div>
               </article>

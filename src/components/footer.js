@@ -38,14 +38,14 @@ const Footer = () => {
                 <div className = {styles.newsletterCard}>   
                     <div className={styles.newsletterCardHeader}>
                         <div className={styles.newsletterBadge}>BROCHURE</div>
-                        <div className={styles.newsletterMeta}>Édition Février</div>
+                        <div className={styles.newsletterMeta}>Édition Mars</div>
                     </div>
                     <div className={styles.newsletterCardBody}>
                         <div className={styles.newsletterTitle}>Newsletter FONAREV</div>
                         <div className={styles.newsletterSubtitle}>Découvrez les faits marquants, activités et actualités du mois.</div>
                     </div>
                     <div className={styles.newsletterCardFooter}>
-                        <a className={styles.newsletterDownloadCta} href="/api/newsletter/fevrier">
+                        <a className={styles.newsletterDownloadCta} href="/api/newsletter/mars">
                             Télécharger (PDF)
                         </a>
                     </div>
