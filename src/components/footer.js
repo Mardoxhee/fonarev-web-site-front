@@ -11,14 +11,9 @@ const Footer = () => {
     <section className={styles.footerWrapper}>
         <div className={styles.newsLetterContainer}>
             <div className={styles.socialMedia}>
-                <h3>Nous suivre sur les réseaux</h3>
+                <h3>Restez connectés au FONAREV</h3>
+                <p>Suivez nos actions, publications et activités institutionnelles.</p>
                 <div className={styles.iconesWrapper}>
-                    <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
-                        <Icon icon="ri:youtube-fill" className={styles.icone} />
-                    </Link> 
-                
-
-                    <Icon icon="ic:round-tiktok" className={styles.icone} />
                     <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
                         <Icon icon="mdi:facebook" className={styles.icone} />
                     </Link> 
@@ -34,10 +29,9 @@ const Footer = () => {
                 </div>
             </div>
             <div className = {styles.rightContainer}>
-                {/* <h3>Newsletter</h3> */}
                 <div className = {styles.newsletterCard}>   
                     <div className={styles.newsletterCardHeader}>
-                        <div className={styles.newsletterBadge}>BROCHURE</div>
+                        <div className={styles.newsletterBadge}>NEWSLETTER</div>
                         <div className={styles.newsletterMeta}>Édition Mars</div>
                     </div>
                     <div className={styles.newsletterCardBody}>
@@ -54,43 +48,49 @@ const Footer = () => {
         </div>
         <footer>
             <div className = {styles.linkSide} >
-                <div>
+                <div className={styles.brandBlock}>
                     <Image src ={Logo} alt = "logo fonarev"/>     
+                    <p>Fonds national des réparations des victimes.</p>
                 </div>
                 <div className = {styles.linkBlock}>
-                    <h3>A propos</h3>
+                    <h3>Institution</h3>
                     <ul>
-                    <Link href="/about/#about" >
+                    <Link href="/a-propos-du-fonarev" >
                         <li>Qui sommes nous</li>
                     </Link> 
-                    <Link href="/about/#story" >
+                    <Link href="/a-propos-du-fonarev" >
                         <li>Notre histoire</li>
                     </Link> 
-                    <Link href="/about/#team" >
+                    <Link href="/a-propos-du-fonarev" >
                         <li>Equipe dirigeante</li>
                     </Link> 
-                        <li></li>
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>
-                    <h3>Actualités</h3>
+                    <h3>Accès rapides</h3>
                     <ul>
-                        <li>Toutes les actualités</li>
-                        <li>A la une</li>
-                        {/* <li>Nos valeurs</li> */}
-                        <li></li>
+                        <Link href="/actualites" >
+                            <li>Actualités</li>
+                        </Link> 
+                        <Link href="/activites" >
+                            <li>Activités</li>
+                        </Link> 
+                        <Link href="/publications/rapports-annuels" >
+                            <li>Publications</li>
+                        </Link> 
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>
-                    <h3>Notre adresse</h3>
+                    <h3>Contact</h3>
                     <p>
                         Avenue Colonel Ebeya 3498, <br/>Q/ Golf, C/ Gombe
                     </p>
+                    <Link href="/contact" className={styles.contactLink}>Nous contacter</Link>
                 </div>
             </div>
         </footer>
         <div className = {styles.copyRight} >
-                <p>Copyright 2024 FONAREV | Powered by FONAREV</p>
+                <p>© 2026 FONAREV. Tous droits réservés.</p>
             </div>
         
     </section>
