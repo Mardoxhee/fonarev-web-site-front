@@ -9,11 +9,12 @@
 
     .bannerContainer {
       display: flex;
-      height: 100vh;
+      min-height: 100vh;
       position: relative ;
+      isolation: isolate;
       @media (max-width: 575.98px) {
      overflow: hidden;
-     height: 80vh;
+     min-height: 82vh;
      padding: 0 !important;
            }
       .carouselContainer {
@@ -21,11 +22,36 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         background-size: cover;
         background-position: center;
         transition: background-image 1s ease-in-out;
-        padding: 2rem;
+        padding: 2rem 8rem;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 80% 25%, rgba(254, 202, 10, .26), transparent 24%), linear-gradient(110deg, rgba(12, 12, 18, .92) 0%, rgba(35, 11, 42, .75) 45%, rgba(0, 0, 0, .3) 100%);
+          z-index: 0;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -90px;
+          bottom: -110px;
+          width: 420px;
+          height: 420px;
+          border: 1px solid rgba(255, 255, 255, .28);
+          border-radius: 50%;
+          z-index: 0;
+        }
+
+        @media (max-width: 991px) {
+          padding: 2rem;
+        }
 
   
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -50,43 +76,90 @@
         }
   
         .carouselText {
-          padding: 1rem 8rem;
-          border-radius: 8px;
+          padding: 0;
           color: #fff;
           z-index: 1;
-          max-width: 60%;
-          text-align: center;
-          margin-top: 5rem !important;
+          max-width: 980px;
+          text-align: left;
+          margin-top: 5rem;
           display: flex;
           flex-direction: column;
-          align-items: center ;
+          align-items: flex-start ;
           justify-content: center;
       
             p{
-              font-size: 2rem !important;
+              font-size: clamp(36px, 5vw, 68px) !important;
+              line-height: 1.14;
+              letter-spacing: -2px;
+              margin: 0;
             }
           
           .highlight {
-              background-color: #800080; 
-              padding: 0.2rem 0.4rem;
+              display: inline;
+              background-color: #FECA0A; 
+              color: #1b1b1b;
+              padding: 0 0.22rem;
+              line-height: .9;
             }
           p{
-              font-size: 28px;
-              font-weight: 600;
+              font-weight: 800;
           }
 
           
           @media (max-width: 575.98px) {
-            padding: 0 !important;
+            padding: 0 1rem !important;
             width: 100% !important;
             max-width: 100% !important;
-            font-size: 20px !important;
-            margin-top: 10rem !important;
+            margin-top: 8rem !important;
             p{
-              font-size: 25px !important;
+              font-size: 34px !important;
+              letter-spacing: -1px;
             }
           }
 
+        }
+
+        .heroActions {
+          display: flex;
+          gap: 1rem;
+          margin-top: 2rem;
+          flex-wrap: wrap;
+
+          a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 1.2rem;
+            font-weight: 800;
+            transition: all 250ms ease;
+          }
+
+          a:first-child {
+            background: #FECA0A;
+            color: #1b1b1b;
+            box-shadow: 0 18px 45px rgba(254, 202, 10, .25);
+          }
+
+          a:last-child {
+            color: white;
+            border: 1px solid rgba(255, 255, 255, .45);
+          }
+
+          a:hover {
+            transform: translateY(-2px);
+          }
+
+          @media (max-width: 575.98px) {
+            flex-direction: column;
+            align-items: flex-start;
+            width: auto;
+
+            a {
+              width: auto;
+              min-width: 220px;
+            }
+          }
         }
       
       .prevButton,
@@ -97,7 +170,8 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(10px);
         border: none;
         color: white;
         width: 50px;  /* Set fixed width */
@@ -105,7 +179,7 @@
         font-size: 1.5rem; /* Adjusted font size */
         cursor: pointer;
         z-index: 2;
-        border-radius: 50%; /* Ensures perfect circle */
+        border-radius: 0;
         transition: background-color 0.3s ease;
   
         display: flex;
@@ -113,7 +187,7 @@
         justify-content: center;
   
         &:hover {
-          background-color: rgba(0, 0, 0, 0.8);
+          background-color: #8E1F71;
         }
       }
   
@@ -123,43 +197,6 @@
   
       .nextButton {
         right: 10px;
-      }
-    }
-  
-  
-    .actuContainer {
-      bottom: -30%; /* Centré verticalement */
-      padding: 30px;
-      background: white;
-      width: 80%;
-      position: absolute;
-      z-index: 10;
-      left: 50%; /* Centré horizontalement */
-      transform: translate(-50%, -50%); /* Ajuste pour être exactement au centre */
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      box-sizing: border-box;
-      overflow: hidden;
-      justify-content: space-between;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-
-      h3 {
-        margin-top: -8px !important;
-        font-size: 14px;
-      }
-      @media (max-width: 575.98px) {
-        flex-direction: column ;
-        width: 100%;
-        padding: 5px;
-        top: 100%;
-        display: none;
-      }
-    }
-    .actuContainer > a {
-      width: 30%;
-      @media (max-width: 575.98px) {
-        width: 100%;
       }
     }
     }

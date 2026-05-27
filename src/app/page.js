@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import styles from "./home.module.scss";
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
-import Actucard from './../components/actuCard'
-import HeadActu from './../components/headActu'
 import Link from 'next/link';
 import Faq from './../components/faq'
 import AliceCarousel from 'react-alice-carousel';
@@ -12,7 +10,6 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 import Modal from "react-modal";
 import Head from 'next/head'; 
 import ActuCard from './../components/actuCard'
-import Laterral from './../components/lateralSqueleton'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
@@ -27,7 +24,7 @@ const carouselItems = [
         <span className={styles.highlight}>
           Identifier les victimes
         </span> 
-        des violences sexuelles liées aux conflits et les victimes des crimes contre la paix et la sécurité de l’humanité depuis 1993
+        des violences sexuelles liées aux conflits
       </>
     ),
     background: "/reparation.jpg"
@@ -35,8 +32,8 @@ const carouselItems = [
   {
     text: (
       <>
-        Aider les victimes des violences sexuelles liées aux conflits et les victimes des crimes contre la paix et la sécurité de l’humanité à 
-        <span className={styles.highlight}>avoir accès à la justice</span>
+        <span className={styles.highlight}>Allouer des réparations</span>
+        aux victimes
       </>
     ),
     background: "/Idevic2.JPG"
@@ -44,10 +41,8 @@ const carouselItems = [
   {
     text: (
       <>
-        <span className={styles.highlight}>
-          Allouer des réparations aux victimes
-        </span>  
-        des violences sexuelles liées aux conflits et les victimes des crimes contre la paix et la sécurité de l’humanité à avoir accès à la justice
+        Aider les victimes à 
+        <span className={styles.highlight}>avoir accès à la justice</span>
       </>
     ),
     background: "/idvic3.jpg"
@@ -144,7 +139,6 @@ const Home = () => {
   const [isClient, setIsClient] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
-  const [articles, setArticles] = useState([])
   const [lastFourArticles, setLastFourArticles] = useState([]);
    const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -156,11 +150,9 @@ const Home = () => {
       const response = await fetch("https://fonarev-api.onrender.com/articles");
       console.log("response from today", response);
       const articles = await response.json();
-      const lastThreeArticles = articles.article.slice(-3);
       const lastFourArticles = articles.article.slice(-4);
       console.log("lastThreeArticles",lastFourArticles)
       setLastFourArticles(lastFourArticles)
-      setArticles(lastThreeArticles);
 
     } catch (error) {
       console.error("Error fetching articles:", error);
@@ -264,30 +256,11 @@ const formatTitre = (titre) => {
           </button>
           <div className={styles.carouselText}>
             <p>{carouselItems[currentIndex].text}</p>
+            <div className={styles.heroActions}>
+              <Link href="/petition">Signer la pétition</Link>
+              <Link href="/a-propos-du-fonarev">Découvrir le FONAREV</Link>
+            </div>
           </div>
-        </div>
-      
-        <div className={styles.actuContainer}>
-        {articles.length === 0 ? (
-      <Laterral />
-          ) : (
-            articles
-              ?.slice(0, 3)
-              .reverse() // Inverse l'ordre des articles
-              .map((article, index) => (
-                <Link
-                  key={article._id}
-                  href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}
-                >
-                  <HeadActu
-                    key={index} // Utilisez une clé unique, comme article._id
-                    title={article.titre}
-                    bg={article.thumbanails}
-                  />
-                </Link>
-              ))
-          )}
-
         </div>
       </section>
 
@@ -304,7 +277,7 @@ const formatTitre = (titre) => {
           {/* Vidéo intégrée */}
           <div className={styles.videoWrapper}>
             <iframe
-              src="https://www.youtube.com/embed/y4bly-MWU18"
+              src="https://www.youtube.com/embed/Xi0031x3W-A?si=_0PjlzBdS0WrRErc"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -313,7 +286,7 @@ const formatTitre = (titre) => {
           </div>
         </div>
         <p className={styles.videoDescription}>
-         Campagne d'identification des victimes des violences sexuelles liées aux conflicts et des victimes des crimes contre la paix et la sécurité de l'humanité.
+         Parole aux victimes.
         </p>
       </section>
 
