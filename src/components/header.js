@@ -16,6 +16,7 @@ const [isMobile, setIsMobile] = useState(false)
 const [selected, setSelected] = useState(false)
 const [isOpportunitiesOpen, setIsOpportunitiesOpen] = useState(false);
 const router = useRouter();
+const pathname = usePathname();
 
 
 const handleOpportunitiesClick = () => {
@@ -32,7 +33,6 @@ const handleHamburgerClick = () => {
   }
 
   const isLinkActive = (href) => {
-    const pathname = usePathname();
     if (pathname === href) {
       return true;
     }   
@@ -99,17 +99,8 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/activites") ? styles.active : ""} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
                 </li>
-                <li className={isLinkActive("/publications/rapports-annuels") ? styles.active : styles.hoverMenu}>
-                    <Link href="#">Publications<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
-                    <small className={styles.secondaryMenu}>
-                        <Link href="/publications/rapports-annuels">Rapports annuels</Link>
-                        <Link href="/publications/newsletter" onClick= {handleMenuSelections} >Newsletter</Link>
-                        <Link href="#">Bulletins infos</Link>
-                        <Link href="#">Articles</Link>
-                    </small>
-                </li>
                 <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
-                    <Link href="#">Mediathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
+                    <Link href="#">Médiathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
                         <Link href="https://www.youtube.com/@FonarevRDC/videos" target='_blank'>Vidéos</Link>
                         <Link href="#" onClick= {handleMenuSelections} >Podcasts</Link>
@@ -145,7 +136,16 @@ const handleHamburgerClick = () => {
                 <button>DEVENIR PARTENAIRE</button>
             </a>
             </div>
-                {isMobile ? <Icon icon="maki:cross" className={styles.icone} onClick={handleHamburgerClick}/>:  <Icon icon="icon-park:hamburger-button" className={styles.icone} onClick={handleHamburgerClick}/>}
+                <button
+                    type="button"
+                    className={`${styles.menuButton} ${isMobile ? styles.menuButtonOpen : ""}`}
+                    onClick={handleHamburgerClick}
+                    aria-label={isMobile ? "Fermer le menu" : "Ouvrir le menu"}
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
            
         </nav>
     </div>

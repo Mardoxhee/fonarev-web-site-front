@@ -1,8 +1,8 @@
 "use client"
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from './../components/header';
 import Footer from './../components/footer';
+import PageLoader from './../components/pageLoader';
 import { Poppins } from 'next/font/google';
 import { Barlow_Condensed } from 'next/font/google'; // Import the Barlow_Condensed font
 import { store } from './store/store';
@@ -19,6 +19,7 @@ const poppins = Poppins({
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'], // Specify desired font subsets (optional)
   weight: ['300', '400', '700'], // Specify desired font weights (optional)
+  variable: '--font-heading',
 });
 
 export default function RootLayout({ children }) {
@@ -27,8 +28,9 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
-        <html lang="en">
-          <body className={poppins.className}>
+        <html lang="fr">
+          <body className={`${poppins.className} ${barlowCondensed.variable}`}>
+            <PageLoader/>
             <Header/>
               {children}
             <Footer/>

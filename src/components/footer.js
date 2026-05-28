@@ -7,12 +7,19 @@ import Logo from './../../public/fonarev-logo.png'
 import Link from 'next/link'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <section className={styles.footerWrapper}>
         <div className={styles.newsLetterContainer}>
             <div className={styles.socialMedia}>
                 <h3>Restez connectés au FONAREV</h3>
-                <p>Suivez nos actions, publications et activités institutionnelles.</p>
+                <p>Suivez les actions de réparation, les publications, les activités institutionnelles et les voix qui portent la mémoire des victimes.</p>
+                <div className={styles.newsletterHighlights}>
+                    <span><Icon icon="solar:document-text-bold" /> Publications</span>
+                    <span><Icon icon="solar:calendar-bold" /> Activités</span>
+                    <span><Icon icon="solar:heart-bold" /> Réparation</span>
+                </div>
                 <div className={styles.iconesWrapper}>
                     <Link href="https://www.facebook.com/people/Fonarev-RDC/100095091627231/" target='_blank'>
                         <Icon icon="mdi:facebook" className={styles.icone} />
@@ -50,19 +57,33 @@ const Footer = () => {
             <div className = {styles.linkSide} >
                 <div className={styles.brandBlock}>
                     <Image src ={Logo} alt = "logo fonarev"/>     
-                    <p>Fonds national des réparations des victimes.</p>
+                    <p>Fonds national des réparations des victimes des violences sexuelles liées aux conflits et des crimes contre la paix et la sécurité de l'humanité.</p>
                 </div>
                 <div className = {styles.linkBlock}>
                     <h3>Institution</h3>
                     <ul>
                     <Link href="/a-propos-du-fonarev" >
-                        <li>Qui sommes nous</li>
+                        <li>Qui sommes-nous ?</li>
                     </Link> 
                     <Link href="/a-propos-du-fonarev" >
                         <li>Notre histoire</li>
                     </Link> 
                     <Link href="/a-propos-du-fonarev" >
-                        <li>Equipe dirigeante</li>
+                        <li>Équipe dirigeante</li>
+                    </Link> 
+                    </ul>
+                </div>
+                <div className = {styles.linkBlock}>
+                    <h3>Mission</h3>
+                    <ul>
+                    <Link href="/petition" >
+                        <li>Signer la pétition</li>
+                    </Link> 
+                    <Link href="/a-propos-du-fonarev/#genocost" >
+                        <li>GENOCOST</li>
+                    </Link> 
+                    <Link href="https://front.ecosys.fonasite.app/" target='_blank'>
+                        <li>Devenir partenaire</li>
                     </Link> 
                     </ul>
                 </div>
@@ -83,14 +104,14 @@ const Footer = () => {
                 <div className = {styles.linkBlock}>
                     <h3>Contact</h3>
                     <p>
-                        Avenue Colonel Ebeya 3498, <br/>Q/ Golf, C/ Gombe
+                        Avenue Lukusa 26, <br/>Q/Gare, C/Gombe
                     </p>
                     <Link href="/contact" className={styles.contactLink}>Nous contacter</Link>
                 </div>
             </div>
         </footer>
         <div className = {styles.copyRight} >
-                <p>© 2026 FONAREV. Tous droits réservés.</p>
+                <p>© {currentYear} FONAREV. Tous droits réservés.</p>
             </div>
         
     </section>

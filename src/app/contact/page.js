@@ -17,8 +17,8 @@ const page = () => {
         <section className={styles.contact}>
               <div className={styles.textContent}>
                   <h3>Notre siège social</h3>
-                  <p>Avenue Colonel Ebeya 3498,
-                  Q/ Golf, C/ Gombe</p>
+                  <p>Avenue Lukusa 26,
+                  Q/Gare, C/Gombe</p>
                   <h3 className={styles.horaire}>Notre horaire de travail</h3>
                   <p>Lundi : 8h00 - 16h30</p>
                   <p>Mardi : 8h00 - 16H30</p>

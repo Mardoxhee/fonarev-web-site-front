@@ -1,0 +1,261 @@
+@import "./../app/variables.module";
+
+.faqWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: .82fr 1.18fr;
+  gap: 2rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.faqPanel {
+  position: sticky;
+  top: 126px;
+  min-height: 430px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(142, 31, 113, .92), rgba(0, 137, 207, .78)),
+    url("/aboutcover.JPG") center / cover;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: faqPanelIn 700ms ease both;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 0;
+    height: 4px;
+    background: $yellow-color;
+    animation: faqLine 2.8s ease-in-out infinite;
+  }
+
+  span {
+    font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+    color: $yellow-color;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+
+  h3 {
+    font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+    position: relative;
+    margin: .8rem 0 1rem;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.08;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  p {
+    position: relative;
+    margin: 0;
+    color: rgba(255, 255, 255, .82);
+    line-height: 28px;
+  }
+
+  @media (max-width: 991px) {
+    position: relative;
+    top: auto;
+  }
+}
+
+.faqList {
+  display: grid;
+  gap: 1rem;
+}
+
+.faqItem {
+  background: white;
+  border: 1px solid rgba(16, 32, 51, .08);
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(16, 32, 51, .06);
+  overflow: hidden;
+  animation: faqItemIn 650ms ease both;
+
+  &:nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 160ms;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 240ms;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 320ms;
+  }
+
+  button {
+    width: 100%;
+    min-height: 86px;
+    display: grid;
+    grid-template-columns: 48px 1fr 34px;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border: none;
+    background: transparent;
+    color: #172033;
+    text-align: left;
+    cursor: pointer;
+
+    strong {
+      font-size: 17px;
+      line-height: 24px;
+    }
+  }
+}
+
+.questionIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: $move-color;
+  background: rgba(142, 31, 113, .08);
+  border-radius: 8px;
+
+  svg {
+    font-size: 24px;
+  }
+}
+
+.toggleIcon {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: #f7f8fb;
+  border-radius: 50%;
+
+  span {
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background: #172033;
+    transition: transform 240ms ease;
+
+    &:last-child {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.2rem;
+  opacity: 0;
+  transition: max-height 420ms ease, opacity 260ms ease, padding 320ms ease;
+
+  p {
+    margin: 0;
+    color: $paragraph-color;
+    line-height: 28px;
+  }
+
+  ul {
+    display: grid;
+    gap: .6rem;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    gap: .6rem;
+    align-items: flex-start;
+    list-style: none;
+    color: #344054;
+    line-height: 24px;
+
+    svg {
+      flex: 0 0 auto;
+      margin-top: 2px;
+      color: $blue-color;
+      font-size: 18px;
+    }
+  }
+}
+
+.open {
+  border-color: rgba(142, 31, 113, .2);
+  box-shadow: 0 22px 50px rgba(142, 31, 113, .1);
+
+  .questionIcon {
+    color: #171717;
+    background: $yellow-color;
+    animation: iconPulse 1.8s ease-in-out infinite;
+  }
+
+  .toggleIcon span:last-child {
+    transform: rotate(0deg);
+  }
+
+  .answer {
+    max-height: 620px;
+    padding: 0 1.2rem 1.3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes faqPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes faqItemIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes faqLine {
+  0%,
+  100% {
+    transform: scaleX(.35);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@keyframes iconPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}

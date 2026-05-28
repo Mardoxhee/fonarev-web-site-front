@@ -15,11 +15,11 @@ const ArchiveCard = ({ className = styles.cardWrapper, titre, backgroundImage })
           setImageUrl(link);
         } else {
           console.error("No src found in link object", link);
-          setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+          setImageUrl("/placebo.jpg");
         }
       } catch (error) {
         console.error("Error fetching image link:", error);
-        setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+        setImageUrl("/placebo.jpg");
       }
     }
   };

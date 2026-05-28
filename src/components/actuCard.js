@@ -16,11 +16,11 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
           setImageUrl(link);
         } else {
           console.error("No src found in link object", link);
-          setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+          setImageUrl("/placebo.jpg");
         }
       } catch (error) {
         console.error("Error fetching image link:", error);
-        setImageUrl("default-fallback-image-url.png"); // Provide a fallback image URL
+        setImageUrl("/placebo.jpg");
       }
     }
   };
@@ -29,7 +29,20 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
     fetchImage();
   }, []);
 
-  const truncatedTitle = title.length > 70 ? `${title.substring(0, 60)}...` : title;
+  const formatDate = (value) => {
+    if (!value) return "Date non renseignée";
+
+    const parsedDate = new Date(value);
+    if (Number.isNaN(parsedDate.getTime())) return value;
+
+    return new Intl.DateTimeFormat("fr-FR", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    }).format(parsedDate);
+  };
+
+  const truncatedTitle = title?.length > 86 ? `${title.substring(0, 78)}...` : title;
 
   return (
     <div className={styles.cardWrapper}>
@@ -40,18 +53,20 @@ const ActuCard = ({ title, bg, date, category, backgroundPosition, backgroundSiz
           backgroundPosition: backgroundPosition || 'center', // Default to center
           backgroundSize: backgroundSize || 'cover', // Default to cover
         }}
-      ></div>
+      >
+        <span>{category || "Actualité"}</span>
+      </div>
       <div className={styles.titleWrapper}>
         <h3>{truncatedTitle}</h3>
         
         <div className={styles.metaContainer}>
           <p>
             <Icon icon="formkit:time" className={styles.icone} />
-            <span>{date}</span>
+            <span>{formatDate(date)}</span>
           </p>
           <h4>
-            <Icon icon="bi:folder" className={styles.icone} />
-            <span>{category}</span>
+            Lire
+            <Icon icon="solar:arrow-right-linear" className={styles.icone} />
           </h4>
         </div>
       </div>

@@ -78,6 +78,63 @@
     }
 }
 
+.languageSwitch {
+    position: absolute;
+    top: 8.7rem;
+    right: 8rem;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .35rem;
+    color: white;
+    background: rgba(255, 255, 255, .13);
+    border: 1px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(14px);
+
+    span {
+        padding: 0 .55rem;
+        color: rgba(255, 255, 255, .78);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    button {
+        width: 42px;
+        height: 36px;
+        border: 0;
+        color: white;
+        background: transparent;
+        font-weight: 900;
+        cursor: pointer;
+        transition: background 220ms ease, color 220ms ease, transform 220ms ease;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    .activeLanguage {
+        color: #171717;
+        background: $yellow-color;
+    }
+
+    @media (max-width: 991px) {
+        right: 2rem;
+        top: 8.8rem;
+    }
+
+    @media (max-width: 575.98px) {
+        top: 6.5rem;
+        right: 1rem;
+
+        span {
+            display: none;
+        }
+    }
+}
+
 .heroContent {
     max-width: 920px;
     width: 100%;
@@ -169,12 +226,17 @@
 
 .heroCta {
     flex: 0 0 auto;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: $yellow-color;
     color: #1b1b1b;
     text-decoration: none;
-    padding: 1.1rem 1.5rem;
-    font-weight: 800;
+    min-width: 245px;
+    min-height: 68px;
+    padding: 0 2rem;
+    font-size: 18px;
+    font-weight: 900;
     box-shadow: 0 18px 45px rgba(254, 202, 10, .28);
     transition: all 300ms ease;
 
@@ -186,6 +248,7 @@
 
     @media (max-width: 575.98px) {
         width: 100%;
+        min-width: 0;
         box-sizing: border-box;
         text-align: center;
     }
@@ -194,7 +257,7 @@
 .heroMarkers {
     position: absolute;
     right: 8rem;
-    top: 10rem;
+    top: 13.8rem;
     width: 170px;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -208,7 +271,7 @@
 
     @media (max-width: 991px) {
         right: 2rem;
-        top: 9rem;
+        top: 13.5rem;
     }
 
     @media (max-width: 575.98px) {
@@ -260,13 +323,38 @@
     h2 {
         font-size: 40px;
         line-height: 1.15;
-        margin-top: .8rem;
+        margin: .8rem 0 0;
         overflow-wrap: break-word;
 
         @media (max-width: 575.98px) {
             font-size: 28px;
             line-height: 1.2;
         }
+    }
+}
+
+.appealCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    margin-top: 1.5rem;
+    padding: 0 1.25rem;
+    color: #fff;
+    background: $move-color;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 0 16px 36px rgba(142, 31, 113, .18);
+    transition: transform 240ms ease, background 240ms ease;
+
+    &:hover {
+        background: $blue-color;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -409,8 +497,10 @@
 }
 
 .memoryIntro {
-    max-width: 820px;
-    margin-bottom: 3rem;
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding-right: 8rem;
 
     span {
         color: $blue-color;
@@ -429,37 +519,63 @@
     }
 
     p {
+        max-width: 760px;
         color: #505050;
         line-height: 30px;
         font-size: 17px;
     }
+
+    @media (max-width: 575.98px) {
+        padding-right: 0;
+    }
 }
 
-.grid {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.4rem;
-    align-items: start;
-    padding: 1.2rem;
-    background: rgba(255, 255, 255, .72);
-    border: 1px solid rgba(17, 24, 39, .06);
-    border-radius: 34px;
-    box-shadow: 0 28px 90px rgba(17, 24, 39, .08);
+.carouselActions {
+    position: absolute;
+    right: 0;
+    bottom: .4rem;
+    display: flex;
+    gap: .65rem;
 
-    @media (max-width: 991px) {
-        grid-template-columns: repeat(3, 1fr);
-        border-radius: 24px;
+    button {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border: none;
+        color: #fff;
+        background: $move-color;
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+        transition: transform 220ms ease, background 220ms ease;
+
+        &:hover {
+            background: $blue-color;
+            transform: translateY(-2px);
+        }
     }
 
     @media (max-width: 575.98px) {
-        grid-template-columns: 1fr;
-        padding: .7rem;
-        gap: 1rem;
+        position: static;
+        margin-top: 1.2rem;
     }
 }
 
+.carouselViewport {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: .5rem .2rem 1.4rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: $move-color rgba(17, 24, 39, .08);
+}
+
 .card {
+    flex: 0 0 min(340px, 82vw);
+    scroll-snap-align: start;
     position: relative;
     margin: 0;
     padding: .55rem;
@@ -467,11 +583,11 @@
     overflow: hidden;
     border-radius: 22px;
     border: 1px solid rgba(17, 24, 39, .08);
-    transition: all 300ms ease;
+    transition: transform 300ms ease, box-shadow 300ms ease;
     box-shadow: 0 18px 45px rgba(17, 24, 39, .1);
 
     &:hover {
-        transform: translateY(-8px) rotate(0deg);
+        transform: translateY(-6px);
         box-shadow: 0 28px 75px rgba(17, 24, 39, .18);
 
         img {
@@ -482,7 +598,7 @@
     img {
         width: 100%;
         height: auto;
-        aspect-ratio: 3 / 4.25;
+        aspect-ratio: 3 / 3.65;
         object-fit: contain;
         display: block;
         background: #f8fafc;
@@ -490,71 +606,52 @@
         transition: transform 700ms ease;
     }
 
+    figcaption {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: .75rem;
+        align-items: start;
+        padding: .9rem .35rem .25rem;
+
+        span {
+            color: $move-color;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        p {
+            margin: 0;
+            color: #344054;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
     @media (max-width: 575.98px) {
+        flex-basis: 86vw;
         border-radius: 18px;
         padding: .45rem;
     }
 }
 
-.card1 {
-    grid-column: span 2;
-    transform: rotate(-1.4deg);
-}
+.carouselDots {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: 1.2rem;
 
-.card2 {
-    grid-column: span 2;
-    margin-top: 3.5rem;
-    transform: rotate(1.2deg);
-}
-
-.card3 {
-    grid-column: span 2;
-    transform: rotate(-.7deg);
-}
-
-.card4 {
-    grid-column: span 2;
-    margin-top: -2rem;
-    transform: rotate(1.1deg);
-}
-
-.card5 {
-    grid-column: span 2;
-    margin-top: 1.5rem;
-    transform: rotate(-1deg);
-}
-
-.card6 {
-    grid-column: span 2;
-    margin-top: -1rem;
-    transform: rotate(.8deg);
-}
-
-@media (max-width: 991px) {
-    .card1,
-    .card2,
-    .card3,
-    .card4,
-    .card5 {
-        grid-column: span 1;
-        margin-top: 0;
+    button {
+        width: 28px;
+        height: 4px;
+        padding: 0;
+        border: 0;
+        background: rgba(142, 31, 113, .22);
+        cursor: pointer;
+        transition: width 220ms ease, background 220ms ease;
     }
 
-    .card6 {
-        grid-column: span 1;
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .card1,
-    .card2,
-    .card3,
-    .card4,
-    .card5,
-    .card6 {
-        grid-column: auto;
-        margin-top: 0;
-        transform: none;
+    .activeDot {
+        width: 54px;
+        background: $move-color;
     }
 }

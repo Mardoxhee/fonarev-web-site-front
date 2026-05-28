@@ -1,146 +1,106 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+"use client"
 
-export default function AccordionExpandDefault() {
+import { useState } from "react";
+import { Icon } from "@iconify/react";
+import styles from "./faq.module.scss";
+
+const faqItems = [
+  {
+    icon: "solar:shield-user-bold",
+    question: "Quid du FONAREV ?",
+    answer:
+      "Le Fonds national des réparations des victimes des violences sexuelles liées aux conflits et des crimes contre la paix et la sécurité de l'humanité est un établissement public dédié à la protection, à l'accompagnement et à la réparation des victimes.",
+    points: [
+      "Identifier les victimes",
+      "Faciliter l'accès à la justice",
+      "Accompagner juridiquement les victimes",
+      "Allouer des réparations adaptées",
+    ],
+  },
+  {
+    icon: "solar:buildings-2-bold",
+    question: "Quel est le statut du FONAREV ?",
+    answer:
+      "Le FONAREV est un établissement public institué par la loi n° 22/065 du 26 décembre 2022. Il est placé sous la tutelle du ministère ayant les Droits humains dans ses attributions.",
+  },
+  {
+    icon: "solar:wallet-money-bold",
+    question: "Quelles sont ses sources de financement ?",
+    answer: "Les ressources du Fonds proviennent de plusieurs sources prévues par les textes et les mécanismes de solidarité.",
+    points: [
+      "11 % de la redevance minière versée par le titulaire du titre minier",
+      "2 % de la part réservée à l'État sur les certificats carbone",
+      "Solidarité nationale et internationale",
+      "Contributions des partenaires, organisations et philanthropes",
+      "Dons et legs",
+    ],
+  },
+  {
+    icon: "solar:map-point-wave-bold",
+    question: "Quel est son champ d'action ?",
+    answer:
+      "Le FONAREV intervient sur toute l'étendue de la République démocratique du Congo, pour les faits couverts à partir de 1993 à ce jour.",
+  },
+  {
+    icon: "solar:users-group-rounded-bold",
+    question: "Quels types de victimes sont pris en charge ?",
+    answer:
+      "Le FONAREV prend en considération les victimes directes et indirectes, selon les préjudices subis et les liens avec les personnes affectées.",
+    points: [
+      "Victimes directes des violences sexuelles liées aux conflits et des crimes graves",
+      "Victimes de tortures, pillages, destructions et dommages en période de conflit",
+      "Victimes indirectes : conjoints survivants, enfants, frères, sœurs et proches",
+    ],
+  },
+];
+
+export default function Faq() {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
   return (
-    <div>
-      <Accordion defaultExpanded>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1-content"
-          id="panel1-header"
-        >
-          <Box>
-            <h4>
-                Quid du Fonarev ?
-            </h4>
-            </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box>
-          Le Fonds National des Réparations des Victimes des violences sexuelles liées aux conflits et des crimes contre la paix et la sécurité de l'humanité (FONAREV), est un établissement public novateur dédié à la protection et à la réparation des victimes de violences sexuelles, placé sous tutelle du ministère des Droits Humains, le Fonarev a pour missions essentielles :
-            <ul>
-                <li>
-                Identifier les victimes ;
-                </li>
-                <li>
-                Aider les victimes à avoir accès à la justice, aider les victimes à être indemnisées et à recouvrer les dommages intérêts leur alloué ; 
-                </li>
-                <li>
-                Aider les victimes à bénéficier gratuitement d'un accompagnement et d'une assistance judiciaire appropriée assurée par des avocats ;
-                </li>
-                <li>
-                Allouer des réparations aux victimes. 
-                </li>
-            </ul>
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-            <Box>
-            <h4>
-                Quel est le statut du Fonarev ? est-ce un organisme ? est-ce une ONG ?
-            </h4>
-            </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-          Le Fonarev est un établissement public institué par la loi n°22/065 du 26 décembre 2022. Il est sous tutelle du ministère ayant les Droits Humains dans ses attributions. 
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+    <div className={styles.faqWrapper}>
+      <aside className={styles.faqPanel}>
+        <span>RÉPONSES ESSENTIELLES</span>
+        <h3>Comprendre le FONAREV en quelques questions.</h3>
+        <p>
+          Une lecture claire de la mission, du statut, du financement et du champ d'action de l'institution.
+        </p>
+      </aside>
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-            <Box>
-            <h4>
-            Quelles sont les sources de financement du Fonarev ?
-            </h4>
-            </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          Les ressources du Fond proviennent de plusieurs sources notamment de 
-          <ul>
-                <li>
-                    11% de la redevance minière versée par le titulaire du titre minier ;
-                </li>
-                <li>
-                    2% de la partie réservée à l'Etat congolais de bénéfices résultant de la vente par les opérateurs économiques privés des certificats du carbone ; 
-                </li>
-                <li>
-                    Sommes collectées exceptionnellement par l'élan de solidarité nationale et internationale ;
-                </li>
-                <li>
-                    Contribution des bailleurs de fonds, organisation internationale et philanthropiques ;
-                </li>
-                <li>
-                    Les dons et legs
-                </li>
-            </ul>
-        </AccordionDetails>
-      </Accordion>
+      <div className={styles.faqList}>
+        {faqItems.map((item, index) => {
+          const isOpen = activeIndex === index;
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-            <Box>
-            <h4>
-            Quel est le champ d'action du Fonarev ?
-            </h4>
-            </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-          <p>
-          Le Fonarev s'occupe des victimes de toute l'étendue de la République et ce, à partir de 1993 à ce jour.
-            </p>
-        </AccordionDetails>
-      </Accordion>
+          return (
+            <article className={`${styles.faqItem} ${isOpen ? styles.open : ""}`} key={item.question}>
+              <button type="button" onClick={() => setActiveIndex(isOpen ? -1 : index)} aria-expanded={isOpen}>
+                <span className={styles.questionIcon}>
+                  <Icon icon={item.icon} />
+                </span>
+                <strong>{item.question}</strong>
+                <span className={styles.toggleIcon}>
+                  <span />
+                  <span />
+                </span>
+              </button>
 
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2-content"
-          id="panel2-header"
-        >
-            <Box>
-            <h4>
-            Quels sont les types de victimes prises en charge par le Fonarev ?
-            </h4>
-            </Box>
-        </AccordionSummary>
-        <AccordionDetails>
-        Il existe deux types de victimes : les victimes directes et les victimes indirectes 
-          <ul>
-                <li>
-                Les victimes directes sont les victimes des violences sexuelles liées aux conflits, les victimes des crimes contre la paix et la sécurité de l'humanité, les victimes de tortures et de tout dommage ayant entrainé ou non une invalidité en temps de conflits., les personnes qui, en période de conflit, ont connu des actes de pillages, de destruction de leurs biens immeubles et meubles tandis que
-                </li>
-                <li>
-                Les victimes indirectes sont les parents de victimes directes (le conjoint survivant, les enfants, frères, sœurs… de cujus). 
-                </li>
-            </ul>
-   
-
-
-
-        </AccordionDetails>
-      </Accordion>
+              <div className={styles.answer} aria-hidden={!isOpen}>
+                <p>{item.answer}</p>
+                {item.points && (
+                  <ul>
+                    {item.points.map((point) => (
+                      <li key={point}>
+                        <Icon icon="solar:check-circle-bold" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </div>
   );
 }
