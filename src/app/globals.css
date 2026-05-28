@@ -301,6 +301,10 @@ a {
   background: rgba(142, 31, 113, 0.08);
 }
 
+[class*="header_activitiesMenu"] {
+  display: none !important;
+}
+
 [class*="header_ctaContainer"] button {
   min-height: 46px;
   padding: 0 1rem;
@@ -502,6 +506,7 @@ a {
 [class*="home_introBand"] {
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: start;
+  padding-bottom: 2rem;
 }
 
 [class*="home_introBand"] > p {
@@ -510,6 +515,7 @@ a {
 
 [class*="home_videoSection"] {
   grid-template-columns: 0.82fr 1.18fr;
+  padding-top: 1.5rem;
   background: linear-gradient(180deg, #fff, #f6fbfe);
 }
 
@@ -602,10 +608,10 @@ a {
 
 [class*="home_videoWrapper"] {
   position: absolute;
-  top: 22%;
-  left: 15.6%;
-  width: 68.8%;
-  height: 42.5%;
+  top: 17.5%;
+  left: 11.7%;
+  width: 76.6%;
+  height: 51.5%;
   overflow: hidden;
   background: #111;
 }

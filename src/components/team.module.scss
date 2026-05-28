@@ -1,8 +1,10 @@
 .teamCardContainer{
-    height: 350px;
+    min-height: 410px;
     border-radius: 10px;
     box-sizing: border-box;
-    width: 300px;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
     position: relative;
     background-color: #FECA0A;
     
@@ -12,13 +14,13 @@
     // background-color:white;
     .imgContainer{
         border-radius: 10px;
-        width: 80%;
-        height: 260px;
+        width: 82%;
+        height: 250px;
         background: url('./../../public/dga-emma.jpg');
         background-position: center center;
         background-size: cover;
         position: absolute;
-        top: -2.5rem;
+        top: -1.4rem;
         left: 50%;
         transform: translateX(-50%); 
         /* 
@@ -27,6 +29,8 @@
     }
 .text{
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
     display: flex;
     flex-direction: column ;
@@ -34,16 +38,22 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    min-height: 145px;
+    padding: 1rem 1.1rem 1.25rem;
+    box-sizing: border-box;
     h3{
-        font-size: 15px;
+        font-size: 16px;
             margin: 0;
             font-weight: 700;
             text-align: center;
+            line-height: 1.25;
     }
     h4{
         text-align: center ;
         font-weight: 500;
         font-size: 14px;
+        line-height: 1.35;
+        margin: .9rem 0 0;
       
       
     }

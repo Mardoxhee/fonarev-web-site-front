@@ -96,7 +96,7 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/actualites") ? styles.active : ""} onClick= {handleMenuSelections} >
                     <Link href="/actualites">Actualités</Link>
                 </li>
-                <li className={isLinkActive("/activites") ? styles.active : ""} onClick= {handleMenuSelections} >
+                <li className={`${isLinkActive("/activites") ? styles.active : ""} ${styles.activitiesMenu}`} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
                 </li>
                 <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
