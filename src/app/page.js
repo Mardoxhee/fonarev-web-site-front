@@ -249,7 +249,7 @@ const Home = () => {
             <p>{currentSlide.text}</p>
             <div className={styles.heroActions}>
               <Link href="/petition">
-                Signer la pétition
+                Voir la pétition
                 <Icon icon="solar:pen-new-square-linear" />
               </Link>
               <Link href="/a-propos-du-fonarev">
