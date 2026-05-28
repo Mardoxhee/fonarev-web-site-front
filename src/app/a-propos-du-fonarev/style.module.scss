@@ -323,6 +323,10 @@
 .vision {
   grid-template-columns: 1.08fr .92fr;
   background: #fff;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .mission {
@@ -409,6 +413,10 @@
 .values {
   grid-template-columns: 1.08fr .92fr;
   background: #fff;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .valuesGrid {
@@ -446,10 +454,25 @@
   }
 }
 
+.valuesImage {
+  @media (max-width: 991px) {
+    min-height: 360px;
+  }
+
+  @media (max-width: 575.98px) {
+    min-height: 300px;
+  }
+}
+
 .genocost {
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
   align-items: start;
   gap: 5rem;
+
+  @media (max-width: 1180px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 .genocostImages {
@@ -473,11 +496,17 @@
     }
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 1180px) {
     position: relative;
     top: auto;
+    height: 420px;
+    min-height: 0;
+    max-height: none;
+  }
+
+  @media (max-width: 575.98px) {
     grid-template-columns: 1fr;
-    min-height: 640px;
+    height: 360px;
   }
 }
 
@@ -489,12 +518,31 @@
   > div:last-child {
     margin-bottom: 2rem;
   }
+
+  @media (max-width: 1180px) {
+    > div:first-child,
+    > div:last-child {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    > div:last-child {
+      display: none;
+    }
+  }
 }
 
 .genocostContent {
   p {
     max-width: 780px;
     text-align: justify;
+
+    @media (max-width: 575.98px) {
+      text-align: left;
+      font-size: 15px;
+      line-height: 28px;
+    }
   }
 }
 
@@ -519,6 +567,11 @@
 
   @media (max-width: 1180px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 4rem;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
     row-gap: 4rem;
   }
 
