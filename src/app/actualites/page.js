@@ -21,7 +21,7 @@ const promos = [
     label: "Mobilisation citoyenne",
     title: "Signer la pétition",
     text: "Porter la voix des victimes, soutenir la reconnaissance et renforcer les efforts de réparation.",
-    image: "/pr-fatshi13.jpg",
+    image: "/genocost1.jpg",
     href: "/petition",
     cta: "Voir la pétition",
   },

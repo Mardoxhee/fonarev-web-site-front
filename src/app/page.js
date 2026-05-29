@@ -312,7 +312,7 @@ const Home = () => {
 
         <section className={styles.aboutSection}>
           <div className={styles.aboutImage}>
-            <Image src="/pr-fatshi13.jpg" alt="Rencontre institutionnelle du FONAREV" fill sizes="(max-width: 900px) 100vw, 42vw" />
+            <Image src="/caroussel-item-1.jpg" alt="Rencontre institutionnelle du FONAREV" fill sizes="(max-width: 900px) 100vw, 42vw" />
           </div>
           <div className={styles.aboutText}>
             <span className={styles.sectionEyebrow}>Qui sommes-nous ?</span>
