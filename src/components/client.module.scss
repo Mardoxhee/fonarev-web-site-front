@@ -191,6 +191,7 @@
 }
 
 .petitionPub {
+  position: relative;
   min-height: 230px;
   display: flex;
   flex-direction: column;
@@ -201,7 +202,8 @@
   color: #fff;
   text-decoration: none;
   background:
-    linear-gradient(135deg, rgba(142, 31, 113, 0.96), rgba(0, 137, 207, 0.88));
+    linear-gradient(180deg, rgba(12, 16, 35, 0.08), rgba(12, 16, 35, 0.82)),
+    url("./../../public/caroussel-item-1.jpg") center / cover no-repeat;
   box-shadow: 0 24px 70px rgba(12, 16, 35, 0.12);
   transition:
     transform 260ms ease,
@@ -214,6 +216,8 @@
 }
 
 .petitionPub span {
+  position: relative;
+  z-index: 1;
   color: $yellow-color;
   font-family: var(--font-heading), "Barlow Condensed", sans-serif;
   font-size: 1.1rem;
@@ -222,6 +226,8 @@
 }
 
 .petitionPub strong {
+  position: relative;
+  z-index: 1;
   margin-top: 0.25rem;
   font-family: var(--font-heading), "Barlow Condensed", sans-serif;
   font-size: clamp(2.4rem, 3.5vw, 3.7rem);
@@ -231,6 +237,8 @@
 }
 
 .petitionPub small {
+  position: relative;
+  z-index: 1;
   margin-top: 0.8rem;
   color: rgba(255, 255, 255, 0.84);
   font-size: 0.95rem;
