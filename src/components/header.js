@@ -5,8 +5,7 @@ import Image from 'next/image'
 import Logo from './../../public/logo-fonarev.png'
 import { Icon } from '@iconify/react';
 import Link from 'next/link'
-import {useState, useEffect} from 'react'
-import { useRouter } from 'next/navigation';
+import {useState} from 'react'
 import { usePathname } from 'next/navigation';
 import Head from 'next/head'; 
 
@@ -14,14 +13,7 @@ import Head from 'next/head';
 const Header = () => {
 const [isMobile, setIsMobile] = useState(false)
 const [selected, setSelected] = useState(false)
-const [isOpportunitiesOpen, setIsOpportunitiesOpen] = useState(false);
-const router = useRouter();
 const pathname = usePathname();
-
-
-const handleOpportunitiesClick = () => {
-    setIsOpportunitiesOpen(!isOpportunitiesOpen); // Toggle Opportunités dropdown
-  };
 
 const handleHamburgerClick = () => {
     setIsMobile(!isMobile);
@@ -33,10 +25,14 @@ const handleHamburgerClick = () => {
   }
 
   const isLinkActive = (href) => {
-    if (pathname === href) {
-      return true;
-    }   
+    if (href === "/") {
+      return pathname === href;
+    }
+
+    return pathname === href || pathname?.startsWith(`${href}/`);
   };
+
+  const isOpportunitiesActive = pathname?.startsWith("/opportunites");
 
   return (
   <>
@@ -118,13 +114,13 @@ const handleHamburgerClick = () => {
               */}
             
        
-                <li className={isLinkActive("/opportunites/appels") ? styles.active : styles.hoverMenu}>
-                    <Link href="#">Opportunités<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
+                <li className={isOpportunitiesActive ? styles.active : styles.hoverMenu}>
+                    <Link href="/opportunites">Opportunités<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
-                        <Link href="/opportunites/offres-emploi">Offres d'emploi</Link>
+                        <Link href="/opportunites/offres-emploi" onClick= {handleMenuSelections} >Offres d'emploi</Link>
                         <Link href="/opportunites/appels" onClick= {handleMenuSelections} >Appels d'offres</Link>
-                        <Link href="/opportunites/appels-a-contributions" onClick= {handleMenuSelections} >Appels à contribution</Link>
-                        <Link href="#">Stages</Link>
+                        <Link href="/opportunites/appels-a-contributions" onClick= {handleMenuSelections} >Appel à contribution</Link>
+                        <Link href="/opportunites/stages" onClick= {handleMenuSelections} >Stage</Link>
                     </small>
                 </li>
                 <li className={isLinkActive("/contact") ? styles.active : ""} onClick= {handleMenuSelections} >
