@@ -1,92 +1,449 @@
-.main{
-    height: auto;
-    background-color: #f3f4f6;
+@import './../_variables.module.scss';
+
+.main {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #fffdf7;
+  color: #111827;
 }
 
-
-.contact{
-    padding: 2rem 8rem;
-    display: flex;
-    justify-content: space-between;
-    .textContent{
-        width: 40%;
-
-    .horaire{
-        margin-top: 4rem;
-    }
-    }
-
-    .formContainer{
-        width: 50%;
-        height: 80vh;
-    
-        margin-top: -10rem;
-        background-color: #f3f4f6;
-        border: rgba(0, 0, 0, 0.044) solid 1px;
-        height: 80vh;
-        h3{
-            padding : 20px;
-            height: 10%;
-        }
-        form {
-            background-color: white;
-            padding: 20px;
-            height: 71.5%;
-            .inputFlexer{
-                display: flex;
-                justify-content: space-between;
-                margin: 1rem 0rem;
-                input{
-                    width: 46%;
-                    background-color: #f3f4f6;
-                    border: none;
-                    padding: 15px 5px;
-                }
-                textarea{
-                    width: 100%;
-                    background-color: #f3f4f6;
-                    border: none;
-                    padding: 15px 5px;
-                    height: 200px;
-                }
-            }
-
-            button{
-                background-color: #0089CF;
-                border: none;
-                width: 100%;
-                color: white;
-                padding: 1rem;
-                font-weight: 500;
-                cursor: pointer;
-            }
-        }
-    }
-
-    @media (max-width: 575.98px) {
-        flex-direction: column-reverse;
-        padding: .8rem;
-        .textContent{
-            width: 100%;
-        }
-        .formContainer{
-            margin-top: 0;
-            width: 100%;
-            h3{
-                margin-top: 0;
-                margin-bottom: 2rem;
-           
-            }
-        }
-    }
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: $yellow-color;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.map{
-    padding: 2rem 8rem;
-    @media (max-width: 575.98px) {
-        padding: 0;
-    }
-    iframe {
-        border: none !important;
-    }
+.hero {
+  position: relative;
+  min-height: 74vh;
+  display: grid;
+  align-items: center;
+  padding: 8rem clamp(1.2rem, 7vw, 8rem) 5rem;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(10, 14, 31, 0.9) 0%, rgba(48, 20, 62, 0.72) 48%, rgba(0, 137, 207, 0.42) 100%),
+    url('/contact.jpg') center/cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: clamp(1.2rem, 7vw, 8rem);
+  bottom: 3.4rem;
+  width: min(34rem, calc(100% - 2.4rem));
+  height: 4px;
+  background: linear-gradient(90deg, $yellow-color, rgba(254, 202, 10, 0));
+  transform-origin: left;
+  animation: contactLine 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  z-index: -1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 18%, rgba(0, 137, 207, 0.25), transparent 34%),
+    linear-gradient(180deg, rgba(7, 10, 24, 0.08), rgba(7, 10, 24, 0.62));
+  z-index: -2;
+}
+
+.heroContent {
+  width: min(800px, 100%);
+  color: #fff;
+}
+
+.heroContent h1,
+.sectionIntro h2,
+.formPanel h2,
+.mapHeader h2 {
+  margin: 0;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.heroContent h1 {
+  font-size: clamp(3.4rem, 5.4vw, 6.2rem);
+  max-width: 13ch;
+}
+
+.heroContent p {
+  max-width: 720px;
+  margin: 1.45rem 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.8;
+}
+
+.heroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3.6rem;
+  margin-top: 2.2rem;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  background: $yellow-color;
+  color: #111827;
+  font-weight: 900;
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.heroButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(254, 202, 10, 0.24);
+  background: #ffd84a;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(420px, 1.08fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 7vw, 8rem);
+}
+
+.infoColumn {
+  display: grid;
+  align-content: start;
+  gap: 1.4rem;
+}
+
+.sectionIntro h2,
+.formPanel h2,
+.mapHeader h2 {
+  color: #111827;
+  font-size: clamp(2.8rem, 4vw, 4.8rem);
+}
+
+.sectionIntro p {
+  max-width: 620px;
+  margin: 1.2rem 0 0;
+  color: $paragraph-color;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.cardStack {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.infoCard,
+.schedule,
+.formPanel,
+.mapFrame {
+  border: 1px solid rgba(103, 120, 142, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 22px 70px rgba(12, 16, 35, 0.06);
+}
+
+.infoCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem;
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 137, 207, 0.28);
+  box-shadow: 0 24px 60px rgba(0, 137, 207, 0.1);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.55rem;
+  height: 3.55rem;
+  border-radius: 8px;
+  background: rgba(142, 31, 113, 0.09);
+  color: $move-color;
+
+  svg {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+}
+
+.infoCard h3,
+.schedule h3 {
+  margin: 0 0 0.35rem;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.infoCard p {
+  margin: 0.12rem 0;
+  color: $paragraph-color;
+  line-height: 1.45;
+}
+
+.schedule {
+  padding: 1.25rem;
+}
+
+.scheduleRows {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  background: #f6f8fb;
+  color: $paragraph-color;
+}
+
+.scheduleRow strong {
+  color: #111827;
+}
+
+.formPanel {
+  position: relative;
+  align-self: start;
+  padding: clamp(1.6rem, 3vw, 2.8rem);
+  overflow: hidden;
+}
+
+.formPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, $move-color, $blue-color, $yellow-color);
+}
+
+.formPanel h2 {
+  max-width: 740px;
+}
+
+.formPanel form {
+  margin-top: 2.4rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem 1.25rem;
+}
+
+.formGroup {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.formGroup span {
+  color: #111827;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  border: 1px solid rgba(103, 120, 142, 0.18);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #111827;
+  font: inherit;
+  outline: none;
+  padding: 1rem;
+  transition:
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.formGroup textarea {
+  min-height: 190px;
+  resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: rgba(0, 137, 207, 0.7);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 137, 207, 0.11);
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
+.formPanel button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  min-height: 3.8rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: $move-color;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition:
+    transform 260ms ease,
+    background 260ms ease,
+    box-shadow 260ms ease;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.formPanel button:hover {
+  transform: translateY(-3px);
+  background: #7d1a64;
+  box-shadow: 0 22px 48px rgba(142, 31, 113, 0.18);
+}
+
+.mapSection {
+  padding: 0 clamp(1.2rem, 7vw, 8rem) clamp(4rem, 7vw, 6.5rem);
+}
+
+.mapHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.mapHeader h2 {
+  max-width: 720px;
+}
+
+.mapFrame {
+  position: relative;
+  overflow: hidden;
+  height: clamp(320px, 42vw, 500px);
+}
+
+.mapFrame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(0.95) contrast(1.02);
+}
+
+@keyframes contactLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero {
+    min-height: 68vh;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formPanel {
+    order: -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 64vh;
+    padding-top: 6.5rem;
+    padding-bottom: 3.8rem;
+  }
+
+  .hero::after {
+    bottom: 2.2rem;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(3.1rem, 14vw, 4.6rem);
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .contactGrid {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .sectionIntro h2,
+  .formPanel h2,
+  .mapHeader h2 {
+    font-size: clamp(2.6rem, 11vw, 3.7rem);
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapHeader {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroButton {
+    width: 100%;
+  }
+
+  .infoCard {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduleRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }

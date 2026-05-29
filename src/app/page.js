@@ -155,7 +155,7 @@ const Home = () => {
 
   useEffect(() => {
     const revealElements = document.querySelectorAll(
-      "main > section:not(:first-child), [class*='repairCard'], [class*='voiceCard'], [class*='cardWrapper'], [class*='faqItem']"
+      "main > section:not(:first-child), [class*='repairCard'], [class*='voiceCard'], [class*='cardWrapper']"
     );
 
     revealElements.forEach((element, index) => {
@@ -168,10 +168,11 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
     );
 
     revealElements.forEach((element) => observer.observe(element));

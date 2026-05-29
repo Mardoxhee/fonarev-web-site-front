@@ -1,243 +1,329 @@
-.mainCont{
+@import './../app/_variables.module.scss';
 
-    box-sizing: border-box;
-    overflow: hidden;
-        @media only screen and (min-width: 768px) and (max-width: 991px) {
-            padding: 2rem 1rem;
-            padding-top: 9rem;
-            flex-direction: column;
-            .postDetails{
-                width: 100% !important;
-            }
-            .sideBar{
-                width: 100% !important;
-                .pub{
-                    height: 20vh !important;
-                }
-                .cardContainer{
-                    h2{
-                        width: 100% !important;
-                    }
-                    display: flex;
-                    flex-wrap: wrap !important;
-                    a {
-                        width: 40% !important;
-                        margin-right: 1rem;
-                    }
-                }
-            }
-        }
-        height: auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 9rem 8rem;
-        @media (max-width: 575.98px) { 
-            flex-direction: column;
-            width: 100%;
-            padding: 0;
-            justify-content: center !important;
-            .sideBar{
-                margin-top: 2rem;
-                width: 96% !important;
-            }
-           .postDetails  {
-            width: 92% !important;
-            padding: 1rem;
-           padding-top: 9rem;
-           h1{
-            font-size: 28px !important;
-           }
-           .textContent{
-            text-align: justify;
-           }
-        
-            h1{
-                font-size: 30px !important;
-            }
-           }
-        }
-        .postDetails{
-            width: 70%;
-            h1{
-                font-size:40px;
-                margin-bottom: 1rem;
-            }
-            img{
-                height: 419px;
-                width: 100%;
-            }
-            .thumbnails{
-                height: 419px;
-                width: 100%;
-            }
-            .metadata{
-              color: #8E8686 !important; 
-              font-size: 13px; 
-           
-    
-            }
-    
-            .shareContainer{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                @media (max-width: 575.98px) {
-                    flex-direction: column;
-                    p{
-                        margin-bottom: 0;
-                    }
-                }
-            }
-    .ctaContainer{
-        display: flex;
-        align-items: center;
-        p{
-            font-size: 14px;
-        }
-    .socialMedia{
-        display: flex;
-        li {
-            list-style: none;
-            font-size: 20px;
-            margin: 0px 10px;
-            color: black;
-            cursor: pointer;
-        }
-    }
-        .cardContainer{
-            width: 100% !important;
-        }
-        // display: inline-block;
-    
-    
-        button {
-            display: flex;
-            align-items: center !important;
-            padding: 14px 20px;
-            border: #0089CF solid 2px;
-            background: transparent ;
-            border-radius: 3px;
-            margin-right: 10px;
-            color: #0089CF;
-            justify-content: center;
-            @media (max-width: 575.98px) {
-                padding: 5px;
-             }
-     
-            .icone{
-                font-size: 1.2rem;
-                margin-right: 1rem;
-            }
-        }
-    }
-    
-    h2{
-        font-size: 20px;
-        margin: 2rem 0rem;
-    }
-    .textContent{
-        font-size: 16px;
-        line-height: 22px;
-            font-weight: 300;
-            text-align: justify;
-        br{
-            margin-top: 5rem;
-        }
-    }
-    
-    .imgCaroussel{
-        display: flex;
-        overflow: hidden;
-        box-sizing: border-box;
-        height: 220px;
-        margin-top: 0 !important;
-        flex-wrap: wrap;
-        @media (max-width: 575.98px) { 
-            height: 150px !important;
-            justify-content: space-between;
-            .imgPhotos{
-                width: 49% !important;
-                margin: 0 !important;
-                margin: .3Òrem 0rem !important;
-            }
-        }
-    
-        .imgPhotos{
-            width: 30%;
-            margin-right: 10px;
-            margin-top: 10px;
-            background-position: center;
-            background-size: cover !important;
-    
-        }
-        margin: 2rem 0rem;
-        @media (max-width: 575.98px) { 
-            height: 100px;
-        }
-        .alice-carousel{
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-           img {
-            width: 40%;
-            height: 100%;
-            margin-right: .5rem;
-           }
-    }
-        }
-    
-    
-    .sideBar{
-        @media (max-width: 575.98px) {
-        width: 96%;
-        padding-top: 0;
-        .pub{
-display: none;
-        }
-         }
-        width: 28%;
-        height: auto;
-        padding-top: 35px;
-        .pub{
-            height: 650px;
-            width: 100%;
-            // background-color: #0089CF;
-            background: url('/genocost-cover.jpeg');
-            background-size: cover !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-        }
-        .cardContainer{
-            height: auto;
-            width: 100%;
-            padding: 2rem 1rem;
-            a{
-                text-decoration: none;
-                color: black;
-            }
-    
-        }
-    }
-    }
-    
-    .newsLetterContainer{
-        @media (max-width: 575.98px) {
-            width: 100% !important;
-        }
-    }
-
-
-.mobilePub{
-    display: none;
-@media (max-width: 575.98px) {
-    display: block;
-    background: url('/banieregenocost.jpg') !important;
-    width: 100%;
-    height: 150px;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    margin: 0rem .5rem;
-    // padding: 2rem !important;
+.mainCont {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.36fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  min-height: 100vh;
+  padding: clamp(8rem, 12vw, 10rem) clamp(1.2rem, 7vw, 8rem) clamp(4rem, 7vw, 6rem);
+  overflow-x: hidden;
+  background: #fff;
+  color: #111827;
+  font-family: var(--font-body), Poppins, sans-serif;
 }
+
+.loading {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  border-radius: 8px;
+  background: #fff;
+  color: $paragraph-color;
+  box-shadow: 0 22px 70px rgba(12, 16, 35, 0.06);
+}
+
+.postDetails {
+  min-width: 0;
+}
+
+.articleHeader {
+  max-width: 1040px;
+  margin-bottom: 2rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+  color: $blue-color;
+  font-weight: 900;
+  text-decoration: none;
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 0.8rem;
+  color: $yellow-color;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.articleHeader h1 {
+  max-width: 900px;
+  margin: 1rem 0 1.2rem;
+  color: #111827;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif !important;
+  font-size: clamp(44px, 6vw, 86px);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.metaLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.3rem;
+  color: $paragraph-color;
+  font-size: 0.98rem;
+  font-weight: 800;
+
+  span,
+  time {
+    display: inline-flex;
+    min-height: 2.3rem;
+    align-items: center;
+    padding: 0 0.85rem;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid rgba(103, 120, 142, 0.14);
+  }
+}
+
+.shareContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  margin: 1.5rem 0 2rem;
+  padding: 1.1rem;
+  border: 1px solid rgba(103, 120, 142, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(12, 16, 35, 0.05);
+}
+
+.shareContainer p {
+  margin: 0;
+  color: $paragraph-color;
+  line-height: 1.7;
+}
+
+.ctaContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  span {
+    color: #111827;
+    font-weight: 900;
+  }
+}
+
+.socialMedia {
+  display: flex;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 8px;
+    background: #f6f8fb;
+    transition:
+      transform 220ms ease,
+      background 220ms ease;
+  }
+
+  a:hover {
+    transform: translateY(-3px);
+    background: #fff3c3;
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.textContent {
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  border-radius: 8px;
+  background: #fff;
+  color: #344054;
+  font-size: 1.06rem;
+  line-height: 1.9;
+  box-shadow: 0 22px 70px rgba(12, 16, 35, 0.06);
+
+  p {
+    margin: 0 0 1.25rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: #111827;
+    font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+    letter-spacing: 0;
+  }
+
+  a {
+    color: $blue-color;
+    font-weight: 900;
+  }
+
+  img,
+  .insertedImage {
+    display: none;
+  }
+}
+
+.sideBar {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.petitionPub {
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgba(142, 31, 113, 0.96), rgba(0, 137, 207, 0.88));
+  box-shadow: 0 24px 70px rgba(12, 16, 35, 0.12);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.petitionPub:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(12, 16, 35, 0.18);
+}
+
+.petitionPub span {
+  color: $yellow-color;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.petitionPub strong {
+  margin-top: 0.25rem;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: clamp(2.4rem, 3.5vw, 3.7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.petitionPub small {
+  margin-top: 0.8rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.cardContainer {
+  padding: 1.1rem;
+  border: 1px solid rgba(103, 120, 142, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 22px 70px rgba(12, 16, 35, 0.06);
+
+  h2 {
+    margin: 0 0 1rem;
+    color: #111827;
+    font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+}
+
+.sideItem {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  color: inherit;
+  text-decoration: none;
+  border-top: 1px solid rgba(103, 120, 142, 0.12);
+}
+
+.sideImage {
+  height: 78px;
+  border-radius: 8px;
+  background-position: center;
+  background-size: cover;
+}
+
+.sideItem time {
+  color: $paragraph-color;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.sideItem h3 {
+  margin: 0.25rem 0 0;
+  color: #111827;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 1120px) {
+  .mainCont {
+    grid-template-columns: 1fr;
+  }
+
+  .sideBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardContainer {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .mainCont {
+    padding-top: 7rem;
+  }
+
+  .articleHeader h1 {
+    font-size: clamp(3rem, 13vw, 4.8rem);
+  }
+
+  .shareContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .sideBar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .textContent {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .sideItem {
+    grid-template-columns: 86px 1fr;
+  }
 }
