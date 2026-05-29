@@ -155,7 +155,7 @@ const Home = () => {
 
   useEffect(() => {
     const revealElements = document.querySelectorAll(
-      "main > section:not(:first-child), [class*='repairCard'], [class*='voiceCard'], [class*='cardWrapper'], [class*='faqItem']"
+      "main > section:not(:first-child), [class*='repairCard'], [class*='voiceCard'], [class*='cardWrapper']"
     );
 
     revealElements.forEach((element, index) => {
@@ -168,10 +168,11 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
     );
 
     revealElements.forEach((element) => observer.observe(element));
@@ -311,7 +312,7 @@ const Home = () => {
 
         <section className={styles.aboutSection}>
           <div className={styles.aboutImage}>
-            <Image src="/pr-fatshi13.jpg" alt="Rencontre institutionnelle du FONAREV" fill sizes="(max-width: 900px) 100vw, 42vw" />
+            <Image src="/caroussel-item-1.jpg" alt="Rencontre institutionnelle du FONAREV" fill sizes="(max-width: 900px) 100vw, 42vw" />
           </div>
           <div className={styles.aboutText}>
             <span className={styles.sectionEyebrow}>Qui sommes-nous ?</span>

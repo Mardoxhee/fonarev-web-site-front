@@ -86,23 +86,19 @@ const About = () => {
   useEffect(() => {
     const revealElements = document.querySelectorAll(
       [
-        "[class*='intro']",
-        "[class*='legal']",
-        "[class*='vision']",
-        "[class*='mission']",
-        "[class*='values']",
-        "[class*='genocost']",
-        "[class*='team']",
-        "[class*='missionCard']",
-        "[class*='valuesGrid'] article",
-        "[class*='teamCardContainer']",
-        "[class*='legalContent'] li",
+        `.${styles.intro}`,
+        `.${styles.legal}`,
+        `.${styles.vision}`,
+        `.${styles.mission}`,
+        `.${styles.values}`,
+        `.${styles.genocost}`,
+        `.${styles.team}`,
       ].join(", ")
     );
 
     revealElements.forEach((element, index) => {
       element.setAttribute("data-reveal", "");
-      element.style.setProperty("--reveal-delay", `${Math.min((index % 6) * 95, 475)}ms`);
+      element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
     });
 
     const observer = new IntersectionObserver(
@@ -110,10 +106,11 @@ const About = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
     );
 
     revealElements.forEach((element) => observer.observe(element));

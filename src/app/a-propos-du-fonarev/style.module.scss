@@ -126,7 +126,6 @@
       color: #fff;
       border: 1px solid rgba(255, 255, 255, .42);
       background: rgba(255, 255, 255, .1);
-      backdrop-filter: blur(12px);
     }
 
     &:hover {
@@ -148,7 +147,6 @@
   color: #fff;
   background: rgba(255, 255, 255, .12);
   border: 1px solid rgba(255, 255, 255, .18);
-  backdrop-filter: blur(12px);
 
   strong {
     color: $yellow-color;
@@ -476,14 +474,13 @@
 }
 
 .genocostImages {
-  position: sticky;
-  top: 136px;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  height: calc(100vh - 172px);
-  min-height: 560px;
-  max-height: 700px;
+  height: 560px;
+  min-height: 0;
+  max-height: none;
   align-self: start;
 
   > div {
@@ -497,11 +494,7 @@
   }
 
   @media (max-width: 1180px) {
-    position: relative;
-    top: auto;
     height: 420px;
-    min-height: 0;
-    max-height: none;
   }
 
   @media (max-width: 575.98px) {

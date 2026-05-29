@@ -1,0 +1,633 @@
+@import "./../variables.module";
+
+.main {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #f7f4ef;
+  color: #111827;
+}
+
+.hero {
+  position: relative;
+  min-height: clamp(520px, 62vh, 680px);
+  padding: clamp(8.5rem, 11vw, 10rem) clamp(1.2rem, 7vw, 8rem) clamp(4rem, 7vw, 6rem);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: #fffdf7;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: clamp(1.2rem, 7vw, 8rem);
+    bottom: clamp(3.1rem, 6vw, 5rem);
+    width: 84px;
+    height: 8px;
+    background: $yellow-color;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: clamp(1.2rem, 7vw, 8rem);
+    bottom: clamp(2rem, 5vw, 4rem);
+    width: min(39vw, 520px);
+    height: min(43vw, 560px);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, rgba(12, 16, 35, 0.04), rgba(12, 16, 35, 0.24)),
+      url("/caroussel-item-1.jpg") center / cover no-repeat;
+    box-shadow: 0 34px 90px rgba(17, 24, 39, 0.18);
+    z-index: -2;
+  }
+}
+
+.heroInner {
+  max-width: 760px;
+  width: 58%;
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: $move-color;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.3rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.sectionHeader h2,
+.formContainer h2,
+.titleContainer h2,
+.contentContainer h2,
+.subMenuCard span {
+  margin: 0;
+  color: #111827;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 780px;
+  font-size: clamp(4.2rem, 7vw, 7.5rem);
+  line-height: 0.9;
+}
+
+.hero p {
+  max-width: 610px;
+  margin: 1.1rem 0 0;
+  color: $paragraph-color;
+  font-size: clamp(1rem, 1.35vw, 1.22rem);
+  line-height: 1.75;
+}
+
+.sectionShell,
+.mainContent,
+.colloqueContainer,
+.subMenuContainer {
+  width: min(1220px, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: clamp(3.4rem, 7vw, 6.6rem) 0;
+}
+
+.sectionHeader,
+.titleContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.4rem;
+  margin-bottom: 1.15rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.sectionHeader h2,
+.titleContainer h2,
+.formContainer h2,
+.contentContainer h2 {
+  font-size: clamp(2rem, 3.3vw, 3.2rem);
+}
+
+.sectionHeader p,
+.titleContainer p {
+  max-width: 470px;
+  margin: 0;
+  color: $paragraph-color;
+  line-height: 1.7;
+}
+
+.archiveBtn,
+.downloadButton,
+.formContainer button {
+  min-height: 3.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  background: #111827;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 240ms ease, background 240ms ease, box-shadow 240ms ease;
+}
+
+.archiveBtn,
+.downloadButton {
+  padding: 0 1rem;
+}
+
+.archiveBtn:hover,
+.downloadButton:hover,
+.formContainer button:hover {
+  background: $blue-color;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0, 137, 207, 0.18);
+}
+
+.contentGrid,
+.mainContent,
+.colloqueContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
+  gap: clamp(1.1rem, 2.6vw, 2rem);
+  align-items: start;
+}
+
+.mainContent {
+  grid-template-columns: 1fr;
+  gap: clamp(1.4rem, 3vw, 2.5rem);
+}
+
+.subtitle,
+.formContainer,
+.contentContainer,
+.flyerContainer,
+.ppm2026Sticky,
+.subMenuCard,
+.emptyState {
+  border: 1px solid rgba(103, 120, 142, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(12, 16, 35, 0.06);
+}
+
+.subtitle,
+.formContainer,
+.contentContainer,
+.flyerContainer,
+.ppm2026Sticky,
+.emptyState {
+  padding: clamp(1.1rem, 2.2vw, 1.7rem);
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardContainer h3 {
+  margin: 0;
+  color: $paragraph-color;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+.formContainer {
+  position: relative;
+  top: auto;
+  overflow: hidden;
+  padding: clamp(1.7rem, 4vw, 3.2rem);
+  border-top: 0;
+  background:
+    linear-gradient(90deg, #fff 0%, #fff 63%, rgba(0, 137, 207, 0.08) 63%, rgba(0, 137, 207, 0.08) 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 100%;
+    background: $yellow-color;
+  }
+
+  &::after {
+    content: "FONAREV";
+    position: absolute;
+    right: clamp(1.2rem, 4vw, 3rem);
+    bottom: clamp(1rem, 3vw, 2rem);
+    color: rgba(142, 31, 113, 0.08);
+    font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+    font-size: clamp(5rem, 12vw, 11rem);
+    font-weight: 900;
+    line-height: 0.8;
+    pointer-events: none;
+  }
+}
+
+.formContainer h2 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(3rem, 5.5vw, 5.8rem);
+  line-height: 0.88;
+}
+
+.formIntro {
+  max-width: 650px;
+  margin: 0 0 clamp(1.5rem, 3vw, 2.4rem);
+  color: $paragraph-color;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.formContainer form {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.inputWrapper,
+.inputUpload {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inputWrapper > div,
+.inputUpload > div {
+  min-width: 0;
+}
+
+.inputWrapper input,
+.inputUpload input {
+  width: 100%;
+  min-height: 4.25rem;
+  box-sizing: border-box;
+  padding: 0 1.15rem;
+  border: 1px solid rgba(103, 120, 142, 0.18);
+  border-radius: 5px;
+  outline: none;
+  background: #fbfcfe;
+  color: #111827;
+  font: inherit;
+  transition: border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.inputWrapper input:focus,
+.inputUpload input:focus {
+  border-color: rgba(0, 137, 207, 0.55);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 137, 207, 0.1);
+}
+
+.uploadInput label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #111827;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.uploadInput input {
+  padding-top: 1.08rem;
+}
+
+.formContainer button {
+  width: min(300px, 100%);
+  min-height: 4rem;
+  margin-top: 0.7rem;
+  padding: 0 1.4rem;
+  font-size: 1rem;
+}
+
+.contentGrid .cardContainer,
+.subtitle .cardContainer {
+  padding-top: 0.4rem;
+}
+
+.sidebar {
+  min-width: 0;
+}
+
+.ppm2026Sticky {
+  position: sticky;
+  top: 8.5rem;
+  max-height: calc(100vh - 10rem);
+  overflow: auto;
+}
+
+.ppm2026Header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(103, 120, 142, 0.14);
+}
+
+.ppm2026Header h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading), "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.ppm2026Header p {
+  margin: 0;
+  color: $paragraph-color;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.ppmBadge {
+  padding: 0.28rem 0.55rem;
+  border-radius: 5px;
+  background: $yellow-color;
+  color: #111827;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.ppm2026Cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.subMenuContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.subMenuCard {
+  min-height: 210px;
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.subMenuCard span {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+}
+
+.subMenuCard p {
+  margin: 1.2rem 0 0;
+  color: $paragraph-color;
+  line-height: 1.7;
+}
+
+.subMenuCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 137, 207, 0.25);
+  box-shadow: 0 32px 80px rgba(0, 137, 207, 0.12);
+}
+
+.colloqueContainer {
+  grid-template-columns: minmax(280px, 0.45fr) minmax(0, 1fr);
+}
+
+.flyerContainer {
+  position: sticky;
+  top: 8.5rem;
+}
+
+.flyerImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #eef2f7;
+}
+
+.flyerImage img {
+  transition: transform 300ms ease;
+}
+
+.flyerImage:hover img {
+  transform: scale(1.03);
+}
+
+.contentContainer p,
+.highlightBox p,
+.contactInfo p {
+  color: $paragraph-color;
+  line-height: 1.8;
+}
+
+.highlightBox,
+.contactInfo {
+  margin: 1.4rem 0;
+  padding: 1.2rem;
+  border-radius: 8px;
+}
+
+.highlightBox {
+  border: 1px solid rgba(0, 137, 207, 0.16);
+  background: rgba(0, 137, 207, 0.05);
+}
+
+.highlightBox h3,
+.contactInfo h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.highlightBox ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.2rem;
+  color: $paragraph-color;
+  line-height: 1.7;
+}
+
+.contactInfo {
+  background: #111827;
+  color: #fff;
+}
+
+.contactInfo p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.emailLink {
+  color: $yellow-color;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.languageToggle {
+  display: inline-flex;
+  margin-top: 0.6rem;
+  padding: 0.35rem;
+  border-radius: 8px;
+  background: #eef2f7;
+}
+
+.languageToggle button {
+  min-height: 2.65rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #111827;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.languageToggle .active {
+  background: #fff;
+  color: $move-color;
+  box-shadow: 0 8px 24px rgba(12, 16, 35, 0.08);
+}
+
+.downloadButton {
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.emptyState p {
+  margin: 0 0 1rem;
+  color: $paragraph-color;
+}
+
+.emptyCta {
+  display: inline-flex;
+  color: $move-color;
+  font-weight: 900;
+}
+
+.inputError {
+  border-color: #d92d20 !important;
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 0.3rem;
+  color: #d92d20;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.loader {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #fff;
+  border-bottom-color: $yellow-color;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Dnone {
+  display: none !important;
+}
+
+@media (max-width: 1080px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 4rem;
+
+    &::after {
+      opacity: 0.22;
+      right: -8rem;
+      width: 520px;
+      height: 520px;
+    }
+  }
+
+  .heroInner {
+    width: 100%;
+  }
+
+  .contentGrid,
+  .mainContent,
+  .colloqueContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .formContainer,
+  .ppm2026Sticky,
+  .flyerContainer {
+    position: static;
+  }
+
+  .subMenuContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-top: 7rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .sectionShell,
+  .mainContent,
+  .colloqueContainer,
+  .subMenuContainer {
+    width: calc(100% - 1.4rem);
+    padding-block: 2.2rem;
+  }
+
+  .sectionHeader,
+  .titleContainer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .inputWrapper,
+  .inputUpload,
+  .subMenuContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .formContainer {
+    background: #fff;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .downloadButton {
+    width: 100%;
+  }
+}

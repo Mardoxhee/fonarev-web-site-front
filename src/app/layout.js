@@ -14,6 +14,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const poppins = Poppins({
   subsets: ['latin'], // Specify desired font subsets (optional)
   weight: ['300', '400', '700', '200', '500', '600', '800'], // Specify desired font weights (optional)
+  variable: '--font-body',
 });
 
 const barlowCondensed = Barlow_Condensed({
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
     <Provider store={store}>
       {/* <PersistGate loading={null} persistor={persistor}> */}
         <html lang="fr">
-          <body className={`${poppins.className} ${barlowCondensed.variable}`}>
+          <body className={`${poppins.className} ${poppins.variable} ${barlowCondensed.variable}`}>
             <PageLoader/>
             <Header/>
               {children}

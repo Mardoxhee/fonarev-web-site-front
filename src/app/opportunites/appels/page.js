@@ -1,32 +1,28 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import styles from "./style.module.scss"
-const AppelCard = React.lazy(() => import('./../../../components/appelCard'));
-import Head from 'next/head'; 
-import { Script } from 'next/script';
+import AppelCard from './../../../components/appelCard';
 import Link from 'next/link';
 
 const Appel = () => {
   return (
-    <>
-    <Head> 
-    <title>Fonarev rdc | Actualités du FONAREV : Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité</title>  
-    < meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />
-     <meta name="keywords" content="victimes,violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes,réparation, aide aux victimes, soutien victiles, préjudices, massacre, republique democratique du congo, tuerie, minrais, 11%, redévance" />
-     
-    </Head>
-        <main className={styles.main}>
-          <section className={styles.bannerContainer}>
-              <h1>
-                  Appels d'offres 
-              </h1>
-              <p>
-                Retrouvez tous les appels d'offres disponibles au FONAREV.
-              </p>
-          </section>
-          <section className={styles.subtitle}>
+    <main className={styles.main}>
+      <section className={styles.hero}>
+        <div className={styles.heroInner}>
+          <span className={styles.eyebrow}>Opportunités</span>
+          <h1>Appels d'offres</h1>
+          <p>
+            Retrouvez les appels d'offres, avis de marchés et documents de passation publiés par le FONAREV.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.sectionShell}>
             <div className={styles.titleContainer}>
-                <h2> Appels d'<span>offres</span></h2>
-                <Link className={styles.archiveBtn} href="/opportunites/appels/archives">Voir plus</Link>
+                <div>
+                  <span className={styles.eyebrow}>Marchés publics</span>
+                  <h2>Appels d'offres</h2>
+                </div>
+                <Link className={styles.archiveBtn} href="/opportunites/appels/archives">Voir les archives</Link>
             </div>
 
             <div className={styles.contentGrid}>
@@ -79,9 +75,8 @@ const Appel = () => {
                 </div>
               </aside>
             </div>
-          </section>  
-        </main>
-        </>
+      </section>
+    </main>
   )
 }
 
