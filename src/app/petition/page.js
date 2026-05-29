@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
+import { Icon } from '@iconify/react'
 import styles from './style.module.scss'
 import HeroImage from './../../../public/aboutcover.JPG'
 import EventOne from './../../../public/1.jpg'
@@ -23,72 +24,82 @@ const images = [
 const translations = {
   fr: {
     languageLabel: "Langue",
-    heroBadge: "Pétition nationale",
-    heroMeta: "Mémoire · Justice · Réparation",
-    heroTitle: "Une voix collective pour que les victimes ne soient plus invisibles",
+    heroBadge: "Pétition internationale",
+    heroMeta: "Vérité · Mémoire · Justice",
+    heroTitle: "Pour la reconnaissance des génocides commis en République démocratique du Congo",
     heroText:
-      "Soutenir cette pétition, c’est porter une exigence simple : reconnaître les souffrances, préserver la mémoire et renforcer les efforts de réparation en RDC.",
+      "Signez pour que les crimes subis par les populations congolaises soient regardés, nommés et reconnus à leur juste mesure.",
     petitionButton: "Signer la pétition",
-    markers: ["Reconnaître", "Réparer", "Transmettre"],
-    appealEyebrow: "Notre appel",
-    appealTitle: "Une signature pour refuser l’oubli",
+    markers: ["Vérité", "Mémoire", "Justice"],
+    appealEyebrow: "Notre demande",
+    appealTitle: "Reconnaître les victimes, établir la vérité, préserver la mémoire",
     appealParagraphs: [
-      "Nous appelons toutes les personnes éprises de paix, de dignité humaine et de justice à soutenir cette démarche citoyenne en faveur des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l’humanité.",
-      "À travers les rencontres, les actions de proximité et les moments de mobilisation, cette pétition rappelle l’urgence de préserver la mémoire, de reconnaître les souffrances subies et d’accompagner les efforts de réparation.",
-      "Signer cette pétition, c’est contribuer à porter une exigence collective : que les victimes soient entendues, que leur dignité soit restaurée et que la mémoire de ces tragédies demeure vivante dans la conscience nationale.",
+      "Depuis plus de trois décennies, la République démocratique du Congo traverse l’une des tragédies humaines les plus graves de l’histoire contemporaine. Des millions de Congolais ont perdu la vie, des communautés ont été décimées ou forcées au déplacement, des femmes ont subi des violences sexuelles massives, et des familles continuent de porter les séquelles profondes de ces crimes.",
+      "De nombreux rapports nationaux et internationaux, dont le Rapport Mapping des Nations Unies publié en 2010, ont documenté des massacres à grande échelle, des violences systématiques et des attaques ciblées contre des populations civiles. Certains de ces faits soulèvent avec gravité la question de la reconnaissance des génocides commis sur le territoire congolais.",
+      "La souffrance des victimes et la mémoire collective du peuple congolais appellent aujourd’hui une reconnaissance claire de ces crimes. Il est essentiel que cette réalité soit pleinement regardée, nommée et prise en compte à sa juste mesure par la communauté nationale et internationale.",
+      "Par cette pétition, nous demandons aux institutions nationales, régionales et internationales, aux pays amis de la République démocratique du Congo, aux États de la région des Grands Lacs, aux instances africaines ainsi qu’à l’ensemble de la communauté internationale de reconnaître les génocides commis en République démocratique du Congo, d’en faire un sujet de vérité historique, de justice et de mémoire, et d’accompagner les efforts visant à établir les responsabilités, honorer les victimes et prévenir la répétition de tels crimes.",
+      "Reconnaître ces génocides, c’est refuser l’oubli. C’est rendre justice à des millions de victimes. C’est faire avancer la vérité. C’est préserver la mémoire collective. Et c’est contribuer à construire un avenir de paix durable.",
     ],
     actionEyebrow: "Passer à l’action",
-    actionTitle: "Signez la pétition et portez la voix des victimes",
-    actionText:
-      "Le lien de signature sera activé prochainement. Cette page prépare déjà l’appel public à la mobilisation.",
+    actionTitle: "Signez cette pétition",
+    actionText: [
+      "Pour que les victimes soient reconnues.",
+      "Pour que la vérité soit pleinement établie.",
+      "Pour que les génocides commis en RDC ne soient ni oubliés, ni ignorés.",
+    ],
     momentsEyebrow: "Moments de mobilisation",
-    momentsTitle: "Une mémoire portée par les communautés",
+    momentsTitle: "Une mémoire collective à faire vivre",
     momentsText:
-      "Parcourez les moments clés de mobilisation. Chaque carte résume le message porté auprès des communautés.",
+      "Reconnaître les victimes, établir la vérité, préserver la mémoire collective et contribuer à un avenir de paix durable.",
     previous: "Précédent",
     next: "Suivant",
     cards: [
-      "Mobilisation autour de la mémoire, de la justice et de la réparation.",
-      "Un appel public pour rappeler que les victimes ne doivent plus être seules.",
-      "Des communautés rassemblées pour porter la voix des survivantes et survivants.",
-      "Des actions de proximité pour soutenir la reconnaissance des préjudices.",
-      "Une campagne citoyenne pour transformer la mémoire en engagement.",
-      "Un message collectif pour défendre la dignité des victimes.",
+      "Pour que les victimes soient reconnues.",
+      "Pour que la vérité soit pleinement établie.",
+      "Pour que la mémoire collective soit préservée.",
+      "Pour que justice soit rendue aux millions de victimes.",
+      "Pour accompagner les efforts de responsabilité et de réparation.",
+      "Pour construire un avenir de paix durable.",
     ],
   },
   en: {
     languageLabel: "Language",
-    heroBadge: "National petition",
-    heroMeta: "Memory · Justice · Reparation",
-    heroTitle: "A collective voice so victims are no longer invisible",
+    heroBadge: "International petition",
+    heroMeta: "Truth · Memory · Justice",
+    heroTitle: "For the recognition of genocides committed in the Democratic Republic of Congo",
     heroText:
-      "Supporting this petition means standing behind a simple demand: to recognize suffering, preserve memory and strengthen reparation efforts in the DRC.",
+      "Sign so that the crimes suffered by Congolese populations are seen, named and recognized in their full gravity.",
     petitionButton: "Sign the petition",
-    markers: ["Recognize", "Repair", "Pass on"],
-    appealEyebrow: "Our appeal",
-    appealTitle: "One signature to refuse forgetting",
+    markers: ["Truth", "Memory", "Justice"],
+    appealEyebrow: "Our request",
+    appealTitle: "Recognize victims, establish truth, preserve memory",
     appealParagraphs: [
-      "We call on everyone committed to peace, human dignity and justice to support this civic initiative for victims of conflict-related sexual violence and victims of crimes against peace and the security of humanity.",
-      "Through meetings, community outreach and moments of mobilisation, this petition recalls the urgent need to preserve memory, recognize the suffering endured and support reparation efforts.",
-      "Signing this petition helps carry a collective demand: that victims be heard, that their dignity be restored and that the memory of these tragedies remain alive in the national conscience.",
+      "For more than three decades, the Democratic Republic of Congo has endured one of the gravest human tragedies in contemporary history. Millions of Congolese people have lost their lives, communities have been devastated or forced into displacement, women have suffered mass sexual violence, and families continue to bear the deep consequences of these crimes.",
+      "Numerous national and international reports, including the United Nations Mapping Report published in 2010, have documented large-scale massacres, systematic violence and targeted attacks against civilian populations. Some of these facts raise, with great seriousness, the question of recognizing genocides committed on Congolese territory.",
+      "The suffering of victims and the collective memory of the Congolese people call today for clear recognition of these crimes. This reality must be fully seen, named and taken into account by the national and international community.",
+      "Through this petition, we ask national, regional and international institutions, friends of the Democratic Republic of Congo, states of the Great Lakes region, African bodies and the wider international community to recognize the genocides committed in the Democratic Republic of Congo, make them a matter of historical truth, justice and memory, and support efforts to establish responsibility, honor victims and prevent the repetition of such crimes.",
+      "Recognizing these genocides means refusing oblivion. It means rendering justice to millions of victims. It means advancing truth. It means preserving collective memory. And it means contributing to a future of lasting peace.",
     ],
     actionEyebrow: "Take action",
-    actionTitle: "Sign the petition and carry the victims’ voices",
-    actionText:
-      "The signature link will be activated soon. This page is already preparing the public call for mobilisation.",
+    actionTitle: "Sign this petition",
+    actionText: [
+      "So that victims are recognized.",
+      "So that truth is fully established.",
+      "So that the genocides committed in the DRC are neither forgotten nor ignored.",
+    ],
     momentsEyebrow: "Moments of mobilisation",
-    momentsTitle: "A memory carried by communities",
+    momentsTitle: "A collective memory to keep alive",
     momentsText:
-      "Browse the key mobilisation moments. Each card summarizes the message shared with communities.",
+      "These visuals support the public appeal: recognize victims, establish truth, preserve collective memory and contribute to a future of lasting peace.",
     previous: "Previous",
     next: "Next",
     cards: [
-      "Mobilisation around memory, justice and reparation.",
-      "A public appeal reminding everyone that victims must no longer be left alone.",
-      "Communities coming together to carry the voices of survivors.",
-      "Local outreach supporting the recognition of harm suffered.",
-      "A civic campaign turning memory into commitment.",
-      "A collective message defending victims’ dignity.",
+      "So that victims are recognized.",
+      "So that truth is fully established.",
+      "So that collective memory is preserved.",
+      "So that justice is rendered to millions of victims.",
+      "To support efforts of responsibility and reparation.",
+      "To build a future of lasting peace.",
     ],
   },
 }
@@ -109,7 +120,7 @@ const Petition = () => {
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
-        <Image src={HeroImage} alt="Communautés accompagnées dans le cadre de la réparation" fill priority />
+        <Image src={HeroImage} alt="Mobilisation pour la reconnaissance des victimes en République démocratique du Congo" fill priority />
         <div className={styles.heroOverlay}></div>
         <div className={styles.languageSwitch} aria-label={t.languageLabel}>
           <span>{t.languageLabel}</span>
@@ -128,7 +139,10 @@ const Petition = () => {
           <h1>{t.heroTitle}</h1>
           <div className={styles.heroBottom}>
             <p>{t.heroText}</p>
-            <a href="#signature" className={styles.heroCta}>{t.petitionButton}</a>
+            <a href="#signature" className={styles.heroCta}>
+              <Icon icon="ph:pen-nib-bold" aria-hidden="true" />
+              {t.petitionButton}
+            </a>
           </div>
         </div>
         <div className={styles.heroMarkers}>
@@ -145,7 +159,10 @@ const Petition = () => {
         <div className={styles.petitionHeader}>
           <span>{t.appealEyebrow}</span>
           <h2>{t.appealTitle}</h2>
-          <a href="#signature" className={styles.appealCta}>{t.petitionButton}</a>
+          <a href="#signature" className={styles.appealCta}>
+            <Icon icon="ph:signature-bold" aria-hidden="true" />
+            {t.petitionButton}
+          </a>
         </div>
         <div className={styles.petitionContent}>
           {t.appealParagraphs.map((paragraph) => (
@@ -158,9 +175,14 @@ const Petition = () => {
         <div>
           <span>{t.actionEyebrow}</span>
           <h2>{t.actionTitle}</h2>
-          <p>{t.actionText}</p>
+          {t.actionText.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
         </div>
-        <a href="#" aria-disabled="true">{t.petitionButton}</a>
+        <a href="#" aria-disabled="true">
+          <Icon icon="ph:pen-nib-bold" aria-hidden="true" />
+          {t.petitionButton}
+        </a>
       </section>
 
       <section className={styles.memory}>
