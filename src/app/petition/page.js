@@ -21,6 +21,8 @@ const images = [
   { src: EventSix, title: 'Visuel de mobilisation 6' },
 ]
 
+const petitionLink = 'https://c.org/zzWQJp6GSx'
+
 const translations = {
   fr: {
     languageLabel: "Langue",
@@ -139,7 +141,7 @@ const Petition = () => {
           <h1>{t.heroTitle}</h1>
           <div className={styles.heroBottom}>
             <p>{t.heroText}</p>
-            <a href="#signature" className={styles.heroCta}>
+            <a href={petitionLink} className={styles.heroCta} target="_blank" rel="noopener noreferrer">
               <Icon icon="ph:pen-nib-bold" aria-hidden="true" />
               {t.petitionButton}
             </a>
@@ -159,7 +161,7 @@ const Petition = () => {
         <div className={styles.petitionHeader}>
           <span>{t.appealEyebrow}</span>
           <h2>{t.appealTitle}</h2>
-          <a href="#signature" className={styles.appealCta}>
+          <a href={petitionLink} className={styles.appealCta} target="_blank" rel="noopener noreferrer">
             <Icon icon="ph:signature-bold" aria-hidden="true" />
             {t.petitionButton}
           </a>
@@ -179,7 +181,7 @@ const Petition = () => {
             <p key={line}>{line}</p>
           ))}
         </div>
-        <a href="#" aria-disabled="true">
+        <a href={petitionLink} target="_blank" rel="noopener noreferrer">
           <Icon icon="ph:pen-nib-bold" aria-hidden="true" />
           {t.petitionButton}
         </a>
