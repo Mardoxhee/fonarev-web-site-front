@@ -12,6 +12,14 @@ import EventFour from './../../../public/4.jpg'
 import EventFive from './../../../public/5.jpg'
 import EventSix from './../../../public/6.jpg'
 
+
+import EventOneEn from './../../../public/1-en.jpeg'
+import EventTwoEn from './../../../public/2-en.jpeg'
+import EventThreeEn from './../../../public/3-en.jpeg'
+import EventFourEn from './../../../public/4-en.jpeg'
+import EventFiveEn from './../../../public/5-en.jpeg'
+import EventSixEn from './../../../public/6-en.jpeg'
+
 const images = [
   { src: EventOne, title: 'Visuel de mobilisation 1' },
   { src: EventTwo, title: 'Visuel de mobilisation 2' },
@@ -19,6 +27,15 @@ const images = [
   { src: EventFour, title: 'Visuel de mobilisation 4' },
   { src: EventFive, title: 'Visuel de mobilisation 5' },
   { src: EventSix, title: 'Visuel de mobilisation 6' },
+]
+
+const imagesEn = [
+  { src: EventOneEn, title: 'Visual of mobilisation 1' },
+  { src: EventTwoEn, title: 'Visual of mobilisation 2' },
+  { src: EventThreeEn, title: 'Visual of mobilisation 3' },
+  { src: EventFourEn, title: 'Visual of mobilisation 4' },
+  { src: EventFiveEn, title: 'Visual of mobilisation 5' },
+  { src: EventSixEn, title: 'Visual of mobilisation 6' },
 ]
 
 const petitionLink = 'https://c.org/zzWQJp6GSx'
@@ -112,8 +129,11 @@ const Petition = () => {
   const carouselRef = useRef(null)
   const t = translations[language]
 
+    // ✅ images dynamiques selon la langue
+  const currentImages = language === 'en' ? imagesEn : images
+
   const handleSlide = (index) => {
-    const safeIndex = (index + images.length) % images.length
+    const safeIndex = (index + currentImages.length) % images.length
     setActiveSlide(safeIndex)
     const slide = carouselRef.current?.querySelector(`[data-slide="${safeIndex}"]`)
     slide?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
@@ -202,7 +222,7 @@ const Petition = () => {
           </div>
         </div>
         <div className={styles.carouselViewport} ref={carouselRef}>
-          {images.map((image, index) => (
+          {currentImages.map((image, index) => (
             <figure className={styles.card} key={image.title} data-slide={index}>
               <Image src={image.src} alt={image.title} />
               <figcaption>
@@ -213,7 +233,7 @@ const Petition = () => {
           ))}
         </div>
         <div className={styles.carouselDots} aria-label="Navigation du carrousel">
-          {images.map((image, index) => (
+          {currentImages.map((image, index) => (
             <button
               type="button"
               key={image.title}
