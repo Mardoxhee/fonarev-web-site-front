@@ -15,7 +15,7 @@
   align-items: flex-end;
   overflow: hidden;
   isolation: isolate;
-  background: #fffdf7;
+  background:$blue-color ;
 
   &::before {
     content: "";
@@ -83,7 +83,7 @@
 .hero p {
   max-width: 610px;
   margin: 1.1rem 0 0;
-  color: $paragraph-color;
+  color: white;
   font-size: clamp(1rem, 1.35vw, 1.22rem);
   line-height: 1.75;
 }
