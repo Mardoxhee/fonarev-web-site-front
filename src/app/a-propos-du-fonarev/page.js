@@ -91,6 +91,7 @@ const About = () => {
         `.${styles.vision}`,
         `.${styles.mission}`,
         `.${styles.values}`,
+        `.${styles.missionVideo}`,
         `.${styles.genocost}`,
         `.${styles.team}`,
       ].join(", ")
@@ -248,38 +249,41 @@ const About = () => {
           </div>
         </section>
 
+        <section className={styles.missionVideo} aria-labelledby="mission-video-title">
+          <div className={styles.missionVideoHeader}>
+            <span className={styles.eyebrow}>Notre mission en images</span>
+            <h2 id="mission-video-title">
+              Identifier les victimes, l’accès à la justice et allouer les réparations : le cœur de notre mission.
+            </h2>
+          </div>
+          <div className={styles.videoFrame}>
+            <iframe
+              src="https://www.youtube.com/embed/Q0cVcXR3U8M?si=ZkD6liuDPmpunGq7"
+              title="Identifier les victimes, l’accès à la justice et allouer les réparations : le cœur de notre mission."
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </section>
+
         <section className={styles.genocost} id="genocost">
           <div className={styles.genocostContent}>
             <span className={styles.eyebrow}>GENOCOST</span>
             <h2>Genocost</h2>
             <p>
-              Le terme « Geno-cost » signifie « génocide pour des gains économiques ». C'est une combinaison des mots
-              « génocide » et « coût », expliquant ainsi la nature économique du génocide en RDC. Dans l'histoire du génocide
-              en République démocratique du Congo, les conflits actuels, qui ont coûté la vie à plus de six millions de
-              personnes, ne sont pas les premiers du genre. Selon des historiens comme Adam Hochschild et Isidore Ndaywel è
-              Nziem, pendant le règne colonial du roi Léopold II (1885-1908), environ 10 à 13 millions de Congolais ont été
-              tués en raison de l'exploitation brutale du caoutchouc et d'autres ressources naturelles. Ce nombre de morts
-              représentait environ la moitié de la population indigène du Congo. Pourtant, très peu de Congolais connaissent
-              cette partie de leur histoire.
+              Le terme « Geno-cost » signifie génocide pour des gains économiques. Il rappelle la dimension économique des
+              violences de masse subies en République démocratique du Congo et l'urgence de reconnaître la mémoire des victimes.
             </p>
             <p>
-              Elle a été soigneusement retirée des programmes scolaires, remplacée par des récits glorifiant « un Roi
-              bâtisseur », souvent présenté comme un Noko (un oncle de la nation). Plus d'un siècle plus tard, l'histoire se
-              répète. Des millions de Congolais paient à nouveau de leur vie à cause de l'exploitation du coltan, de l'or et
-              d'autres ressources naturelles. Bien que de plus en plus de personnes aient accès à l'Internet et aux moyens de
-              communication modernes, on en sait très peu sur ce conflit, un conflit alimenté par la demande mondiale de
-              l'électronique. Les massacres systématiques et planifiés des Bantous de la RDC par les Tutsis du Rwanda, de
-              l'Ouganda et du Burundi constituent bel et bien un génocide qui doit être reconnu comme tel. Les massacres en
-              RDC, souvent motivés par des gains économiques sous le terme de « Geno-cost », ne doivent pas être oubliés.
+              À travers la commémoration, le plaidoyer et les actions de réparation, le FONAREV contribue à faire vivre cette
+              mémoire, à soutenir la vérité historique et à porter l'exigence de non-répétition.
             </p>
-            <p>
-              La reconnaissance officielle et les actions de réparation sont des étapes essentielles pour empêcher la
-              répétition de ces tragédies et pour honorer la mémoire des millions de victimes. Depuis 2023, année de sa
-              première commémoration, la cérémonie du « GENOCOST » s'est imposée comme un évènement d'ampleur nationale,
-              touchant profondément le cœur de nombreuses villes et localités à travers la République démocratique du Congo,
-              voire même à l'étranger, où dans de nombreuses grandes villes à l'instar de Paris, Bruxelles ou Londres, la
-              diaspora congolaise organise des commémorations.
-            </p>
+            <Link href="/genocost" className={styles.genocostCta}>
+              Voir plus sur le Genocost
+              <Icon icon="solar:arrow-right-linear" />
+            </Link>
           </div>
           <div className={styles.genocostImages}>
             <div>

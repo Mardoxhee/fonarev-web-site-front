@@ -47,10 +47,10 @@
 
   nav {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
     align-items: center;
-    gap: 1.6rem;
-    width: min(1180px, calc(100% - 4rem));
+    gap: 2.2rem;
+    width: min(1480px, calc(100% - 4rem));
     margin: 0 auto;
     padding: .7rem 0;
 
@@ -129,7 +129,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .45rem;
+    gap: .6rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -144,6 +144,7 @@
       font-size: 12px;
       font-weight: 800;
       letter-spacing: .02em;
+      white-space: nowrap;
       cursor: pointer;
 
       > a {
@@ -155,6 +156,7 @@
         padding: 0 .65rem;
         color: #172033;
         border-radius: 4px;
+        white-space: nowrap;
         transition: color 220ms ease, background 220ms ease;
 
         &::after {
@@ -183,6 +185,8 @@
   }
 
   .ctaContainer {
+    justify-self: end;
+
     a {
       display: inline-flex;
     }
@@ -197,6 +201,7 @@
       font-size: 12px;
       font-weight: 800;
       letter-spacing: .08em;
+      white-space: nowrap;
       cursor: pointer;
       transition: transform 240ms ease, background 240ms ease, box-shadow 240ms ease;
 
@@ -215,7 +220,8 @@
 
     nav {
       gap: .8rem;
-      width: min(1120px, calc(100% - 3rem));
+      grid-template-columns: auto 1fr auto;
+      width: min(1280px, calc(100% - 3rem));
     }
 
     .logoContainer {

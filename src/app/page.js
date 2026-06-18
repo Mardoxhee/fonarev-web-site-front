@@ -250,7 +250,7 @@ const Home = () => {
             <p>{currentSlide.text}</p>
             <div className={styles.heroActions}>
               <Link href="/petition">
-                Voir la pétition
+                Signer la pétition
                 <Icon icon="solar:pen-new-square-linear" />
               </Link>
               <Link href="/a-propos-du-fonarev">
@@ -359,7 +359,7 @@ const Home = () => {
               « Geno-cost » signifie génocide pour des gains économiques. Cette thématique rappelle la nature économique des violences
               subies en RDC et l'urgence de faire vivre la mémoire, la justice et la réparation.
             </p>
-            <Link href="/a-propos-du-fonarev/#genocost" className={styles.textCta}>
+            <Link href="/genocost" className={styles.textCta}>
               Voir plus
               <Icon icon="solar:arrow-right-linear" />
             </Link>

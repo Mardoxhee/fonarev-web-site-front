@@ -14,7 +14,7 @@ const promos = [
     title: "GENOCOST",
     text: "Comprendre la mémoire des victimes et la reconnaissance du génocide pour des gains économiques.",
     image: "/genocost-cover.jpeg",
-    href: "/a-propos-du-fonarev/#genocost",
+    href: "/genocost",
     cta: "Lire le dossier",
   },
   {
@@ -23,7 +23,7 @@ const promos = [
     text: "Porter la voix des victimes, soutenir la reconnaissance et renforcer les efforts de réparation.",
     image: "/genocost1.jpg",
     href: "/petition",
-    cta: "Voir la pétition",
+    cta: "Signer la pétition",
   },
 ];
 

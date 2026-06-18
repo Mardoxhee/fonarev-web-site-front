@@ -24,6 +24,15 @@ const handleHamburgerClick = () => {
     setIsMobile(false); 
   }
 
+  const handleGenocostSelection = () => {
+    if (typeof window !== "undefined") {
+      window.sessionStorage.setItem("genocost-sound-intent", "1");
+      window.dispatchEvent(new CustomEvent("genocost-audio-start"));
+    }
+
+    handleMenuSelections();
+  }
+
   const isLinkActive = (href) => {
     if (href === "/") {
       return pathname === href;
@@ -94,6 +103,9 @@ const handleHamburgerClick = () => {
                 </li>
                 <li className={`${isLinkActive("/activites") ? styles.active : ""} ${styles.activitiesMenu}`} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
+                </li>
+                <li className={isLinkActive("/genocost") ? styles.active : ""} onClick= {handleGenocostSelection} >
+                    <Link href="/genocost">Genocost</Link>
                 </li>
                 <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
                     <Link href="#">Médiathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>

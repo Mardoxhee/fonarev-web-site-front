@@ -79,7 +79,7 @@ const Footer = () => {
                     <Link href="/petition" >
                         <li>Signer la pétition</li>
                     </Link> 
-                    <Link href="/a-propos-du-fonarev/#genocost" >
+                    <Link href="/genocost" >
                         <li>GENOCOST</li>
                     </Link> 
                     <Link href="https://front.ecosys.fonasite.app/" target='_blank'>
