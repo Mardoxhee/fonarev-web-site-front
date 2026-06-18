@@ -250,7 +250,7 @@ const Home = () => {
             <p>{currentSlide.text}</p>
             <div className={styles.heroActions}>
               <Link href="/petition">
-                Signer la pétition
+                Signer la pétition sur la reconnaissance des genocides au congo
                 <Icon icon="solar:pen-new-square-linear" />
               </Link>
               <Link href="/a-propos-du-fonarev">
