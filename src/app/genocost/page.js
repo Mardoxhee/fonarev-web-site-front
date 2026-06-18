@@ -227,7 +227,7 @@ const Genocost = () => {
         {/* <audio ref={audioRef} src="/genocost-hope-lament.wav" loop preload="auto" /> */}
 
         <section className={styles.hero}>
-          <Image src="/genocost-cover.jpeg" alt="Commémoration Genocost portée par le FONAREV" fill priority sizes="100vw" />
+          <Image src="/genocost-banner-fire.jpeg" alt="Commémoration Genocost portée par le FONAREV" fill priority sizes="100vw" />
           <div className={styles.heroContent}>
             <span className={styles.eyebrow}>Mémoire nationale</span>
             <h1>Genocost</h1>
