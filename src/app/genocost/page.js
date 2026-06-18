@@ -454,7 +454,7 @@ const Genocost = () => {
           </div>
         </section>
 
-        <section className={styles.finalCta} data-genocost-reveal>
+        {/* <section className={styles.finalCta} data-genocost-reveal>
           <div>
             <span className={styles.eyebrow}>Appel à contributions</span>
             <h2>Étudiants, chercheurs, porteurs de projets : proposez une recherche sur le Genocost.</h2>
@@ -473,7 +473,8 @@ const Genocost = () => {
               <Icon icon="solar:letter-linear" />
             </Link>
           </div>
-        </section>
+        </section> */}
+
       </main>
     </>
   )
