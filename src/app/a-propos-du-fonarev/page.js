@@ -3,7 +3,7 @@
 import styles from './style.module.scss'
 import TeamCard from "../../components/teamCard"
 import Head from 'next/head';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import { Icon } from '@iconify/react';
@@ -83,6 +83,8 @@ const leaders = [
 ];
 
 const About = () => {
+  const [isMissionVideoActive, setIsMissionVideoActive] = useState(false)
+
   useEffect(() => {
     const revealElements = document.querySelectorAll(
       [
@@ -256,7 +258,10 @@ const About = () => {
               Identifier les victimes, l’accès à la justice et allouer les réparations : le cœur de notre mission.
             </h2>
           </div>
-          <div className={styles.videoFrame}>
+          <div
+            className={`${styles.videoFrame} ${isMissionVideoActive ? styles.videoFrameActive : ""}`}
+            onMouseLeave={() => setIsMissionVideoActive(false)}
+          >
             <iframe
               src="https://www.youtube.com/embed/Q0cVcXR3U8M?si=ZkD6liuDPmpunGq7"
               title="Identifier les victimes, l’accès à la justice et allouer les réparations : le cœur de notre mission."
@@ -265,6 +270,17 @@ const About = () => {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
+            {!isMissionVideoActive && (
+              <button
+                type="button"
+                className={styles.videoActivate}
+                onClick={() => setIsMissionVideoActive(true)}
+                aria-label="Lire la vidéo"
+              >
+                <Icon icon="solar:play-circle-bold" />
+                <span>Lire la vidéo</span>
+              </button>
+            )}
           </div>
         </section>
 
