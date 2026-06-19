@@ -4,18 +4,18 @@ import { Icon } from '@iconify/react';
 
 import React from 'react'
 
-const MiseEnConstruction = () => {
+const MiseEnConstruction = ({ className = "" }) => {
   return (
-        <div className={styles.main}>
+        <div className={`${styles.main} ${className}`}>
                 <div></div>
                 <Icon icon="ic:outline-construction" className={styles.icone} />
                 
                 <h2>
-                    Cette page est en constrcution
+                    Cette page est en construction
                 </h2>
                 <p>
-                    Vous pouvez pendant en attendant  voir nos <a href= "/actualites">actualités </a>
-                    ou encore nous laisser un message en clicquant <a href= "/contact">Ici </a>
+                    En attendant, vous pouvez voir nos <a href= "/actualites">actualités </a>
+                    ou encore nous laisser un message en cliquant <a href= "/contact">ici </a>
                 </p>
         </div>
   )

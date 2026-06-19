@@ -43,6 +43,7 @@ const handleHamburgerClick = () => {
 
   const isOpportunitiesActive = pathname?.startsWith("/opportunites");
   const isPublicationsActive = pathname?.startsWith("/publications");
+  const isOperationsActive = pathname?.startsWith("/operations");
 
   return (
   <>
@@ -104,6 +105,14 @@ const handleHamburgerClick = () => {
                 </li>
                 <li className={`${isLinkActive("/activites") ? styles.active : ""} ${styles.activitiesMenu}`} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
+                </li>
+                <li className={isOperationsActive ? styles.active : styles.hoverMenu}>
+                    <Link href="#">Opérations<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
+                    <small className={styles.secondaryMenu}>
+                        <Link href="/operations/etudes-identification" onClick= {handleMenuSelections} >Etudes/identification</Link>
+                        <Link href="/operations/acces-a-la-justice" onClick= {handleMenuSelections} >Accès à la justice</Link>
+                        <Link href="/operations/reparations" onClick= {handleMenuSelections} >Réparations</Link>
+                    </small>
                 </li>
                 <li className={isLinkActive("/genocost") ? styles.active : ""} onClick= {handleGenocostSelection} >
                     <Link href="/genocost">Genocost</Link>
