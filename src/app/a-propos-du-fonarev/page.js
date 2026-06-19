@@ -60,14 +60,14 @@ const leaders = [
     fonction: "Président du Conseil d’Administration",
   },
   {
-    bg: "dgpatrick.jpg",
+    bg: "/dg-fata.jpg",
     prenom: "Patrick",
     nom: "FATA",
     postnom: "MAKUNGA",
     fonction: "Directeur Général",
   },
   {
-    bg: "dga_k.jpg",
+    bg: "/dgakev.jpg",
     prenom: "Kevin",
     nom: "NGUNGA",
     postnom: "MAKIEDI",

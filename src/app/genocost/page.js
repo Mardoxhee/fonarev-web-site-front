@@ -13,33 +13,18 @@ import EventFour from "./../../../public/4.jpg"
 import EventFive from "./../../../public/5.jpg"
 import EventSix from "./../../../public/6.jpg"
 
-const focusCards = [
-  {
-    icon: "solar:calendar-mark-bold",
-    label: "Date de commémoration",
-    value: "02 août",
-    text: "Une journée pour nommer les crimes, honorer les victimes et porter la mémoire collective.",
-  },
-  {
-    icon: "solar:map-point-wave-bold",
-    label: "Rayonnement",
-    value: "RDC, Genève, New York",
-    text: "Le plaidoyer relie les communautés touchées aux espaces nationaux et internationaux.",
-  },
-]
-
 const quotes = [
   {
-    title: "Extrait 1",
-    text: "Nous nous engageons à honorer la mémoire, à reconnaître la douleur et à soutenir la dignité des victimes.",
+    title: "Vérité",
+    text: "Nommer le Genocost, c'est refuser de détourner le regard face à la destruction systématique de millions de vies.",
   },
   {
-    title: "Extrait 2",
-    text: "La reconnaissance est un pas essentiel vers la justice, la réparation et la non-répétition.",
+    title: "Mémoire",
+    text: "Oublier, c'est accepter de devenir complice. La reconnaissance officielle est une exigence morale absolue.",
   },
   {
-    title: "Extrait 3",
-    text: "Notre responsabilité collective est de préserver la mémoire et de transformer la commémoration en action.",
+    title: "Réparation",
+    text: "Transformer la douleur historique en quête inébranlable de justice, de vérité et de réparation pour chaque victime.",
   },
 ]
 
@@ -62,9 +47,10 @@ const memoryCards = [
 ]
 
 const meaningParagraphs = [
-  "Le terme « Geno-cost » signifie « génocide pour des gains économiques ». Il associe les mots « génocide » et « coût » pour rappeler la nature économique des violences de masse en République démocratique du Congo.",
-  "Dans l'histoire du génocide en RDC, les conflits actuels, qui ont coûté la vie à plus de six millions de personnes, ne sont pas les premiers du genre. Des historiens comme Adam Hochschild et Isidore Ndaywel è Nziem rappellent que, pendant le règne colonial du roi Léopold II (1885-1908), environ 10 à 13 millions de Congolais ont été tués en raison de l'exploitation brutale du caoutchouc et d'autres ressources naturelles.",
-  "Plus d'un siècle plus tard, l'histoire se répète : des millions de Congolais paient encore de leur vie à cause de l'exploitation du coltan, de l'or et d'autres ressources naturelles. Reconnaître le Genocost, c'est refuser l'oubli, honorer les victimes et soutenir les actions de réparation et de non-répétition.",
+  "Le terme « Geno-cost », contraction glaçante de « génocide » et de « coût », a été forgé pour nommer l'innommable : un génocide perpétré pour des gains économiques. Les conflits qui ravagent le territoire congolais ne relèvent pas d'une fatalité ; ils traduisent une équation macabre où la vie humaine est sacrifiée sur l'autel de la prédation financière.",
+  "Nommer le Genocost, c'est refuser de détourner le regard face à la destruction systématique de millions de vies, fauchées pour l'accaparement illégal des ressources minérales. C'est poser l'acte fondateur d'une dignité retrouvée : la vérité, nue et implacable.",
+  "Les tragédies actuelles, qui ont déjà coûté la vie à plus de six millions de compatriotes, s'inscrivent dans une continuité historique effroyable. Sous le règne colonial du roi Léopold II, entre 1885 et 1908, l'exploitation brutale du caoutchouc a entraîné la mort de 10 à 13 millions de Congolais.",
+  "Plus d'un siècle plus tard, ce n'est plus le caoutchouc, mais l'or, le coltan et les minerais qui alimentent l'industrie électronique mondiale qui financent le sang congolais. La reconnaissance officielle de ces atrocités économiques est le premier pilier de la justice transitionnelle.",
 ]
 
 const meaningStats = [
@@ -78,7 +64,11 @@ const meaningStats = [
   },
   {
     value: "2023",
-    label: "Première commémoration nationale",
+    label: "Institution de la commémoration nationale",
+  },
+  {
+    value: "3 éditions",
+    label: "Organisées en 2023, 2024 et 2025",
   },
 ]
 
@@ -86,53 +76,32 @@ const roadmap = [
   {
     date: "1885 - 1908",
     place: "Mémoire historique",
-    title: "Exploitation coloniale et violences de masse",
-    text: "La mémoire du Genocost replace les tragédies actuelles dans une longue histoire de violences liées aux ressources.",
+    title: "Caoutchouc, exploitation coloniale et violences de masse",
+    text: "Sous le règne colonial du roi Léopold II, l'exploitation frénétique et brutale du caoutchouc a entraîné la mort de 10 à 13 millions de Congolais.",
   },
   {
     date: "Depuis 1993",
     place: "RDC",
-    title: "Massacres, déplacements et violences systématiques",
-    text: "Les communautés touchées portent les conséquences humaines, sociales et territoriales de cycles de violence prolongés.",
+    title: "Ressources minières, massacres et prédation",
+    text: "Les conflits contemporains ont déjà coûté la vie à plus de six millions de compatriotes, dans un contexte marqué par l'accaparement illégal de l'or, du coltan et d'autres minerais.",
   },
   {
-    date: "2010",
-    place: "Nations Unies",
-    title: "Rapport Mapping",
-    text: "La documentation des crimes graves renforce l'exigence de vérité, de justice et de reconnaissance internationale.",
+    date: "26 décembre 2022",
+    place: "Cadre légal",
+    title: "Loi n°22/065",
+    text: "La journée nationale d'hommages aux victimes dénommée Genocost est prévue par l'article 28 de la loi n°22/065 fixant les principes de protection et de réparation des victimes.",
   },
   {
-    date: "02 août",
+    date: "02 août 2023",
     place: "RDC et diaspora",
-    title: "Commémoration du Genocost",
-    text: "La journée de mémoire rassemble les victimes, les institutions et les partenaires autour de la reconnaissance.",
+    title: "Institution de la commémoration nationale",
+    text: "Le 2 août devient un moment de recueillement national, vibrant dans les villes, les villages et au-delà des frontières.",
   },
   {
-    date: "2026",
-    place: "RDC - Genève - New York",
-    title: "Plaidoyer, capitalisation et prochaines étapes",
-    text: "Le FONAREV consolide les acquis, documente les résultats et prépare les nouvelles séquences de plaidoyer.",
-  },
-]
-
-const efforts = [
-  {
-    image: "/geneve-fonarev.png",
-    tag: "Plaidoyer",
-    title: "Porter la reconnaissance dans les espaces publics",
-    text: "Actions de mobilisation, rencontres et messages institutionnels pour faire connaître le Genocost.",
-  },
-  {
-    image: "/genocost1.jpg",
-    tag: "Commémoration",
-    title: "Faire vivre la mémoire des victimes",
-    text: "Cérémonies, recueillement et espaces de parole pour que les victimes ne soient pas réduites au silence.",
-  },
-  {
-    image: "/senat-internationl-fonarec.jpeg",
-    tag: "Reconnaissance",
-    title: "Relier mémoire, vérité et réparation",
-    text: "Un plaidoyer international qui transforme la commémoration en engagement concret pour la justice et la non-répétition.",
+    date: "2023 - 2025",
+    place: "Nation congolaise",
+    title: "Trois éditions déjà organisées",
+    text: "Les éditions 2023, 2024 et 2025 témoignent de la volonté constante de perpétuer le devoir de mémoire et de faire entendre la voix des victimes à travers les générations.",
   },
 ]
 
@@ -232,32 +201,32 @@ const Genocost = () => {
             <span className={styles.eyebrow}>Mémoire nationale</span>
             <h1>Genocost</h1>
             <p>
-              Une page dédiée à la reconnaissance des génocides congolais et aux actions portées par le FONAREV pour honorer
-              les victimes, soutenir la vérité et transformer la mémoire en réparation.
+              Génocide pour des gains économiques : une vérité que le silence ne peut plus étouffer, portée par la mémoire
+              des victimes et l'exigence de justice, de vérité et de réparation.
             </p>
           </div>
         </section>
 
         <section className={styles.intro} data-genocost-reveal>
           <div className={styles.introText}>
-            <span className={styles.eyebrow}>Reconnaissance, mémoire et réparation</span>
-            <h2>Nommer la tragédie, protéger la mémoire, ouvrir un chemin d'espoir.</h2>
+            <span className={styles.eyebrow}>Génocide pour des gains économiques</span>
+            <h2>Nommer l'innommable, refuser la prédation, restaurer la dignité.</h2>
             <p>
-              Le Genocost rappelle les millions de vies brisées par les violences de masse, les déplacements forcés, les
-              violences sexuelles liées aux conflits et les crimes commis contre les populations civiles en République
-              démocratique du Congo.
+              Le terme « Geno-cost » nomme un génocide perpétré pour des gains économiques. Il rappelle que les violences qui
+              ravagent le territoire congolais ne sont pas le fruit d'une fatalité ou de haines spontanées, mais le résultat
+              d'une prédation financière qui sacrifie la vie humaine.
             </p>
             <p>
-              Cette mémoire n'est pas seulement un regard vers le passé. Elle porte une exigence de justice, de réparation et
-              de non-répétition, afin que la douleur des victimes devienne une responsabilité nationale et internationale.
+              Dire Genocost, c'est poser un acte de vérité. C'est honorer les morts, accompagner les survivants et faire de la
+              mémoire un pilier de justice transitionnelle et de non-répétition.
             </p>
           </div>
           <aside className={styles.introPanel}>
-            <small>Point clé</small>
-            <h3>Autour du 02 août, le FONAREV intensifie la mobilisation.</h3>
+            <small>Appel à la signature</small>
+            <h3>Signez pour que ces crimes soient regardés, nommés et reconnus.</h3>
             <p>
-              Campagnes, plaidoyer, side events et activités de commémoration contribuent à porter la mémoire des victimes et
-              à renforcer la reconnaissance.
+              Par cette pétition, le FONAREV appelle à reconnaître les victimes, établir la vérité, préserver la mémoire
+              collective et prévenir la répétition de tels crimes.
             </p>
             <Link href="/petition">
               Signer la pétition
@@ -266,23 +235,36 @@ const Genocost = () => {
           </aside>
         </section>
 
-        <section className={styles.focusGrid} data-genocost-reveal>
-          {focusCards.map((item) => (
-            <article key={item.label}>
-              <Icon icon={item.icon} />
-              <div>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
+        <section className={styles.roadmap} data-genocost-reveal>
+          <div className={styles.sectionHeading}>
+            <span className={styles.eyebrow}>Histoire, origines et commémoration</span>
+            <h2>Du caoutchouc aux minerais, une continuité historique à regarder en face</h2>
+            <p>
+              Comprendre le Genocost exige de relier le passé colonial, les conflits contemporains, le cadre légal de la
+              commémoration et la mobilisation nationale du 2 août.
+            </p>
+          </div>
+          <div className={styles.timeline}>
+            {roadmap.map((item) => (
+              <article key={`${item.date}-${item.title}`}>
+                <div className={styles.timelineMeta}>
+                  <strong>{item.date}</strong>
+                  <span>
+                    <Icon icon="solar:map-point-bold" />
+                    {item.place}
+                  </span>
+                </div>
+                <h3>{item.title}</h3>
                 <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.meaning} data-genocost-reveal>
           <div className={styles.meaningImages}>
             <div className={styles.meaningPrimaryImage}>
-              <Image src="/genocost2.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
+              <Image src="/hommes.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
             </div>
             <div className={styles.meaningSecondaryImage}>
               <Image src="/genocost-car.jpeg" alt="Commémoration du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
@@ -290,12 +272,12 @@ const Genocost = () => {
           </div>
           <div className={styles.meaningContent}>
             <span className={styles.eyebrow}>Comprendre le Genocost</span>
-            <h2>Geno-cost : le coût humain d'une économie de prédation.</h2>
+            <h2>Geno-cost : génocide, coût humain et prédation économique.</h2>
             <div className={styles.meaningLead}>
-              <strong>Nommer, c'est déjà refuser l'effacement.</strong>
+              <strong>Il est des vérités que le silence ne peut plus étouffer.</strong>
               <p>
-                Cette page porte une mémoire douloureuse : celle des victimes congolaises dont les vies ont été brisées par
-                l'exploitation, les massacres, les déplacements forcés et les violences liées aux conflits.
+                Les massacres systématiques et planifiés qui endeuillent la nation exigent d'être reconnus par le monde
+                entier avec la plus grande fermeté.
               </p>
             </div>
             <div className={styles.meaningText}>
@@ -312,8 +294,8 @@ const Genocost = () => {
               ))}
             </div>
             <blockquote>
-              La reconnaissance officielle et les actions de réparation sont des étapes essentielles pour honorer les millions
-              de victimes et empêcher la répétition de ces tragédies.
+              Le FONAREV porte ce devoir de mémoire comme un bouclier pour les générations futures : se souvenir, honorer,
+              accompagner et garantir la non-répétition.
             </blockquote>
           </div>
         </section>
@@ -321,11 +303,11 @@ const Genocost = () => {
         <section className={styles.memory} data-genocost-reveal>
           <div className={styles.memoryIntro}>
             <div>
-              <span className={styles.eyebrow}>Moments de mobilisation</span>
-              <h2>Une mémoire collective à faire vivre</h2>
+              <span className={styles.eyebrow}>Le devoir de mémoire</span>
+              <h2>Oublier, c'est accepter de devenir complice.</h2>
               <p>
-                Ces visuels rappellent des lieux, des périodes et des douleurs qui doivent rester dans la conscience
-                collective. Les intégrer à la page Genocost donne un visage plus direct à la reconnaissance demandée.
+                La reconnaissance officielle des atrocités économiques n'est pas seulement un acte symbolique ; c'est une
+                exigence morale absolue et le premier pilier de la justice transitionnelle.
               </p>
             </div>
             <div className={styles.carouselActions}>
@@ -365,11 +347,11 @@ const Genocost = () => {
         <section className={styles.speech} data-genocost-reveal>
           <Image src="/genocost-car.jpeg" alt="Moment de recueillement autour du Genocost" fill sizes="100vw" />
           <div className={styles.speechIntro}>
-            <span className={styles.eyebrow}>Discours</span>
-            <h2>Extraits des discours du Chef de l'État</h2>
+            <span className={styles.eyebrow}>Messages clés</span>
+            <h2>Vérité, mémoire et réparation au cœur du Genocost</h2>
             <p>
-              Des paroles pour rappeler l'engagement institutionnel et l'importance de la mémoire, de la reconnaissance et de
-              la justice.
+              La nation congolaise transforme sa douleur historique en quête de justice pour chaque victime, dans les villes,
+              les villages et au sein de la diaspora.
             </p>
           </div>
           <div className={styles.quoteGrid}>
@@ -378,36 +360,10 @@ const Genocost = () => {
                 <Icon icon="solar:quote-up-bold" />
                 <small>{quote.title}</small>
                 <p>“{quote.text}”</p>
-                <Link href="/actualites">
-                  Lire le discours
+                <Link href="/petition">
+                  Soutenir la pétition
                   <Icon icon="solar:arrow-right-linear" />
                 </Link>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.roadmap} data-genocost-reveal>
-          <div className={styles.sectionHeading}>
-            <span className={styles.eyebrow}>Périodes et cartographies</span>
-            <h2>Une mémoire située, de l'histoire aux espaces de plaidoyer</h2>
-            <p>
-              Ces repères structurent la lecture du Genocost : les périodes de violence, les territoires touchés et les lieux
-              où la reconnaissance doit continuer à avancer.
-            </p>
-          </div>
-          <div className={styles.timeline}>
-            {roadmap.map((item) => (
-              <article key={`${item.date}-${item.title}`}>
-                <div className={styles.timelineMeta}>
-                  <strong>{item.date}</strong>
-                  <span>
-                    <Icon icon="solar:map-point-bold" />
-                    {item.place}
-                  </span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
               </article>
             ))}
           </div>
@@ -418,8 +374,8 @@ const Genocost = () => {
             <span className={styles.eyebrow}>Espoir en action</span>
             <h2>Ce que le FONAREV porte pour la reconnaissance du Genocost</h2>
             <p>
-              La reconnaissance se construit aussi par des présences visibles : mobilisation, commémoration, documentation,
-              plaidoyer et dialogue avec les communautés.
+              La reconnaissance se construit par la mémoire, la mobilisation citoyenne, la commémoration, la documentation et
+              la voix des victimes portée à travers les générations.
             </p>
           </div>
           <div className={styles.effortFeature}>
@@ -439,18 +395,6 @@ const Genocost = () => {
                 <Icon icon="solar:play-circle-bold" />
               </a>
             </div>
-          </div>
-          <div className={styles.effortGrid}>
-            {efforts.map((effort) => (
-              <article key={effort.title}>
-                <div>
-                  <Image src={effort.image} alt={effort.title} fill sizes="(max-width: 800px) 100vw, 33vw" />
-                </div>
-                <small>{effort.tag}</small>
-                <h3>{effort.title}</h3>
-                <p>{effort.text}</p>
-              </article>
-            ))}
           </div>
         </section>
 

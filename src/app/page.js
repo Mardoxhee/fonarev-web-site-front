@@ -256,7 +256,7 @@ const Home = () => {
               </Link>
 
               <Link href="/petition">
-                Signer la pétition sur la reconnaissance des genocides au congo
+                Signer la pétition
                 <Icon icon="solar:pen-new-square-linear" />
               </Link>
           

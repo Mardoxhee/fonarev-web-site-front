@@ -42,6 +42,7 @@ const handleHamburgerClick = () => {
   };
 
   const isOpportunitiesActive = pathname?.startsWith("/opportunites");
+  const isPublicationsActive = pathname?.startsWith("/publications");
 
   return (
   <>
@@ -107,9 +108,10 @@ const handleHamburgerClick = () => {
                 <li className={isLinkActive("/genocost") ? styles.active : ""} onClick= {handleGenocostSelection} >
                     <Link href="/genocost">Genocost</Link>
                 </li>
-                <li className={isLinkActive("/publications/") ? styles.active : styles.hoverMenu}>
+                <li className={isPublicationsActive ? styles.active : styles.hoverMenu}>
                     <Link href="#">Médiathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
+                        <Link href="/publications/newsletter" onClick= {handleMenuSelections} >Newsletter</Link>
                         <Link href="https://www.youtube.com/@FonarevRDC/videos" target='_blank'>Vidéos</Link>
                         <Link href="#" onClick= {handleMenuSelections} >Podcasts</Link>
 
@@ -133,6 +135,7 @@ const handleHamburgerClick = () => {
                         <Link href="/opportunites/appels" onClick= {handleMenuSelections} >Appels d'offres</Link>
                         <Link href="/opportunites/appels-a-contributions" onClick= {handleMenuSelections} >Appel à contribution</Link>
                         <Link href="/opportunites/stages" onClick= {handleMenuSelections} >Stage</Link>
+                        <Link href="https://front.ecosys.fonasite.app/" target='_blank' rel="noreferrer" onClick= {handleMenuSelections} >Devenir partenaire</Link>
                     </small>
                 </li>
                 <li className={isLinkActive("/contact") ? styles.active : ""} onClick= {handleMenuSelections} >
@@ -140,9 +143,9 @@ const handleHamburgerClick = () => {
                 </li>
             </ul>
             <div className={styles.ctaContainer}> 
-            <a href="https://front.ecosys.fonasite.app/" target="_blank" rel="noreferrer">
-                <button>DEVENIR PARTENAIRE</button>
-            </a>
+            <Link href="/petition" onClick= {handleMenuSelections}>
+                <button>SIGNER LA PÉTITION</button>
+            </Link>
             </div>
                 <button
                     type="button"
