@@ -105,9 +105,9 @@ const handleHamburgerClick = () => {
                 <li className={`${isLinkActive("/activites") ? styles.active : ""} ${styles.activitiesMenu}`} onClick= {handleMenuSelections} >
                     <Link href="/activites">Activités</Link>
                 </li>
-                <li className={isLinkActive("/genocost") ? styles.active : ""} onClick= {handleGenocostSelection} >
+                {/* <li className={isLinkActive("/genocost") ? styles.active : ""} onClick= {handleGenocostSelection} >
                     <Link href="/genocost">Genocost</Link>
-                </li>
+                </li> */}
                 <li className={isPublicationsActive ? styles.active : styles.hoverMenu}>
                     <Link href="#">Médiathèque<Icon icon="ep:arrow-down-bold" className={styles.iconeArrow} /></Link>
                     <small className={styles.secondaryMenu}>
