@@ -5,7 +5,18 @@ import React from 'react'
 import Image from 'next/image'
 import { Icon } from '@iconify/react'
 
+const newsletterImage = '/genocost1.jpg'
+
 const newsletters = [
+  {
+    id: '2026-04-05',
+    monthLabel: 'Avril-Mai',
+    period: 'Édition bimestrielle',
+    title: 'Newsletter FONAREV',
+    description: "Les temps forts d'avril et mai, les activités institutionnelles et les avancées du FONAREV auprès des victimes.",
+    href: '/api/newsletter/avril-mai',
+    imageSrc: newsletterImage,
+  },
   {
     id: '2026-03',
     monthLabel: 'Mars',
@@ -13,7 +24,7 @@ const newsletters = [
     title: 'Newsletter FONAREV',
     description: "Les faits marquants du mois, les activités institutionnelles et les avancées portées auprès des victimes.",
     href: '/api/newsletter/mars',
-    imageSrc: '/geneve-fonarev.png',
+    imageSrc: newsletterImage,
   },
   {
     id: '2026-02',
@@ -22,7 +33,7 @@ const newsletters = [
     title: 'Newsletter FONAREV',
     description: "Un regard synthétique sur les actions de réparation, la mobilisation et les temps forts du FONAREV.",
     href: '/api/newsletter/fevrier',
-    imageSrc: '/reparation.jpg',
+    imageSrc: newsletterImage,
   },
   {
     id: '2026-01',
@@ -31,7 +42,7 @@ const newsletters = [
     title: 'Newsletter FONAREV',
     description: "Les premières nouvelles de l'année autour des missions, des activités et des publications institutionnelles.",
     href: '/api/newsletter/janvier',
-    imageSrc: '/bg-actu.jpg',
+    imageSrc: newsletterImage,
   },
 ]
 
@@ -41,7 +52,7 @@ const Newsletter = () => {
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
-        <Image src="/bg-actu.jpg" alt="Publications et actualités du FONAREV" fill priority sizes="100vw" />
+        <Image src={newsletterImage} alt="Publications et actualités du FONAREV" fill priority sizes="100vw" />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
           <div>
