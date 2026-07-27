@@ -117,7 +117,13 @@ const Footer = () => {
             </div>
         </footer>
         <div className = {styles.copyRight} >
-                <p>© {currentYear} FONAREV. Tous droits réservés.</p>
+                <p>
+                    <span>© {currentYear} FONAREV. Tous droits réservés.</span>
+                    <span className={styles.copyrightDivider} aria-hidden="true">•</span>
+                    <span className={styles.digitalCredit}>
+                        Développé avec <Icon icon="solar:heart-bold" aria-hidden="true" /> par l’équipe numérique du FONAREV.
+                    </span>
+                </p>
             </div>
         
     </section>

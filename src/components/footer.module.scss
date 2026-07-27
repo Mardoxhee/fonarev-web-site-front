@@ -280,12 +280,39 @@
 
     p {
         margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: .55rem;
         text-align: center;
         color: rgba(255, 255, 255, .62);
         font-size: 14px;
 
         @media (max-width: 575.98px) {
+            flex-direction: column;
+            gap: .35rem;
             font-size: 12px;
         }
+    }
+}
+
+.copyrightDivider {
+    color: rgba(255, 255, 255, .3);
+
+    @media (max-width: 575.98px) {
+        display: none;
+    }
+}
+
+.digitalCredit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+
+    svg {
+        color: $yellow-color;
+        font-size: 16px;
     }
 }
