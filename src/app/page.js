@@ -287,13 +287,7 @@ const Home = () => {
           <div className={styles.tvWrapper}>
             <Image src="/tv-frame.png" alt="" fill sizes="(max-width: 900px) 100vw, 54vw" className={styles.tvImage} />
             <div className={styles.videoWrapper}>
-              <iframe
-                src="https://www.youtube.com/embed/Xi0031x3W-A?si=_0PjlzBdS0WrRErc"
-                title="Parole aux victimes"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+<iframe src="https://www.youtube.com/embed/MwoCVW7IaaM?si=oNGQnRXWEoB0jGNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
         </section>
