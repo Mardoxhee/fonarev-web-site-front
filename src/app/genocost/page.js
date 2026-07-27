@@ -255,10 +255,11 @@ const Genocost = () => {
         <section className={styles.meaning} data-genocost-reveal>
           <div className={styles.meaningImages}>
             <div className={styles.meaningPrimaryImage}>
-              <Image src="/hommes.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
+              <Image src="/genocost-cover.jpeg" alt="Commémoration du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
             </div>
             <div className={styles.meaningSecondaryImage}>
-              <Image src="/genocost-cover.jpeg" alt="Commémoration du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
+              <Image src="/hommes.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
+            
             </div>
           </div>
           <div className={styles.meaningContent}>
