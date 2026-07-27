@@ -2,7 +2,6 @@
 
 import styles from './style.module.scss'
 import TeamCard from "../../components/teamCard"
-import Head from 'next/head';
 import React, { useEffect } from 'react'
 import Image from "next/image"
 import Link from "next/link"
@@ -121,15 +120,6 @@ const About = () => {
 
   return (
     <>
-      <Head>
-        <title>FONAREV RDC | À propos du FONAREV</title>
-        <meta
-          name="description"
-          content="Découvrez le FONAREV, son cadre légal, sa mission, ses valeurs et son engagement pour la réparation des victimes en République démocratique du Congo."
-        />
-        <meta name="google-site-verification" content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs" />
-      </Head>
-
       <main className={styles.main}>
         <section className={styles.hero}>
           <Image src="/fonarev-about.jpg" alt="FONAREV en action auprès des communautés" fill priority sizes="100vw" />

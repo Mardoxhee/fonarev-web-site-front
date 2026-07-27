@@ -9,7 +9,6 @@ import Faq from "./../components/faq";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Modal from "react-modal";
-import Head from "next/head";
 import ActuCard from "./../components/actuCard";
 
 const heroSlides = [
@@ -209,20 +208,6 @@ const Home = () => {
 
   return (
     <>
-      <Head>
-        <title key="title">FONAREV RDC - Fonds national des réparations</title>
-        <meta key="keywords" name="keywords" content="FONAREV, Fonds national des réparations, victimes, RDC" />
-        <meta key="og-title" property="og:title" content="Fonarev RDC" />
-        <meta
-          key="description"
-          name="description"
-          content="Découvrez le FONAREV, Fonds national des réparations des victimes des violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité."
-        />
-        <meta property="og:image" content="/logo-fonarev.png" />
-        <meta key="og-url" property="og:url" content="https://fonarev.cd/" />
-        <meta key="og-type" property="og:type" content="website" />
-      </Head>
-
       <main className={styles.mainContainer}>
         <section className={styles.heroSection}>
           <div className={styles.heroMedia}>
@@ -488,7 +473,7 @@ const Home = () => {
           </div>
           <div className={styles.cardContainer}>
             {featuredArticles.map((article, index) => (
-              <Link key={article._id || index} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
+              <Link key={article._id || index} href={`/actualites/details?articleId=${article._id}&articleTitle=${formatTitre(article.titre)}`}>
                 <ActuCard title={article.titre} date={article.date} category={article.category} bg={article.thumbanails} />
               </Link>
             ))}
@@ -503,6 +488,10 @@ const Home = () => {
           <div className={styles.faqContainer}>
             <Faq />
           </div>
+          <Link href="/faq" className={styles.textCta}>
+            Voir toutes les réponses sur le FONAREV et les réparations
+            <Icon icon="solar:arrow-right-linear" />
+          </Link>
         </section>
       </main>
     </>

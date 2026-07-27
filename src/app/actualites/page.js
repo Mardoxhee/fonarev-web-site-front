@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import Head from "next/head";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import styles from "./style.module.scss";
@@ -128,22 +127,6 @@ const Actualite = () => {
 
   return (
     <>
-      <Head>
-        <title>FONAREV RDC | Actualités</title>
-        <meta
-          name="description"
-          content="Retrouvez les actualités, communiqués et dossiers du FONAREV."
-        />
-        <meta
-          name="keywords"
-          content="FONAREV, actualités, réparation, victimes, RDC, Genocost, pétition"
-        />
-        <meta
-          name="google-site-verification"
-          content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs"
-        />
-      </Head>
-
       <main className={styles.main}>
         <section className={styles.newsHero}>
           <div className={styles.heroHeader} data-news-reveal>

@@ -56,7 +56,7 @@ const Footer = () => {
         <footer>
             <div className = {styles.linkSide} >
                 <div className={styles.brandBlock}>
-                    <Image src ={Logo} alt = "logo fonarev"/>     
+                    <Image src ={Logo} alt = "FONAREV RDC — Fonds National des Réparations des Victimes"/>
                     <p>Fonds national des réparations des victimes des violences sexuelles liées aux conflits et des crimes contre la paix et la sécurité de l'humanité.</p>
                 </div>
                 <div className = {styles.linkBlock}>
@@ -99,6 +99,12 @@ const Footer = () => {
                         <Link href="/publications/rapports-annuels" >
                             <li>Publications</li>
                         </Link> 
+                        <Link href="/publications/newsletter" >
+                            <li>Newsletter FONAREV</li>
+                        </Link>
+                        <Link href="/faq" >
+                            <li>FAQ — Réparation des victimes</li>
+                        </Link>
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>

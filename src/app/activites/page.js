@@ -6,7 +6,6 @@ import { useGetAllArticlesQuery } from "./../store/slices/actualite";
 import Skeleton from "@/components/skeleton";
 import Link from "next/link";
 import Banner from "@/components/banner";
-import Head from "next/head";
 
 const Activites = () => {
   const { data, error, isLoading } = useGetAllArticlesQuery("");
@@ -83,19 +82,6 @@ const Activites = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          Fonarev rdc | Activités du FONAREV : Fonds national des réparations des victimes de violences sexuelles liées aux conflits et des victimes des crimes contre la paix et la sécurité de l'humanité
-        </title>
-        <meta
-          name="google-site-verification"
-          content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs"
-        />
-        <meta
-          name="keywords"
-          content="victimes, violences sexuelles, Etat congolais, guerre à l'est, réparation des victimes, réparation, aide aux victimes, soutien aux victimes, préjudices, massacre, république démocratique du congo, tuerie, minerais, 11%, redevance"
-        />
-      </Head>
       <main className={styles.main}>
         <Banner
           pageTitle="Les activités du Fonarev"
@@ -122,7 +108,7 @@ const Activites = () => {
                 </h3>
                 <div className={styles.cardWrapper}>
                   {sortedArticles.map((article) => (
-                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}?articleTitle=${formatTitre(article.titre)}`}>
+                    <Link key={article._id} href={`/actualites/details?articleId=${article._id}&articleTitle=${formatTitre(article.titre)}`}>
                       <ActuCard
                         date={article.date ? formatDate(article.date) : ""}
                         category="Activité"

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { genocostArticles, getGenocostArticle } from "../articles"
 import styles from "./article.module.scss"
+import { createPageMetadata, SITE_URL } from "../../../lib/seo"
 
 export const generateStaticParams = () => genocostArticles.map((article) => ({ slug: article.slug }))
 
@@ -11,21 +12,28 @@ export const generateMetadata = async ({ params }) => {
   const article = getGenocostArticle(slug)
 
   if (!article) {
-    return {
-      title: "Article Genocost | FONAREV",
-    }
+    return createPageMetadata({
+      title: "Article GENOCOST | FONAREV",
+      description: "Dossier du FONAREV consacré au GENOCOST et à la mémoire des victimes en RDC.",
+      path: "/genocost",
+      keywords: ["GENOCOST", "Mémoire des victimes"],
+    })
   }
 
-  return {
-    metadataBase: new URL("https://www.fonarev.cd"),
+  return createPageMetadata({
     title: `${article.title} | Genocost | FONAREV`,
     description: article.intro,
-    openGraph: {
-      title: article.title,
-      description: article.intro,
-      images: [{ url: article.image }],
-    },
-  }
+    path: article.href,
+    image: article.image,
+    type: "article",
+    keywords: [
+      "GENOCOST",
+      "Génocide pour des gains économiques",
+      "Mémoire du GENOCOST",
+      "Victimes du GENOCOST",
+      "Préservation de la mémoire",
+    ],
+  })
 }
 
 const GenocostArticle = async ({ params }) => {
@@ -37,6 +45,28 @@ const GenocostArticle = async ({ params }) => {
   }
 
   const relatedArticles = genocostArticles.filter((item) => item.slug !== article.slug)
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.intro,
+    image: `${SITE_URL}${article.image}`,
+    mainEntityOfPage: `${SITE_URL}${article.href}`,
+    inLanguage: "fr-CD",
+    author: {
+      "@type": "Organization",
+      name: "FONAREV",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "FONAREV",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo-fonarev.png`,
+      },
+    },
+  }
 
   return (
     <main className={styles.main}>
@@ -102,6 +132,10 @@ const GenocostArticle = async ({ params }) => {
           ))}
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
     </main>
   )
 }

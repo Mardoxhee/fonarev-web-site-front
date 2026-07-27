@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Head from "next/head";
 import { Icon } from "@iconify/react";
 import styles from "./contact.module.scss";
 
@@ -58,22 +57,6 @@ const ContactPage = () => {
 
   return (
     <>
-      <Head>
-        <title>FONAREV RDC | Contact</title>
-        <meta
-          name="description"
-          content="Contactez le Fonds national des réparations des victimes, FONAREV RDC."
-        />
-        <meta
-          name="keywords"
-          content="FONAREV, contact FONAREV, victimes, réparations, RDC, Gombe, Kinshasa"
-        />
-        <meta
-          name="google-site-verification"
-          content="Dfs8FK4nUdFPwDyNRjv2x_ciS2PZKFuhJBT4KP9TZYs"
-        />
-      </Head>
-
       <main className={styles.main}>
         <section className={styles.hero}>
           <div className={styles.heroOverlay} />

@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import styles from "./style.module.scss";
 const AppelCard = React.lazy(() => import('./../../../../components/appelCard'));
-import Head from 'next/head';
 import Link from 'next/link';
 
 const monthNames = [
@@ -305,10 +304,6 @@ const AppelsArchives = () => {
 
   return (
     <>
-      <Head>
-        <title>Fonarev rdc | Archives des appels d'offres</title>
-      </Head>
-
       <main className={styles.main}>
         <section className={styles.bannerContainer}>
           <h1>Archives</h1>

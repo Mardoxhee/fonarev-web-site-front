@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useRef, useState } from "react"
-import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
@@ -184,14 +183,6 @@ const Genocost = () => {
 
   return (
     <>
-      <Head>
-        <title>FONAREV RDC | Genocost</title>
-        <meta
-          name="description"
-          content="Page Genocost du FONAREV : mémoire des victimes, reconnaissance, plaidoyer, réparation et actions de commémoration."
-        />
-      </Head>
-
       <main className={styles.main}>
         {/* <audio ref={audioRef} src="/genocost-hope-lament.wav" loop preload="auto" /> */}
 
