@@ -353,7 +353,12 @@ const Home = () => {
             </Link>
           </div>
           <div className={styles.genocostImage}>
-            <Image src="/genocost-car.jpeg" alt="Visuel Genocost" fill sizes="(max-width: 900px) 100vw, 44vw" />
+            <Image
+              src="/genocost-car.jpeg"
+              alt="Commémoration nationale du GENOCOST le 2 août 2026 en République démocratique du Congo"
+              fill
+              sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 991px) calc(100vw - 4rem), 680px"
+            />
           </div>
         </section>
 

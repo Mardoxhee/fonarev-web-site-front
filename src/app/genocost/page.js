@@ -258,7 +258,7 @@ const Genocost = () => {
               <Image src="/hommes.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
             </div>
             <div className={styles.meaningSecondaryImage}>
-              <Image src="/genocost-car.jpeg" alt="Commémoration du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
+              <Image src="/genocost-cover.jpeg" alt="Commémoration du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
             </div>
           </div>
           <div className={styles.meaningContent}>

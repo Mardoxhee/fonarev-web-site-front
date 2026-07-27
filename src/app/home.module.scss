@@ -548,16 +548,16 @@
 
 .genocostImage {
   position: relative;
-  min-height: 580px;
+  width: min(100%, 680px);
+  aspect-ratio: 4 / 5;
+  justify-self: center;
   overflow: hidden;
   border-radius: 8px;
+  background: #eef0f6;
 
   img {
-    object-fit: cover;
-  }
-
-  @media (max-width: 575.98px) {
-    min-height: 390px;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
