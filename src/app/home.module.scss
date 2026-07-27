@@ -353,12 +353,8 @@
 .tvWrapper {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  aspect-ratio: 720 / 491;
   filter: drop-shadow(0 28px 45px rgba(16, 32, 51, .16));
-
-  @media (max-width: 575.98px) {
-    min-height: 300px;
-  }
 }
 
 .tvImage {
@@ -368,10 +364,10 @@
 
 .videoWrapper {
   position: absolute;
-  top: 17.5%;
-  left: 11.7%;
-  width: 76.6%;
-  height: 51.5%;
+  top: 3.5%;
+  left: 4%;
+  width: 92%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #111;
 
