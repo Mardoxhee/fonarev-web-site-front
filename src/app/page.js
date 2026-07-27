@@ -287,7 +287,13 @@ const Home = () => {
           <div className={styles.tvWrapper}>
             <Image src="/tv-frame.png" alt="" fill sizes="(max-width: 900px) 100vw, 54vw" className={styles.tvImage} />
             <div className={styles.videoWrapper}>
-<iframe src="https://www.youtube.com/embed/MwoCVW7IaaM?si=oNGQnRXWEoB0jGNC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe
+                src="https://www.youtube.com/embed/MwoCVW7IaaM?si=oNGQnRXWEoB0jGNC"
+                title="Journal des Réparations du FONAREV"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
             </div>
           </div>
         </section>
