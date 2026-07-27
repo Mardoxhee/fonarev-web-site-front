@@ -243,7 +243,7 @@ const About = () => {
           <div className={styles.missionVideoHeader}>
             <span className={styles.eyebrow}>Notre mission en images</span>
             <h2 id="mission-video-title">
-              Identifier les victimes, l’accès à la justice et allouer les réparations : le cœur de notre mission.
+              Comprendre le Processus de Réparation du FONAREV
             </h2>
           </div>
           <div className={styles.videoFrame}>
