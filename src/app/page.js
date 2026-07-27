@@ -487,10 +487,10 @@ const Home = () => {
           <div className={styles.faqContainer}>
             <Faq />
           </div>
-          <Link href="/faq" className={styles.textCta}>
+          {/* <Link href="/faq" className={styles.textCta}>
             Voir toutes les réponses sur le FONAREV et les réparations
             <Icon icon="solar:arrow-right-linear" />
-          </Link>
+          </Link> */}
         </section>
       </main>
     </>

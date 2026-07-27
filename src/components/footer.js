@@ -102,9 +102,9 @@ const Footer = () => {
                         <Link href="/publications/newsletter" >
                             <li>Newsletter FONAREV</li>
                         </Link>
-                        <Link href="/faq" >
+                        {/* <Link href="/faq" >
                             <li>FAQ — Réparation des victimes</li>
-                        </Link>
+                        </Link> */}
                     </ul>
                 </div>
                 <div className = {styles.linkBlock}>
@@ -121,7 +121,7 @@ const Footer = () => {
                     <span>© {currentYear} FONAREV. Tous droits réservés.</span>
                     <span className={styles.copyrightDivider} aria-hidden="true">•</span>
                     <span className={styles.digitalCredit}>
-                        Développé avec <Icon icon="solar:heart-bold" aria-hidden="true" /> par l’équipe numérique du FONAREV.
+                        Conçu avec <Icon icon="solar:heart-bold" aria-hidden="true" /> par l’équipe numérique du FONAREV.
                     </span>
                 </p>
             </div>
