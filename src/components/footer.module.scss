@@ -162,22 +162,40 @@
 
 .newsletterCardFooter {
     display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
 }
 
-.newsletterDownloadCta {
+.newsletterDownloadCta,
+.newsletterMoreCta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: $blue-color;
-    color: white;
     text-decoration: none;
     font-weight: 800;
     padding: 12px 16px;
     border-radius: 4px;
     transition: all 250ms ease;
+}
+
+.newsletterDownloadCta {
+    background: $blue-color;
+    color: white;
 
     &:hover {
         background: $move-color;
+    }
+}
+
+.newsletterMoreCta {
+    color: $blue-color;
+    background: white;
+    border: 1px solid rgba(0, 137, 207, .35);
+
+    &:hover {
+        color: white;
+        background: $move-color;
+        border-color: $move-color;
     }
 }
 

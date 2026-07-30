@@ -49,6 +49,9 @@ const Footer = () => {
                         <a className={styles.newsletterDownloadCta} href="/api/newsletter/juin">
                             Télécharger (PDF)
                         </a>
+                        <Link className={styles.newsletterMoreCta} href="/publications/newsletter">
+                            Voir plus
+                        </Link>
                     </div>
                 </div>
             </div>
