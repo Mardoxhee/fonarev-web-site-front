@@ -1,0 +1,256 @@
+@import "./../variables.module";
+
+.page {
+  width: 100%;
+  padding-top: 7.5rem;
+  color: #172033;
+  background: #f6f8fb;
+}
+
+.hero {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #172033;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(23, 32, 51, .76);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 4rem));
+  margin: 0 auto;
+  padding: 5.25rem 0 4rem;
+  color: #fff;
+
+  h1 {
+    max-width: 760px;
+    margin: .75rem 0 1rem;
+    font-size: clamp(2.7rem, 6vw, 5.4rem);
+    line-height: .95;
+    font-weight: 950;
+  }
+
+  p {
+    max-width: 760px;
+    margin: 0;
+    color: rgba(255, 255, 255, .9);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+.kicker,
+.kickerDark {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: $yellow-color;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.kickerDark {
+  color: $move-color;
+}
+
+.section {
+  width: 100%;
+  padding: 4rem 0 5rem;
+}
+
+.sectionInner {
+  width: min(1180px, calc(100% - 4rem));
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin: .45rem 0 0;
+    color: #172033;
+    font-size: clamp(1.55rem, 3vw, 2.35rem);
+    line-height: 1.08;
+  }
+
+  p {
+    max-width: 410px;
+    margin: 0;
+    color: $paragraph-color;
+    font-size: .95rem;
+    line-height: 1.6;
+  }
+}
+
+.publicationGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.publicationCard {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid rgba(16, 32, 51, .08);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(16, 32, 51, .055);
+}
+
+.documentPreview {
+  width: 116px;
+  min-height: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  color: #fff;
+  background: #172033;
+  border-top: 4px solid $yellow-color;
+  border-radius: 6px;
+
+  svg {
+    font-size: 2.4rem;
+  }
+
+  span {
+    color: $yellow-color;
+    font-size: .82rem;
+    font-weight: 950;
+    letter-spacing: .08em;
+  }
+}
+
+.publicationContent {
+  span {
+    color: $move-color;
+    font-size: .72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  h3 {
+    margin: .45rem 0 .55rem;
+    color: #172033;
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    line-height: 1.18;
+  }
+
+  p {
+    margin: 0;
+    color: $paragraph-color;
+    font-size: .94rem;
+    line-height: 1.6;
+  }
+}
+
+.actions {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: .35rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    min-height: 42px;
+    padding: 0 .9rem;
+    color: #fff;
+    background: $move-color;
+    border-radius: 4px;
+    font-size: .74rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+
+    &:last-child {
+      background: $blue-color;
+    }
+
+    &:hover {
+      background: #172033;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(16, 32, 51, .14);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .heroContent,
+  .sectionInner {
+    width: min(100% - 2rem, 680px);
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .publicationGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .page {
+    padding-top: 5rem;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .heroContent {
+    padding: 4rem 0 2.5rem;
+  }
+
+  .section {
+    padding: 2.25rem 0 3.25rem;
+  }
+
+  .publicationCard {
+    grid-template-columns: 1fr;
+  }
+
+  .documentPreview {
+    width: 100%;
+    min-height: 128px;
+  }
+
+  .actions {
+    grid-column: auto;
+
+    a {
+      flex: 1 1 150px;
+    }
+  }
+}

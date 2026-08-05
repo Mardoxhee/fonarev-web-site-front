@@ -83,6 +83,7 @@ export const staticPages = [
   { path: "/genocost", changeFrequency: "weekly", priority: 0.95 },
   { path: "/petition", changeFrequency: "monthly", priority: 0.8 },
   { path: "/faq", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/publications", changeFrequency: "monthly", priority: 0.8 },
   { path: "/publications/newsletter", changeFrequency: "monthly", priority: 0.75 },
   { path: "/publications/rapports-annuels", changeFrequency: "yearly", priority: 0.65 },
   { path: "/galerie", changeFrequency: "weekly", priority: 0.6 },
