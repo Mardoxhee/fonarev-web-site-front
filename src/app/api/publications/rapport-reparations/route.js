@@ -2,8 +2,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 export async function GET() {
-  const fileName = 'Rapport de réparations 2024-2026.pdf';
-  const downloadName = 'rapport-reparations-2024-2026.pdf';
+  const fileName = 'rapport-reparations-2024-2026.pdf';
   const filePath = path.join(process.cwd(), 'public', fileName);
 
   const fileBuffer = await fs.readFile(filePath);
@@ -11,7 +10,7 @@ export async function GET() {
   return new Response(fileBuffer, {
     headers: {
       'Content-Type': 'application/pdf',
-      'Content-Disposition': `inline; filename="${downloadName}"`,
+      'Content-Disposition': `inline; filename="${fileName}"`,
       'Cache-Control': 'public, max-age=3600',
     },
   });
