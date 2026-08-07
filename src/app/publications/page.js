@@ -4,6 +4,7 @@ import styles from './style.module.scss'
 import React from 'react'
 import Image from 'next/image'
 import { Icon } from '@iconify/react'
+import PictureAsPdfRoundedIcon from '@mui/icons-material/PictureAsPdfRounded'
 
 const heroImage = '/reparation.jpg'
 
@@ -55,8 +56,7 @@ const Publications = () => {
             {publications.map((publication) => (
               <article key={publication.id} className={styles.publicationCard}>
                 <div className={styles.documentPreview} aria-hidden="true">
-                  <Icon icon="solar:document-text-bold" />
-                  <span>PDF</span>
+                  <PictureAsPdfRoundedIcon />
                 </div>
                 <div className={styles.publicationContent}>
                   <span>{publication.category}</span>
