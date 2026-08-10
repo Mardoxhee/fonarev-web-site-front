@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
 import styles from "./contact.module.scss";
 
@@ -31,30 +31,6 @@ const weekdays = [
 ];
 
 const ContactPage = () => {
-  useEffect(() => {
-    const elements = document.querySelectorAll("[data-contact-reveal]");
-
-    elements.forEach((element, index) => {
-      element.setAttribute("data-reveal", "");
-      element.style.setProperty("--reveal-delay", `${Math.min(index * 85, 420)}ms`);
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
-    );
-
-    elements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       <main className={styles.main}>

@@ -2,7 +2,7 @@
 
 import styles from './style.module.scss'
 import TeamCard from "../../components/teamCard"
-import React, { useEffect } from 'react'
+import React from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import { Icon } from '@iconify/react';
@@ -82,42 +82,6 @@ const leaders = [
 ];
 
 const About = () => {
-  useEffect(() => {
-    const revealElements = document.querySelectorAll(
-      [
-        `.${styles.intro}`,
-        `.${styles.legal}`,
-        `.${styles.vision}`,
-        `.${styles.mission}`,
-        `.${styles.values}`,
-        `.${styles.missionVideo}`,
-        `.${styles.genocost}`,
-        `.${styles.team}`,
-      ].join(", ")
-    );
-
-    revealElements.forEach((element, index) => {
-      element.setAttribute("data-reveal", "");
-      element.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: "0px 0px -4% 0px" }
-    );
-
-    revealElements.forEach((element) => observer.observe(element));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       <main className={styles.main}>
@@ -247,7 +211,7 @@ const About = () => {
             </h2>
           </div>
           <div className={styles.videoFrame}>
-             <iframe src="https://www.youtube.com/embed/lS2RRCws0iQ?si=dSkk_UMx_S1EA9ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <iframe src="https://www.youtube.com/embed/lS2RRCws0iQ?si=dSkk_UMx_S1EA9ug" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </div>
         </section>
 

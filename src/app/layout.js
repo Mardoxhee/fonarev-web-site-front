@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import PageLoader from "../components/pageLoader";
+import SiteMotion from "../components/siteMotion";
 import Providers from "./providers";
 import { Poppins, Barlow_Condensed } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -102,6 +103,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} ${poppins.variable} ${barlowCondensed.variable}`}>
         <Providers>
           <PageLoader />
+          <SiteMotion />
           <Header />
           {children}
           <Footer />

@@ -432,6 +432,31 @@ const Home = () => {
               />
             </div>
           )}
+          <div className={styles.campaignContinuation}>
+            <button
+              className={styles.campaignPoster}
+              onClick={() => openModal("/maintenant-tu-sais-que-fais-tu.mp4")}
+              aria-label="Regarder la suite de la campagne"
+            >
+              <Image
+                src="/maintenant-tu-sais-poster.png"
+                alt="Aperçu de la campagne Maintenant tu sais, que fais-tu ?"
+                fill
+                sizes="(max-width: 767px) calc(100vw - 2rem), 140px"
+              />
+              <Icon icon="solar:play-bold" />
+            </button>
+            <div className={styles.campaignCopy}>
+              <span>La campagne continue</span>
+              <strong>Maintenant tu sais, que fais-tu ?</strong>
+              <p>Cliquez pour découvrir la suite de la campagne et passer du témoignage à l’action.</p>
+            </div>
+            <button className={styles.campaignButton} onClick={() => openModal("/maintenant-tu-sais-que-fais-tu.mp4")}>
+              <Icon icon="solar:play-circle-bold" />
+              Regarder la suite
+              <Icon icon="solar:arrow-right-linear" />
+            </button>
+          </div>
         </section>
 
         <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={modalStyles} contentLabel="Video Modal" ariaHideApp={false}>
@@ -439,7 +464,18 @@ const Home = () => {
             <Icon icon="solar:close-circle-bold" />
           </button>
           <div className={styles.videoContainer}>
-            {videoUrl && (
+            {videoUrl?.startsWith("/") ? (
+              <video
+                src={videoUrl}
+                poster="/maintenant-tu-sais-poster.png"
+                controls
+                autoPlay
+                playsInline
+                preload="metadata"
+              >
+                Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+              </video>
+            ) : videoUrl ? (
               <iframe
                 src={videoUrl}
                 title="Vidéo témoignage"
@@ -448,7 +484,7 @@ const Home = () => {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
-            )}
+            ) : null}
           </div>
         </Modal>
 
