@@ -45,65 +45,6 @@ const memoryCards = [
   "Pour construire un avenir de paix durable.",
 ]
 
-const meaningParagraphs = [
-  "Le terme « Geno-cost », contraction glaçante de « génocide » et de « coût », a été forgé pour nommer l'innommable : un génocide perpétré pour des gains économiques. Les conflits qui ravagent le territoire congolais ne relèvent pas d'une fatalité ; ils traduisent une équation macabre où la vie humaine est sacrifiée sur l'autel de la prédation financière.",
-  "Nommer le Genocost, c'est refuser de détourner le regard face à la destruction systématique de millions de vies, fauchées pour l'accaparement illégal des ressources minérales. C'est poser l'acte fondateur d'une dignité retrouvée : la vérité, nue et implacable.",
-  "Les tragédies actuelles, qui ont déjà coûté la vie à plus de six millions de compatriotes, s'inscrivent dans une continuité historique effroyable. Sous le règne colonial du roi Léopold II, entre 1885 et 1908, l'exploitation brutale du caoutchouc a entraîné la mort de 10 à 13 millions de Congolais.",
-  "Plus d'un siècle plus tard, ce n'est plus le caoutchouc, mais l'or, le coltan et les minerais qui alimentent l'industrie électronique mondiale qui financent le sang congolais. La reconnaissance officielle de ces atrocités économiques est le premier pilier de la justice transitionnelle.",
-]
-
-const meaningStats = [
-  {
-    value: "1885-1908",
-    label: "Mémoire coloniale",
-  },
-  {
-    value: "10 à 13 M",
-    label: "Congolais tués selon des historiens",
-  },
-  {
-    value: "2023",
-    label: "Institution de la commémoration nationale",
-  },
-  {
-    value: "3 éditions",
-    label: "Organisées en 2023, 2024 et 2025",
-  },
-]
-
-const roadmap = [
-  {
-    date: "1885 - 1908",
-    place: "Mémoire historique",
-    title: "Caoutchouc, exploitation coloniale et violences de masse",
-    text: "Sous le règne colonial du roi Léopold II, l'exploitation frénétique et brutale du caoutchouc a entraîné la mort de 10 à 13 millions de Congolais.",
-  },
-  {
-    date: "Depuis 1993",
-    place: "RDC",
-    title: "Ressources minières, massacres et prédation",
-    text: "Les conflits contemporains ont déjà coûté la vie à plus de six millions de compatriotes, dans un contexte marqué par l'accaparement illégal de l'or, du coltan et d'autres minerais.",
-  },
-  {
-    date: "26 décembre 2022",
-    place: "Cadre légal",
-    title: "Loi n°22/065",
-    text: "La journée nationale d'hommages aux victimes dénommée Genocost est prévue par l'article 28 de la loi n°22/065 fixant les principes de protection et de réparation des victimes.",
-  },
-  {
-    date: "02 août 2023",
-    place: "RDC et diaspora",
-    title: "Institution de la commémoration nationale",
-    text: "Le 2 août devient un moment de recueillement national, vibrant dans les villes, les villages et au-delà des frontières.",
-  },
-  {
-    date: "2023 - 2025",
-    place: "Nation congolaise",
-    title: "Trois éditions déjà organisées",
-    text: "Les éditions 2023, 2024 et 2025 témoignent de la volonté constante de perpétuer le devoir de mémoire et de faire entendre la voix des victimes à travers les générations.",
-  },
-]
-
 const Genocost = () => {
   const [activeSlide, setActiveSlide] = useState(0)
   const [isSoundOn, setIsSoundOn] = useState(false)
@@ -224,71 +165,6 @@ const Genocost = () => {
               <Icon icon="solar:arrow-right-linear" />
             </Link>
           </aside>
-        </section>
-
-        <section className={styles.roadmap} data-genocost-reveal>
-          <div className={styles.sectionHeading}>
-            <span className={styles.eyebrow}>Histoire, origines et commémoration</span>
-            <h2>Du caoutchouc aux minerais, une continuité historique à regarder en face</h2>
-            <p>
-              Comprendre le Genocost exige de relier le passé colonial, les conflits contemporains, le cadre légal de la
-              commémoration et la mobilisation nationale du 2 août.
-            </p>
-          </div>
-          <div className={styles.timeline}>
-            {roadmap.map((item) => (
-              <article key={`${item.date}-${item.title}`}>
-                <div className={styles.timelineMeta}>
-                  <strong>{item.date}</strong>
-                  <span>
-                    <Icon icon="solar:map-point-bold" />
-                    {item.place}
-                  </span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.meaning} data-genocost-reveal>
-          <div className={styles.meaningImages}>
-            <div className={styles.meaningPrimaryImage}>
-              <Image src="/genocost-cover.jpeg" alt="BOMOKO : Commémoration du Genocost" fill sizes="(max-width: 900px) 100vw, 42vw" />
-            </div>
-            {/* <div className={styles.meaningSecondaryImage}>
-              <Image src="/hommes.jpg" alt="Mémoire et reconnaissance du Genocost" fill sizes="(max-width: 900px) 50vw, 20vw" />
-            </div> */}
-          </div>
-          <div className={styles.meaningContent}>
-            <span className={styles.eyebrow}>Comprendre le Genocost</span>
-            <h2>Geno-cost : génocide, coût humain et prédation économique.</h2>
-            <div className={styles.meaningLead}>
-              <strong>Il est des vérités que le silence ne peut plus étouffer.</strong>
-              <p>
-                Les massacres systématiques et planifiés qui endeuillent la nation exigent d'être reconnus par le monde
-                entier avec la plus grande fermeté.
-              </p>
-            </div>
-            <div className={styles.meaningText}>
-              {meaningParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-            <div className={styles.meaningStats}>
-              {meaningStats.map((item) => (
-                <article key={item.value}>
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                </article>
-              ))}
-            </div>
-            <blockquote>
-              Le FONAREV porte ce devoir de mémoire comme un bouclier pour les générations futures : se souvenir, honorer,
-              accompagner et garantir la non-répétition.
-            </blockquote>
-          </div>
         </section>
 
         <section className={styles.memory} data-genocost-reveal>
