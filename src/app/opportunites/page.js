@@ -1,11 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./style.module.scss";
+import { createPageMetadata } from "../../lib/seo";
 
-export const metadata = {
+export const metadata = createPageMetadata({
   title: "FONAREV RDC | Opportunités",
   description: "Offres d'emploi, appels d'offres, appels à contribution et demandes de stage du FONAREV.",
-};
+  path: "/opportunites",
+  keywords: ["Opportunités FONAREV", "Offres d'emploi FONAREV", "Appels d'offres FONAREV"],
+});
 
 const opportunities = [
   {

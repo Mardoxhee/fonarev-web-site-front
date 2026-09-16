@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { getFileLink } from "../../../lib/Requests.js";
-import { createPageMetadata, SITE_URL } from "../../../lib/seo";
+import { createPageMetadata, resolveSiteUrl, SITE_URL } from "../../../lib/seo";
 
 const ClientComponents = dynamic(() => import("../../../components/clientComponent.js"), { ssr: false });
 
@@ -61,7 +61,11 @@ export async function generateMetadata({ searchParams }) {
     description,
     path,
     image: image || "/og.png",
+    imageAlt: article.titre,
     type: "article",
+    publishedTime: article.date,
+    modifiedTime: article.updatedAt || article.date,
+    authors: ["FONAREV"],
     keywords: [
       "Actualités FONAREV",
       "Réparation des victimes RDC",
@@ -76,6 +80,16 @@ export default async function DetailsPage({ searchParams }) {
   const articleDetails = await fetchArticleDetails(articleId);
   const article = articleDetails?.article;
   const description = stripHtml(article?.contenu).slice(0, 160);
+  let articleImage;
+
+  if (article?.thumbanails) {
+    try {
+      articleImage = await getFileLink(article.thumbanails);
+    } catch {
+      articleImage = undefined;
+    }
+  }
+
   const canonical = articleId
     ? `${SITE_URL}/actualites/details?articleId=${encodeURIComponent(articleId)}`
     : `${SITE_URL}/actualites`;
@@ -86,6 +100,7 @@ export default async function DetailsPage({ searchParams }) {
         "@type": "NewsArticle",
         headline: article.titre,
         description,
+        image: articleImage ? [resolveSiteUrl(articleImage)] : [resolveSiteUrl("/og.png")],
         datePublished: article.date,
         dateModified: article.updatedAt || article.date,
         mainEntityOfPage: canonical,

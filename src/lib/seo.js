@@ -1,6 +1,15 @@
 export const SITE_URL = "https://www.fonarev.cd";
 export const SITE_NAME = "FONAREV";
 export const DEFAULT_OG_IMAGE = "/og.png";
+export const DEFAULT_LOGO_IMAGE = "/logo-fonarev.png";
+
+export const resolveSiteUrl = (value = "/") => {
+  try {
+    return new URL(value, SITE_URL).toString();
+  } catch {
+    return new URL("/", SITE_URL).toString();
+  }
+};
 
 const coreKeywords = [
   "FONAREV",
@@ -19,14 +28,21 @@ export const createPageMetadata = ({
   path = "/",
   keywords = [],
   image = DEFAULT_OG_IMAGE,
+  imageAlt,
+  imageWidth = 1200,
+  imageHeight = 630,
   type = "website",
+  publishedTime,
+  modifiedTime,
+  authors,
   noIndex = false,
 }) => {
-  const canonical = new URL(path, SITE_URL).toString();
+  const canonical = resolveSiteUrl(path);
   const resolvedTitle = title.includes("FONAREV") ? title : `${title} | FONAREV`;
+  const resolvedImage = resolveSiteUrl(image || DEFAULT_OG_IMAGE);
 
   return {
-    title,
+    title: resolvedTitle,
     description,
     keywords: [...new Set([...coreKeywords, ...keywords])],
     alternates: {
@@ -56,11 +72,15 @@ export const createPageMetadata = ({
       siteName: SITE_NAME,
       title: resolvedTitle,
       description,
+      ...(type === "article" && publishedTime ? { publishedTime } : {}),
+      ...(type === "article" && modifiedTime ? { modifiedTime } : {}),
+      ...(type === "article" && authors ? { authors } : {}),
       images: [
         {
-          url: image,
-          ...(image === DEFAULT_OG_IMAGE ? { width: 1200, height: 630 } : {}),
-          alt: `${resolvedTitle} — République démocratique du Congo`,
+          url: resolvedImage,
+          width: imageWidth,
+          height: imageHeight,
+          alt: imageAlt || `${resolvedTitle} — République démocratique du Congo`,
         },
       ],
     },
@@ -70,7 +90,7 @@ export const createPageMetadata = ({
       creator: "@fonarevrdc",
       title: resolvedTitle,
       description,
-      images: [image],
+      images: [resolvedImage],
     },
   };
 };
