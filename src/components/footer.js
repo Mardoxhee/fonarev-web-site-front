@@ -39,14 +39,14 @@ const Footer = () => {
                 <div className = {styles.newsletterCard}>   
                     <div className={styles.newsletterCardHeader}>
                         <div className={styles.newsletterBadge}>NEWSLETTER</div>
-                        <div className={styles.newsletterMeta}>Édition Juin 2026</div>
+                        <div className={styles.newsletterMeta}>Édition Juillet 2026</div>
                     </div>
                     <div className={styles.newsletterCardBody}>
                         <div className={styles.newsletterTitle}>Newsletter FONAREV</div>
                         <div className={styles.newsletterSubtitle}>Découvrez les faits marquants, activités et actualités du mois.</div>
                     </div>
                     <div className={styles.newsletterCardFooter}>
-                        <a className={styles.newsletterDownloadCta} href="/api/newsletter/juin">
+                        <a className={styles.newsletterDownloadCta} href="/api/newsletter/juillet">
                             Télécharger (PDF)
                         </a>
                         <Link className={styles.newsletterMoreCta} href="/publications/newsletter">

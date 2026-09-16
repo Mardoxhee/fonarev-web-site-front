@@ -9,6 +9,15 @@ const newsletterImage = '/genocost1.jpg'
 
 const newsletters = [
   {
+    id: '2026-07',
+    monthLabel: 'Juillet',
+    period: 'Édition mensuelle',
+    title: 'Newsletter FONAREV',
+    description: "L'édition de juillet 2026 revient sur les faits marquants, les activités institutionnelles et les avancées du FONAREV.",
+    href: '/api/newsletter/juillet',
+    imageSrc: newsletterImage,
+  },
+  {
     id: '2026-06',
     monthLabel: 'Juin',
     period: 'Édition mensuelle',
