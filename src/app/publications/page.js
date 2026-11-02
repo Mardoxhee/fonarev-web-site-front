@@ -25,6 +25,14 @@ const publications = [
       'Le rapport consacré aux réparations, couvrant les actions et perspectives institutionnelles sur la période 2024-2026.',
     href: '/api/publications/rapport-reparations',
   },
+  {
+    id: 'rapport-activite-fonarev-2024-2025',
+    category: "Rapport d'activité",
+    title: "Rapport d'activité du FONAREV 2024-2025",
+    description:
+      "Le rapport d'activité du FONAREV pour les années 2024 et 2025.",
+    href: '/api/publications/rapport-activite-2024-2025',
+  },
 ]
 
 const Publications = () => {
