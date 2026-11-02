@@ -9,6 +9,15 @@ const newsletterImage = '/genocost1.jpg'
 
 const newsletters = [
   {
+    id: '2026-genocost-speciale',
+    monthLabel: 'Spéciale GENOCOST 2026',
+    period: 'Édition spéciale',
+    title: 'Newsletter FONAREV',
+    description: "Une édition spéciale consacrée à la commémoration GENOCOST 2026.",
+    href: '/api/newsletter/genocost-2026',
+    imageSrc: newsletterImage,
+  },
+  {
     id: '2026-07',
     monthLabel: 'Juillet',
     period: 'Édition mensuelle',
